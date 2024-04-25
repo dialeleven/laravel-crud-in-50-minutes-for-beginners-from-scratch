@@ -6,7 +6,15 @@
    <title>Product Index</title>
 </head>
 <body>
-   <h1>Product</h1>
+   <h1>Products</h1>
+   <p><a href="{{route('product.create')}}">Add a Product</a></p>
+   <div>
+      @if(@session()->has('success'))
+         <p style="color: green; font-weight: bold;">
+            {{session('success')}}
+         </p>
+      @endif
+   </div>
    <div>
       <table border="1">
          <tr>
@@ -29,5 +37,6 @@
          @endforeach
       </table>
    </div>
+
 </body>
 </html>
