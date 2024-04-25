@@ -20,10 +20,11 @@ class ProductController extends Controller
         // dump and die function to dump the $request data to the browser
         //dd('description: ' . $request->description);
         //dd($request);
+        
         $data = $request->validate([
             'name' => 'required',
             'qty' => 'required|numeric',
-            'price' => 'required|decimal:2', // 2 decimal places
+            'price' => 'required|decimal:0,2', // min 0, max 2 decimal places
             'description' => 'required',
         ]);
 

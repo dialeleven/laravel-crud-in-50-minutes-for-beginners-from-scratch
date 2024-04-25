@@ -7,23 +7,34 @@
 </head>
 <body>
    <h1>Create a Product</h1>
+
+   <div>
+      @if ($errors->any())
+      <ul>
+         @foreach($errors->all() as $error)
+            <li>{{$error}}</li>
+         @endforeach
+      </ul>
+      @endif
+   </div>
+   
    <form method="post" action="{{route('product.store')}}">
       @csrf
       @method('post')
       <div>
-         <label for="">Name</label>
+         <label">Name</label>
          <input type="text" name="name" placeholder="Name" />
       </div>
       <div>
-         <label for="">Qty</label>
+         <label>Qty</label>
          <input type="text" name="qty" placeholder="Qty" />
       </div>
       <div>
-         <label for="">Price</label>
+         <label>Price</label>
          <input type="text" name="price" placeholder="Price" />
       </div>
       <div>
-         <label for="">Description</label>
+         <label>Description</label>
          <input type="text" name="description" placeholder="Description" />
       </div>
       <div>
