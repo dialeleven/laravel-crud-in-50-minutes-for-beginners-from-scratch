@@ -34,6 +34,9 @@ class ProductController extends Controller
 
         // redirect to product index page after
         return redirect(route('product.index'));
+    }
 
+    public function edit(Product $product) {
+        
     }
 }

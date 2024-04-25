@@ -15,6 +15,7 @@
             <th>Qty</th>
             <th>Price</th>
             <th>Description</th>
+            <th>Edit</th>
          </tr>
          @foreach ($products as $product)
             <tr>
@@ -23,6 +24,7 @@
                <td>{{$product->qty}}</td>
                <td>{{$product->price}}</td>
                <td>{{$product->description}}</td>
+               <td><a href="{{route('product.edit', ['product' => $product])}}">Edit</a></td>
             </tr>
          @endforeach
       </table>
