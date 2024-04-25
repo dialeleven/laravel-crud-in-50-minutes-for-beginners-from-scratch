@@ -37,9 +37,10 @@
          <label>Description</label>
          <input type="text" name="description" placeholder="Description" value="{{old('description')}}" />
       </div>
-      <div>
+      <p>
          <input type="submit" value="Save a New Product" />
-      </div>
+         <input type="button" value="Cancel" onclick="window.history.back();">
+      </p>
    </form>
 </body>
 </html>
