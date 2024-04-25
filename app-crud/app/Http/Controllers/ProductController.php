@@ -38,6 +38,15 @@ class ProductController extends Controller
 
     public function edit(Product $product) {
         //dd(\Route::getRoutes());
-        dd($product);
+        //dd($product);
+
+        /*
+        Return the view with the $product data. Note that 'products.edit' follows the naming convention
+        of our directory structure:
+
+        If edit.blade.php is in resources/views/products/, then we have 'products' to reflect the 
+        /products/ directory and 'edit' represents the name of the specific view file.
+        */
+        return view('products.edit', ['product' => $product]);
     }
 }
