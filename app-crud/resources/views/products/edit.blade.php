@@ -39,6 +39,7 @@
       </div>
       <div>
          <input type="submit" value="Update" />
+         <input type="button" value="Cancel" onclick="window.history.back();">
       </div>
    </form>
 </body>
