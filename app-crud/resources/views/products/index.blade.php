@@ -46,5 +46,8 @@
       </table>
    </div>
 
+   <p>
+      Today is {{ date('Y-m-d H:i:s', time()) }}
+   </p>
 </body>
 </html>
