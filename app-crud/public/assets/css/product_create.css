@@ -2,12 +2,9 @@ body {
    font: 14px Roboto;
 }
 
-h1 {
-   font: 24px Roboto;
-}
-
 form {
    max-width: 400px;
+   margin: 0 auto;
    padding: 20px;
    border: 1px solid #ccc;
    border-radius: 5px;
@@ -15,7 +12,6 @@ form {
 
 label {
    display: block;
-   font-family: Roboto;
    margin-bottom: 10px;
 }
 
@@ -50,9 +46,9 @@ input[type="submit"]:hover {
       border-radius: 5px;
       border: 1px solid #000000;
       transition: background-color 0.2s ease; /* Smooth transition */
-}
+   }
 
-/* Hover effect for cancel button */
-.cancel-button:hover {
-   background-color: #d8d8d8; /* Darker red on hover */
-}
+   /* Hover effect for cancel button */
+   .cancel-button:hover {
+      background-color: #dc5361; /* Darker red on hover */
+   }
