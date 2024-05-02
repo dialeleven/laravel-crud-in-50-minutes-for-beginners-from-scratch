@@ -20,8 +20,8 @@ input[type="email"] {
 /* Basic reset */
 table {
    border-collapse: collapse;
+   width: 100%;
    /*
-   width: 95%;
    margin: 0 auto;
    */
  }
@@ -87,31 +87,19 @@ table {
 
 
 .status-message {
-   padding: 15px;
-   border-radius: 5px;
-   color: #fff;
-   font-weight: bold;
-   text-align: center;
- }
+  padding: 15px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 0.5s, height 0.5s;
+}
 
- .success {
-   background-color: #28a745; /* Green */
- }
-
- .error {
-   background-color: #dc3545; /* Red */
- }
-
- .info {
-   background-color: #007bff; /* Blue */
- }
-
- .warning {
-   background-color: #ffc107; /* Yellow */
- }
-
+.success {
+  background-color: #28a745; /* Green */
+}
  
- .create-product-link {
+.create-product-link {
   display: inline-block;
   padding: 10px 15px;
   background-color: #0365cd;

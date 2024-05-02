@@ -6,13 +6,28 @@
    <title>Product Index</title>
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="{{asset('assets/css/product_index.css')}}">
+   <script>
+      // Function to remove the status message after a timeout
+      function removeStatusMessage() {
+        var statusMessage = document.getElementById('statusMessage');
+        if (statusMessage) {
+          statusMessage.style.opacity = '0';
+          setTimeout(function() {
+            statusMessage.remove();
+          }, 100); // Adjust timeout duration (in milliseconds) as needed
+        }
+      }
+  
+      // Call the function after a certain period (e.g., 3 seconds)
+      setTimeout(removeStatusMessage, 3000);
+    </script>
 </head>
 <body>
    <h1>Products</h1>
 
    <p><a href="{{route('product.create')}}" class="create-product-link">Create a Product</a></p>
       @if(@session()->has('success'))
-      <div class="status-message success">
+      <div id="statusMessage" class="status-message success">
          {{session('success')}}
       </div>
       @endif
