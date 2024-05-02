@@ -45,7 +45,7 @@
          <input type="file" name="image">
       </div>
       <p>
-         <input type="submit" value="Save a New Product" />
+         <input type="submit" value="Save" />
          <input type="button" value="Cancel" class="cancel-button" onclick="window.history.back();">
       </p>
    </form>

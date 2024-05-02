@@ -33,7 +33,8 @@ class ProductController extends Controller
         $newProduct = Product::create($data);
 
         // redirect to product index page after
-        return redirect(route('product.index'));
+        //return redirect(route('product.index'));
+        return redirect(route('product.index'))->with('success', 'Product added successfully');
     }
 
     public function edit(Product $product) {

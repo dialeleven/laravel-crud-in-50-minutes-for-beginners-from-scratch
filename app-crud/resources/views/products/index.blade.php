@@ -10,16 +10,14 @@
 <body>
    <h1>Products</h1>
 
-   <p><a href="{{route('product.create')}}">Add a Product</a></p>
-   <div>
+   <p><a href="{{route('product.create')}}">Create a Product</a></p>
       @if(@session()->has('success'))
-         <p style="color: green; font-weight: bold;">
-            {{session('success')}}
-         </p>
+      <div class="status-message success">
+         {{session('success')}}
+      </div>
       @endif
-   </div>
    <div>
-      <table border="1" cellspacing="0" cellpadding="5">
+      <table>
          <tr>
             <th>ID</th>
             <th>Name</th>
@@ -36,7 +34,7 @@
                <td>{{$product->qty}}</td>
                <td>{{$product->price}}</td>
                <td>{{$product->description}}</td>
-               <td><a href="{{route('product.edit', ['product' => $product])}}">Edit</a></td>
+               <td><a href="{{route('product.edit', ['product' => $product])}}" class="button-like">Edit</a></td>
                <td>
                   <form method="POST" action="{{route('product.destroy', ['product' => $product])}}">
                      @csrf

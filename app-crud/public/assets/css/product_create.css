@@ -25,12 +25,14 @@ input[type="email"] {
 }
 
 input[type='submit'] {
-   background-color: #0056b3;
-   border: 1px solid #000000;
-   color: #eee;
-   padding: 5px;
+   display: inline-block;
+   padding: 5px 20px;
+   text-decoration: none;
    border-radius: 5px;
-   transition: background-color 0.2s ease; /* Smooth transition */
+   cursor: pointer;
+   background-color: #0365cd;
+   color: #fff;
+   border: 1px solid #0365cd;
 }
 
 input[type="submit"]:hover {
@@ -40,15 +42,18 @@ input[type="submit"]:hover {
 
 /* Cancel button styles */
 .cancel-button {
-      background-color: #b3b3b3; /* Red background color */
-      color: #000000; /* Default text color */
-      padding: 5px;
-      border-radius: 5px;
-      border: 1px solid #000000;
-      transition: background-color 0.2s ease; /* Smooth transition */
-   }
+   display: inline-block;
+   padding: 5px 20px;
+   text-decoration: none;
+   border-radius: 5px;
+   cursor: pointer;
+   background-color: #ccc;
+   color: #000;
+   border: 1px solid #ccc;
+   transition: background-color 0.2s ease; /* Smooth transition */
+}
 
-   /* Hover effect for cancel button */
-   .cancel-button:hover {
-      background-color: #dc5361; /* Darker red on hover */
-   }
+/* Hover effect for cancel button */
+.cancel-button:hover {
+   background-color: #ddd;
+}
