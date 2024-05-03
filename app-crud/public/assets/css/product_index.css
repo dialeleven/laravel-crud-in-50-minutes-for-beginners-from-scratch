@@ -98,6 +98,18 @@ table {
 .success {
   background-color: #28a745; /* Green */
 }
+
+.error {
+  background-color: #dc3545; /* Red */
+}
+
+.info {
+  background-color: #007bff; /* Blue */
+}
+
+.warning {
+  background-color: #ffc107; /* Yellow */
+}
  
 .create-product-link {
   display: inline-block;

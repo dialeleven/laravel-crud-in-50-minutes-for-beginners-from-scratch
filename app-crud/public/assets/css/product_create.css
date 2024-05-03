@@ -57,3 +57,22 @@ input[type="submit"]:hover {
 .cancel-button:hover {
    background-color: #ddd;
 }
+
+.error-list {
+   list-style: none; /* Remove default list bullet */
+   padding: 0;
+ }
+ 
+ .error-list-item {
+   background-color: #ffe6e6; /* Light red background */
+   color: #b30000; /* Dark red text color */
+   padding: 10px;
+   margin-bottom: 5px;
+   border-radius: 5px;
+ }
+ 
+ .error-list-item::before {
+   content: "\2718"; /* Unicode character for "cross mark" */
+   color: #b30000; /* Dark red cross mark color */
+   margin-right: 5px;
+ }
