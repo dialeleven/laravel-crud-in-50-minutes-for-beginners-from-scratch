@@ -5,6 +5,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Product Index</title>
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+   <!-- Include Font Awesome CSS --> 
+   <link href="{{asset('assets/fontawesome/css/all.min.css')}}" rel="stylesheet" />
    <link rel="stylesheet" href="{{asset('assets/css/product_index.css')}}">
    <script>
       // Function to remove the status message after a timeout
@@ -21,6 +23,9 @@
       // Call the function after a certain period (e.g., 3 seconds)
       setTimeout(removeStatusMessage, 3000);
     </script>
+    <style>
+      
+    </style>
 </head>
 <body>
    <h1>Products</h1>
@@ -52,7 +57,7 @@
                <td>{{$product->description}}</td>
                <td>
                   @if ($product->image)
-                  <img src="/storage/{{$product->image}}" alt="{{$product->name}}">
+                  <a href="/storage/{{$product->image}}" target="_blank"><i class="fa-solid fa-image" aria-label="display image" title="Image opens in new tab/window"></i></a>
                   @endif
                </td>
                <td><a href="{{route('product.edit', ['product' => $product])}}" class="button-like">Edit</a></td>
