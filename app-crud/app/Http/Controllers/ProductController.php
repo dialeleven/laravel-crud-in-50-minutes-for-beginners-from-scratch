@@ -13,10 +13,14 @@ class ProductController extends Controller
         return view('products.index', ['products' => $products]);
     }
 
+    // hyperlink to create product
     public function create() {
         return view('products.create');
     }
 
+    /**
+     * Store the product
+     */
     public function store(Request $request) {
         // dump and die function to dump the $request data to the browser
         //dd('description: ' . $request->description);
@@ -27,7 +31,14 @@ class ProductController extends Controller
             'qty' => 'required|numeric',
             'price' => 'required|decimal:0,2', // min 0, max 2 decimal places
             'description' => 'required',
+            'image' => 'nullable|image|max:2048', // Image field is now optional with maximum size of 2MB
         ]);
+
+        // If an image is provided, handle the image upload
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('images', 'public');
+            $data['image'] = $imagePath;
+        }
 
         // save request data to database
         $newProduct = Product::create($data);

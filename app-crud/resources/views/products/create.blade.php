@@ -10,7 +10,7 @@
 </head>
 <body>
    
-   <form method="post" action="{{route('product.store')}}">
+   <form method="post" action="{{route('product.store')}}" enctype="multipart/form-data">
       @csrf
       @method('post')
       <h1>Create a Product</h1>

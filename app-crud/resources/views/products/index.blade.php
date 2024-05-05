@@ -39,6 +39,7 @@
             <th>Qty</th>
             <th>Price</th>
             <th>Description</th>
+            <th>Image</th>
             <th>Edit</th>
             <th>Delete</th>
          </tr>
@@ -49,6 +50,11 @@
                <td>{{$product->qty}}</td>
                <td>{{$product->price}}</td>
                <td>{{$product->description}}</td>
+               <td>
+                  @if ($product->image)
+                  <img src="/storage/{{$product->image}}" alt="{{$product->name}}">
+                  @endif
+               </td>
                <td><a href="{{route('product.edit', ['product' => $product])}}" class="button-like">Edit</a></td>
                <td>
                   <form method="POST" action="{{route('product.destroy', ['product' => $product])}}">
