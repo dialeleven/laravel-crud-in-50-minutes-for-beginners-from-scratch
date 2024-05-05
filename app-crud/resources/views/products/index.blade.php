@@ -49,26 +49,26 @@
             <th>Delete</th>
          </tr>
          @foreach ($products as $product)
-            <tr>
-               <td>{{$product->id}}</td>
-               <td>{{$product->name}}</td>
-               <td>{{$product->qty}}</td>
-               <td>{{$product->price}}</td>
-               <td>{{$product->description}}</td>
-               <td>
-                  @if ($product->image)
-                  <a href="/storage/{{$product->image}}" target="_blank"><i class="fa-solid fa-image" aria-label="display image" title="Image opens in new tab/window"></i></a>
-                  @endif
-               </td>
-               <td><a href="{{route('product.edit', ['product' => $product])}}" class="button-like">Edit</a></td>
-               <td>
-                  <form method="POST" action="{{route('product.destroy', ['product' => $product])}}">
-                     @csrf
-                     @method('delete')
-                     <input type="submit" value="Delete" class="delete-button" onclick="return confirm('Delete {{$product->name}}?')">
-                  </form>
-               </td>
-            </tr>
+         <tr>
+            <td>{{$product->id}}</td>
+            <td>{{$product->name}}</td>
+            <td>{{$product->qty}}</td>
+            <td>{{$product->price}}</td>
+            <td>{{$product->description}}</td>
+            <td>
+               @if ($product->image)
+               <a href="/storage/{{$product->image}}" target="_blank"><i class="fa-solid fa-image" aria-label="display image" title="Image opens in new tab/window"></i></a>
+               @endif
+            </td>
+            <td><a href="{{route('product.edit', ['product' => $product])}}" class="button-like">Edit</a></td>
+            <td>
+               <form method="POST" action="{{route('product.destroy', ['product' => $product])}}">
+                  @csrf
+                  @method('delete')
+                  <input type="submit" value="Delete" class="delete-button" onclick="return confirm('Delete {{$product->name}}?')">
+               </form>
+            </td>
+         </tr>
          @endforeach
       </table>
    </div>
