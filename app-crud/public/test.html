@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show/Hide Password</title>
+  <!-- Include Font Awesome CSS -->
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
+
+  
+  <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
+  <link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
+  <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+  <style>
+    .password-wrapper {
+      position: relative;
+      display: inline-block; /* Ensure the wrapper only takes the space it needs */
+    }
+
+    #password {
+      padding-right: 40px; /* Make space for the eyeball icon */
+    }
+
+    #password[type="password"] + .eye-icon .fa-eye,
+    #password[type="password"] + .eye-icon .fa-eye-slash {
+      font-size: 10px; /* Adjust the size of the eye icons */
+    }
+
+    .eye-icon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="password-wrapper">
+      <label>Password:</label>
+    <input type="password" id="password" name="password">
+    <i class="far fa-eye eye-icon" id="password-toggle"></i>
+  </div>
+
+  <script>
+    document.querySelector('.eye-icon').addEventListener('click', function() {
+      var passwordInput = document.getElementById('password');
+      var eyeIcon = this;
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.classList.remove('fa-eye');
+        eyeIcon.classList.add('fa-eye-slash');
+      } else {
+        passwordInput.type = 'password';
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+      }
+    });
+  </script>
+</body>
+</html>
