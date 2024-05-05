@@ -1,5 +1,6 @@
 Expanding upon the Laravel CRUD tutorial which has been completed (marked as a 1.0 release). What's next?
 
+- Laravel DB operations: :white_check_mark: add column to table
 - Style UI: :white_check_mark: CSS, or possible frameworks (e.g. Tailwind CSS, Vue)
 - Login check for entire CRUD app
 - User login page
