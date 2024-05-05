@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Show/Hide Password</title>
-  <!-- Include Font Awesome CSS -->
-  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
-
-  
-  <link href="/assets/fontawesome/css/fontawesome.css" rel="stylesheet" />
-  <link href="/assets/fontawesome/css/brands.css" rel="stylesheet" />
-  <link href="/assets/fontawesome/css/solid.css" rel="stylesheet" />
+  <!-- Include Font Awesome CSS --> 
+  <link href="/assets/fontawesome/css/all.min.css" rel="stylesheet" />
+  <!--
+  <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+  <link href="/assets/fontawesome/css/brands.min.css" rel="stylesheet" />
+  <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+  -->
   <style>
     .password-wrapper {
       position: relative;
@@ -38,9 +38,9 @@
 </head>
 <body>
   <div class="password-wrapper">
-      <label>Password:</label>
+    <label>Password :</label>
     <input type="password" id="password" name="password">
-    <i class="far fa-eye eye-icon" id="password-toggle"></i>
+    <i class="far fa-eye eye-icon" id="password-toggle" aria-label="Show/hide password"></i>
   </div>
 
   <script>
