@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Models\Product;
 
 
@@ -35,9 +36,25 @@ class ProductController extends Controller
         ]);
 
         // If an image is provided, handle the image upload
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('images', 'public');
-            $data['image'] = $imagePath;
+        if ($request->hasFile('image'))
+        {
+            /*
+            This will save the file using a unique ID as the filename (e.g. eDPjdMKbPCT0gvbpSnCJBKz15Ua8JQfJ8ExY5WZX.jpg)
+            */
+            #$imagePath = $request->file('image')->store('images', 'public');
+            #$data['image'] = $imagePath;
+
+            // Retrieve the uploaded file
+            $image = $request->file('image');
+            
+            // Get the original file name
+            $original_filename = $image->getClientOriginalName();
+            
+            // Store the uploaded file with the original file name
+            $image->storeAs('images', $original_filename, 'public'); // Adjust storage path as needed// Set the image path in the request data
+            
+            // Set the image path and filename in the request data
+            $data['image'] = 'images/' . $original_filename;
         }
 
         // save request data to database
@@ -76,7 +93,30 @@ class ProductController extends Controller
         return redirect(route('product.index'))->with('success', 'Product updated successfully');
     }
 
-    public function destroy(Product $product) {
+    public function destroy(Product $product)
+    {
+        // Delete the product's image if it exists
+        if ($product->image)
+        {
+            // Get the full path to the image file
+            $imagePath = public_path('storage/' . $product->image);
+
+            // Check if the file exists
+            if (file_exists($imagePath)) {
+                try {
+                    // Attempt to delete the image file
+                    unlink($imagePath);
+                } catch (\Exception $e) {
+                    // Log or handle the deletion error
+                    Log::error('Error deleting image: ' . $e->getMessage());
+                }
+            } else {
+                // Log or handle the case where the file doesn't exist
+                Log::warning('Image file not found: ' . $imagePath);
+            }
+        }
+
+        // Delete the product
         $product->delete();
 
         return redirect(route('product.index'))->with('success', 'Product deleted successfully');
