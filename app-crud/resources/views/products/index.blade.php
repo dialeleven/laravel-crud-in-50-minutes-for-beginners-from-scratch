@@ -57,6 +57,11 @@
             <td>{{$product->description}}</td>
             <td align="center">
                @if ($product->image)
+               <?php
+               /*
+
+               */
+              ?>
                <a href="/storage/{{$product->image}}" target="_blank"><i class="fa-solid fa-image" aria-label="display image" title="Image opens in new tab/window"></i></a>
                @endif
             </td>

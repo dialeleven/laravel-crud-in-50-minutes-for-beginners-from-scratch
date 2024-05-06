@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+
+use Illuminate\Support\Facades\File;
+use Intervention\Image\ImageManagerStatic as Image;
+
 use App\Models\Product;
 
 
@@ -15,10 +19,12 @@ class ProductController extends Controller
         return view('products.index', ['products' => $products]);
     }
 
+
     // hyperlink to create product
     public function create() {
         return view('products.create');
     }
+
 
     /**
      * Store the product
@@ -40,7 +46,7 @@ class ProductController extends Controller
         if ($request->hasFile('image'))
         {
             /*
-            // This will save the file using a unique ID as the filename (e.g. eDPjdMKbPCT0gvbpSnCJBKz15Ua8JQfJ8ExY5WZX.jpg)
+            # This will save the file using a unique ID as the filename (e.g. eDPjdMKbPCT0gvbpSnCJBKz15Ua8JQfJ8ExY5WZX.jpg)
             $imagePath = $request->file('image')->store('images', 'public');
             $data['image'] = $imagePath;
             */
@@ -59,9 +65,23 @@ class ProductController extends Controller
             
             // Store the uploaded file with the original file name
             $image->storeAs('images', $filename, 'public'); // Adjust storage path as needed
+
+
+            // Check if file exists and resize image using Intervention Image (https://image.intervention.io/v2)
+            if ($image && File::exists($image->getRealPath())) {
+                // Create an instance of ImageManager - Create a thumbnail
+                $thumbnail = Image::make($image->getRealPath())->fit(100, 100);
+            }
+
+            $thumbnail_path = 'app\public\thumbnails\\' . $filename;    // thumbnail path
+            $thumbnail->save(storage_path($thumbnail_path));            // Save the thumbnail
+
             
             // Set the image path and filename in the request data
             $data['image'] = 'images/' . $filename;
+
+            // set the thumbnail path and filename
+            $data['thumbnail'] = 'thumbnails/' . $filename;
         }
 
         // save request data to database
@@ -71,6 +91,7 @@ class ProductController extends Controller
         //return redirect(route('product.index'));
         return redirect(route('product.index'))->with('success', 'Product added successfully');
     }
+
 
     public function edit(Product $product) {
         //dd(\Route::getRoutes());
@@ -86,19 +107,21 @@ class ProductController extends Controller
         return view('products.edit', ['product' => $product]);
     }
 
+
     public function update(Product $product, Request $request)
     {
         $data = $request->validate([
             'name' => 'required',
             'qty' => 'required|numeric',
             'price' => 'required|decimal:0,2', // min 0, max 2 decimal places
-            'description' => 'required',
+            'description' => 'nullable',
         ]);
 
         $product->update($data);
 
         return redirect(route('product.index'))->with('success', 'Product updated successfully');
     }
+
 
     public function destroy(Product $product)
     {
