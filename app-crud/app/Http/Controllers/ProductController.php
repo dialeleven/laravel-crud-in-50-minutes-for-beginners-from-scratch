@@ -31,7 +31,7 @@ class ProductController extends Controller
             'name' => 'required',
             'qty' => 'required|numeric',
             'price' => 'required|decimal:0,2', // min 0, max 2 decimal places
-            'description' => 'required',
+            'description' => 'nullable',
             'image' => 'nullable|image|max:2048', // Image field is now optional with maximum size of 2MB
         ]);
 
@@ -107,11 +107,11 @@ class ProductController extends Controller
                     // Attempt to delete the image file
                     unlink($imagePath);
                 } catch (\Exception $e) {
-                    // Log or handle the deletion error
+                    // Log deletion error
                     Log::error('Error deleting image: ' . $e->getMessage());
                 }
             } else {
-                // Log or handle the case where the file doesn't exist
+                // Log case where the file doesn't exist
                 Log::warning('Image file not found: ' . $imagePath);
             }
         }
