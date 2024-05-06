@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 use App\Models\Product;
 
 
@@ -39,22 +40,28 @@ class ProductController extends Controller
         if ($request->hasFile('image'))
         {
             /*
-            This will save the file using a unique ID as the filename (e.g. eDPjdMKbPCT0gvbpSnCJBKz15Ua8JQfJ8ExY5WZX.jpg)
+            // This will save the file using a unique ID as the filename (e.g. eDPjdMKbPCT0gvbpSnCJBKz15Ua8JQfJ8ExY5WZX.jpg)
+            $imagePath = $request->file('image')->store('images', 'public');
+            $data['image'] = $imagePath;
             */
-            #$imagePath = $request->file('image')->store('images', 'public');
-            #$data['image'] = $imagePath;
 
             // Retrieve the uploaded file
             $image = $request->file('image');
             
             // Get the original file name
             $original_filename = $image->getClientOriginalName();
+
+            // Current timestamp
+            $timestamp = date('Ymd_Hisu', time());
+
+            // convert to lowercase with spaces replaced with underscore
+            $filename = $timestamp . '_' . str_replace(' ', '_', strtolower($original_filename));
             
             // Store the uploaded file with the original file name
-            $image->storeAs('images', $original_filename, 'public'); // Adjust storage path as needed// Set the image path in the request data
+            $image->storeAs('images', $filename, 'public'); // Adjust storage path as needed
             
             // Set the image path and filename in the request data
-            $data['image'] = 'images/' . $original_filename;
+            $data['image'] = 'images/' . $filename;
         }
 
         // save request data to database
