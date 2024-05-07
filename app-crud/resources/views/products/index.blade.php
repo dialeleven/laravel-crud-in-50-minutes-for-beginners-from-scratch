@@ -23,9 +23,6 @@
       // Call the function after a certain period (e.g., 3 seconds)
       setTimeout(removeStatusMessage, 3000);
     </script>
-    <style>
-      
-    </style>
 </head>
 <body>
    <h1>Products</h1>
@@ -56,12 +53,9 @@
             <td>{{$product->price}}</td>
             <td>{{$product->description}}</td>
             <td align="center">
-               @if ($product->image)
-               <?php
-               /*
-
-               */
-              ?>
+               @if ($product->thumbnail)
+               <a href="/storage/{{$product->image}}" target="_blank"><img src="/storage/{{$product->thumbnail}}" width="100" height="100" alt=""></a>
+               @else
                <a href="/storage/{{$product->image}}" target="_blank"><i class="fa-solid fa-image" aria-label="display image" title="Image opens in new tab/window"></i></a>
                @endif
             </td>
