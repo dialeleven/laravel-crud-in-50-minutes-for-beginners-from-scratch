@@ -81,7 +81,7 @@ class ProductController extends Controller
                 // resize image proportionally to [N]px width
                 #$thumbnail->scale(width: 100);
 
-                // crop the best fitting 1:1 ratio (100x200) and resize to 200x200 pixel
+                // crop the best fitting 1:1 ratio (100x100) and resize to 200x200 pixel
                 $thumbnail->cover(100, 100);
             }
 
