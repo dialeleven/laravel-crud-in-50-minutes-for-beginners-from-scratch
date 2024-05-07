@@ -14,6 +14,7 @@ class Product extends Model
         'qty',
         'price',
         'description',
-        'image'
+        'image',
+        'thumbnail'
     ];
 }
