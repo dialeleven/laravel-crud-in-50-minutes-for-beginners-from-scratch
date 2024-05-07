@@ -22,7 +22,8 @@ Install Intervention Image with Composer by running the following command.
 ### How To Use Intervention Image
 Code Example from https://image.intervention.io/v3
 
-`use Intervention\Image\ImageManager;
+```
+use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 // create image manager with desired driver
@@ -38,4 +39,5 @@ $image->scale(width: 300);
 $image->place('images/watermark.png');
 
 // save modified image in new format 
-$image->toPng()->save('images/foo.png');`
+$image->toPng()->save('images/foo.png');
+```
