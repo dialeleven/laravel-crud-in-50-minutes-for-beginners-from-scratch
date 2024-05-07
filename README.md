@@ -1,4 +1,4 @@
-## Expanding upon the Laravel CRUD tutorial which has been completed (marked as a 1.0 release). What's next?
+## Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
 - [x] Laravel DB operations: add column to table
 - [x] Style UI: CSS
