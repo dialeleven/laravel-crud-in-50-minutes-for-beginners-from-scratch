@@ -34,7 +34,7 @@
       </div>
       @endif
    <div>
-      <table>
+      <table border="0">
          <tr>
             <th>ID</th>
             <th>Name</th>
@@ -54,7 +54,9 @@
             <td>{{$product->description}}</td>
             <td align="center">
                @if ($product->thumbnail)
-               <a href="/storage/{{$product->image}}" target="_blank"><img src="/storage/{{$product->thumbnail}}" width="100" height="100" alt=""></a>
+               <a href="/storage/{{$product->image}}" target="_blank">
+                  <img src="/storage/{{$product->thumbnail}}" width="50" height="50" alt="{{$product->name}}">
+               </a>
                @else
                <a href="/storage/{{$product->image}}" target="_blank"><i class="fa-solid fa-image" aria-label="display image" title="Image opens in new tab/window"></i></a>
                @endif

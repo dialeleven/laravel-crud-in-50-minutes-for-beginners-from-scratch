@@ -86,7 +86,7 @@ class ProductController extends Controller
             }
 
             $thumbnail_path = 'app\public\thumbnails\\' . $filename;    // thumbnail path
-            $thumbnail->save(storage_path($thumbnail_path));            // Save the thumbnail
+            $thumbnail->save(storage_path($thumbnail_path), quality: 80);            // Save the thumbnail
 
             
             // Set the image path and filename in the request data
@@ -141,20 +141,41 @@ class ProductController extends Controller
         if ($product->image)
         {
             // Get the full path to the image file
-            $imagePath = public_path('storage/' . $product->image);
+            $image_path = public_path('storage/' . $product->image);
 
             // Check if the file exists
-            if (file_exists($imagePath)) {
+            if (file_exists($image_path)) {
                 try {
                     // Attempt to delete the image file
-                    unlink($imagePath);
+                    unlink($image_path);
                 } catch (\Exception $e) {
                     // Log deletion error
                     Log::error('Error deleting image: ' . $e->getMessage());
                 }
             } else {
                 // Log case where the file doesn't exist
-                Log::warning('Image file not found: ' . $imagePath);
+                Log::warning('Image file not found: ' . $image_path);
+            }
+        }
+
+        // Delete the product's thumbnail if it exists
+        if ($product->thumbnail)
+        {
+            // Get the full path to the thumbnail file
+            $image_path = public_path('storage/' . $product->thumbnail);
+
+            // Check if the file exists
+            if (file_exists($image_path)) {
+                try {
+                    // Attempt to delete the image file
+                    unlink($image_path);
+                } catch (\Exception $e) {
+                    // Log deletion error
+                    Log::error('Error deleting image: ' . $e->getMessage());
+                }
+            } else {
+                // Log case where the file doesn't exist
+                Log::warning('Image file not found: ' . $image_path);
             }
         }
 
