@@ -11,5 +11,5 @@ Expanding upon the Laravel CRUD tutorial which has been completed (marked as a 1
 - [x] Images upload: Full-size image
 - [x] Image upload: preserve user's image file name
 - [x] Delete product: delete image
-- [x] Images upload: Generate thumbnails (using [https://image.intervention.io/v3](Intervention Image library))
+- [x] Images upload: Generate thumbnails (using (Intervention Image library)[https://image.intervention.io/v3])
 - [ ] Validation (email address, URL slugs, [A-Za-z0-9], etc)
