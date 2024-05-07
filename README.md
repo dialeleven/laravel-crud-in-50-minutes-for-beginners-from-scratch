@@ -1,4 +1,4 @@
-# Expanding upon the Laravel CRUD tutorial which has been completed (marked as a 1.0 release). What's next?
+## Expanding upon the Laravel CRUD tutorial which has been completed (marked as a 1.0 release). What's next?
 
 - [x] Laravel DB operations: add column to table
 - [x] Style UI: CSS
@@ -15,11 +15,11 @@
 - [ ] Validation (email address, URL slugs, [A-Za-z0-9], etc)
 
 
-## How to Install Intervention Image Library
+### How to Install Intervention Image Library
 Install Intervention Image with Composer by running the following command.
 `$ composer require intervention/image`
 
-## How To Use Intervention Image
+### How To Use Intervention Image
 Code Example from https://image.intervention.io/v3
 
 `use Intervention\Image\ImageManager;
@@ -38,5 +38,4 @@ $image->scale(width: 300);
 $image->place('images/watermark.png');
 
 // save modified image in new format 
-$image->toPng()->save('images/foo.png');
-`
+$image->toPng()->save('images/foo.png');`
