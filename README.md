@@ -6,6 +6,7 @@
 - [x] Image upload: preserve user's image file name
 - [x] Image upload: Generate thumbnail using [Intervention Image library](https://image.intervention.io/v3) (using v3.6.3)
 - [x] Delete product: delete image/thumbnail
+- [ ] Edit product: image upload field (update -> view/controller)
 - [ ] Product index: pagination
 - [ ] Style UI: Frameworks? (e.g. Tailwind CSS, Vue)
 - [ ] Login check for entire CRUD app
