@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-
 use Illuminate\Support\Facades\File;
-use Intervention\Image\ImageManagerStatic as Image;
+
+// need the following two "use" keywords for Intervention Image library
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+//-----------------
 
 use App\Models\Product;
 
@@ -69,8 +72,17 @@ class ProductController extends Controller
 
             // Check if file exists and resize image using Intervention Image (https://image.intervention.io/v2)
             if ($image && File::exists($image->getRealPath())) {
-                // Create an instance of ImageManager - Create a thumbnail
-                $thumbnail = Image::make($image->getRealPath())->fit(100, 100);
+                // create Intervention Image - image manager with desired driver
+                $manager = new ImageManager(new Driver());
+
+                // read image from file system
+                $thumbnail = $manager->read($image->getRealPath());
+
+                // resize image proportionally to [N]px width
+                #$thumbnail->scale(width: 100);
+
+                // crop the best fitting 1:1 ratio (100x100) and resize to 200x200 pixel
+                $thumbnail->cover(100, 100);
             }
 
             $thumbnail_path = 'app\public\thumbnails\\' . $filename;    // thumbnail path
