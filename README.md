@@ -8,9 +8,9 @@
 - [x] Delete product: delete image/thumbnail
 - [ ] Edit product: image upload field (update -> view/controller)
 - [ ] Product index: pagination
-- [ ] Style UI: Frameworks? (e.g. Tailwind CSS, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Login check for entire CRUD app
 - [ ] User login page
+- [ ] Style UI: Frameworks? (e.g. Tailwind CSS, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] User forgot password page
 - [ ] Reset password page
 - [ ] Validation (email address, URL slugs, [A-Za-z0-9], etc)
