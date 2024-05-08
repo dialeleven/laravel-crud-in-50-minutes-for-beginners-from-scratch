@@ -18,31 +18,40 @@
          @if ($errors->any())
          <ul>
             @foreach($errors->all() as $error)
-               <li>{{$error}}</li>
+               @php
+               // extract input name/id from error message
+               preg_match('/^The (.*?) field/i', $error, $matches);
+               $inputNameOrId = $matches[1] ?? '';
+               @endphp
+               <li class="error-list-item"><a href="#{{ $inputNameOrId }}">{{$error}}</a></li>
             @endforeach
          </ul>
          @endif
       </div>
       <div>
          <label">Name</label>
-         <input type="text" name="name" placeholder="Name" value="{{$product->name}}" />
+         <input type="text" name="name" value="{{$product->name}}" />
       </div>
       <div>
          <label>Qty</label>
-         <input type="text" name="qty" placeholder="Qty" value="{{$product->qty}}" />
+         <input type="text" name="qty" value="{{$product->qty}}" />
       </div>
       <div>
          <label>Price</label>
-         <input type="text" name="price" placeholder="Price" value="{{$product->price}}" />
+         <input type="text" name="price" value="{{$product->price}}" />
       </div>
       <div>
          <label>Description</label>
-         <input type="text" name="description" placeholder="Description" value="{{$product->description}}" />
+         <input type="text" name="description" value="{{$product->description}}" />
       </div>
       <div>
-         <input type="submit" value="Update" />
-         <input type="button" value="Cancel" class="cancel-button" onclick="window.history.back();">
+         <label>Image</label>
+         <input type="file" name="image">
       </div>
+      <p>
+         <input type="submit" value="Update" />
+         <input type="button" value="Cancel" class="cancel-button" onclick="location.href='{{route('product.index')}}';">
+      </p>
    </form>
 </body>
 </html>
