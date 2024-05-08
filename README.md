@@ -8,7 +8,7 @@
 - [x] Delete product: delete image/thumbnail
 - [x] Create/edit product: link form submission error messages to form field
 - [x] Edit product: image upload field (update -> view/controller) + delete old image/thumbnail
-- [ ] Product index: pagination
+- [ ] Product index: ✔️pagination and ❌styling (Bootstrap, Tailwind?)
 - [ ] Login check for entire CRUD app
 - [ ] User login page
 - [ ] Style UI: Frameworks? (e.g. Tailwind CSS, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
