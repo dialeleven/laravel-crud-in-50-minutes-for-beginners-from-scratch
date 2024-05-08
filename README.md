@@ -1,6 +1,6 @@
 ## Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
-✔️ **Completed**
+✔️ **Completed Additions**
 - [x] Laravel DB operations: add column to table
 - [x] Style UI: CSS
 - [x] Image upload: Full-size image
