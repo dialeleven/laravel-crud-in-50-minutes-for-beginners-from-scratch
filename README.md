@@ -7,7 +7,7 @@
 - [x] Image upload: Generate thumbnail using [Intervention Image library](https://image.intervention.io/v3) (using v3.6.3)
 - [x] Delete product: delete image/thumbnail
 - [x] Create/edit product: link form submission error messages to form field
-- [ ] Edit product: image upload field (update -> view/controller)
+- [x] Edit product: image upload field (update -> view/controller) + delete old image/thumbnail
 - [ ] Product index: pagination
 - [ ] Login check for entire CRUD app
 - [ ] User login page
