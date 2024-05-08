@@ -1,6 +1,6 @@
 ## Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
-**Completed**
+✔️ **Completed**
 - [x] Laravel DB operations: add column to table
 - [x] Style UI: CSS
 - [x] Image upload: Full-size image
@@ -11,7 +11,7 @@
 - [x] Edit product: image upload field (update -> view/controller) + delete old image/thumbnail
 - [x] Product index: pagination and basic CSS styling
 
-**To Do**
+✅ **To Do**
 - [ ] Pagination styling with Tailwind CSS or Bootstrap?
 - [ ] **Export SQL query to CSV/XLS**
 - [ ] **Login check for entire CRUD app**
