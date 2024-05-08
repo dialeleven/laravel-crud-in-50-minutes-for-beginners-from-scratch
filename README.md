@@ -11,7 +11,7 @@
 - [x] Edit product: image upload field (update -> view/controller) + delete old image/thumbnail
 - [x] Product index: pagination and basic CSS styling
 
-✅ **To Do**
+:white_check_mark: **To Do**
 - [ ] Pagination styling with Tailwind CSS or Bootstrap?
 - [ ] **Export SQL query to CSV/XLS**
 - [ ] **Login check for entire CRUD app**
