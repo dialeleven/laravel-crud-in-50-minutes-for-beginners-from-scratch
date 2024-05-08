@@ -28,11 +28,15 @@
    <h1>Products</h1>
 
    <p><a href="{{route('product.create')}}" class="create-product-link">Create a Product</a></p>
-      @if (@session()->has('success'))
-      <div id="statusMessage" class="status-message success">
-         {{session('success')}}
-      </div>
-      @endif
+
+   @if (@session()->has('success'))
+   <div id="statusMessage" class="status-message success">
+      {{session('success')}}
+   </div>
+   @endif
+
+   {{ $products->links() }}
+
    <div>
       <table border="0">
          <tr>
