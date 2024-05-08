@@ -29,14 +29,15 @@
 
    <p><a href="{{route('product.create')}}" class="create-product-link">Create a Product</a></p>
 
+   <!-- pagination links - make sure controller is calling "Classname::paginate(X);"" -->
+   {{ $products->links() }}
+
+   {{-- output status message(s) if any --}}
    @if (@session()->has('success'))
    <div id="statusMessage" class="status-message success">
       {{session('success')}}
    </div>
    @endif
-
-   <!-- pagination links - make sure controller is calling "Classname::paginate(X);"" -->
-   {{ $products->links() }}
 
    <div>
       <table border="0">

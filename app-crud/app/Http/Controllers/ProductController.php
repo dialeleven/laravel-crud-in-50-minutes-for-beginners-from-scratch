@@ -21,8 +21,8 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     public function index() {
-        $products = Product::all();
-        $products = Product::paginate(1);
+        //$products = Product::all(); // get all DB records
+        $products = Product::paginate(5); // get paginated records
         return view('products.index', ['products' => $products]);
     }
 
