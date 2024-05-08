@@ -146,8 +146,8 @@ nav[role="navigation"] a {
    </div>
 </nav>
 
-   </body>
-</html>
-
 <?php
-phpinfo();
+#phpinfo();
+
+</body>
+</html>
