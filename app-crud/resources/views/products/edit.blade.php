@@ -30,19 +30,19 @@
       </div>
       <div>
          <label">Name</label>
-         <input type="text" name="name" value="{{$product->name}}" />
+         <input type="text" name="name" value="{{ old('name', $product->name) }}" />
       </div>
       <div>
          <label>Qty</label>
-         <input type="text" name="qty" value="{{$product->qty}}" />
+         <input type="text" name="qty" value="{{ old('qty', $product->qty) }}" />
       </div>
       <div>
          <label>Price</label>
-         <input type="text" name="price" value="{{$product->price}}" />
+         <input type="text" name="price" value="{{  old('price', $product->price) }}" />
       </div>
       <div>
          <label>Description</label>
-         <input type="text" name="description" value="{{$product->description}}" />
+         <input type="text" name="description" value="{{ old('description', $product->description) }}" />
       </div>
       <div>
          <label>Image</label>

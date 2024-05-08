@@ -35,7 +35,7 @@
    </div>
    @endif
 
-   {{ $products->links() }}
+
 
    <div>
       <table border="0">
