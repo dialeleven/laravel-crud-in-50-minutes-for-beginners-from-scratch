@@ -35,7 +35,8 @@
    </div>
    @endif
 
-
+   <!-- pagination links - make sure controller is calling "Classname::paginate(X);"" -->
+   {{ $products->links() }}
 
    <div>
       <table border="0">
