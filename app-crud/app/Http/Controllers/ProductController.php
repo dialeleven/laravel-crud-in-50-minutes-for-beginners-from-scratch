@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
+use Illuminate\Support\Facades\DB;      // DB facade for traditional style SQL queries
+use Illuminate\Database\Eloquent\Model; // Eloquent ORM DB model
+
 // need the following two "use" keywords for Intervention Image library
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
@@ -60,11 +63,8 @@ class ProductController extends Controller
             // Get the original file name
             $original_filename = $image->getClientOriginalName();
 
-            // Current timestamp
-            $timestamp = date('Ymd_Hisu', time());
-
             // convert to lowercase with spaces replaced with underscore
-            $filename = $timestamp . '_' . str_replace(' ', '_', strtolower($original_filename));
+            $filename = str_replace('.', '', microtime(true)) . '_' . str_replace(' ', '_', strtolower($original_filename));
             
             // Store the uploaded file with the original file name
             $image->storeAs('images', $filename, 'public'); // Adjust storage path as needed
@@ -127,8 +127,87 @@ class ProductController extends Controller
             'qty' => 'required|numeric',
             'price' => 'required|decimal:0,2', // min 0, max 2 decimal places
             'description' => 'nullable',
+            'image' => 'nullable|image|max:2048', // Image field is now optional with maximum size of 2MB
         ]);
 
+        #dd($product->image);
+
+        // If an image is provided, handle the image upload
+        if ($request->hasFile('image'))
+        {
+            // Retrieve the uploaded file
+            $image = $request->file('image');
+            
+            // Get the original file name
+            $original_filename = $image->getClientOriginalName();
+
+            // convert to lowercase with spaces replaced with underscore
+            $filename = str_replace('.', '', microtime(true)) . '_' . str_replace(' ', '_', strtolower($original_filename));
+            
+            // Store the uploaded file with the original file name
+            $image->storeAs('images', $filename, 'public'); // Adjust storage path as needed
+
+
+            // Check if file exists and resize image using Intervention Image (https://image.intervention.io/v2)
+            if ($image && File::exists($image->getRealPath())) {
+                // create Intervention Image - image manager with desired driver
+                $manager = new ImageManager(new Driver());
+
+                // read image from file system
+                $thumbnail = $manager->read($image->getRealPath());
+
+                // resize image proportionally to [N]px width
+                #$thumbnail->scale(width: 100);
+
+                // crop the best fitting 1:1 ratio (100x100) and resize to 200x200 pixel
+                $thumbnail->cover(100, 100);
+            }
+
+            $thumbnail_path = 'app\public\thumbnails\\' . $filename;    // thumbnail path
+            $thumbnail->save(storage_path($thumbnail_path), quality: 80);            // Save the thumbnail
+
+            
+            // Set the image path and filename in the request data
+            $data['image'] = 'images/' . $filename;
+
+            // set the thumbnail path and filename
+            $data['thumbnail'] = 'thumbnails/' . $filename;
+
+            
+            // old image/thumb full paths for cleanup
+            $old_image_path = 'public/' . $product->image;
+            $old_thumbnail_path = 'public/' . $product->thumbnail;
+
+            // delete old image
+            try {
+                if (Storage::exists($old_image_path))
+                {
+                    Storage::delete($old_image_path);
+                    //echo "File deleted successfully using Storage::delete().";
+                }
+                else {
+                    echo "File $old_image_path does not exist.";
+                }
+            } catch (\Exception $e) {
+                echo "Error deleting file: " . $e->getMessage();
+            }
+
+            // delete old thumbnail
+            try {
+                if (Storage::exists($old_thumbnail_path))
+                {
+                    Storage::delete($old_thumbnail_path);
+                    //echo "File deleted successfully using Storage::delete().";
+                } else {
+                    echo "File $old_image_path does not exist.";
+                }
+            } catch (\Exception $e) {
+                echo "Error deleting file: " . $e->getMessage();
+            }
+        }
+        
+        
+        // update request data to database
         $product->update($data);
 
         return redirect(route('product.index'))->with('success', 'Product updated successfully');
