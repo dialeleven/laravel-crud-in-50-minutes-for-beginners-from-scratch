@@ -21,7 +21,8 @@
       setTimeout(removeStatusMessage, 3000);
     </script>
 </head>
-<body class="px-5 py-5">
+
+<body class="p-5">
 
    <div class="mx-auto max-w-4xl">
       <h1 class="text-3xl">Products</h1>
