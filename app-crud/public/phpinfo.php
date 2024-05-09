@@ -148,6 +148,6 @@ nav[role="navigation"] a {
 
 <?php
 #phpinfo();
-
+?>
 </body>
 </html>
