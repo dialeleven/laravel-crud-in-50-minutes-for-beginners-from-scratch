@@ -27,7 +27,10 @@
 <body>
    <h1>Products</h1>
 
-   <p><a href="{{route('product.create')}}" class="create-product-link">Create a Product</a></p>
+   <p>
+      <a href="{{route('product.create')}}" class="create-product-link">Create a Product</a>
+      <a href="{{route('product.index.exportcsv')}}" class="create-product-link">Export to CSV</a>
+   </p>
 
    <!-- pagination links - make sure controller is calling "Classname::paginate(X);"" -->
    {{ $products->links() }}

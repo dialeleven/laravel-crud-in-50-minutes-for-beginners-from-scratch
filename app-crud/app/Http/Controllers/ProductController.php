@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Response;
 
 use Illuminate\Support\Facades\DB;      // DB facade for traditional style SQL queries
 use Illuminate\Database\Eloquent\Model; // Eloquent ORM DB model
+
 
 // need the following two "use" keywords for Intervention Image library
 use Intervention\Image\ImageManager;
@@ -20,14 +22,42 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
+    /**
+     * Product index - list of paginated products
+     */
     public function index() {
         //$products = Product::all(); // get all DB records
         $products = Product::paginate(5); // get paginated records
         return view('products.index', ['products' => $products]);
     }
 
+    /**
+     * Product index - export products to CSV file
+     */
+    public function indexExportCsv() {
+        $products = Product::all(); // get all products
+        $filename = 'products.csv';
 
-    // hyperlink to create product
+        $handle = fopen($filename, 'w+');
+        fputcsv($handle, array('product id', 'name', 'qty', 'description', 'image', 'thumbnail', 'created at'));
+
+        foreach ($products as $product) {
+            fputcsv($handle, array($product->id, $product->name, $product->qty, 
+                                   $product->description, $product->image, 
+                                   $product->thumbnail, $product->created_at));
+        }
+
+        fclose($handle);
+
+        $headers = array(
+            'Content-Type' => 'text/csv',
+        );
+
+        return Response::download($filename, $filename, $headers);
+    }
+
+
+    // Create product view
     public function create() {
         return view('products.create');
     }
@@ -105,7 +135,9 @@ class ProductController extends Controller
         return redirect(route('product.index'))->with('success', 'Product added successfully');
     }
 
-
+    /**
+     * Product edit view
+     */
     public function edit(Product $product) {
         //dd(\Route::getRoutes());
         //dd($product);
@@ -121,6 +153,9 @@ class ProductController extends Controller
     }
 
 
+    /**
+     * Product update DB record
+     */
     public function update(Product $product, Request $request)
     {
         $data = $request->validate([
@@ -215,6 +250,9 @@ class ProductController extends Controller
     }
 
 
+    /**
+     * Product delete
+     */
     public function destroy(Product $product)
     {
         // Delete the product's image if it exists
