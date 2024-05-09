@@ -1,5 +1,6 @@
 ## Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
+✔️ **Completed Additions**
 - [x] Laravel DB operations: add column to table
 - [x] Style UI: CSS
 - [x] Image upload: Full-size image
@@ -9,12 +10,15 @@
 - [x] Create/edit product: link form submission error messages to form field
 - [x] Edit product: image upload field (update -> view/controller) + delete old image/thumbnail
 - [x] Product index: pagination and basic CSS styling
+- [x] Export product list to CSV/XLS
+
+📋 **To Do**
+- [ ] **Login check for entire CRUD app**
+- [ ] **User login page**
+- [ ] **User forgot password page (email user with reset password link)**
+- [ ] **Reset password page**
 - [ ] Pagination styling with Tailwind CSS or Bootstrap?
-- [ ] Login check for entire CRUD app
-- [ ] User login page
 - [ ] Style UI: Frameworks? (e.g. Tailwind CSS, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
-- [ ] User forgot password page
-- [ ] Reset password page
 - [ ] Validation (email address, URL slugs, [A-Za-z0-9], etc)
 
 
