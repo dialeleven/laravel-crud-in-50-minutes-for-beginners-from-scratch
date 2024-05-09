@@ -11,9 +11,11 @@
 - [x] Edit product: image upload field (update -> view/controller) + delete old image/thumbnail
 - [x] Product index: pagination and basic CSS styling
 - [x] Export product list to CSV
-- [x] Pagination styling with Tailwind CSS
+- [x] Styling with Tailwind CSS: Product index
 
 📋 **To Do**
+- [ ] Styling with Tailwind CSS: Create product
+- [ ] Styling with Tailwind CSS: Edit product
 - [ ] **Login check for entire CRUD app**
 - [ ] **User login page**
 - [ ] **User forgot password page (email user with reset password link)**
