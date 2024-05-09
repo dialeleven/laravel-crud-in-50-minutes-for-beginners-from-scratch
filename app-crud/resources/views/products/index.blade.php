@@ -8,6 +8,7 @@
    <!-- Include Font Awesome CSS --> 
    <link href="{{asset('assets/fontawesome/css/all.min.css')}}" rel="stylesheet" />
    <link rel="stylesheet" href="{{asset('assets/css/product_index.css')}}">
+   <!--@vite('resources/css/app.css')-->
    <script>
       // Function to remove the status message after a timeout
       function removeStatusMessage() {
