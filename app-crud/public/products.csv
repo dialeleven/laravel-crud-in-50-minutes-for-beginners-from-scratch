@@ -1,7 +1,0 @@
-"product id",name,qty,description,image,thumbnail,"created at"
-50,"Twice - Between 1&2",1,Album,images/20240507_023639000000_twice_between1&2.jpg,thumbnails/20240507_023639000000_twice_between1&2.jpg,"2024-05-07 02:36:39"
-51,TWICE,1,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non rhoncus tortor. Ut ut quam vitae orci eleifend hendrerit a id velit.",images/20240507_025420000000_twice_group.jpg,thumbnails/20240507_025420000000_twice_group.jpg,"2024-05-07 02:54:20"
-54,Banana,1,Yellow,images/20240507_224920000000_banana.jpg,thumbnails/20240507_224920000000_banana.jpg,"2024-05-07 22:49:23"
-57,Apple,10,red,images/17151407630142_apple_vector_painterly.jpg,thumbnails/17151407630142_apple_vector_painterly.jpg,"2024-05-07 23:51:27"
-58,Mango,3,Tropical,images/17151410125813_mango.jpg,thumbnails/17151410125813_mango.jpg,"2024-05-08 00:03:32"
-59,Peach,25,Juicy,images/17151813159433_peach.jpg,thumbnails/17151813159433_peach.jpg,"2024-05-08 11:15:16"

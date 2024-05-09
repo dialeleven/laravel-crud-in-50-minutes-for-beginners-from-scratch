@@ -34,7 +34,7 @@ class ProductController extends Controller
     /**
      * Product index - export products to CSV file
      */
-    public function indexExportCsv() {
+    public function indexExportCsv2() {
         $products = Product::all(); // get all products
         $filename = 'products.csv';
 
@@ -54,6 +54,36 @@ class ProductController extends Controller
         );
 
         return Response::download($filename, $filename, $headers);
+    }
+
+    /**
+     * Product index - export products to CSV file.
+     * Ref: https://stackoverflow.com/a/27596496/23343222
+     */
+    public function indexExportCsv() {
+        $headers = [
+            'Cache-Control'       => 'must-revalidate, post-check=0, pre-check=0',
+            'Content-type'        => 'text/csv',
+            'Content-Disposition' => 'attachment; filename=export.csv',
+            'Expires'             => '0',
+            'Pragma'              => 'public'
+        ];
+
+        $list = Product::all()->toArray();
+
+        # add headers for each column in the CSV download
+        array_unshift($list, array_keys($list[0]));
+
+        $callback = function() use ($list) 
+        {
+            $fh = fopen('php://output', 'w');
+            foreach ($list as $row) { 
+                fputcsv($fh, $row);
+            }
+            fclose($fh);
+        };
+
+        return response()->stream($callback, 200, $headers);
     }
 
 
