@@ -14,7 +14,6 @@
 - [x] Styling with Tailwind CSS: Product index, Create product
 
 📋 **To Do**
-- [ ] Tailwind CSS: Product index - success message
 - [ ] Tailwind CSS: Edit product
 - [ ] Shared (include) footer
 - [ ] **Login check for entire CRUD app**
