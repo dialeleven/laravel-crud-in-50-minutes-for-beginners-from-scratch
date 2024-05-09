@@ -31,30 +31,6 @@ class ProductController extends Controller
         return view('products.index', ['products' => $products]);
     }
 
-    /**
-     * Product index - export products to CSV file
-     */
-    public function indexExportCsv2() {
-        $products = Product::all(); // get all products
-        $filename = 'products.csv';
-
-        $handle = fopen($filename, 'w+');
-        fputcsv($handle, array('product id', 'name', 'qty', 'description', 'image', 'thumbnail', 'created at'));
-
-        foreach ($products as $product) {
-            fputcsv($handle, array($product->id, $product->name, $product->qty, 
-                                   $product->description, $product->image, 
-                                   $product->thumbnail, $product->created_at));
-        }
-
-        fclose($handle);
-
-        $headers = array(
-            'Content-Type' => 'text/csv',
-        );
-
-        return Response::download($filename, $filename, $headers);
-    }
 
     /**
      * Product index - export products to CSV file.
