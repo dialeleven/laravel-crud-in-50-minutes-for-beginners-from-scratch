@@ -11,14 +11,14 @@
 - [x] Edit product: image upload field (update -> view/controller) + delete old image/thumbnail
 - [x] Product index: pagination and basic CSS styling
 - [x] Export product list to CSV
+- [x] Pagination styling with Tailwind CSS
 
 📋 **To Do**
 - [ ] **Login check for entire CRUD app**
 - [ ] **User login page**
 - [ ] **User forgot password page (email user with reset password link)**
 - [ ] **Reset password page**
-- [ ] Pagination styling with Tailwind CSS or Bootstrap?
-- [ ] Style UI: Frameworks? (e.g. Tailwind CSS, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
+- [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Validation (email address, URL slugs, [A-Za-z0-9], etc)
 
 
