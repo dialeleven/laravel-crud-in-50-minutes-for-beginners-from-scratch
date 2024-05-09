@@ -15,6 +15,7 @@
 
 📋 **To Do**
 - [ ] Styling with Tailwind CSS: Edit product
+- [ ] Shared (include) footer
 - [ ] **Login check for entire CRUD app**
 - [ ] **User login page**
 - [ ] **User forgot password page (email user with reset password link)**
