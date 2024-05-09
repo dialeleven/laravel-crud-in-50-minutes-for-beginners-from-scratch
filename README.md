@@ -10,7 +10,7 @@
 - [x] Create/edit product: link form submission error messages to form field
 - [x] Edit product: image upload field (update -> view/controller) + delete old image/thumbnail
 - [x] Product index: pagination and basic CSS styling
-- [x] Export SQL query to CSV/XLS
+- [x] Export product list to CSV/XLS
 
 📋 **To Do**
 - [ ] **Login check for entire CRUD app**
