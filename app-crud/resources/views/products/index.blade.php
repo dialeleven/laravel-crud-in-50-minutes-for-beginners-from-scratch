@@ -28,8 +28,8 @@
       <h1 class="text-3xl">Products</h1>
 
       <p class="mt-4 mb-4">
-         <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-3 text-xs uppercase font-bold">Create a Product</a>
-         <a href="{{ route('product.index.exportcsv') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded text-xs uppercase font-bold">Export to CSV</a>
+         <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-3 text-xs uppercase font-bold">Create Product</a>
+         <a href="{{ route('product.index.exportcsv') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded text-xs uppercase font-bold">Export CSV</a>
       </p>
 
       <!-- pagination links - make sure controller is calling "Classname::paginate(X);"" -->

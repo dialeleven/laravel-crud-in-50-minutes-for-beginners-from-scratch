@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Product Create</title>
+   <title>Create Product</title>
    @vite('resources/css/app.css')
 </head>
 
@@ -12,20 +12,23 @@
    <form method="post" action="{{route('product.store')}}" enctype="multipart/form-data" class="max-w-md mx-auto text-sm">
       @csrf
       @method('post')
-      <h1 class="text-3xl mb-4">Create a Product</h1>
-      <div>
-          @if ($errors->any())
-          <ul class="error-list">
-              @foreach($errors->all() as $error)
-              @php
-              // extract input name/id from error message
-              preg_match('/^The (.*?) field/i', $error, $matches);
-              $inputNameOrId = $matches[1] ?? '';
-              @endphp
-              <li class="error-list-item"><a href="#{{ $inputNameOrId }}">{{$error}}</a></li>
-              @endforeach
-          </ul>
-          @endif
+      <h1 class="text-3xl mb-4">Create Product</h1>
+      <div class="mb-3">
+         @if ($errors->any())
+         <ul class="error-list">
+            @foreach($errors->all() as $error)
+            @php
+            // extract input name/id from error message
+            preg_match('/^The (.*?) field/i', $error, $matches);
+            $inputNameOrId = $matches[1] ?? '';
+            @endphp
+            <li class="error-list-item flex items-center">
+               <span class="text-red-500 font-bold mr-2">X</span>
+               <a href="#{{ $inputNameOrId }}" class="underline">{{$error}}</a>
+            </li>
+            @endforeach
+         </ul>
+         @endif
       </div>
       <div class="mb-4">
           <label class="block mb-1">Name</label>
