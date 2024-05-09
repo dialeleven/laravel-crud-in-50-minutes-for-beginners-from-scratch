@@ -84,7 +84,7 @@
    </div>
 
    <p>
-      Today is {{ date('Y-m-d H:i:s', time()) }}
+      Current date/time: {{ date('Y-m-d H:i:s', time()) }}
    </p>
 </body>
 </html>
