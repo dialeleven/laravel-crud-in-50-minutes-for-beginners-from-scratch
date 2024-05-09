@@ -16,7 +16,7 @@
           statusMessage.style.opacity = '0';
           setTimeout(function() {
             statusMessage.remove();
-          }, 100); // Adjust timeout duration (in milliseconds) as needed
+          }, 500); // Adjust timeout duration (in milliseconds) as needed
         }
       }
   
