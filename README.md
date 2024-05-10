@@ -12,9 +12,9 @@
 - [x] Product index: pagination and basic CSS styling
 - [x] Export product list to CSV
 - [x] Styling with Tailwind CSS: Product index, Create product, Edit product
+- [x] Common includes with Blade view partials (header/footer)
 
 📋 **To Do**
-- [ ] Shared (include) footer
 - [ ] **Login check for entire CRUD app**
 - [ ] **User login page**
 - [ ] **User forgot password page (email user with reset password link)**
