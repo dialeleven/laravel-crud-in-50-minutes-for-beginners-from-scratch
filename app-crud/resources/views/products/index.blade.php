@@ -95,7 +95,10 @@
       </table>
    </div>
 
-   {{ $products->links() }}
+   {{-- output pagination below table if needed (e.g. total rows > N) --}}
+   @if ($products->total() >= 5)
+      {{ $products->links() }}
+   @endif
 
    <div class="mt-4 text-xs text-gray-500">
       Current date/time: {{ date('Y-m-d H:i:s', time()) }}
