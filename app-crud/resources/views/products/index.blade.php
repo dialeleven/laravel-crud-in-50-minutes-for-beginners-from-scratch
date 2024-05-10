@@ -25,11 +25,13 @@
 <body class="p-5">
 
 <div class="mx-auto max-w-4xl">
+
+   <!-- header/logo -->
    <div class="flex items-center p-2 mb-3 bg-gray-100 rounded-lg">
       <img src="{{asset('assets/images/crud_create_read_update_delete-1024.webp')}}" alt="CRUD App" class="w-10 h-auto mr-2 rounded">
       <span class="text-lg font-semibold text-gray-800">
-         <span style="color: #3490dc">C</span><span style="color: #38a169">R</span><span style="color: #6d28d9">U</span><span style="color: #e53e3e">D</span>
-         App
+         <span class="text-green-600">C</span><span class="text-blue-600">R</span><span class="text-purple-600">U</span><span class="text-red-500">D</span>
+         <span class="text-gray-400 font-normal">App</span>
       </span>
    </div>
 
