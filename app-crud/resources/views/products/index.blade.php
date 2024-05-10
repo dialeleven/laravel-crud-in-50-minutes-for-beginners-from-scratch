@@ -95,8 +95,8 @@
       </table>
    </div>
 
-   {{-- output pagination below table if needed (e.g. total rows > N) --}}
-   @if ($products->total() >= 5)
+   {{-- output pagination below table if needed (e.g. current page rows > N) --}}
+   @if ($products->count() >= 5)
       {{ $products->links() }}
    @endif
 
