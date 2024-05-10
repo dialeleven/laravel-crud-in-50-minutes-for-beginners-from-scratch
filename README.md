@@ -2,7 +2,7 @@
 
 ✔️ **Completed Additions**
 - [x] Laravel DB operations: add column to table
-- [x] Style UI: CSS
+- [x] ~~Style UI: CSS~~
 - [x] Image upload: Full-size image
 - [x] Image upload: preserve user's image file name
 - [x] Image upload: Generate thumbnail using [Intervention Image library](https://image.intervention.io/v3) (using v3.6.3)
