@@ -9,7 +9,7 @@
 - [x] Delete product: delete image/thumbnail
 - [x] Create/edit product: link form submission error messages to form field
 - [x] Edit product: image upload field (update -> view/controller) + delete old image/thumbnail
-- [x] Product index: pagination and basic CSS styling
+- [x] Product index: pagination and ~~basic~~ Tailwind CSS styling
 - [x] Export product list to CSV
 - [x] Styling with Tailwind CSS: Product index, Create product, Edit product
 - [x] Common includes with Blade view partials (header/footer)
