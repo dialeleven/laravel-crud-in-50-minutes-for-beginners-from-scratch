@@ -9,9 +9,13 @@
 
 <body class="p-5">
    
-   <form method="post" action="{{route('product.update', ['product' => $product])}}" enctype="multipart/form-data" class="max-w-md mx-auto text-sm border p-4 rounded-lg shadow-md">
+<form method="post" action="{{route('product.update', ['product' => $product])}}" enctype="multipart/form-data" class="max-w-md mx-auto text-sm border p-4 rounded-lg shadow-md">
    @csrf
    @method('put')
+   
+   <!-- header/logo -->
+   @include('site.partials.header')
+   
    <h1 class="text-3xl mb-4">Edit Product</h1>
 
    <div class="mb-3">
@@ -57,22 +61,8 @@
    </div>
 </form>
 
-<div class="flex flex-col items-center justify-center mt-5">
-   <div class="text-center text-xs uppercase text-gray-300">
-      Page Styled Using
-   </div>
-   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33" class="w-10 h-10 mt-1">
-      <title>Tailwind CSS</title>
-      <g clip-path="url(#prefix__clip0)">
-         <path fill="#38bdf8" fill-rule="evenodd" d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.513 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.513-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z" clip-rule="evenodd"/>
-      </g>
-      <defs>
-         <clipPath id="prefix__clip0">
-            <path fill="#fff" d="M0 0h54v32.4H0z"/>
-         </clipPath>
-      </defs>
-   </svg>
-</div>
+<!-- footer - style info -->
+@include('site.partials.footer')
 
 </body>
 </html>
