@@ -15,6 +15,7 @@
 - [x] Common includes with Blade view partials (header/footer)
 
 📋 **To Do**
+- [ ] Templating using @extends, @section, @yields, @parent
 - [ ] Calendar picker form input
 - [ ] Hover over thumbnail to show full size image
 - [ ] **Login check for entire CRUD app**
