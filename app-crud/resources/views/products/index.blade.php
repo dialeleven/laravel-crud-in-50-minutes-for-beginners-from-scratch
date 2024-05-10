@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Product Index</title>
+   <title>CRUD App - Product Index</title>
    @vite('resources/css/app.css')
    <script>
       // Function to remove the status message after a timeout
@@ -31,6 +31,7 @@
 
    <h1 class="text-3xl">Products</h1>
 
+   <!-- create/export csv buttons
    <p class="mt-4 mb-4">
       <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-3 text-xs uppercase font-bold">Create Product</a>
       <a href="{{ route('product.index.exportcsv') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded text-xs uppercase font-bold">Export CSV</a>
@@ -46,6 +47,7 @@
    </div>
    @endif
 
+   <!-- products table -->
    <div class="mt-4">
       <table class="w-full border-collapse rounded-md overflow-hidden text-sm">
          <thead>
