@@ -32,8 +32,8 @@
    <h1 class="text-3xl">Products</h1>
 
    <!-- create/export csv buttons -->
-   <p class="mt-4 mb-4">
-      <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-3 text-xs uppercase font-bold">Create Product</a>
+   <p class="mt-3 mb-4">
+      <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Create Product</a>
       <a href="{{ route('product.index.exportcsv') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded text-xs uppercase font-bold">Export CSV</a>
    </p>
 
@@ -48,7 +48,7 @@
    @endif
 
    <!-- products table -->
-   <div class="mt-4 mb-3">
+   <div class="mt-2 mb-3">
       <table class="w-full border-collapse rounded-md overflow-hidden text-sm">
          <thead>
             <tr class="bg-gray-200">
