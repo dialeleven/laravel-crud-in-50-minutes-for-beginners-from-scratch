@@ -8,6 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+Route::get('/product2', [ProductController::class, 'index2'])->name('product.index2');
 Route::get('/product/exportcsv', [ProductController::class, 'indexExportCsv'])->name('product.index.exportcsv');
 Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
 Route::post('/product', [ProductController::class, 'store'])->name('product.store');

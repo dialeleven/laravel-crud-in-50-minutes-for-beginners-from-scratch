@@ -31,6 +31,15 @@ class ProductController extends Controller
         return view('products.index', ['products' => $products]);
     }
 
+    /**
+     * Product index - list of paginated products
+     */
+    public function index2() {
+        //$products = Product::all(); // get all DB records
+        $products = Product::paginate(5); // get paginated records
+        return view('products.index2', ['products' => $products]);
+    }
+
 
     /**
      * Product index - export products to CSV file.
