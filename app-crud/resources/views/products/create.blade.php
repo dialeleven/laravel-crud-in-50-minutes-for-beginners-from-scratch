@@ -9,7 +9,7 @@
 
 <body class="p-5">
    
-   <form method="post" action="{{route('product.store')}}" enctype="multipart/form-data" class="max-w-md mx-auto text-sm">
+   <form method="post" action="{{route('product.store')}}" enctype="multipart/form-data" class="max-w-md mx-auto text-sm border p-4 rounded-lg shadow-md">
       @csrf
       @method('post')
       <h1 class="text-3xl mb-4">Create Product</h1>
@@ -22,7 +22,7 @@
             preg_match('/^The (.*?) field/i', $error, $matches);
             $inputNameOrId = $matches[1] ?? '';
             @endphp
-            <li class="error-list-item flex items-center">
+            <li class="error-list-item flex items-center bg-red-100 rounded-sm p-1">
                <span class="text-red-500 font-bold mr-2">X</span>
                <a href="#{{ $inputNameOrId }}" class="underline">{{$error}}</a>
             </li>
@@ -50,15 +50,15 @@
           <label class="block mb-1">Image</label>
           <input type="file" name="image" class="w-full">
       </div>
-      <p class="mb-4">
+      <div class="mb-4">
           <input type="submit" value="Save" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded transition duration-300 cursor-pointer">
           <input type="button" value="Cancel" class="inline-block bg-gray-500 hover:bg-gray-600 text-white py-1 px-3 rounded transition duration-300 cursor-pointer" onclick="location.href='{{route('product.index')}}';">
-      </p>
+      </div>
    </form>
 
 
-   <div class="flex flex-col items-center justify-center">
-      <div class="text-center text-xs uppercase text-gray-400">
+   <div class="flex flex-col items-center justify-center mt-5">
+      <div class="text-center text-xs uppercase text-gray-300">
          Page Styled Using
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33" class="w-10 h-10 mt-1">
@@ -72,7 +72,7 @@
             </clipPath>
          </defs>
       </svg>
-      </div>
+   </div>
 
 </body>
 </html>
