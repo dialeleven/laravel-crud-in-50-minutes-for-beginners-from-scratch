@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create Product</title>
+   <title>CRUD App - Create Product</title>
    @vite('resources/css/app.css')
 </head>
 
@@ -12,7 +12,7 @@
 <form method="post" action="{{route('product.store')}}" enctype="multipart/form-data" class="max-w-md mx-auto text-sm border p-4 rounded-lg shadow-md">
    @csrf
    @method('post')
-   
+
    <!-- header/logo -->
    @include('site.partials.header')
 

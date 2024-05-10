@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Product Index</title>
+   <title>CRUD App - Product Index</title>
    @vite('resources/css/app.css')
    <script>
       // Function to remove the status message after a timeout
