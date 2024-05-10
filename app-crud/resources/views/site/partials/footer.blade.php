@@ -2,7 +2,7 @@
    <div class="text-center text-xs uppercase text-gray-300">
       UI Styled Using
    </div>
-   <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="">
+   <a href="https://tailwindcss.com/docs/installation" target="_blank" rel="noopener noreferrer" class="">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 54 33" class="w-10 h-10">
          <title>Tailwind CSS</title>
          <g clip-path="url(#prefix__clip0)">
