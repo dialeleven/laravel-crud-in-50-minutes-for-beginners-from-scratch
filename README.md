@@ -22,6 +22,7 @@
 - [ ] **Reset password page**
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Validation (email address, URL slugs, [A-Za-z0-9], etc)
+- [ ] API integration?
 
 
 ### How to Install Intervention Image Library
