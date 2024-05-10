@@ -31,7 +31,7 @@
 
    <h1 class="text-3xl">Products</h1>
 
-   <!-- create/export csv buttons
+   <!-- create/export csv buttons -->
    <p class="mt-4 mb-4">
       <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-3 text-xs uppercase font-bold">Create Product</a>
       <a href="{{ route('product.index.exportcsv') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded text-xs uppercase font-bold">Export CSV</a>
@@ -48,7 +48,7 @@
    @endif
 
    <!-- products table -->
-   <div class="mt-4">
+   <div class="mt-4 mb-3">
       <table class="w-full border-collapse rounded-md overflow-hidden text-sm">
          <thead>
             <tr class="bg-gray-200">
@@ -71,13 +71,13 @@
                <td class="py-2 px-3 border-b border-gray-400">{{ $product->price }}</td>
                <td class="py-2 px-3 border-b border-gray-400">{{ $product->description }}</td>
                <td class="py-2 px-3 border-b border-gray-400 text-center">
-                  @if ($product->thumbnail)
+               @if ($product->thumbnail)
                   <a href="/storage/{{ $product->image }}" target="_blank">
                   <img src="/storage/{{ $product->thumbnail }}" width="50" height="50" alt="{{ $product->name }}">
                   </a>
-                  @else
-                  <a href="/storage/{{ $product->image }}" target="_blank"><i class="fa-solid fa-image" aria-label="display image" title="Image opens in new tab/window"></i></a>
-                  @endif
+               @else
+                  <!--<a href="/storage/{{ $product->image }}" target="_blank"><i class="fa-solid fa-image" aria-label="display image" title="Image opens in new tab/window"></i></a>-->
+               @endif
                </td>
                <td class="py-2 px-3 border-b border-gray-400 text-center">
                   <a href="{{ route('product.edit', ['product' => $product]) }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded transition duration-300">Edit</a>
@@ -94,6 +94,8 @@
          </tbody>
       </table>
    </div>
+
+   {{ $products->links() }}
 
    <div class="mt-4 text-xs text-gray-500">
       Current date/time: {{ date('Y-m-d H:i:s', time()) }}
