@@ -16,6 +16,7 @@
 
 📋 **To Do**
 - [ ] Calendar picker form input
+- [ ] Hover over thumbnail to show full size image
 - [ ] **Login check for entire CRUD app**
 - [ ] **User login page**
 - [ ] **User forgot password page (email user with reset password link)**
