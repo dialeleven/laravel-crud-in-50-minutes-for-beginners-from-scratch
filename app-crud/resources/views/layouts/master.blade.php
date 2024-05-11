@@ -27,10 +27,6 @@
    {{-- ! @yield('content') - content goes below (@yield is the unique content that is not meant to be reusable. --}}
    @yield('content')
 
-
-   <div class="mt-4 text-xs text-gray-500">
-      Current date/time: {{ date('Y-m-d H:i:s', time()) }}
-   </div>
 </div>
 
 <!-- footer - style info -->
@@ -51,6 +47,10 @@
          </defs>
       </svg>
    </a>
+
+   <div class="mt-4 text-xs text-gray-400">
+      Current date/time: {{ date('Y-m-d H:i:s', time()) }}
+   </div>
 </div>
 
 

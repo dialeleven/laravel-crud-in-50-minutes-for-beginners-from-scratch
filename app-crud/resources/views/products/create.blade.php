@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>CRUD App - Create Product</title>
-   @vite('resources/css/app.css')
-</head>
+{{-- FILE: resources/views/create.blade.php --}}
 
-<body class="p-5">
+
+{{-- ******* The layout template to use (/resources/views/layouts/master.blade.php) *******--}}
+{{-- @extends are the reusable components in a master template like your header/nav - e.g. master.blade.php  --}}
+{{-- Here we specify to use /resources/views/master.blade.php as our master/app HTML layout template --}}
+@extends('layouts.master')
+
+
+{{-- Define section of content in child view to be injected using `@yield` to 
+     a layout or master template (e.g. master.blade.php). This is done using `@yield('section_name')`.
+     Here we define a section of content called 'title' to be used in the <title> tag only. --}}
+@section('title', 'Create Product')
+
+
+{{-- `@section` & `@endsection` marks where your unique page content goes --}}
+@section('content')
    
 <form method="post" action="{{route('product.store')}}" enctype="multipart/form-data" class="max-w-md mx-auto text-sm border p-4 rounded-lg shadow-md">
    @csrf
    @method('post')
-
-   <!-- header/logo -->
-   @include('site.partials.header')
 
    <h1 class="text-3xl mb-4">Create Product</h1>
    
@@ -60,10 +64,4 @@
          <input type="button" value="Cancel" class="inline-block bg-gray-500 hover:bg-gray-600 text-white py-1 px-3 rounded transition duration-300 cursor-pointer" onclick="location.href='{{route('product.index')}}';">
    </div>
 </form>
-
-
-<!-- footer - style info -->
-@include('site.partials.footer')
-
-</body>
-</html>
+@endsection
