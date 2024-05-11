@@ -17,6 +17,8 @@
 
 📋 **To Do**
 - [ ] Calendar picker form input
+- [ ] move meta tags to include
+- [ ] new navbar/logo design
 - [ ] Hover over thumbnail to show full size image
 - [ ] **Login check for entire CRUD app**
 - [ ] **User login page**
