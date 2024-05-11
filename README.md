@@ -17,7 +17,7 @@
 
 📋 **To Do**
 - [ ] Calendar picker form input
-- [ ] move meta tags to include
+- [ ] Add meta tags (description, keywords) and use @section @yield
 - [ ] new navbar/logo design
 - [ ] Hover over thumbnail to show full size image
 - [ ] **Login check for entire CRUD app**
