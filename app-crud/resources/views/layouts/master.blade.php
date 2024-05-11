@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <title>CRUD APP - @yield('meta_title', 'INSERT PAGE NAME using @section(\'meta_title\', \'Home Page\')')</title>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>CRUD APP - @yield('title', 'INSERT PAGE NAME using @section(\'title\', \'Home Page\')')</title>
+   <meta name="description" content="@yield('meta_description', 'default meta description')">
+   <meta name="keywords" content="@yield('meta_keywords', 'default, meta, keywords')">
    @vite('resources/css/app.css')
    {{-- leave a blank line for HTML source formatting (Laravel comment is fine) --}}
 </head>
@@ -24,7 +26,25 @@
    </div>
    
 
-   {{-- ! @yield('content') - content goes below (@yield is the unique content that is not meant to be reusable. --}}
+   {{-- *** @yield('yield_name_here') - @yield is unique content not meant to be reusable. 
+          * Use the following to output content in master layout/template (master.blade.php):
+          *    @section('yield_name_here') - For a declared 'yield' replacement much like a variable.
+          *                                    
+          *                                   e.g. `master.blade.php` contains `<title>@yield('meta_title')</title>`
+          *                                        
+          *                                         The child view (e.g. create.blade.php) contains
+          *                                         `@section('meta_title', 'Home Page')` and passes the
+          *                                         declared @section 'meta_title' to `@yield('meta_title')`
+          *    OR
+          *    @section('multi_line_yield_name')
+          *    <div>
+          *       <!-- Your HTML/Blade code here -->
+          *       @if ($foo == true)
+          *          <div>Conditional HTML here</div>
+          *       @endif
+          *    </div>
+          *    @endsection
+          *--}}
    @yield('content')
 
 </div>
@@ -54,7 +74,7 @@
 </div>
 
 
-{{-- any non-essential JavaScript code to load using `@push` (used in child view) and `@stack (used in layout or master template) --}}
+{{-- * any non-essential JavaScript code to load using `@push` (used in child view) and `@stack (used in layout or master template) --}}
 @stack('scripts_body')
 
 </body>

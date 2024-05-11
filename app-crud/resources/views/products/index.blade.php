@@ -9,8 +9,10 @@
 
 {{-- Define section of content in child view to be injected using `@yield` to 
      a layout or master template (e.g. master.blade.php). This is done using `@yield('section_name')`.
-     Here we define a section of content called 'title' to be used in the <title> tag only. --}}
-@section('title', 'Home Page')
+     Here we define a section of content called 'meta_title' to be used in the <title> tag only. --}}
+@section('meta_title', 'Home Page')
+@section('meta_description', 'My home page')
+@section('meta_keywords', 'CRUD app, products page, create, read, update, delete')
 
 
 {{-- `@section` & `@endsection` marks where your unique page content goes --}}
