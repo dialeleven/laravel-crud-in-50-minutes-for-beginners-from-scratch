@@ -37,7 +37,9 @@ class ProductController extends Controller
     public function index2() {
         //$products = Product::all(); // get all DB records
         $products = Product::paginate(5); // get paginated records
-        return view('products.index2', ['products' => $products]);
+        //return view('products.index2', ['products' => $products]);
+        
+        return view('home', ['products' => $products]);
     }
 
 
