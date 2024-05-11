@@ -2,19 +2,20 @@
 
 ✔️ **Completed Additions**
 - [x] Laravel DB operations: add column to table
-- [x] Style UI: CSS
+- [x] ~~Style UI: CSS~~
 - [x] Image upload: Full-size image
 - [x] Image upload: preserve user's image file name
 - [x] Image upload: Generate thumbnail using [Intervention Image library](https://image.intervention.io/v3) (using v3.6.3)
 - [x] Delete product: delete image/thumbnail
 - [x] Create/edit product: link form submission error messages to form field
 - [x] Edit product: image upload field (update -> view/controller) + delete old image/thumbnail
-- [x] Product index: pagination and basic CSS styling
+- [x] Product index: pagination and ~~basic~~ Tailwind CSS styling
 - [x] Export product list to CSV
 - [x] Styling with Tailwind CSS: Product index, Create product, Edit product
 - [x] Common includes with Blade view partials (header/footer)
 
 📋 **To Do**
+- [ ] Templating using @extends, @section, @yields, @parent
 - [ ] Calendar picker form input
 - [ ] Hover over thumbnail to show full size image
 - [ ] **Login check for entire CRUD app**
