@@ -13,7 +13,7 @@
 - [x] Export product list to CSV
 - [x] Styling with Tailwind CSS: Product index, Create product, Edit product
 - [x] Common includes with Blade view partials (header/footer) - *no longer used in favor of @extends, @section+@yields, @push+@stack unless `include` is needed*
-- [x] Templating using @extends, @section+@yields, @push+@stack
+- [x] Templating using @extends, @section+@yields, @push+@stack, @parent (not used... yet)
 
 📋 **To Do**
 - [ ] Calendar picker form input
