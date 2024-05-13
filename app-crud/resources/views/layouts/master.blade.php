@@ -219,6 +219,7 @@
 {{-- * any non-essential JavaScript code to load using `@push` (used in child view) and `@stack (used in layout or master template) --}}
 @stack('scripts_body')
 <script>
+// mobile hamburger icon show/hide sidebar
 document.getElementById("burgerIcon").addEventListener("click", function() {
    var sidebar = document.getElementById("sidebar");
    var burgerIcon = document.getElementById("burgerIcon");
