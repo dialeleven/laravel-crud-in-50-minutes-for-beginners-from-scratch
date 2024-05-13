@@ -17,15 +17,16 @@
 - [x] Add meta tags (description, keywords) and use @section @yield
 - [x] Dashboard UI - responsive, mobile hamburger menu
 - [x] Edit/delete operations: send user back to same paginated page they were on after edit/delete operation instead of page 1 automatically
+- [x] Login: controller, view
 
 
 📋 **To Do**
+- [ ] Login: Model
+- [ ] **Login check for entire CRUD app
 - [ ] Calendar picker form input
-- [ ] **Login check for entire CRUD app**
-- [ ] **User login page**
-- [ ] **User forgot password page (email user with reset password link)**
-- [ ] **Reset password page**
-- [ ] Make Dashboard index page
+- [ ] User forgot password page (email user with reset password link
+- [ ] Reset password page
+- [ ] Dashboard index page
 - [ ] Pagination - sorting (asc/desc)
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
