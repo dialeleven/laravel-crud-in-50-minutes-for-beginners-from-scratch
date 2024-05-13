@@ -130,17 +130,22 @@
    <!-- Right column -->
    <div class="flex-1">
 
-      <header class="bg-gradient-to-b from-sky-900 to-sky-700">
-         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold tracking-tight text-white">Products</h1>
+      <div class="pl-1">
+         <header class="bg-gradient-to-b from-sky-900 to-sky-700">
+            <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+               <h1 class="text-3xl font-bold tracking-tight text-white">Products</h1>
+            </div>
+         </header>
+      </div>
+      <!-- subnav -->
+      <div class="pl-1">
+         <div class="bg-gray-400 text-white p-1 text-xs shadow-lg rounded-bl">
+            <span href="{{ route('product.create') }}" class="inline-block bg-slate-600  text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Products Index</span>
+            <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Product Reports</a>
+            <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Product Widgets</a>
+            <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Product XYZ</a>
+            <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Product Admin</a>
          </div>
-      </header>
-      <div class="bg-gray-400 text-white p-1 text-xs shadow-lg">
-         <span href="{{ route('product.create') }}" class="inline-block bg-slate-600  text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Products Index</span>
-         <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Product Reports</a>
-         <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Product Widgets</a>
-         <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Product XYZ</a>
-         <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Product Admin</a>
       </div>
 
       <main>
