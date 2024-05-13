@@ -17,12 +17,13 @@
 - [x] Add meta tags (description, keywords) and use @section @yield
 - [x] Dashboard UI - responsive, mobile hamburger menu
 - [x] Edit/delete operations: send user back to same paginated page they were on after edit/delete operation instead of page 1 automatically
+- [x] Login: controller, view
 
 
 📋 **To Do**
-- [ ] Calendar picker form input
+- [ ] Login: model TBD
 - [ ] **Login check for entire CRUD app**
-- [ ] **User login page**
+- [ ] Calendar picker form input
 - [ ] **User forgot password page (email user with reset password link)**
 - [ ] **Reset password page**
 - [ ] Make Dashboard index page
