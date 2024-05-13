@@ -15,9 +15,10 @@
 - [x] Common includes with Blade view partials (header/footer) - *no longer used in favor of @extends, @section+@yields, @push+@stack unless `include` is needed*
 - [x] Templating using @extends, @section+@yields, @push+@stack, @parent (not used... yet)
 - [x] Add meta tags (description, keywords) and use @section @yield
-- [x] Dashboard UI - responsive, mobile hamburger menu
+
 
 📋 **To Do**
+- [ ] Dashboard UI - responsive, mobile hamburger menu
 - [ ] Calendar picker form input
 - [ ] Hover over thumbnail to show full size image
 - [ ] **Login check for entire CRUD app**
