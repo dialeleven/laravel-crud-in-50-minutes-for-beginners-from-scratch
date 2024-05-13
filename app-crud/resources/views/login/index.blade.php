@@ -16,7 +16,10 @@
 
   <div class="mx-auto max-w-lg text-center">
     
-    <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+    <div class="mb-5">
+      <img class="mx-auto h-10 w-auto" src="{{asset('assets/images/android-chrome-512x512.png')}}" alt="CRUD App">CRUD App
+    </div>
+
     <h1 class="text-2xl font-bold sm:text-3xl">Sign in to your account</h1>
 
     <p class="mt-4 text-gray-500">
@@ -25,7 +28,7 @@
   </div>
 
   <div class="mx-auto border-2 shadow rounded-md max-w-md">
-    <form action="#" class="mx-auto mb-0 mt-8 max-w-md space-y-4 p-5">
+    <form action="#" method="POST" class="mx-auto mb-0 mt-8 max-w-md space-y-4 p-5">
       <div class="">
         <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
   

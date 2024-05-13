@@ -31,7 +31,7 @@
          
          <!-- logo -->
          <a href="#" style="display: flex; align-items: center; text-decoration: none;">
-            <img class="w-auto h-7" src="https://merakiui.com/images/logo.svg" alt="Logo" title="" style="margin-right: 8px;">
+            <img class="w-auto h-7" src="{{asset('assets/images/android-chrome-512x512.png')}}" alt="Logo" title="" style="margin-right: 8px;">
             <span class="font-bold">CRUD APP</span>
          </a>
 
