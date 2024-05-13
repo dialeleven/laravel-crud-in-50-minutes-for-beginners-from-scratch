@@ -24,7 +24,7 @@
 - [ ] Login: Model
 - [ ] **Login check for entire CRUD app
 - [ ] Calendar picker form input
-- [ ] User forgot password page (email user with reset password link
+- [ ] User forgot password page (email user with reset password link)
 - [ ] Reset password page
 - [ ] Dashboard index page
 - [ ] Pagination - sorting (asc/desc)
