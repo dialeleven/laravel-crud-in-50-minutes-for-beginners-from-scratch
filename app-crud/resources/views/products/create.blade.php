@@ -19,30 +19,16 @@
 @section('h1', 'Create Product')
 
 
-{{-- `@section` & `@endsection` marks where your unique page content goes --}}
+{{-- `@section` alone or `@section`+`@endsection` marks where your unique page content goes --}}
 @section('content')
    
-<form method="post" action="{{route('product.store')}}" enctype="multipart/form-data" class="max-w-md mx-auto text-sm border p-4 rounded-lg shadow-md">
+<form method="post" action="{{route('product.store')}}" enctype="multipart/form-data" class="max-w-xl text-sm border p-4 rounded-md shadow">
    @csrf
    @method('post')
    
-   <div class="mb-3">
-      @if ($errors->any())
-      <ul class="error-list">
-         @foreach($errors->all() as $error)
-         @php
-         // extract input name/id from error message
-         preg_match('/^The (.*?) field/i', $error, $matches);
-         $inputNameOrId = $matches[1] ?? '';
-         @endphp
-         <li class="error-list-item flex items-center bg-red-100 rounded-sm p-1">
-            <span class="text-red-500 font-bold mr-2">X</span>
-            <a href="#{{ $inputNameOrId }}" class="underline">{{$error}}</a>
-         </li>
-         @endforeach
-      </ul>
-      @endif
-   </div>
+   {{-- form submission error output --}}
+   @include('site.partials.form_error_output')
+
    <div class="mb-4">
          <label class="block mb-1">Name</label>
          <input type="text" id="name" name="name" value="{{old('name')}}" class="w-full border border-gray-300 rounded px-3 py-2">

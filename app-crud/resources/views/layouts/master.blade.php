@@ -143,7 +143,7 @@
 
       <!-- right column - heading -->
       <div class="">
-         <header class="bg-gradient-to-b from-sky-900 to-sky-700">
+         <header class="bg-gradient-to-b from-sky-950 via-sky-700 via-70% to-sky-600 rounded-br-md">
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
                <h1 class="text-3xl font-bold tracking-tight text-white">@yield('h1', 'Insert H1 Text')</h1>
             </div>

@@ -10,7 +10,7 @@
 {{-- Define section of content in child view to be injected using `@yield` to 
      a layout or master template (e.g. master.blade.php). This is done using `@yield('section_name')`.
      Here we define a section of content called 'meta_title' to be used in the <title> tag only. --}}
-@section('meta_title', 'Create Product')
+@section('meta_title', 'Edit Product')
 @section('meta_description', '')
 @section('meta_keywords', '')
 
@@ -23,38 +23,24 @@
    @csrf
    @method('put')
 
-   <div class="mb-3">
-      @if ($errors->any())
-      <ul class="error-list">
-         @foreach($errors->all() as $error)
-            @php
-            // extract input name/id from error message
-            preg_match('/^The (.*?) field/i', $error, $matches);
-            $inputNameOrId = $matches[1] ?? '';
-            @endphp
-            <li class="error-list-item flex items-center bg-red-100 rounded-sm p-1">
-               <span class="text-red-500 font-bold mr-2">X</span>
-               <a href="#{{ $inputNameOrId }}" class="underline">{{$error}}</a>
-            </li>
-         @endforeach
-      </ul>
-      @endif
-   </div>
+   {{-- form submission error output --}}
+   @include('site.partials.form_error_output')
+
    <div class="mb-4">
       <label class="block mb-1">Name</label>
-      <input type="text" id="name" name="name" value="{{old('name')}}" class="w-full border border-gray-300 rounded px-3 py-2">
+      <input type="text" id="name" name="name" value="{{ old('name', $product->name) }}" class="w-full border border-gray-300 rounded px-3 py-2">
    </div>
    <div class="mb-4">
       <label class="block mb-1">Quantity</label>
-      <input type="text" id="qty" name="qty" value="{{old('qty')}}" class="w-full border border-gray-300 rounded px-3 py-2">
+      <input type="text" id="qty" name="qty" value="{{ old('qty', $product->qty) }}" class="w-full border border-gray-300 rounded px-3 py-2">
    </div>
    <div class="mb-4">
       <label class="block mb-1">Price</label>
-      <input type="text" id="price" name="price" value="{{old('price')}}" class="w-full border border-gray-300 rounded px-3 py-2">
+      <input type="text" id="price" name="price" value="{{ old('price', $product->price) }}" class="w-full border border-gray-300 rounded px-3 py-2">
    </div>
    <div class="mb-4">
       <label class="block mb-1">Description</label>
-      <input type="text" id="description" name="description" value="{{old('description')}}" class="w-full border border-gray-300 rounded px-3 py-2">
+      <input type="text" id="description" name="description" value="{{ old('description', $product->description) }}" class="w-full border border-gray-300 rounded px-3 py-2">
    </div>
    <div class="mb-4">
       <label class="block mb-1">Image</label>
