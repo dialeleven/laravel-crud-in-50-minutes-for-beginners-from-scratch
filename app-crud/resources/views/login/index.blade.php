@@ -92,7 +92,7 @@
         </button>
 
         <p class="text-sm text-gray-500">
-          No account?
+          New user?
           <a class="underline" href="#">Sign up</a>
         </p>
       </div>
