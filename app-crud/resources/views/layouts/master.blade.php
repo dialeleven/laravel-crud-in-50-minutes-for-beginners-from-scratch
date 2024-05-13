@@ -216,7 +216,7 @@
 </div>
 
 
-{{-- * any non-essential JavaScript code to load using `@push` (used in child view) and `@stack (used in layout or master template) --}}
+{{-- any non-essential JavaScript code to load using `@push` (child view) and `@stack (layout or master-template) --}}
 @stack('scripts_body')
 <script>
 // mobile hamburger icon show/hide sidebar
