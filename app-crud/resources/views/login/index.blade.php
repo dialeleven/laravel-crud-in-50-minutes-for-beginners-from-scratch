@@ -62,7 +62,9 @@
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              
             >
+              <title>Show/hide password</title>
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
