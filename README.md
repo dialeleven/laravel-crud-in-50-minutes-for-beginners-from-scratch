@@ -16,6 +16,7 @@
 - [x] Templating using @extends, @section+@yields, @push+@stack, @parent (not used... yet)
 - [x] Add meta tags (description, keywords) and use @section @yield
 - [x] Dashboard UI - responsive, mobile hamburger menu
+- [x] Edit/delete operations: send user back to same paginated page they were on after edit/delete operation instead of page 1 automatically
 
 
 📋 **To Do**
