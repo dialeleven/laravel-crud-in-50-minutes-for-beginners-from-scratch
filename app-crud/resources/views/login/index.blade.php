@@ -9,44 +9,119 @@
 </head>
 <body>
 
-   <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-      <div class="sm:mx-auto sm:w-full sm:max-w-sm">
-        <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
-        <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to your account</h2>
+
+<!-- www.hyperui.dev --> 
+<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+
+  <div class="mx-auto max-w-lg text-center">
+    
+    <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+    <h1 class="text-2xl font-bold sm:text-3xl">Sign in to your account</h1>
+
+    <p class="mt-4 text-gray-500">
+      <!-- content here -->
+    </p>
+  </div>
+
+  <div class="mx-auto border-2 shadow rounded-md max-w-md">
+    <form action="#" class="mx-auto mb-0 mt-8 max-w-md space-y-4 p-5">
+      <div class="">
+        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+  
+        <div class="relative">
+          <input id="email" name="email" type="email" autocomplete="email" required 
+             class="w-full rounded-md p-4 pe-12 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+  
+          <span class="absolute inset-y-0 end-0 grid place-content-center px-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="size-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+              />
+            </svg>
+          </span>
+        </div>
       </div>
-    
-      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form class="space-y-6" action="#" method="POST">
-          <div>
-            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-            <div class="mt-2">
-              <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-            </div>
+  
+      <div>
+        <div class="flex items-center justify-between">
+          <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+          <div class="text-sm">
+            <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
           </div>
-    
-          <div>
-            <div class="flex items-center justify-between">
-              <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-              <div class="text-sm">
-                <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
-              </div>
-            </div>
-            <div class="mt-2">
-              <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-            </div>
-          </div>
-    
-          <div>
-            <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
-          </div>
-        </form>
-    
-        <p class="mt-10 text-center text-sm text-gray-500">
-          Not a member?
-          <a href="#" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Start a 14 day free trial</a>
+        </div>
+  
+        <div class="relative">
+          <input
+            id="password"
+            type="password"
+            class="w-full rounded-md p-4 pe-12 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6""
+            placeholder=""
+          />
+  
+          <span id="togglePassword" class="absolute inset-y-0 end-0 grid place-content-center px-4 cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="size-4 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+  
+      <div class="flex items-center justify-between">
+        <button
+          type="submit"
+          class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white"
+        >
+          Sign in
+        </button>
+
+        <p class="text-sm text-gray-500">
+          No account?
+          <a class="underline" href="#">Sign up</a>
         </p>
       </div>
-    </div>
+    </form>
+  </div>
+</div>
+    
+
+<script>
+  const togglePassword = document.getElementById('togglePassword');
+  const passwordInput = document.getElementById('password');
+
+  togglePassword.addEventListener('click', function() {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    // Change eye icon color on toggle
+    this.querySelector('svg').classList.toggle('text-gray-400');
+    this.querySelector('svg').classList.toggle('text-gray-600');
+  });
+</script>
 
 </body>
 </html>
