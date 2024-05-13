@@ -21,12 +21,12 @@
 
 
 📋 **To Do**
-- [ ] Login: model TBD
-- [ ] **Login check for entire CRUD app**
+- [ ] Login: Model
+- [ ] **Login check for entire CRUD app
 - [ ] Calendar picker form input
-- [ ] **User forgot password page (email user with reset password link)**
-- [ ] **Reset password page**
-- [ ] Make Dashboard index page
+- [ ] User forgot password page (email user with reset password link
+- [ ] Reset password page
+- [ ] Dashboard index page
 - [ ] Pagination - sorting (asc/desc)
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
