@@ -144,9 +144,26 @@ class ProductController extends Controller
     /**
      * Product edit view
      */
-    public function edit(Product $product) {
+    public function edit(Product $product, Request $request) {
         //dd(\Route::getRoutes());
         //dd($product);
+        #dd($request);
+
+        $referer = request()->headers->get('referer');
+        $page = null;
+     
+        // Extract the page number from the referer URL to store in hidden input 
+        // to redirect user to pagination page they were on originally.
+        if ($referer) {
+           $url_parts = parse_url($referer);
+        
+           if (isset($url_parts['query'])) {
+              
+              parse_str($url_parts['query'], $query);
+              //dd($query); // Debugging: Check the parsed query parameters
+              $page = $query['page'] ?? null;
+           }
+        }
 
         /*
         Return the view with the $product data. Note that 'products.edit' follows the naming convention
@@ -155,7 +172,7 @@ class ProductController extends Controller
         If edit.blade.php is in resources/views/products/, then we have 'products' to reflect the 
         /products/ directory and 'edit' represents the name of the specific view file.
         */
-        return view('products.edit', ['product' => $product]);
+        return view('products.edit', ['product' => $product, 'page' => $page]);
     }
 
 
@@ -252,14 +269,17 @@ class ProductController extends Controller
         // update request data to database
         $product->update($data);
 
-        return redirect(route('product.index'))->with('success', 'Product updated successfully');
+        // get the current page number from the query parameters
+        $current_page = $request->input('page', 1);
+
+        return redirect(route('product.index', ['page' => $current_page]))->with('success', 'Product updated successfully');
     }
 
 
     /**
      * Product delete
      */
-    public function destroy(Product $product)
+    public function destroy(Product $product, Request $request)
     {
         // Delete the product's image if it exists
         if ($product->image)
@@ -303,10 +323,15 @@ class ProductController extends Controller
             }
         }
 
-        // Delete the product
+        // get the current page number from the query parameters
+        $current_page = $request->input('page', 1);
+        #dd($request);
+        #dd($request->input('page'));
+
+        // delete the product
         $product->delete();
 
-        return redirect(route('product.index'))->with('success', 'Product deleted successfully');
+        return redirect(route('product.index', ['page' => $current_page]))->with('success', 'Product deleted successfully');
     }
 
 

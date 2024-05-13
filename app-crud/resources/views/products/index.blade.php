@@ -81,6 +81,7 @@
                   @csrf
                   @method('delete')
                   <button type="submit" class="inline-block bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded transition duration-300" onclick="return confirm('Delete {{ $product->name }}?')">Delete</button>
+                  <input type="hidden" name="page" value="{{request()->query('page')}}">
                   </form>
                </td>
             </tr>

@@ -163,7 +163,7 @@
       --}}
 
       <main>
-         <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+         <div class="mx-auto max-w-7xl py-6 sm:px-4 lg:px-5">
             <!-- Place your content here -->
    
 
@@ -210,7 +210,7 @@
       </svg>
    </a>
 
-   <div class="mt-4 text-xs text-gray-400">
+   <div class="my-4 text-xs text-gray-400">
       Current date/time: {{ date('Y-m-d H:i:s', time()) }}
    </div>
 </div>
