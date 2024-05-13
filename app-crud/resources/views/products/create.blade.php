@@ -16,6 +16,8 @@
 @section('meta_keywords', '')
 --}}
 
+@section('h1', 'Create Product')
+
 
 {{-- `@section` & `@endsection` marks where your unique page content goes --}}
 @section('content')
@@ -23,8 +25,6 @@
 <form method="post" action="{{route('product.store')}}" enctype="multipart/form-data" class="max-w-md mx-auto text-sm border p-4 rounded-lg shadow-md">
    @csrf
    @method('post')
-
-   <h1 class="text-3xl mb-4">Create Product</h1>
    
    <div class="mb-3">
       @if ($errors->any())

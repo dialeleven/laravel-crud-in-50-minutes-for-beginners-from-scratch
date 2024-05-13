@@ -14,14 +14,14 @@
 @section('meta_description', '')
 @section('meta_keywords', '')
 
+@section('h1', 'Edit Product')
+
 
 {{-- `@section` & `@endsection` marks where your unique page content goes --}}
 @section('content')
 <form method="post" action="{{route('product.update', ['product' => $product])}}" enctype="multipart/form-data" class="max-w-md mx-auto text-sm border p-4 rounded-lg shadow-md">
    @csrf
    @method('put')
-   
-   <h1 class="text-3xl mb-4">Edit Product</h1>
 
    <div class="mb-3">
       @if ($errors->any())
