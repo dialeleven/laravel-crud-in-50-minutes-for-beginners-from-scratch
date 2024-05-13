@@ -31,17 +31,6 @@ class ProductController extends Controller
         return view('products.index', ['products' => $products]);
     }
 
-    /**
-     * Product index - list of paginated products
-     */
-    public function index2() {
-        //$products = Product::all(); // get all DB records
-        $products = Product::paginate(5); // get paginated records
-        //return view('products.index2', ['products' => $products]);
-        
-        return view('home', ['products' => $products]);
-    }
-
 
     /**
      * Product index - export products to CSV file.
@@ -318,5 +307,38 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect(route('product.index'))->with('success', 'Product deleted successfully');
+    }
+
+
+    
+
+    /**
+     * * FOR TEST PURPOSES
+     */
+    public function index2() {
+        //$products = Product::all(); // get all DB records
+        $products = Product::paginate(5); // get paginated records
+        //return view('products.index2', ['products' => $products]);
+
+        return view('home', ['products' => $products]);
+    }
+
+    
+    /**
+     * * FOR TEST PURPOSES
+     */
+    public function test() {
+        //return view('products.index2', ['products' => $products]);
+        #$products = Product::all();
+        $products = Product::paginate(5); // get paginated records
+
+        return view('products.test', ['products' => $products]);
+    }
+    public function test2() {
+        //return view('products.index2', ['products' => $products]);
+        #$products = Product::all();
+        $products = Product::paginate(5); // get paginated records
+
+        return view('products.test2', ['products' => $products]);
     }
 }
