@@ -28,7 +28,7 @@
   </div>
 
   <div class="mx-auto border-2 shadow rounded-md max-w-md">
-    <form action="#" method="POST" class="mx-auto mb-0 mt-8 max-w-md space-y-4 p-5">
+    <form action="#" method="POST" class="mx-auto mb-0 mt-3 max-w-md space-y-4 p-5">
       <div class="">
         <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
   
