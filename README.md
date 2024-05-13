@@ -15,17 +15,17 @@
 - [x] Common includes with Blade view partials (header/footer) - *no longer used in favor of @extends, @section+@yields, @push+@stack unless `include` is needed*
 - [x] Templating using @extends, @section+@yields, @push+@stack, @parent (not used... yet)
 - [x] Add meta tags (description, keywords) and use @section @yield
+- [x] Dashboard UI - responsive, mobile hamburger menu
 
 
 📋 **To Do**
-- [ ] Dashboard UI - responsive, mobile hamburger menu
 - [ ] Calendar picker form input
-- [ ] Hover over thumbnail to show full size image
 - [ ] **Login check for entire CRUD app**
 - [ ] **User login page**
 - [ ] **User forgot password page (email user with reset password link)**
 - [ ] **Reset password page**
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
+- [ ] Hover over thumbnail to show full size image
 - [ ] Validation (email address, URL slugs, [A-Za-z0-9], etc)
 - [ ] API integration?
 
