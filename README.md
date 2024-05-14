@@ -25,7 +25,6 @@
 - [ ] **Login check for entire CRUD app (check out [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#breeze-and-blade) for authentication starter kit)
 - [ ] User forgot password page (email user with reset password link)
 - [ ] Reset password page
-
 - [ ] Calendar picker form input
 - [ ] Dashboard index page
 - [ ] Pagination - sorting (asc/desc)
