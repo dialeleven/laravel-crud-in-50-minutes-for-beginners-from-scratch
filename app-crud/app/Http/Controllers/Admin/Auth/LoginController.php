@@ -2,17 +2,14 @@
 namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller; // Import the base Controller class
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
+
 use Illuminate\Support\Facades\Response;
 
-use Illuminate\Support\Facades\DB;      // DB facade for traditional style SQL queries
-use Illuminate\Database\Eloquent\Model; // Eloquent ORM DB model
+#use Illuminate\Support\Facades\DB;      // DB facade for traditional style SQL queries
+#use Illuminate\Database\Eloquent\Model; // Eloquent ORM DB model
 
-use App\Models\Login;
+#use App\Models\Login;
 //use App\Models\User;
 
 

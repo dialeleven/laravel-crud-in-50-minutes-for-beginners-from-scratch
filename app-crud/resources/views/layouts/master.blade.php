@@ -14,8 +14,8 @@
 <body>
 
 <!-- mobile burger icon -->
-<div class="w-full md:w-1/6 bg-sky-600 md:hidden block pt-2">
-   <a href="#" id="burgerIcon" class="inline-block p-1 ml-1 rounded-md hover:bg-sky-200 transition duration-300">
+<div class="w-full md:w-1/6 bg-slate-400 md:hidden block pt-2">
+   <a href="#" id="burgerIcon" class="inline-block p-1 ml-1 rounded-md hover:bg-slate-200 transition duration-300">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
          <path fill="currentColor" d="M21 10H3a1 1 0 0 1 0-2h18a1 1 0 0 1 0 2zm0-5H3a1 1 0 0 1 0-2h18a1 1 0 0 1 0 2zm0 10H3a1 1 0 0 1 0-2h18a1 1 0 0 1 0 2z"/>
       </svg>
