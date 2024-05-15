@@ -10,7 +10,14 @@ Route::get('/', function () {
 
 
 //--------------- Product routes ---------------//
+
+// no middleware
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+
+// middleware attached
+#Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('admin');
+
+
 Route::get('/product/exportcsv', [ProductController::class, 'indexExportCsv'])->name('product.index.exportcsv');
 Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
 Route::post('/product', [ProductController::class, 'store'])->name('product.store');
@@ -26,5 +33,5 @@ Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'
 
 
 //--------------- Login routes ---------------//
-Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::get('/login', [LoginController::class, 'login'])->name('login.index');
 //--------------- /Login routes ---------------//
