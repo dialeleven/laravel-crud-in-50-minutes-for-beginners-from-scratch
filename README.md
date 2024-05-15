@@ -23,9 +23,9 @@
 📋 **To Do**
 - [ ] Login: Model
 - [ ] **Login check for entire CRUD app (check out [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#breeze-and-blade) for authentication starter kit)
-- [ ] Calendar picker form input
 - [ ] User forgot password page (email user with reset password link)
 - [ ] Reset password page
+- [ ] Calendar picker form input
 - [ ] Dashboard index page
 - [ ] Pagination - sorting (asc/desc)
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
