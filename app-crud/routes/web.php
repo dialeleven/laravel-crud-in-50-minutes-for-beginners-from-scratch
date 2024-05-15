@@ -33,5 +33,6 @@ Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'
 
 
 //--------------- Login routes ---------------//
-Route::get('/login', [LoginController::class, 'login'])->name('login.index');
+Route::get('/login', [LoginController::class, 'loginPage'])->name('login.index');
+Route::post('/processlogin', [LoginController::class, 'processLogin'])->name('login.process');
 //--------------- /Login routes ---------------//

@@ -18,9 +18,13 @@ class LoginController extends Controller
     /**
      * login index
      */
-    public function login() {
+    public function loginPage() {
         //return view('login.index', ['products' => $products]);
         return view('login.index');
+    }
+
+    public function processLogin() {
+        //return view('login.index');
     }
     
     /**
