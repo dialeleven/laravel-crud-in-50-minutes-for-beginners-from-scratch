@@ -27,6 +27,27 @@
     </p>
   </div>
 
+  <div class="mx-auto max-w-md">
+    {{-- output form submission errors if any exist --}}
+    @if ($errors->any())
+    <div class="mb-3">
+        <ul class="error-list">
+          @foreach($errors->all() as $index => $error)
+          @php
+          // extract input name/id from error message
+          preg_match('/^The (.*?) field/i', $error, $matches);
+          $inputNameOrId = $matches[1] ?? '';
+          @endphp
+          <li class="error-list-item flex items-center bg-red-100 rounded-md p-1 mb-2">
+              <span class="text-red-500 font-bold mr-2">X</span>
+              <a href="#{{ $inputNameOrId }}" class="underline">{{$error}}</a>
+          </li>
+          @endforeach
+        </ul>
+    </div>
+    @endif
+  </div>
+
   <div class="mx-auto border-2 shadow rounded-md max-w-md">
     <form action="#" method="POST" class="mx-auto mb-0 mt-3 max-w-md space-y-4 p-5">
       <div class="">

@@ -18,9 +18,9 @@ class LoginController extends Controller
     /**
      * login index
      */
-    public function index() {
+    public function login() {
         //return view('login.index', ['products' => $products]);
-        return view('login.index', []);
+        return view('login.index');
     }
     
     /**
