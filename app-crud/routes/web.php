@@ -11,11 +11,12 @@ Route::get('/', function () {
 
 //--------------- Product routes ---------------//
 
-// no middleware
+// Product index - no middleware
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 
-// middleware attached
-#Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('admin');
+// Product index - 'auth' middleware added which will redirect to a 'login' route by default
+Route::get('/product', [ProductController::class, 'index'])->name('product.index')
+    ->middleware('auth');
 
 
 Route::get('/product/exportcsv', [ProductController::class, 'indexExportCsv'])->name('product.index.exportcsv');
@@ -33,6 +34,6 @@ Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'
 
 
 //--------------- Login routes ---------------//
-Route::get('/login', [LoginController::class, 'loginPage'])->name('login.index');
+Route::get('/login', [LoginController::class, 'loginPage'])->name('login');
 Route::post('/processlogin', [LoginController::class, 'processLogin'])->name('login.process');
 //--------------- /Login routes ---------------//
