@@ -15,8 +15,14 @@ Route::get('/', function () {
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 
 // Product index - 'auth' middleware added which will redirect to a 'login' route by default
-Route::get('/product', [ProductController::class, 'index'])->name('product.index')
-    ->middleware('auth');
+//Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth');
+
+
+
+Route::group(['middleware' => ['auth', 'web']], function() {
+    // * Routes that require authentication
+    // Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+});
 
 
 Route::get('/product/exportcsv', [ProductController::class, 'indexExportCsv'])->name('product.index.exportcsv');
