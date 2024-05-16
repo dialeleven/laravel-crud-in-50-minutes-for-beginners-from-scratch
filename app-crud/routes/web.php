@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController; // namespace for our "Products" Controller
 use App\Http\Controllers\Admin\AdminUsersController; // namespace for our "Adminusers" Controller
-use App\Http\Controllers\Admin\Auth\LoginController; // namespace for our "Login" Controller to handle /login, /forgotpassword, etc
+use App\Http\Controllers\Admin\LoginController; // namespace for our "Login" Controller to handle /login, /forgotpassword, etc
 
 Route::get('/', function () {
     return view('welcome');

@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Admin\Auth;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller; // Import the base Controller class
 use Illuminate\Http\Request;
@@ -20,7 +20,7 @@ class LoginController extends Controller
      */
     public function loginPage() {
         //return view('login.index', ['products' => $products]);
-        return view('login.index');
+        return view('admin.login.index');
     }
 
     public function processLogin() {
