@@ -23,7 +23,7 @@
 
 📋 **To Do**
 - [ ] Admin site user admin module (✔️index, create, edit, delete)
-- [ ] Authentication for CRUD app (login form, login check, forgot password, reset password - email reset password link)
+- [ ] Authentication for CRUD app (login form, login form submission logic, user logged in check, forgot password, reset password - email reset password link)
 - [ ] **Login check for entire CRUD app (check out [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#breeze-and-blade) for authentication starter kit)
 - [ ] Calendar picker form input
 - [ ] Dashboard index page
