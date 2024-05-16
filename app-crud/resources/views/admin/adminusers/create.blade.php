@@ -43,13 +43,13 @@
    </div>
    <div class="mb-4">
       <label class="block mb-1">Role</label>
-      <input type="radio" id="role_superadmin" name="role" value="superadmin" @if(old('role', 'superadmin') == 'superadmin') checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2">
+      <input type="radio" id="role_superadmin" name="role" value="superadmin" @if(old('role') == 'superadmin') checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2">
       <label for="role_superadmin" class="mr-4">Superadmin</label>
 
-      <input type="radio" id="role_admin" name="role" value="admin" @if(old('accountstatus') == 'admin') checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2">
+      <input type="radio" id="role_admin" name="role" value="admin" @if(old('role') == 'admin') checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2">
       <label for="role_admin" class="mr-4">Admin</label>
 
-      <input type="radio" id="role_user" name="role" value="user" @if(old('accountstatus') == 'user') checked @endif class="border border-gray-300 rounded px-3 py-2">
+      <input type="radio" id="role_user" name="role" value="user" @if(old('role', 'user') == 'user') checked @endif class="border border-gray-300 rounded px-3 py-2">
       <label for="role_user" class="mr-4">User</label>
    </div>
    <div class="mb-4">
