@@ -18,11 +18,11 @@
 - [x] Dashboard UI - responsive, mobile hamburger menu
 - [x] Edit/delete operations: send user back to same paginated page they were on after edit/delete operation instead of page 1 automatically
 - [x] Login: controller, view
+- [x] Organize admin site views into /views/admin/SUBFOLDER (update /routes/web.php accordingly)
 
 
 📋 **To Do**
-- [ ] Create user admin module (✔️index, create, edit, delete)
-- [ ] Organize admin site views into /views/admin/SUBFOLDER (update /routes/web.php accordingly)
+- [ ] Admin site user admin module (✔️index, create, edit, delete)
 - [ ] Authentication for CRUD app (login form, login check, forgot password, reset password - email reset password link)
 - [ ] **Login check for entire CRUD app (check out [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#breeze-and-blade) for authentication starter kit)
 - [ ] Calendar picker form input
