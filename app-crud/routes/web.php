@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\Auth\LoginController;
+use App\Http\Controllers\Admin\ProductController; // namespace for our "Products" Controller
+use App\Http\Controllers\Admin\AdminUsersController; // namespace for our "Adminusers" Controller
+use App\Http\Controllers\Admin\Auth\LoginController; // namespace for our "Login" Controller to handle /login, /forgotpassword, etc
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,10 +37,15 @@ Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'
     Route::get('/test', [ProductController::class, 'test'])->name('product.test');
     Route::get('/test2', [ProductController::class, 'test2'])->name('product.test2');
     // ********** /end testing *************/
-//--------------- /Product routes ---------------//
+//--------------- END - Product routes ---------------//
+
+
+//--------------- Admin Users routes ---------------//
+Route::get('/adminusers', [AdminusersController::class, 'adminusersindex'])->name('adminusers.index');
+//--------------- END - Admin Users routes ---------------//
 
 
 //--------------- Login routes ---------------//
 Route::get('/login', [LoginController::class, 'loginPage'])->name('login');
 Route::post('/processlogin', [LoginController::class, 'processLogin'])->name('login.process');
-//--------------- /Login routes ---------------//
+//--------------- END - Login routes ---------------//
