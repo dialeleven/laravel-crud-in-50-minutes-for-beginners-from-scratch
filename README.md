@@ -19,6 +19,7 @@
 - [x] Edit/delete operations: send user back to same paginated page they were on after edit/delete operation instead of page 1 automatically
 - [x] Login: controller, view
 - [x] Organize admin site views into /views/admin/SUBFOLDER (update /routes/web.php accordingly)
+- [x] Create migrations (admins, adminroles) and Models
 
 
 📋 **To Do**
