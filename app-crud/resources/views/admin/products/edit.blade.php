@@ -4,7 +4,7 @@
 {{-- ******* The layout template to use (/resources/views/layouts/master.blade.php) *******--}}
 {{-- @extends are the reusable components in a master template like your header/nav - e.g. master.blade.php  --}}
 {{-- Here we specify to use /resources/views/master.blade.php as our master/app HTML layout template --}}
-@extends('layouts.master')
+@extends('admin.site.layouts.master')
 
 
 {{-- Define section of content in child view to be injected using `@yield` to 
@@ -24,7 +24,7 @@
    @method('put')
 
    {{-- form submission error output --}}
-   @include('site.partials.form_error_output')
+   @include('admin.site.partials.form_error_output')
 
    <div class="mb-4">
       <label class="block mb-1">Name</label>

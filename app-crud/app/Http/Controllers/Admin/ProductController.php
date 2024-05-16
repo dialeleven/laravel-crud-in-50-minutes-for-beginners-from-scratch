@@ -30,7 +30,7 @@ class ProductController extends Controller
     public function index() {
         //$products = Product::all(); // get all DB records
         $products = Product::paginate(5); // get paginated records
-        return view('products.index', ['products' => $products]);
+        return view('admin.products.index', ['products' => $products]);
     }
 
 
@@ -67,7 +67,7 @@ class ProductController extends Controller
 
     // Create product view
     public function create() {
-        return view('products.create');
+        return view('admin.products.create');
     }
 
 
@@ -174,7 +174,7 @@ class ProductController extends Controller
         If edit.blade.php is in resources/views/products/, then we have 'products' to reflect the 
         /products/ directory and 'edit' represents the name of the specific view file.
         */
-        return view('products.edit', ['product' => $product, 'page' => $page]);
+        return view('admin.products.edit', ['product' => $product, 'page' => $page]);
     }
 
 
@@ -359,13 +359,13 @@ class ProductController extends Controller
         #$products = Product::all();
         $products = Product::paginate(5); // get paginated records
 
-        return view('products.test', ['products' => $products]);
+        return view('admin.products.test', ['products' => $products]);
     }
     public function test2() {
         //return view('products.index2', ['products' => $products]);
         #$products = Product::all();
         $products = Product::paginate(5); // get paginated records
 
-        return view('products.test2', ['products' => $products]);
+        return view('admin.products.test2', ['products' => $products]);
     }
 }

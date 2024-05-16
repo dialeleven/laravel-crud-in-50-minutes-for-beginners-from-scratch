@@ -41,7 +41,9 @@ Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'
 
 
 //--------------- Admin Users routes ---------------//
-Route::get('/adminusers', [AdminusersController::class, 'adminusersindex'])->name('adminusers.index');
+Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminusers.index');
+Route::get('/adminusers/create', [AdminusersController::class, 'create'])->name('adminusers.create');
+Route::post('/adminusers', [AdminusersController::class, 'store'])->name('adminusers.store');
 //--------------- END - Admin Users routes ---------------//
 
 
