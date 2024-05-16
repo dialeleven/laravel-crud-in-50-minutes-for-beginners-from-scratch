@@ -18,7 +18,7 @@ use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 
 
-use App\Models\Product; // ? Import 'Product' class from /app/Models to reference our Product model like Product::all() instead of
+use App\Models\AdminModels\Product; // ? Import 'Product' class from /app/Models to reference our Product model like Product::all() instead of
                         // ? the fully qualified name '\App\Models\Product::all()'
 
 

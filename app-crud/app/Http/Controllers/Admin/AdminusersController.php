@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin; // reference our directory structure "app\
 use App\Http\Controllers\Controller; // Import the base Controller class
 use Illuminate\Http\Request;
 
-// use App\Models\Product; // ? TODO: Need to add some model here for adminusers
+use App\Models\AdminModels\Admin; // ? TODO: Need to add some model here for adminusers
 
 class AdminusersController extends Controller
 {
