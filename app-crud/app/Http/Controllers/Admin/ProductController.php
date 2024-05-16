@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller; // Import the base Controller class
@@ -14,12 +13,13 @@ use Illuminate\Support\Facades\DB;      // DB facade for traditional style SQL q
 use Illuminate\Database\Eloquent\Model; // Eloquent ORM DB model
 
 
-// need the following two "use" keywords for Intervention Image library
+// Import Intervention Image library for image functions (e.g. resizing fullsize img to thumbnail, crop, etc)
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
-//-----------------
 
-use App\Models\Product;
+
+use App\Models\Product; // ? Import 'Product' class from /app/Models to reference our Product model like Product::all() instead of
+                        // ? the fully qualified name '\App\Models\Product::all()'
 
 
 class ProductController extends Controller
