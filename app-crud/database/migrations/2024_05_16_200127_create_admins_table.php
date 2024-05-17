@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->string('username');
+            $table->string('name')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('account_active');
-            $table->enum('role', ['superadmin', 'admin', 'user'])->default('user');
+            $table->tinyInteger('account_active')->default(1);
             $table->foreignId('role_id')->constrained('adminroles')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();

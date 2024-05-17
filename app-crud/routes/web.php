@@ -10,7 +10,9 @@ Route::get('/', function () {
 });
 
 
-//--------------- Product routes ---------------//
+/*************************************************************
+ ******************** Product routes *************************
+ *************************************************************/
 
 // Product index - no middleware
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
@@ -37,17 +39,20 @@ Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'
     Route::get('/test', [ProductController::class, 'test'])->name('product.test');
     Route::get('/test2', [ProductController::class, 'test2'])->name('product.test2');
     // ********** /end testing *************/
-//--------------- END - Product routes ---------------//
 
 
-//--------------- Admin Users routes ---------------//
+
+/*************************************************************
+ ******************** Admin users routes *********************
+ *************************************************************/
 Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminusers.index');
 Route::get('/adminusers/create', [AdminusersController::class, 'create'])->name('adminusers.create');
 Route::post('/adminusers', [AdminusersController::class, 'store'])->name('adminusers.store');
-//--------------- END - Admin Users routes ---------------//
 
 
-//--------------- Login routes ---------------//
+
+/*************************************************************
+ ********************** Login routes *************************
+ *************************************************************/
 Route::get('/login', [LoginController::class, 'loginPage'])->name('login');
 Route::post('/processlogin', [LoginController::class, 'processLogin'])->name('login.process');
-//--------------- END - Login routes ---------------//
