@@ -3,8 +3,10 @@ namespace App\Http\Controllers\Admin; // reference our directory structure "app\
 
 use App\Http\Controllers\Controller; // Import the base Controller class
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash; // Import Hash facade to bcrypt hash password
 
-use App\Models\AdminModels\Admin; // ? TODO: Need to add some model here for adminusers
+use App\Models\AdminModels\Admin; // import 'Admin' model
+
 
 class AdminusersController extends Controller
 {
@@ -19,14 +21,18 @@ class AdminusersController extends Controller
     public function store(Request $request) {
         $data = $request->validate([
             'username' => 'required',
-            'name' => 'required',
+            'name' => 'nullable',
             'email' => 'required',
-            'role' => 'required',
-            'accountstatus' => 'required',
+            'password' => 'required',
+            'account_active' => 'required',
+            'role_id' => 'nullable',
         ]);
 
-        // ? 'Adminuser::' needs to be adjusted below
-        //new_adminuser = Adminuser::create($data);
+        // hash the password (bcrypt default)
+        $data['password'] = Hash::make($request->input('password'));
+
+        // create new admin user
+        $new_adminuser = Admin::create($data);
 
         return redirect(route('adminusers.index'))->with('success', 'Successfully added user');
     }

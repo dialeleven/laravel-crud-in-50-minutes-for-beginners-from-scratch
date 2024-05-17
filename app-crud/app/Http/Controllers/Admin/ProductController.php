@@ -19,7 +19,7 @@ use Intervention\Image\Drivers\Gd\Driver;
 
 
 use App\Models\AdminModels\Product; // ? Import 'Product' class from /app/Models to reference our Product model like Product::all() instead of
-                        // ? the fully qualified name '\App\Models\Product::all()'
+                                    // ? the fully qualified name '\App\Models\Product::all()'
 
 
 class ProductController extends Controller

@@ -34,6 +34,10 @@
       <input type="text" id="username" name="username" value="{{old('username')}}" class="w-full border border-gray-300 rounded px-3 py-2">
    </div>
    <div class="mb-4">
+      <label class="block mb-1">Password</label>
+      <input type="password" id="password" name="password" value="{{old('password')}}" class="w-full border border-gray-300 rounded px-3 py-2">
+   </div>
+   <div class="mb-4">
       <label class="block mb-1">Name</label>
       <input type="text" id="name" name="name" value="{{old('name')}}" class="w-full border border-gray-300 rounded px-3 py-2">
    </div>
@@ -43,22 +47,22 @@
    </div>
    <div class="mb-4">
       <label class="block mb-1">Role</label>
-      <input type="radio" id="role_user" name="role" value="user" @if(old('role', 'user') == 'user') checked @endif class="border border-gray-300 rounded px-3 py-2 cursor-pointer">
+      <input type="radio" id="role_user" name="role_id" value="3" @if(old('role_id', '3') == '3') checked @endif class="border border-gray-300 rounded px-3 py-2 cursor-pointer">
       <label for="role_user" class="mr-4 cursor-pointer">User</label>
 
-      <input type="radio" id="role_admin" name="role" value="admin" @if(old('role') == 'admin') checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2 cursor-pointer">
+      <input type="radio" id="role_admin" name="role_id" value="2" @if(old('role_id') == '2') checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2 cursor-pointer">
       <label for="role_admin" class="mr-4 cursor-pointer">Admin</label>
 
-      <input type="radio" id="role_superadmin" name="role" value="superadmin" @if(old('role') == 'superadmin') checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2 cursor-pointer">
+      <input type="radio" id="role_superadmin" name="role_id" value="1" @if(old('role_id') == '1') checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2 cursor-pointer">
       <label for="role_superadmin" class="mr-4 cursor-pointer">Superadmin</label>
    </div>
    <div class="mb-4">
       <label class="block mb-1">Account Status</label>
       <div class="flex items-center">
-         <input type="radio" id="account_active_active" name="account_active" value="active" @if(old('account_active', 'active') == 'active') checked @endif class="mr-1 cursor-pointer">
+         <input type="radio" id="account_active_active" name="account_active" value="1" @if(old('account_active', '1') == 1) checked @endif class="mr-1 cursor-pointer">
          <label for="account_active_active" class="mr-4 cursor-pointer">Active</label>
          
-         <input type="radio" id="account_active_inactive" name="account_active" value="inactive" @if(old('account_active') == 'inactive') checked @endif class="mr-1 cursor-pointer">
+         <input type="radio" id="account_active_inactive" name="account_active" value="0" @if(old('account_active') == 0) checked @endif class="mr-1 cursor-pointer">
          <label for="account_active_inactive" class="cursor-pointer">Inactive</label>
       </div>
    </div>
