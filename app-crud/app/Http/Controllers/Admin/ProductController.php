@@ -179,7 +179,7 @@ class ProductController extends Controller
 
 
     /**
-     * Product update DB record
+     * Product update DB record (form submission logic)
      */
     public function update(Product $product, Request $request)
     {

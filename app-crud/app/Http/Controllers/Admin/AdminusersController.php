@@ -45,7 +45,9 @@ class AdminusersController extends Controller
     }
     
     public function edit(Admin $adminuser, Request $request) {
-        dd('edit adminuser');
-        #return view('admin.adminusers.index');
+        #dd('edit adminuser');
+        #dd($request);
+        
+        return view('admin.adminusers.edit', ['adminuser' => $adminuser]);
     }
 }

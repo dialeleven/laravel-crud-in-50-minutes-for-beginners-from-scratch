@@ -65,10 +65,10 @@
                <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->email }}</td>
                <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->role_id }}</td>
                <td class="py-2 px-3 border-b border-gray-400 text-center">
-                  <a href="{{ route('adminusers.edit', ['adminusers' => $adminuser]) }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded transition duration-300">Edit</a>
+                  <a href="{{ route('adminusers.edit', ['adminuser' => $adminuser]) }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded transition duration-300">Edit</a>
                </td>
                <td class="py-2 px-3 border-b border-gray-400 text-center">
-                  <form method="POST" action="{{ route('adminusers.destroy', ['adminusers' => $adminuser]) }}">
+                  <form method="POST" action="{{ route('adminusers.destroy', ['adminuser' => $adminuser]) }}">
                   @csrf
                   @method('delete')
                   <button type="submit" class="inline-block bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded transition duration-300" 
