@@ -1,4 +1,4 @@
-## Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
+Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
 ✔️ **Completed Additions**
 - [x] Laravel DB operations: add column to table
@@ -23,7 +23,9 @@
 
 
 📋 **To Do**
-- [ ] Admin site user admin module (✔️index, create, edit, delete)
+- [ ] Admin site user admin module (✔️index, ✔️create, edit, delete)
+- [ ] Admin users index/edit/create (output user roles from 'adminroles' table?)
+
 - [ ] Authentication for CRUD app (login form, login form submission logic, user logged in check, forgot password, reset password - email reset password link)
 - [ ] **Login check for entire CRUD app (check out [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#breeze-and-blade) for authentication starter kit)
 - [ ] "You are here" sidebar nav indicator
