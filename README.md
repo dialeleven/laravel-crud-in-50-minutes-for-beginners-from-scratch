@@ -1,4 +1,4 @@
-ppp## Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
+Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
 ✔️ **Completed Additions**
 - [x] Laravel DB operations: add column to table
