@@ -11,7 +11,10 @@ use App\Models\AdminModels\Admin; // import 'Admin' model
 class AdminusersController extends Controller
 {
     public function index() {
-        return view('admin.adminusers.index');
+        #$adminusers = Admin::all();
+        $adminusers = Admin::paginate(5); // get paginated records
+
+        return view('admin.adminusers.index', ['adminusers' => $adminusers]);
     }
 
     public function create() {
@@ -35,5 +38,14 @@ class AdminusersController extends Controller
         $new_adminuser = Admin::create($data);
 
         return redirect(route('adminusers.index'))->with('success', 'Successfully added user');
+    }
+
+    public function destroy() {
+        return view('admin.adminusers.index');
+    }
+    
+    public function edit(Admin $adminuser, Request $request) {
+        dd('edit adminuser');
+        #return view('admin.adminusers.index');
     }
 }

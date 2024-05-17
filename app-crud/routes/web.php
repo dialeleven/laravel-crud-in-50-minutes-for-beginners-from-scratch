@@ -48,6 +48,8 @@ Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'
 Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminusers.index');
 Route::get('/adminusers/create', [AdminusersController::class, 'create'])->name('adminusers.create');
 Route::post('/adminusers', [AdminusersController::class, 'store'])->name('adminusers.store');
+Route::delete('/adminusers/{adminusers}/destroy', [AdminusersController::class, 'destroy'])->name('adminusers.destroy');
+Route::get('/adminusers/{adminusers}/edit', [AdminusersController::class, 'edit'])->name('adminusers.edit');
 
 
 

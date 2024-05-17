@@ -44,7 +44,7 @@
    </div>
    @endif
  
-   <!-- products table -->
+   <!-- data table -->
    <div class="mt-2 mb-3">
       <table class="w-full border-collapse rounded-md overflow-hidden text-sm">
          <thead>
@@ -58,22 +58,26 @@
             </tr>
          </thead>
          <tbody id="table-body">
-         {{-- @foreach ($adminusers as $index => $product)
+         @foreach ($adminusers as $index => $adminuser)
             <tr class="{{ $index % 2 === 0 ? 'bg-gray-100' : 'bg-white' }}">
-               <td class="py-2 px-3 border-b border-gray-400">{{ $users->id }}</td>
-               <td class="py-2 px-3 border-b border-gray-400">{{ $users->name }}</td>
-               <td class="py-2 px-3 border-b border-gray-400">{{ $users->email }}</td>
-               <td class="py-2 px-3 border-b border-gray-400">{{ $users->role }}</td>
+               <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->id }}</td>
+               <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->name }}</td>
+               <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->email }}</td>
+               <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->role_id }}</td>
+               <td class="py-2 px-3 border-b border-gray-400 text-center">
+                  <a href="{{ route('adminusers.edit', ['adminusers' => $adminuser]) }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded transition duration-300">Edit</a>
+               </td>
                <td class="py-2 px-3 border-b border-gray-400 text-center">
                   <form method="POST" action="{{ route('adminusers.destroy', ['adminusers' => $adminuser]) }}">
                   @csrf
                   @method('delete')
-                  <button type="submit" class="inline-block bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded transition duration-300" onclick="return confirm('Delete {{ $product->name }}?')">Delete</button>
+                  <button type="submit" class="inline-block bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded transition duration-300" 
+                     onclick="return confirm('Delete {{ $adminuser->username }}?')">Delete</button>
                   <input type="hidden" name="page" value="{{request()->query('page')}}">
                   </form>
                </td>
             </tr>
-            @endforeach --}}
+            @endforeach
          </tbody>
       </table>
    </div>
