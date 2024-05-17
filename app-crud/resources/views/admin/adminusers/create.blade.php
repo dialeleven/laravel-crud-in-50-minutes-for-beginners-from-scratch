@@ -62,7 +62,7 @@
          <input type="radio" id="account_active_active" name="account_active" value="1" @if(old('account_active', '1') == 1) checked @endif class="mr-1 cursor-pointer">
          <label for="account_active_active" class="mr-4 cursor-pointer">Active</label>
          
-         <input type="radio" id="account_active_inactive" name="account_active" value="0" @if(old('account_active') == 0) checked @endif class="mr-1 cursor-pointer">
+         <input type="radio" id="account_active_inactive" name="account_active" value="0" @if(old('account_active') === 0) checked @endif class="mr-1 cursor-pointer">
          <label for="account_active_inactive" class="cursor-pointer">Inactive</label>
       </div>
    </div>

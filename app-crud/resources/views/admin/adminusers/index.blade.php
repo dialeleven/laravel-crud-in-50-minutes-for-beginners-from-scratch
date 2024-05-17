@@ -49,10 +49,10 @@
       <table class="w-full border-collapse rounded-md overflow-hidden text-sm">
          <thead>
             <tr class="bg-gray-200">
-               <th class="py-2 px-3 font-bold border-b border-gray-400">ID</th>
-               <th class="py-2 px-3 font-bold border-b border-gray-400">Name</th>
-               <th class="py-2 px-3 font-bold border-b border-gray-400">Email</th>
-               <th class="py-2 px-3 font-bold border-b border-gray-400">Role</th>
+               <th class="py-2 px-3 font-bold border-b border-gray-400 text-left">ID</th>
+               <th class="py-2 px-3 font-bold border-b border-gray-400 text-left">Name</th>
+               <th class="py-2 px-3 font-bold border-b border-gray-400 text-left">Email</th>
+               <th class="py-2 px-3 font-bold border-b border-gray-400 text-left">Role</th>
                <th class="py-2 px-3 font-bold border-b border-gray-400">Edit</th>
                <th class="py-2 px-3 font-bold border-b border-gray-400">Delete</th>
             </tr>

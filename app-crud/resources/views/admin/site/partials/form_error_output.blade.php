@@ -7,6 +7,12 @@
          // extract input name/id from error message
          preg_match('/^The (.*?) field/i', $error, $matches);
          $inputNameOrId = $matches[1] ?? '';
+         
+         // extract input name/id from error message for "the email has already been taken"
+         if (empty($matches)) {
+            preg_match('/^The (.*?) has/i', $error, $matches);
+            $inputNameOrId = $matches[1] ?? '';
+         }
          @endphp
          <li class="error-list-item flex items-center bg-red-100 rounded-md p-1 mb-2">
             <span class="text-red-500 font-bold mr-2">X</span>

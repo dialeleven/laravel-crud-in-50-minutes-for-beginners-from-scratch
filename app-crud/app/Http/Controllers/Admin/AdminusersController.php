@@ -25,7 +25,7 @@ class AdminusersController extends Controller
         $data = $request->validate([
             'username' => 'required',
             'name' => 'nullable',
-            'email' => 'required',
+            'email' => 'required|unique:admins',
             'password' => 'required',
             'account_active' => 'required',
             'role_id' => 'nullable',
