@@ -22,9 +22,9 @@
 {{-- `@section` alone or `@section`+`@endsection` marks where your unique page content goes --}}
 @section('content')
    
-<form method="post" action="{{ route('adminusers.store') }}" enctype="multipart/form-data" class="max-w-xl text-sm border p-4 rounded-md shadow">
+<form method="post" action="{{ route('adminusers.update', ['adminuser' => $adminuser]) }}" enctype="multipart/form-data" class="max-w-xl text-sm border p-4 rounded-md shadow">
    @csrf
-   @method('post')
+   @method('put')
    
    {{-- form submission error output --}}
    @include('admin.site.partials.form_error_output')

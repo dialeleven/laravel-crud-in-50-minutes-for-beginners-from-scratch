@@ -65,14 +65,14 @@ class ProductController extends Controller
     }
 
 
-    // Create product view
+    // Create product (view)
     public function create() {
         return view('admin.products.create');
     }
 
 
     /**
-     * Store the product
+     * Store product - form submission via "CREATE (add) product"
      */
     public function store(Request $request) {
         // dump and die function to dump the $request data to the browser
@@ -144,7 +144,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Product edit view
+     * Product edit - view
      */
     public function edit(Product $product, Request $request) {
         //dd(\Route::getRoutes());
@@ -179,7 +179,7 @@ class ProductController extends Controller
 
 
     /**
-     * Product update DB record (form submission logic)
+     * Product update - form submission (from EDIT product)
      */
     public function update(Product $product, Request $request)
     {

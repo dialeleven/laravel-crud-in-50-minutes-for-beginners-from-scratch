@@ -29,10 +29,13 @@ Route::group(['middleware' => ['auth', 'web']], function() {
 
 
 Route::get('/product/exportcsv', [ProductController::class, 'indexExportCsv'])->name('product.index.exportcsv');
+
 Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
 Route::post('/product', [ProductController::class, 'store'])->name('product.store');
+
 Route::get('/product/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
 Route::put('/product/{product}/update', [ProductController::class, 'update'])->name('product.update');
+
 Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
     // ********** testing *************/
     Route::get('/product2', [ProductController::class, 'index2'])->name('product.index2');
@@ -41,16 +44,18 @@ Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'
     // ********** /end testing *************/
 
 
-
 /*************************************************************
  ******************** Admin users routes *********************
  *************************************************************/
 Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminusers.index');
+
 Route::get('/adminusers/create', [AdminusersController::class, 'create'])->name('adminusers.create');
 Route::post('/adminusers', [AdminusersController::class, 'store'])->name('adminusers.store');
-Route::delete('/adminusers/{adminuser}/destroy', [AdminusersController::class, 'destroy'])->name('adminusers.destroy');
-Route::get('/adminusers/{adminuser}/edit', [AdminusersController::class, 'edit'])->name('adminusers.edit');
 
+Route::delete('/adminusers/{adminuser}/destroy', [AdminusersController::class, 'destroy'])->name('adminusers.destroy');
+
+Route::get('/adminusers/{adminuser}/edit', [AdminusersController::class, 'edit'])->name('adminusers.edit');
+Route::put('/adminusers/{adminuser}/update', [AdminusersController::class, 'update'])->name('adminusers.update');
 
 
 /*************************************************************

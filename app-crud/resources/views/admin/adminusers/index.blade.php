@@ -50,6 +50,7 @@
          <thead>
             <tr class="bg-gray-200">
                <th class="py-2 px-3 font-bold border-b border-gray-400 text-left">ID</th>
+               <th class="py-2 px-3 font-bold border-b border-gray-400 text-left">Username</th>
                <th class="py-2 px-3 font-bold border-b border-gray-400 text-left">Name</th>
                <th class="py-2 px-3 font-bold border-b border-gray-400 text-left">Email</th>
                <th class="py-2 px-3 font-bold border-b border-gray-400 text-left">Role</th>
@@ -61,6 +62,7 @@
          @foreach ($adminusers as $index => $adminuser)
             <tr class="{{ $index % 2 === 0 ? 'bg-gray-100' : 'bg-white' }}">
                <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->id }}</td>
+               <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->username }}</td>
                <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->name }}</td>
                <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->email }}</td>
                <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->role_id }}</td>
