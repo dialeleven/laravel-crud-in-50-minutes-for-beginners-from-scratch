@@ -20,7 +20,7 @@ Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next
 - [x] Login: controller, view
 - [x] Organize admin site views into /views/admin/SUBFOLDER (update /routes/web.php accordingly)
 - [x] Create migrations (admins, adminroles) and Models
-- [x] Admin site user admin module (✔️index, ✔️create, ✔️edit, :checkmark:delete)
+- [x] Admin site user admin module (✔️index, ✔️create, ✔️edit, ✔️ delete)
 
 
 📋 **To Do**
