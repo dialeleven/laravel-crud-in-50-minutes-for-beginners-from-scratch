@@ -47,22 +47,22 @@
    </div>
    <div class="mb-4">
       <label class="block mb-1">Role</label>
-      <input type="radio" id="role_user" name="role_id" value="3" @if(old('role_id', $adminuser->role_id == 3)) checked @endif class="border border-gray-300 rounded px-3 py-2 cursor-pointer">
+      <input type="radio" id="role_user" name="role_id" value="3" @if(old('role_id', $adminuser->role_id) == 3) checked @endif class="border border-gray-300 rounded px-3 py-2 cursor-pointer">
       <label for="role_user" class="mr-4 cursor-pointer">User</label>
 
-      <input type="radio" id="role_admin" name="role_id" value="2" @if(old('role_id', $adminuser->role_id == 2)) checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2 cursor-pointer">
+      <input type="radio" id="role_admin" name="role_id" value="2" @if(old('role_id', $adminuser->role_id) == 2) checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2 cursor-pointer">
       <label for="role_admin" class="mr-4 cursor-pointer">Admin</label>
 
-      <input type="radio" id="role_superadmin" name="role_id" value="1" @if(old('role_id', $adminuser->role_id == 1)) checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2 cursor-pointer">
+      <input type="radio" id="role_superadmin" name="role_id" value="1" @if(old('role_id', $adminuser->role_id) == 1) checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2 cursor-pointer">
       <label for="role_superadmin" class="mr-4 cursor-pointer">Superadmin</label>
    </div>
    <div class="mb-4">
       <label class="block mb-1">Account Status</label>
       <div class="flex items-center">
-         <input type="radio" id="account_active_active" name="account_active" value="1" @if(old('account_active', $adminuser->account_active == 1)) checked @endif class="mr-1 cursor-pointer">
+         <input type="radio" id="account_active_active" name="account_active" value="1" @if(old('account_active', $adminuser->account_active) == 1) checked @endif class="mr-1 cursor-pointer">
          <label for="account_active_active" class="mr-4 cursor-pointer">Active</label>
          
-         <input type="radio" id="account_active_inactive" name="account_active" value="0" @if(old('account_active', $adminuser->account_active === 0)) checked @endif class="mr-1 cursor-pointer">
+         <input type="radio" id="account_active_inactive" name="account_active" value="0" @if(old('account_active', $adminuser->account_active) === 0) checked @endif class="mr-1 cursor-pointer">
          <label for="account_active_inactive" class="cursor-pointer">Inactive</label>
       </div>
    </div>
