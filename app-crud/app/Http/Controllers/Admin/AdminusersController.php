@@ -10,7 +10,7 @@ use App\Models\AdminModels\Admin; // import 'Admin' model
 
 class AdminusersController extends Controller
 {
-    // adminuser list - view
+    // READ adminuser list - view
     public function index() {
         #$adminusers = Admin::all();
         $adminusers = Admin::paginate(5); // get paginated records
@@ -41,10 +41,6 @@ class AdminusersController extends Controller
         $new_adminuser = Admin::create($data);
 
         return redirect(route('adminusers.index'))->with('success', 'Successfully added user');
-    }
-
-    public function destroy() {
-        return view('admin.adminusers.index');
     }
     
     // UPDATE (edit) adminuser (view)
@@ -91,5 +87,18 @@ class AdminusersController extends Controller
         $current_page = $request->input('page', 1);
 
         return redirect( route('adminusers.index', ['page' => $current_page]))->with('success', 'Successfully updated record' );
+    }
+
+    // DELETE adminuser - POST request
+    public function destroy(Admin $adminuser, Request $request)
+    {
+        // get the current page number from the query parameters
+        $current_page = $request->input('page', 1);
+
+        // delete current adminuser
+        $adminuser->delete();
+
+        // redirect to our route for the Adminusers index view ( see web.php - `name('adminusers.index')` )
+        return redirect( route('adminusers.index', ['page' => $current_page]) )->with('success', 'Successfully deleted record');
     }
 }

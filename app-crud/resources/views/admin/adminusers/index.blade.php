@@ -54,6 +54,7 @@
                <th class="py-2 px-3 font-bold border-b border-gray-400 text-left">Name</th>
                <th class="py-2 px-3 font-bold border-b border-gray-400 text-left">Email</th>
                <th class="py-2 px-3 font-bold border-b border-gray-400 text-left">Role</th>
+               <th class="py-2 px-3 font-bold border-b border-gray-400 text-center">Acct Active</th>
                <th class="py-2 px-3 font-bold border-b border-gray-400">Edit</th>
                <th class="py-2 px-3 font-bold border-b border-gray-400">Delete</th>
             </tr>
@@ -66,6 +67,7 @@
                <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->name }}</td>
                <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->email }}</td>
                <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->role_id }}</td>
+               <td class="py-2 px-3 border-b border-gray-400 text-center">{{ $adminuser->account_active }}</td>
                <td class="py-2 px-3 border-b border-gray-400 text-center">
                   <a href="{{ route('adminusers.edit', ['adminuser' => $adminuser]) }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded transition duration-300">Edit</a>
                </td>

@@ -52,10 +52,10 @@ Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminus
 Route::get('/adminusers/create', [AdminusersController::class, 'create'])->name('adminusers.create');
 Route::post('/adminusers', [AdminusersController::class, 'store'])->name('adminusers.store');
 
-Route::delete('/adminusers/{adminuser}/destroy', [AdminusersController::class, 'destroy'])->name('adminusers.destroy');
-
 Route::get('/adminusers/{adminuser}/edit', [AdminusersController::class, 'edit'])->name('adminusers.edit');
 Route::put('/adminusers/{adminuser}/update', [AdminusersController::class, 'update'])->name('adminusers.update');
+
+Route::delete('/adminusers/{adminuser}/destroy', [AdminusersController::class, 'destroy'])->name('adminusers.destroy');
 
 
 /*************************************************************
