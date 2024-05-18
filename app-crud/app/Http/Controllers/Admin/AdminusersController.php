@@ -18,10 +18,12 @@ class AdminusersController extends Controller
         return view('admin.adminusers.index', ['adminusers' => $adminusers]);
     }
 
+
     // CREATE (add) user - view
     public function create() {
         return view('admin.adminusers.create');
     }
+
 
     // CREATE (add) user - POST request
     public function store(Request $request) {
@@ -43,6 +45,7 @@ class AdminusersController extends Controller
         return redirect(route('adminusers.index'))->with('success', 'Successfully added user');
     }
     
+
     // UPDATE (edit) adminuser (view)
     public function edit(Admin $adminuser, Request $request) {
         #dd('edit adminuser');
@@ -50,6 +53,7 @@ class AdminusersController extends Controller
         
         return view('admin.adminusers.edit', ['adminuser' => $adminuser]);
     }
+
 
     // UPDATE (edit) adminuser - POST request
     public function update(Admin $adminuser, Request $request) 
@@ -89,6 +93,7 @@ class AdminusersController extends Controller
         return redirect( route('adminusers.index', ['page' => $current_page]))->with('success', 'Successfully updated record' );
     }
 
+    
     // DELETE adminuser - POST request
     public function destroy(Admin $adminuser, Request $request)
     {
