@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin; // reference our directory structure "app\
 use App\Http\Controllers\Controller; // Import the base Controller class
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash; // Import Hash facade to bcrypt hash password
+use Illuminate\Validation\Rules\Password;
 
 use App\Models\AdminModels\Admin; // import 'Admin' model
 
@@ -31,7 +32,7 @@ class AdminusersController extends Controller
             'username' => 'required|unique:admins',
             'name' => 'nullable',
             'email' => 'required|unique:admins',
-            'password' => 'required',
+            'password' => ['required', 'string', Password::min(8)->mixedCase()->numbers()->symbols()->uncompromised()],
             'account_active' => 'required',
             'role_id' => 'nullable',
         ]);
@@ -46,7 +47,7 @@ class AdminusersController extends Controller
     }
     
 
-    // UPDATE (edit) adminuser (view)
+    // UPDATE (edit) adminuser (VIEW)
     public function edit(Admin $adminuser, Request $request) {
         #dd('edit adminuser');
         #dd($request);
@@ -72,7 +73,7 @@ class AdminusersController extends Controller
                 - id: The primary key of the record to ignore during the uniqueness check.
             */
             'email' => "required|unique:admins,email,$adminuser->id", 
-            'password' => 'nullable',
+            'password' => ['nullable', 'string', Password::min(8)->mixedCase()->numbers()->symbols()->uncompromised()],
             'account_active' => 'required',
             'role_id' => 'nullable',
         ]);
@@ -93,7 +94,7 @@ class AdminusersController extends Controller
         return redirect( route('adminusers.index', ['page' => $current_page]))->with('success', 'Successfully updated record' );
     }
 
-    
+
     // DELETE adminuser - POST request
     public function destroy(Admin $adminuser, Request $request)
     {
