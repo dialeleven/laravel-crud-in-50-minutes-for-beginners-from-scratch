@@ -24,9 +24,7 @@ use App\Models\AdminModels\Product; // ? Import 'Product' class from /app/Models
 
 class ProductController extends Controller
 {
-    /**
-     * Product index - list of paginated products
-     */
+    // READ product list - view
     public function index() {
         //$products = Product::all(); // get all DB records
         $products = Product::paginate(5); // get paginated records
@@ -34,11 +32,10 @@ class ProductController extends Controller
     }
 
 
-    /**
-     * Product index - export products to CSV file.
-     * Ref: https://stackoverflow.com/a/27596496/23343222
-     */
-    public function indexExportCsv() {
+    // Products - export products to CSV file
+    // Ref: https://stackoverflow.com/a/27596496/23343222
+    public function indexExportCsv()
+    {
         $headers = [
             'Cache-Control'       => 'must-revalidate, post-check=0, pre-check=0',
             'Content-type'        => 'text/csv',
@@ -65,16 +62,15 @@ class ProductController extends Controller
     }
 
 
-    // Create product (view)
+    // CREATE product - view
     public function create() {
         return view('admin.products.create');
     }
 
 
-    /**
-     * Store product - form submission via "CREATE (add) product"
-     */
-    public function store(Request $request) {
+    // CREATE product - POST request
+    public function store(Request $request)
+    {
         // dump and die function to dump the $request data to the browser
         //dd('description: ' . $request->description);
         //dd($request);
@@ -143,9 +139,8 @@ class ProductController extends Controller
         return redirect(route('product.index'))->with('success', 'Product added successfully');
     }
 
-    /**
-     * Product edit - view
-     */
+    
+    // EDIT product - view
     public function edit(Product $product, Request $request) {
         //dd(\Route::getRoutes());
         //dd($product);
@@ -178,9 +173,8 @@ class ProductController extends Controller
     }
 
 
-    /**
-     * Product update - form submission (from EDIT product)
-     */
+    
+    // UPDATE product - POST request
     public function update(Product $product, Request $request)
     {
         $data = $request->validate([
@@ -278,9 +272,7 @@ class ProductController extends Controller
     }
 
 
-    /**
-     * Product delete
-     */
+    // DELETE product - POST request
     public function destroy(Product $product, Request $request)
     {
         // Delete the product's image if it exists
