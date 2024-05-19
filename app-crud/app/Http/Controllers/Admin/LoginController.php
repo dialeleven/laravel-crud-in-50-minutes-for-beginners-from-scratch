@@ -52,6 +52,7 @@ class LoginController extends Controller
     }
 
 
+    // log user out of admin site
     public function adminloginLogout(Request $request) {
         Auth::logout();
         
