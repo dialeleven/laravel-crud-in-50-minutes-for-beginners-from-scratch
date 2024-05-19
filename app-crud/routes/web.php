@@ -61,5 +61,5 @@ Route::delete('/adminusers/{adminuser}/destroy', [AdminusersController::class, '
 /*************************************************************
  ********************** Login routes *************************
  *************************************************************/
-Route::get('/login', [LoginController::class, 'loginPage'])->name('login');
-Route::post('/processlogin', [LoginController::class, 'processLogin'])->name('login.process');
+Route::get('/adminlogin', [LoginController::class, 'adminlogin'])->name('adminlogin');
+Route::post('/adminlogin-process', [LoginController::class, 'adminloginProcess'])->name('adminlogin.process');

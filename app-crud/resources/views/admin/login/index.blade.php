@@ -49,7 +49,7 @@
   </div>
 
   <div class="mx-auto border-2 shadow rounded-md max-w-md">
-    <form action="{{route('login.process')}}" method="POST" class="mx-auto mb-0 mt-3 max-w-md space-y-4 p-5">
+    <form action="{{route('adminlogin.process')}}" method="POST" class="mx-auto mb-0 mt-3 max-w-md space-y-4 p-5">
       @csrf
       @method('post')
       <div class="">
@@ -73,10 +73,10 @@
         <div class="relative">
           <input
             id="password"
+            name="password"
             type="password"
             required
-            class="w-full rounded-md p-4 pe-12 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6""
-            placeholder=""
+            class="w-full rounded-md p-4 pe-12 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           />
   
           <span id="togglePassword" class="absolute inset-y-0 end-0 grid place-content-center px-4 cursor-pointer">
