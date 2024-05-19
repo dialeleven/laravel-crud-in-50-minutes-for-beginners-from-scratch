@@ -38,7 +38,7 @@ class LoginController extends Controller
         if ( Auth::attempt([ 'email' => $data['email'], 'password' => $data['password'] ]) )
         // if ( Auth::attempt([ $data ]) )
         {
-            // regenerate session token?
+            // regenerate session token after successful login to prevent session fixation attack
             request()->session()->regenerate();
             
             // redirect to admin dashboard
@@ -53,7 +53,7 @@ class LoginController extends Controller
 
 
     public function adminloginLogout() {
-        
+
     }
     
     /**
