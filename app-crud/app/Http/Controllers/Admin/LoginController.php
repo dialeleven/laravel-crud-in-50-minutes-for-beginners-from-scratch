@@ -53,7 +53,12 @@ class LoginController extends Controller
 
 
     public function adminloginLogout() {
-
+        Auth::logout();
+        
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        
+        return redirect()->route('login')->with('success', 'You have successfully signed out');
     }
     
     /**
