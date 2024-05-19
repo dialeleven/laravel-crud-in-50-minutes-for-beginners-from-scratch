@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin; // reference our directory structure "app\
 use App\Http\Controllers\Controller; // Import the base Controller class
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash; // Import Hash facade to bcrypt hash password
-use Illuminate\Validation\Rules\Password;
+use Illuminate\Validation\Rules\Password; // import Password validation class
 
 use App\Models\AdminModels\Admin; // import 'Admin' model
 
