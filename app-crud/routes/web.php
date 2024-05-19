@@ -15,16 +15,15 @@ Route::get('/', function () {
  *************************************************************/
 
 // Product index - no middleware
-Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+//Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 
 // Product index - 'auth' middleware added which will redirect to a 'login' route by default
 //Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth');
 
 
-
+// * Routes that require authentication
 Route::group(['middleware' => ['auth', 'web']], function() {
-    // * Routes that require authentication
-    // Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+    Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 });
 
 
