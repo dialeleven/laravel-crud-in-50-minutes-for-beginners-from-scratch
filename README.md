@@ -21,12 +21,12 @@ Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next
 - [x] Organize admin site views into /views/admin/SUBFOLDER (update /routes/web.php accordingly)
 - [x] Create migrations (admins, adminroles) and Models
 - [x] Admin site user admin module (✔️index, ✔️create, ✔️edit, ✔️ delete)
-
+- [x] Admin Users - Create/Edit - password requirements (min character limit, 1 number, 1 special char)
 
 📋 **To Do**
 - [ ] Authentication for CRUD app (login form, login form submission logic, user logged in check, forgot password, reset password - email reset password link)
-- [ ] Admin Users - Create/Edit - password requirements (min character limit, 1 number, 1 special char)
 - [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
+- [ ] Admin Users - Create/Edit - Password requirement error message output: combine into single error message (currently multiple error messages can be output in list items)
 - [ ] **Login check for entire CRUD app (check out [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#breeze-and-blade) for authentication starter kit)
 - [ ] "You are here" sidebar nav indicator
 - [ ] Breadcrumb links?
