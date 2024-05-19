@@ -21,8 +21,10 @@
    "peacock.color": "#471532",
    "html.suggest.html5": true,
    "cSpell.words": [
+      "adminlogin",
       "adminuser",
       "adminusers",
+      "CGPT",
       "exportcsv",
       "forgotpassword",
       "fullsize",
