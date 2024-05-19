@@ -60,6 +60,6 @@ Route::delete('/adminusers/{adminuser}/destroy', [AdminusersController::class, '
 /*************************************************************
  ********************** Login routes *************************
  *************************************************************/
-Route::get('/adminlogin', [LoginController::class, 'adminloginLoginForm'])->name('login');
+Route::get('/adminlogin', [LoginController::class, 'adminloginLoginForm'])->name('login'); // named 'login' b/c Laravel expects 'login' route by default
 Route::post('/adminlogin-process', [LoginController::class, 'adminloginProcess'])->name('adminlogin.process');
 Route::post('/adminlogin-logout', [LoginController::class, 'adminloginLogout'])->name('adminlogin.logout');
