@@ -21,7 +21,7 @@ Route::get('/', function () {
 //Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth');
 
 
-// * Routes that require authentication
+// * Group routes that require authentication
 Route::group(['middleware' => ['auth', 'web']], function() {
     Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 });
