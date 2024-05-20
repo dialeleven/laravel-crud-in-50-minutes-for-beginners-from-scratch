@@ -1,8 +1,14 @@
 <?php
 use Illuminate\Support\Facades\Route;
+
+//--------- ADMIN SITE CONTROLLERS ------------//
 use App\Http\Controllers\Admin\ProductController; // namespace for our "Products" Controller
 use App\Http\Controllers\Admin\AdminUsersController; // namespace for our "Adminusers" Controller
 use App\Http\Controllers\Admin\LoginController; // namespace for our "Login" Controller to handle /login
+
+//---------- PUBLIC SITE CONTROLLERS ---------------//
+use App\Http\Controllers\Public\PublicpageController; // test public page
+use App\Http\Controllers\Public\PublicProductController; // test public page
 
 use Illuminate\Http\Request; // use in conjunction with 'Password' Facade
 use Illuminate\Support\Facades\Password; // lost password/reset password
@@ -21,12 +27,17 @@ Route::get('/send-test-email', function () {
 });
 
 
+/*---------------------------------------------------
+|                                                   |
+|               ADMIN SITE ROUTES                   |
+|                                                   |
+-----------------------------------------------------*/
+
 // Product index - no middleware
 //Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 
 // Product index - 'auth' middleware added which will redirect to a 'login' route by default
 //Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth');
-
 
 // * Group routes that require authentication
 Route::group(['middleware' => ['auth', 'web']], function()
@@ -126,3 +137,12 @@ Route::post('/admin-reset-password', function (Request $request) {
         ? redirect()->route('login')->with('status', __($status))
         : back()->withErrors(['email' => [__($status)]]);
 })->middleware('guest')->name('password.update');
+
+
+
+/*---------------------------------------------------
+|                                                   |
+|               PUBLIC SITE ROUTES                  |
+|                                                   |
+-----------------------------------------------------*/
+Route::get('/products', [PublicProductController::class, 'index'])->name('public_products.index');
