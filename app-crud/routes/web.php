@@ -7,8 +7,17 @@ use App\Http\Controllers\Admin\LoginController; // namespace for our "Login" Con
 use Illuminate\Http\Request; // use in conjunction with 'Password' Facade
 use Illuminate\Support\Facades\Password; // lost password/reset password
 
+use Illuminate\Support\Facades\Mail; // email functionality
+use App\Mail\TestMail;               // email functionality
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+Route::get('/send-test-email', function () {
+    Mail::to('to@demomailtrap.com')->send(new TestMail());
+    return 'Email sent! ' . date('Y-m-d H:i:s');
 });
 
 
