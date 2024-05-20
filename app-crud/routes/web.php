@@ -85,8 +85,13 @@ Route::get('/adminlogin', [LoginController::class, 'adminloginLoginForm'])->name
 Route::post('/adminlogin-process', [LoginController::class, 'adminloginProcess'])->name('adminlogin.process');
 Route::post('/adminlogin-logout', [LoginController::class, 'adminloginLogout'])->name('adminlogin.logout');
 
-// reset password request
-Route::get('/admin-forgot-password', function() { 
+// ! TEMPORARY ROUTE: reset password request 
+Route::get('/admin-forgot-password2', [LoginController::class, 'adminForgotPasswordTemp'])->name('password.request2');
+
+
+// ??? THIS IS NOT WORKING FOR SOME REASON -  reset password request
+Route::get('/admin-forgot-password', function() {
+    dd('hi');
     return view('admin.login.forgot_password');
 })->middleware('guest')->name('password.request');
 

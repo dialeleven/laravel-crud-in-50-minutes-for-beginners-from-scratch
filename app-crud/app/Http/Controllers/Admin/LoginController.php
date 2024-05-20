@@ -61,6 +61,11 @@ class LoginController extends Controller
         
         return redirect()->route('login')->with('success', 'You have successfully signed out');
     }
+
+
+    public function adminForgotPasswordTemp () {
+        return view('admin.login.forgot_password');
+    }
     
     /**
      * * FOR TEST PURPOSES
