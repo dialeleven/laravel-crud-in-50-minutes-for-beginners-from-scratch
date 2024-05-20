@@ -29,16 +29,16 @@ Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next
 - [x] One public site view/controller/model (/products - public listing of products)
 
 📋 **To Do**
+- [ ] Pagination - sorting (asc/desc)
 - [ ] Set up email functionality in XAMPP/Laravel
-  - [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
+  - [ ] TEST: reset password email
+  - [ ] Admin site: reset adminuser password
+- [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
 - [ ] Admin site: more advanced queries/updates (INNER JOIN, LEFT JOIN)
-- [ ] TEST: reset password email
-- [ ] Admin site: reset adminuser password
 - [ ] "You are here" sidebar nav indicator
 - [ ] Breadcrumb links?
 - [ ] Calendar picker form input
 - [ ] Dashboard index page
-- [ ] Pagination - sorting (asc/desc)
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
 - [ ] Validation (email address, URL slugs, [A-Za-z0-9], etc)
