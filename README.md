@@ -26,19 +26,19 @@ Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next
 - [x] Authentication for CRUD app (✔️login form, ✔️login form submission logic, ✔️user logged in check (web.php), ✔️logout
 - [x] Login check for entire CRUD app (check out [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#breeze-and-blade) for authentication starter kit)
 - [x] Admin site: forgot password, reset password - email reset password link
+- [x] One public site view/controller/model (/products - public listing of products)
 
 📋 **To Do**
-- [ ] set up email functionality in XAMPP/Laravel
+- [ ] Pagination - sorting (asc/desc)
+- [ ] Set up email functionality in XAMPP/Laravel
+  - [ ] TEST: reset password email
+  - [ ] Admin site: reset adminuser password
 - [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
-- [ ] One public site view/controller/model
 - [ ] Admin site: more advanced queries/updates (INNER JOIN, LEFT JOIN)
-- [ ] TEST: reset password email
-- [ ] Admin site: reset adminuser password
 - [ ] "You are here" sidebar nav indicator
 - [ ] Breadcrumb links?
 - [ ] Calendar picker form input
 - [ ] Dashboard index page
-- [ ] Pagination - sorting (asc/desc)
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
 - [ ] Validation (email address, URL slugs, [A-Za-z0-9], etc)
