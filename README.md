@@ -28,6 +28,7 @@ Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next
 - [x] Admin site: forgot password, reset password - email reset password link
 
 📋 **To Do**
+- [ ] set up email functionality in XAMPP/Laravel
 - [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
 - [ ] One public site view/controller/model
 - [ ] Admin site: more advanced queries/updates (INNER JOIN, LEFT JOIN)
