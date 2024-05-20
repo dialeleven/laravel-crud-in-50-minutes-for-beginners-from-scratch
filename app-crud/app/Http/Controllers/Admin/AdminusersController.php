@@ -14,7 +14,11 @@ class AdminusersController extends Controller
     // READ adminuser list - view
     public function index() {
         #$adminusers = Admin::all();
-        $adminusers = Admin::paginate(5); // get paginated records
+        //$adminusers = Admin::paginate(5); // get paginated records
+
+        $adminusers = Admin::join('adminroles', 'admins.role_id', '=', 'adminroles.id')
+            ->select('admins.*', 'adminroles.name AS role_name')
+            ->paginate(5); // get paginated records
 
         return view('admin.adminusers.index', ['adminusers' => $adminusers]);
     }

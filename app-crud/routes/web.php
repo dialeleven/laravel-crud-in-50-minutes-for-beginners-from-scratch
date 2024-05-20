@@ -13,8 +13,11 @@ use App\Http\Controllers\Public\PublicProductController; // test public page
 use Illuminate\Http\Request; // use in conjunction with 'Password' Facade
 use Illuminate\Support\Facades\Password; // lost password/reset password
 
+use App\Http\Controllers\EmailController; // ! FOR EMAIL???
 use Illuminate\Support\Facades\Mail; // email functionality
 use App\Mail\TestMail;               // email functionality
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,7 +25,7 @@ Route::get('/', function () {
 
 
 Route::get('/send-test-email', function () {
-    Mail::to('to@demomailtrap.com')->send(new TestMail());
+    Mail::to('getfrancistsao@gmail.com')->send(new TestMail());
     return 'Email sent! ' . date('Y-m-d H:i:s');
 });
 
