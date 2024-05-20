@@ -32,6 +32,7 @@ Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next
 - [ ] One public site view/controller/model
 - [ ] Admin site: more advanced queries/updates (INNER JOIN, LEFT JOIN)
 - [ ] TEST: reset password email
+- [ ] Admin site: reset adminuser password
 - [ ] "You are here" sidebar nav indicator
 - [ ] Breadcrumb links?
 - [ ] Calendar picker form input
