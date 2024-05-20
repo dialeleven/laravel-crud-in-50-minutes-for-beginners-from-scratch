@@ -78,7 +78,6 @@ Route::get('/test2', [ProductController::class, 'test2'])->name('product.test2')
 // ********** /end testing *************/
 
 
-
 /*************************************************************
  ********************** Login routes *************************
  *************************************************************/
@@ -137,7 +136,6 @@ Route::post('/admin-reset-password', function (Request $request) {
         ? redirect()->route('login')->with('status', __($status))
         : back()->withErrors(['email' => [__($status)]]);
 })->middleware('guest')->name('password.update');
-
 
 
 /*---------------------------------------------------
