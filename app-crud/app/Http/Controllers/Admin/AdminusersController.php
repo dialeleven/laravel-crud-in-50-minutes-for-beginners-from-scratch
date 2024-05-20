@@ -16,6 +16,7 @@ class AdminusersController extends Controller
         #$adminusers = Admin::all();
         //$adminusers = Admin::paginate(5); // get paginated records
 
+        // get list of admiusers and INNER JOIN the adminroles table to get the adminroles.name column value
         $adminusers = Admin::join('adminroles', 'admins.role_id', '=', 'adminroles.id')
             ->select('admins.*', 'adminroles.name AS role_name')
             ->paginate(5); // get paginated records
