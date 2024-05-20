@@ -46,11 +46,67 @@
       <table class="w-full border-collapse rounded-md overflow-hidden text-sm">
          <thead>
             <tr class="bg-gray-200">
-               <th class="py-2 px-3 font-bold border-b border-gray-400">ID</th>
-               <th class="py-2 px-3 font-bold border-b border-gray-400">Name</th>
-               <th class="py-2 px-3 font-bold border-b border-gray-400">Qty</th>
+               <th class="py-2 px-3 font-bold border-b border-gray-400 items-center">
+                  <a href="{{ route('product.index', ['sort_by' => 'id', 'sort_dir' => ($sort_column == 'id' && $sort_direction == 'asc') ? 'desc' : 'asc']) }}" 
+                     class="flex items-center">
+                     ID
+                     @if ($sort_column == 'id')
+                        @if($sort_direction == 'asc')
+                           &#9650; <!-- Upward arrow -->
+                        @else
+                           &#9660; <!-- Downward arrow -->
+                        @endif
+                     @else
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-4 h-4 ml-1"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"/></svg>
+                     @endif
+                 </a>
+               </th>
+               <th class="py-2 px-3 font-bold border-b border-gray-400 items-center">
+                  <a href="{{ route('product.index', ['sort_by' => 'name', 'sort_dir' => ($sort_column == 'name' && $sort_direction == 'asc') ? 'desc' : 'asc']) }}" 
+                     class="flex items-center">
+                     Name
+                     @if ($sort_column == 'name')
+                        @if($sort_direction == 'asc')
+                           &#9650; <!-- Upward arrow -->
+                        @else
+                           &#9660; <!-- Downward arrow -->
+                        @endif
+                     @else
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-4 h-4 ml-1"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"/></svg>
+                     @endif
+                 </a>
+               </th>
+               <th class="py-2 px-3 font-bold border-b border-gray-400 items-center">
+                  <a href="{{ route('product.index', ['sort_by' => 'qty', 'sort_dir' => ($sort_column == 'qty' && $sort_direction == 'asc') ? 'desc' : 'asc']) }}" 
+                     class="flex items-center">
+                     Qty
+                     @if ($sort_column == 'qty')
+                        @if($sort_direction == 'asc')
+                           &#9650; <!-- Upward arrow -->
+                        @else
+                           &#9660; <!-- Downward arrow -->
+                        @endif
+                     @else
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-4 h-4 ml-1"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"/></svg>
+                     @endif
+                 </a>
+               </th>
                <th class="py-2 px-3 font-bold border-b border-gray-400">Price</th>
-               <th class="py-2 px-3 font-bold border-b border-gray-400">Description</th>
+               <th class="py-2 px-3 font-bold border-b border-gray-400 items-center">
+                  <a href="{{ route('product.index', ['sort_by' => 'description', 'sort_dir' => ($sort_column == 'description' && $sort_direction == 'asc') ? 'desc' : 'asc']) }}" 
+                     class="flex items-center">
+                     Description
+                     @if ($sort_column == 'description')
+                        @if($sort_direction == 'asc')
+                           &#9650; <!-- Upward arrow -->
+                        @else
+                           &#9660; <!-- Downward arrow -->
+                        @endif
+                     @else
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-4 h-4 ml-1"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M41 288h238c21.4 0 32.1 25.9 17 41L177 448c-9.4 9.4-24.6 9.4-33.9 0L24 329c-15.1-15.1-4.4-41 17-41zm255-105L177 64c-9.4-9.4-24.6-9.4-33.9 0L24 183c-15.1 15.1-4.4 41 17 41h238c21.4 0 32.1-25.9 17-41z"/></svg>
+                     @endif
+                 </a>
+               </th>
                <th class="py-2 px-3 font-bold border-b border-gray-400">Image</th>
                <th class="py-2 px-3 font-bold border-b border-gray-400">Edit</th>
                <th class="py-2 px-3 font-bold border-b border-gray-400">Delete</th>

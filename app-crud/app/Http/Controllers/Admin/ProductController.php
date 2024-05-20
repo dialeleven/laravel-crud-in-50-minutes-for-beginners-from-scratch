@@ -25,10 +25,21 @@ use App\Models\Common\Product; // ? Import 'Product' class from /app/Models to r
 class ProductController extends Controller
 {
     // READ product list - view
-    public function index() {
+    public function index(Request $request) {
         //$products = Product::all(); // get all DB records
-        $products = Product::paginate(5); // get paginated records
-        return view('admin.products.index', ['products' => $products]);
+
+        #dd($request->get);
+        #dd($request);
+
+        #$products = Product::paginate(5); // get paginated records
+
+        $sort_column = $request->get('sort_by', 'id'); // default to sorting by ID
+        $sort_direction = $request->get('sort_dir', 'asc'); // default to asc order
+
+        $products = Product::orderBy($sort_column, $sort_direction)->paginate(5);
+
+        
+        return view('admin.products.index', ['products' => $products, 'sort_column' => $sort_column, 'sort_direction' => $sort_direction]);
     }
 
 
