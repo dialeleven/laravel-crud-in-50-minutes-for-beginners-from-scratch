@@ -26,11 +26,11 @@ Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next
 - [x] Authentication for CRUD app (✔️login form, ✔️login form submission logic, ✔️user logged in check (web.php), ✔️logout
 - [x] Login check for entire CRUD app (check out [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#breeze-and-blade) for authentication starter kit)
 - [x] Admin site: forgot password, reset password - email reset password link
+- [x] One public site view/controller/model (/products - public listing of products)
 
 📋 **To Do**
-- [ ] set up email functionality in XAMPP/Laravel
-- [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
-- [ ] One public site view/controller/model
+- [ ] Set up email functionality in XAMPP/Laravel
+  - [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
 - [ ] Admin site: more advanced queries/updates (INNER JOIN, LEFT JOIN)
 - [ ] TEST: reset password email
 - [ ] Admin site: reset adminuser password
