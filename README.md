@@ -37,11 +37,10 @@ Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next
 - [ ] "You are here" sidebar nav indicator
 - [ ] Breadcrumb links?
 - [ ] Calendar picker form input
+- [ ] API integration?
 - [ ] Dashboard index page
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
-- [ ] Validation (email address, URL slugs, [A-Za-z0-9], etc)
-- [ ] API integration?
 
 
 ### How to Install Intervention Image Library
