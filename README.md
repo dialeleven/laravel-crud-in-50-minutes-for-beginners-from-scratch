@@ -27,9 +27,9 @@ Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next
 - [x] Login check for entire CRUD app (check out [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#breeze-and-blade) for authentication starter kit)
 - [x] Admin site: forgot password, reset password - email reset password link
 - [x] One public site view/controller/model (/products - public listing of products)
+- [x] Pagination - sorting (asc/desc)
 
 📋 **To Do**
-- [ ] Pagination - sorting (asc/desc)
 - [ ] Set up email functionality in XAMPP/Laravel
   - [ ] TEST: reset password email
   - [ ] Admin site: reset adminuser password
