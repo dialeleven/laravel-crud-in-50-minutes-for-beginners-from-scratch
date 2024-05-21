@@ -27,13 +27,13 @@ Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next
 - [x] Login check for entire CRUD app (check out [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#breeze-and-blade) for authentication starter kit)
 - [x] One public site view/controller/model (/products - public listing of products)
 - [x] Pagination - sorting (asc/desc)
+- [x] Admin site: [INNER JOIN](https://laravel.com/docs/11.x/queries#joins) query
 
 📋 **To Do**
 - [ ] Set up email functionality in XAMPP/Laravel
 - [ ] Admin site: Forgot password/reset password
   - [ ] Forgot password route redirects to default Laravel page (to investigate)
 - [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
-- [ ] Admin site: more advanced queries/updates (INNER JOIN, LEFT JOIN)
 - [ ] "You are here" sidebar nav indicator
 - [ ] Breadcrumb links?
 - [ ] Calendar picker form input
