@@ -28,11 +28,11 @@ Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next
 - [x] One public site view/controller/model (/products - public listing of products)
 - [x] Pagination - sorting (asc/desc)
 - [x] Admin site: [INNER JOIN](https://laravel.com/docs/11.x/queries#joins) query
+- [x] Set up email functionality in XAMPP/Laravel with Gmail
 
 📋 **To Do**
-- [ ] Set up email functionality in XAMPP/Laravel
+- [ ] Email functionality with Mailtrap.io?
 - [ ] Admin site: Forgot password/reset password
-  - [ ] Forgot password route redirects to default Laravel page (to investigate)
 - [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
 - [ ] "You are here" sidebar nav indicator
 - [ ] Breadcrumb links?
