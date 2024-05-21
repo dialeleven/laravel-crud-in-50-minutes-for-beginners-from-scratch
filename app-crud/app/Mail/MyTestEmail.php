@@ -1,6 +1,8 @@
 <?php
 
+
 namespace App\Mail;
+
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -9,9 +11,11 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
+
 class MyTestEmail extends Mailable
 {
     use Queueable, SerializesModels;
+
 
     /**
      * Create a new message instance.
@@ -21,15 +25,17 @@ class MyTestEmail extends Mailable
         //
     }
 
+
     /**
      * Get the message envelope.
      */
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'My Test Email',
+            subject: 'My Test Email from ' . $_SERVER['HTTP_HOST'],
         );
     }
+
 
     /**
      * Get the message content definition.
@@ -37,9 +43,10 @@ class MyTestEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'emails.test',
+            view: 'mail.test-email'
         );
     }
+
 
     /**
      * Get the attachments for the message.
