@@ -42,10 +42,10 @@ npm install
 - [x] Email functionality in XAMPP/Laravel with Gmail
   - [x] Email with attachement
   - [x] Email - HTML format
+  - [x] Email multiple attachments
 
 📋 **To Do**
 - [ ] Email
-  - [ ] Multiple email attachments
   - [ ] CC/BCC - ensure CC/BCC list is not visible in email/header
 - [ ] Email functionality with Mailtrap.io?
 - [ ] Admin site: Forgot password/reset password
