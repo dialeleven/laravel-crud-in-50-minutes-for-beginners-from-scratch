@@ -32,5 +32,7 @@
       "processlogin",
       "publicpage",
       "uncompromised"
-   ]
+   ],
+   "editor.tabSize": 3,
+   "editor.detectIndentation": true
 }

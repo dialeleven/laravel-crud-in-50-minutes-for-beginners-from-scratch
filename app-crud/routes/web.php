@@ -38,51 +38,51 @@ Send email using Laravel and Gmail SMTP
 https://mailtrap.io/blog/laravel-send-email-gmail/#How-to-send-emails-using-Laravel-and-Gmail-SMTP
 */
 Route::get('/email', function() {
-    $name = "Funny Coder";
+   $name = "Funny Coder";
 
-    $to_email = 'username@gmail.com';
+   $to_email = 'username@gmail.com';
 
-    // The email sending is done using the to method on the Mail facade
-    $val = Mail::to($to_email)->send(new MyTestEmail($name = 'Jon Doe'));
+   // The email sending is done using the to method on the Mail facade
+   $val = Mail::to($to_email)->send(new MyTestEmail($name = 'Jon Doe'));
 
-    return "<b>Email sent to $to_email!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
+   return "<b>Email sent to $to_email!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
 });
 
 Route::get('/email-with-attachment', function() {
-    $name = "Funny Coder";
-    $filePath = [
-                    'assets/images/android-chrome-512x512.png', 
-                    'assets/images/tailwindcss-mark.svg'
-                ];
-    $filePath = 'assets/images/android-chrome-512x512.png';
+   $name = "Funny Coder";
+   $filePath = [
+                  'assets/images/android-chrome-512x512.png', 
+                  'assets/images/tailwindcss-mark.svg'
+               ];
+   $filePath = 'assets/images/android-chrome-512x512.png';
 
-    $to_email = 'username@gmail.com';
+   $to_email = 'username@gmail.com';
 
-    // The email sending is done using the to method on the Mail facade
-    // Mail::to($to_email)->send(new MyTestEmail($name));
-    Mail::to($to_email)->send(new MyTestEmail($name, $filePath));
+   // The email sending is done using the to method on the Mail facade
+   // Mail::to($to_email)->send(new MyTestEmail($name));
+   Mail::to($to_email)->send(new MyTestEmail($name, $filePath));
 
-    return "<b>Email sent to $to_email!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
+   return "<b>Email sent to $to_email!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
 });
 
 // send email with cc/cc
 Route::get('/email-with-cc-bcc', function() {
-    $mainRecipients = ['main1@example.com', 'main2@example.com'];
-    #$ccRecipients = ['cc1@example.com', 'cc2@example.com'];
-    $ccRecipients = '';
-    $bccRecipients = ['username@gmail.com', 'username@gmail.com'];
-    $name = "Funny Coder"; // Dynamic content
-    /*
-    Mail::to($mainRecipients)
-        ->cc($ccRecipients)
-        ->bcc($bccRecipients)
-        ->send(new MyTestEmail($name));
-    */
-    Mail::bcc($bccRecipients)
-        ->send(new MyTestEmail());
-    
-    print_r($bccRecipients);
-    return "<b>Email sent!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
+   $mainRecipients = ['main1@example.com', 'main2@example.com'];
+   #$ccRecipients = ['cc1@example.com', 'cc2@example.com'];
+   $ccRecipients = '';
+   $bccRecipients = ['username@gmail.com', 'username@gmail.com'];
+   $name = "Funny Coder"; // Dynamic content
+   /*
+   Mail::to($mainRecipients)
+      ->cc($ccRecipients)
+      ->bcc($bccRecipients)
+      ->send(new MyTestEmail($name));
+   */
+   Mail::bcc($bccRecipients)
+      ->send(new MyTestEmail());
+   
+   print_r($bccRecipients);
+   return "<b>Email sent!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
 });
 
 
@@ -101,33 +101,33 @@ Route::get('/email-with-cc-bcc', function() {
 // * Group routes that require authentication
 Route::group(['middleware' => ['auth', 'web']], function()
 {
-    /*************************************************************
-     ************ SECTION: Product routes ************************
-    *************************************************************/
-    Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-    Route::get('/product/exportcsv', [ProductController::class, 'indexExportCsv'])->name('product.index.exportcsv');
-    
-    Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
-    Route::post('/product', [ProductController::class, 'store'])->name('product.store');
-    
-    Route::get('/product/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
-    Route::put('/product/{product}/update', [ProductController::class, 'update'])->name('product.update');
-    
-    Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
+   /*************************************************************
+    ************ SECTION: Product routes ************************
+   *************************************************************/
+   Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+   Route::get('/product/exportcsv', [ProductController::class, 'indexExportCsv'])->name('product.index.exportcsv');
+   
+   Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
+   Route::post('/product', [ProductController::class, 'store'])->name('product.store');
+   
+   Route::get('/product/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
+   Route::put('/product/{product}/update', [ProductController::class, 'update'])->name('product.update');
+   
+   Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
 
 
-    /*************************************************************
-     ************ SECTION: Admin users routes ********************
-     *************************************************************/
-    Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminusers.index');
-    
-    Route::get('/adminusers/create', [AdminusersController::class, 'create'])->name('adminusers.create');
-    Route::post('/adminusers', [AdminusersController::class, 'store'])->name('adminusers.store');
-    
-    Route::get('/adminusers/{adminuser}/edit', [AdminusersController::class, 'edit'])->name('adminusers.edit');
-    Route::put('/adminusers/{adminuser}/update', [AdminusersController::class, 'update'])->name('adminusers.update');
-    
-    Route::delete('/adminusers/{adminuser}/destroy', [AdminusersController::class, 'destroy'])->name('adminusers.destroy');
+   /*************************************************************
+    ************ SECTION: Admin users routes ********************
+   *************************************************************/
+   Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminusers.index');
+   
+   Route::get('/adminusers/create', [AdminusersController::class, 'create'])->name('adminusers.create');
+   Route::post('/adminusers', [AdminusersController::class, 'store'])->name('adminusers.store');
+   
+   Route::get('/adminusers/{adminuser}/edit', [AdminusersController::class, 'edit'])->name('adminusers.edit');
+   Route::put('/adminusers/{adminuser}/update', [AdminusersController::class, 'update'])->name('adminusers.update');
+   
+   Route::delete('/adminusers/{adminuser}/destroy', [AdminusersController::class, 'destroy'])->name('adminusers.destroy');
 });
 
 // ********** testing *************/
@@ -150,55 +150,55 @@ Route::get('/admin-forgot-password2', [LoginController::class, 'adminForgotPassw
 
 // reset password request
 Route::get('/admin-forgot-password', function() {
-    #dd('hi');
-    return view('admin.login.forgot_password');
+   #dd('hi');
+   return view('admin.login.forgot_password');
 })->name('password.request');
 
 
 // forgot password - POST request
 Route::post('/admin-forgot_password', function (Request $request) {
-    $request->validate(['email' => 'required|email']);
- 
-    $status = Password::sendResetLink(
-        $request->only('email')
-    );
- 
-    return $status === Password::RESET_LINK_SENT
-                ? back()->with(['status' => __($status)])
-                : back()->withErrors(['email' => __($status)]);
+   $request->validate(['email' => 'required|email']);
+
+   $status = Password::sendResetLink(
+      $request->only('email')
+   );
+
+   return $status === Password::RESET_LINK_SENT
+               ? back()->with(['status' => __($status)])
+               : back()->withErrors(['email' => __($status)]);
 })->middleware('guest')->name('password.email');
 
 
 // Route for handling password reset form display
 Route::get('/admin-reset-password/{token}', function ($token) {
-    return view('auth.reset-password', ['token' => $token]);
+   return view('auth.reset-password', ['token' => $token]);
 })->middleware('guest')->name('password.reset');
 
 
 // Route for handling password reset form submission
 Route::post('/admin-reset-password', function (Request $request) {
-    $request->validate([
-        'token' => 'required',
-        'email' => 'required|email',
-        'password' => 'required|min:8|confirmed',
-    ]);
+   $request->validate([
+      'token' => 'required',
+      'email' => 'required|email',
+      'password' => 'required|min:8|confirmed',
+   ]);
 
-    $status = Password::reset(
-        $request->only('email', 'password', 'password_confirmation', 'token'),
-        function ($user, $password) {
-            $user->forceFill([
-                'password' => Hash::make($password)
-            ])->save();
+   $status = Password::reset(
+      $request->only('email', 'password', 'password_confirmation', 'token'),
+      function ($user, $password) {
+         $user->forceFill([
+               'password' => Hash::make($password)
+         ])->save();
 
-            $user->setRememberToken(Str::random(60));
+         $user->setRememberToken(Str::random(60));
 
-            event(new PasswordReset($user));
-        }
-    );
+         event(new PasswordReset($user));
+      }
+   );
 
-    return $status === Password::PASSWORD_RESET
-        ? redirect()->route('login')->with('status', __($status))
-        : back()->withErrors(['email' => [__($status)]]);
+   return $status === Password::PASSWORD_RESET
+      ? redirect()->route('login')->with('status', __($status))
+      : back()->withErrors(['email' => [__($status)]]);
 })->middleware('guest')->name('password.update');
 
 
