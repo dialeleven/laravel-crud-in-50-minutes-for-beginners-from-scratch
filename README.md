@@ -46,17 +46,16 @@ npm install
 - [x] API integration: Weather
 
 📋 **To Do**
-- [ ] Email
-  - [ ] CC/BCC - ensure CC/BCC list is not visible in email/header
+- [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header**
 - [ ] Email functionality with Mailtrap.io?
-- [ ] Admin site: Forgot password/reset password
+- [ ] **Admin site: Forgot password/reset password**
 - [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
-- [ ] Products: search functionality (search for product name, description, price - slider(?), description)
-- [ ] "You are here" sidebar nav indicator
+- [ ] **Products: search functionality (search for product name, description, price - slider(?), description)**
+- [ ] **"You are here" sidebar nav indicator**
 - [ ] Breadcrumb links?
-- [ ] Calendar picker form input
+- [ ] **Calendar picker form input**
 - [ ] Dashboard index page
-- [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
+- [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, **Bootstrap**, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
 
 
