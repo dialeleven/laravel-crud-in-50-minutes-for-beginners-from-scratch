@@ -17,8 +17,8 @@ use App\Http\Controllers\Admin\LoginController; // namespace for our "Login" Con
 
 //---------- PUBLIC SITE CONTROLLERS ---------------//
 use App\Http\Controllers\Public\PublicpageController; // test public page
-use App\Http\Controllers\Public\PublicProductController; // test public page
-use App\Http\Controllers\Public\WeatherApiController; // test public page
+use App\Http\Controllers\Public\PublicProductController; // public product page
+use App\Http\Controllers\Public\WeatherApiController; // weatherapi.com controller
 
 use App\Mail\MyTestEmail;
 
@@ -98,7 +98,7 @@ Route::get('/linkstorage', function () {
 
 
 /*************************************************************
- **************** SECTION: API routes **********************
+ **************** SECTION: API routes ************************
  *************************************************************/
 Route::get('weatherapi', [WeatherApiController::class, 'index'])->name('weatherapi.index');
 
