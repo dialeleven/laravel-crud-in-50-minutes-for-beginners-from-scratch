@@ -6,7 +6,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description" content="@yield('meta_description', 'default meta description')">
    <meta name="keywords" content="@yield('meta_keywords', 'default, meta, keywords')">
-   {{-- * @vite directive is for Vite.js to build Tailwind CSS/JS --}}
+   {{-- * @vite directive is for Vite.js to build Tailwind CSS/JS. Run 'npm run build' to build Tailwind CSS/JS --}}
    @vite('resources/css/app.css')
    {{-- leave a blank line for HTML source formatting (Laravel comment is fine) --}}
 </head>

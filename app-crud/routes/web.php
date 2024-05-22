@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\LoginController; // namespace for our "Login" Con
 //---------- PUBLIC SITE CONTROLLERS ---------------//
 use App\Http\Controllers\Public\PublicpageController; // test public page
 use App\Http\Controllers\Public\PublicProductController; // test public page
+use App\Http\Controllers\Public\WeatherApiController; // test public page
 
 use App\Mail\MyTestEmail;
 
@@ -32,6 +33,11 @@ Route::get('/send-test-email', function () {
     return 'Email sent! ' . date('Y-m-d H:i:s');
 });
 */
+
+
+/*************************************************************
+ **************** SECTION: Email routes **********************
+ *************************************************************/
 
 /*
 Send email using Laravel and Gmail SMTP
@@ -64,7 +70,7 @@ Route::get('/email-with-attachment', function() {
    return "<b>Email sent to <span style='color: blue'>$to_email</span>!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
 });
 
-// send email with cc/cc
+// send email with cc/bcc (// ! CC/BCC list is visible in email!!!)
 Route::get('/email-with-cc-bcc', function() {
    $mainRecipients = ['main1@example.com', 'main2@example.com'];
    #$ccRecipients = ['cc1@example.com', 'cc2@example.com'];
@@ -90,6 +96,11 @@ Route::get('/linkstorage', function () {
    Artisan::call('storage:link');
 });
 
+
+/*************************************************************
+ **************** SECTION: API routes **********************
+ *************************************************************/
+Route::get('weatherapi', [WeatherApiController::class, 'index'])->name('weatherapi.index');
 
 /*---------------------------------------------------
 |                                                   |
