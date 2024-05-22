@@ -51,10 +51,9 @@ Route::get('/email', function() {
 Route::get('/email-with-attachment', function() {
    $name = "Funny Coder";
    $filePath = [
-                  'assets/images/android-chrome-512x512.png', 
-                  'assets/images/tailwindcss-mark.svg'
+                  'images/20240507_023639000000_twice_between1&2.jpg', 
+                  'images/20240507_025420000000_twice_group.jpg'
                ];
-   $filePath = 'assets/images/android-chrome-512x512.png';
 
    $to_email = 'username@gmail.com';
 
@@ -62,7 +61,7 @@ Route::get('/email-with-attachment', function() {
    // Mail::to($to_email)->send(new MyTestEmail($name));
    Mail::to($to_email)->send(new MyTestEmail($name, $filePath));
 
-   return "<b>Email sent to $to_email!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
+   return "<b>Email sent to <span style='color: blue'>$to_email</span>!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
 });
 
 // send email with cc/cc
@@ -83,6 +82,12 @@ Route::get('/email-with-cc-bcc', function() {
    
    print_r($bccRecipients);
    return "<b>Email sent!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
+});
+
+
+// lost the 'storage' link in /public? Call this method to fix it.
+Route::get('/linkstorage', function () {
+   Artisan::call('storage:link');
 });
 
 
