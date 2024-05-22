@@ -10,19 +10,23 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+Use Illuminate\Mail\Mailables\Attachment;
 
 
 class MyTestEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $name;
+    public $attachment;
 
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($name, $attachment = null)
     {
-        //
+        $this->name = $name;
+        $this->attachment = $attachment;
     }
 
 
@@ -43,7 +47,11 @@ class MyTestEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.test-email'
+            // view: 'email.test-email', // plain text email
+            view: 'email.test-html-email', // html email
+            with: [
+                'name' => $this->name
+            ],
         );
     }
 
@@ -55,6 +63,13 @@ class MyTestEmail extends Mailable
      */
     public function attachments(): array
     {
+        if ($this->attachment) {
+            return [$this->attachment];
+            return [
+                Attachment::fromPath($this->attachment),
+            ];
+        }
+
         return [];
     }
 }
