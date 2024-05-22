@@ -1,6 +1,3 @@
-{{-- FILE: resources/views/create.blade.php --}}
-
-
 {{-- ******* The layout template to use (/resources/views/layouts/master.blade.php) *******--}}
 {{-- @extends are the reusable components in a master template like your header/nav - e.g. master.blade.php  --}}
 {{-- Here we specify to use /resources/views/master.blade.php as our master/app HTML layout template --}}
