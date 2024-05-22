@@ -51,6 +51,7 @@ npm install
 - [ ] Email functionality with Mailtrap.io?
 - [ ] Admin site: Forgot password/reset password
 - [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
+- [ ] Products: search functionality (search for product name, description, price - slider(?), description)
 - [ ] "You are here" sidebar nav indicator
 - [ ] Breadcrumb links?
 - [ ] Calendar picker form input
