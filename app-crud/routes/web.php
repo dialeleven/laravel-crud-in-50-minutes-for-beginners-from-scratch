@@ -97,10 +97,7 @@ Route::get('/linkstorage', function () {
 });
 
 
-/*************************************************************
- **************** SECTION: API routes ************************
- *************************************************************/
-Route::get('weatherapi', [WeatherApiController::class, 'index'])->name('weatherapi.index');
+
 
 /*---------------------------------------------------
 |                                                   |
@@ -117,8 +114,8 @@ Route::get('weatherapi', [WeatherApiController::class, 'index'])->name('weathera
 // * Group routes that require authentication
 Route::group(['middleware' => ['auth', 'web']], function()
 {
-   /*************************************************************
-    ************ SECTION: Product routes ************************
+   /************************************************************
+   ************ SECTION: Product routes ************************
    *************************************************************/
    Route::get('/product', [ProductController::class, 'index'])->name('product.index');
    Route::get('/product/exportcsv', [ProductController::class, 'indexExportCsv'])->name('product.index.exportcsv');
@@ -133,7 +130,7 @@ Route::group(['middleware' => ['auth', 'web']], function()
 
 
    /*************************************************************
-    ************ SECTION: Admin users routes ********************
+   ************* SECTION: Admin users routes ********************
    *************************************************************/
    Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminusers.index');
    
@@ -158,8 +155,8 @@ Route::get('/test2', [ProductController::class, 'test2'])->name('product.test2')
 
 
 /*************************************************************
- **************** SECTION: Login routes **********************
- *************************************************************/
+**************** SECTION: Login routes ***********************
+*************************************************************/
 Route::get('/adminlogin', [LoginController::class, 'adminloginLoginForm'])->name('login'); // named 'login' b/c Laravel expects 'login' route by default
 Route::post('/adminlogin-process', [LoginController::class, 'adminloginProcess'])->name('adminlogin.process');
 Route::post('/adminlogin-logout', [LoginController::class, 'adminloginLogout'])->name('adminlogin.logout');
@@ -228,3 +225,9 @@ Route::post('/admin-reset-password', function (Request $request) {
 |                                                   |
 -----------------------------------------------------*/
 Route::get('/products', [PublicProductController::class, 'index'])->name('public_products.index');
+
+
+/************************************************************
+**************** SECTION: API routes ************************
+*************************************************************/
+Route::get('weatherapi', [WeatherApiController::class, 'index'])->name('weatherapi.index');
