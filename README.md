@@ -43,6 +43,7 @@ npm install
   - [x] Email with attachement
   - [x] Email - HTML format
   - [x] Email multiple attachments
+- [x] API integration: Weather
 
 📋 **To Do**
 - [ ] Email
@@ -53,7 +54,6 @@ npm install
 - [ ] "You are here" sidebar nav indicator
 - [ ] Breadcrumb links?
 - [ ] Calendar picker form input
-- [ ] API integration?
 - [ ] Dashboard index page
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
