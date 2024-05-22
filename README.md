@@ -32,6 +32,8 @@ Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next
 
 📋 **To Do**
 - [ ] Email functionality with Mailtrap.io?
+- [ ] Email with attachemnts
+- [ ] Email - HTML email
 - [ ] Admin site: Forgot password/reset password
 - [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
 - [ ] "You are here" sidebar nav indicator
