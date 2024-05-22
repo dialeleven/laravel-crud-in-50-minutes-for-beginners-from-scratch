@@ -55,7 +55,7 @@ npm install
 - [ ] Breadcrumb links?
 - [ ] **Calendar picker form input**
 - [ ] Dashboard index page
-- [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, **Bootstrap**, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
+- [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, :whitecheckmark:**Bootstrap**, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
 
 
