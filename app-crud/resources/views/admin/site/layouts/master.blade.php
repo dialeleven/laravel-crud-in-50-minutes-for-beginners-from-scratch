@@ -152,6 +152,16 @@
                   </svg>
                   <span class="mx-2 text-sm font-medium">Weather</span>
                </a>
+
+               <a href="{{route('admin-misc')}}" class="flex items-center px-3 py-2 text-blue-100 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700
+               hover:border-gray-500 dark:hover:border-gray-200 border border-transparent">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                     <title>Miscellany</title>
+                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                   </svg>
+                  <span class="mx-2 text-sm font-medium">Misc</span>
+               </a>
+
             </nav>
 
             <!-- logged in user info, logout -->

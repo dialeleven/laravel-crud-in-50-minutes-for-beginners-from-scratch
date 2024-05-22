@@ -144,6 +144,10 @@ Route::group(['middleware' => ['auth', 'web']], function()
    Route::put('/adminusers/{adminuser}/update', [AdminusersController::class, 'update'])->name('adminusers.update');
    
    Route::delete('/adminusers/{adminuser}/destroy', [AdminusersController::class, 'destroy'])->name('adminusers.destroy');
+
+   Route::get('/misc', function () {
+      return view('admin.misc');
+  })->name('admin-misc');
 });
 
 // ********** testing *************/
