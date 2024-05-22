@@ -1,11 +1,11 @@
 # Copying This Repo For Yourself
-## Clone the repository
+### Clone the repository
 git clone https://github.com/yourusername/your-repo.git
 
-## Navigate to the project directory
+### Navigate to the project directory
 cd your-repo
 
-## Install dependencies (including Tailwind CSS)
+### Install dependencies (including Tailwind CSS)
 npm install
 
 
