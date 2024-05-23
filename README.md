@@ -13,6 +13,9 @@ composer update
 
 ### Copy .env.example as .env
 
+### Run 'php artisan key:generate'
+You may get a 'ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at G:\\...\\\vendor\\laravel\\framework\\src\\Illuminate\\Encryption\\EncryptionServiceProvider.php:83)' if trying to access the application via browser first.
+
 
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
