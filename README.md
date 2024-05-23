@@ -31,7 +31,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-#### Test Accessing The Home Page '/' and 'products/'
+#### Test Accessing The Home Page '/' and 'products/' (e.g. http://localhost/products or http://laravel.localhost/products)
 If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apache error_log.
 
 #### Update Tailwind CSS/JS If Adding New TW Classes
