@@ -20,12 +20,14 @@ You may get a 'ERROR: No application encryption key has been specified. {"except
 Use mysql command line, phpMyAdmin, HeidiSQL, etc to create the database.
 
 ### Update .env With MySQL Details (Adjust Below Accordingly)
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=app-crud
 DB_USERNAME=root
 DB_PASSWORD=
+```
 
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
