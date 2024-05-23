@@ -46,6 +46,11 @@
       <input type="text" id="description" name="description" value="{{old('description')}}" class="w-full border border-gray-300 rounded px-3 py-2">
    </div>
    <div class="mb-4">
+      <label class="block mb-1">Date - In Stock</label>
+      <input type="datetime-local" min="2018-01-01" max="" id="datetime_in_stock" name="datetime_in_stock" 
+      value="{{ old('datetime_in_stock', now()->format('Y-m-d') . ' 00:00' ) }}" class="border border-gray-300 rounded px-3 py-2">
+   </div>
+   <div class="mb-4">
       <label class="block mb-1">Image</label>
       <input type="file" name="image" class="w-full">
    </div>

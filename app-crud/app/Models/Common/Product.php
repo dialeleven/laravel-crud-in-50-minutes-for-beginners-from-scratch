@@ -13,6 +13,7 @@ class Product extends Model
         'qty',
         'price',
         'description',
+        'datetime_in_stock',
         'image',
         'thumbnail'
     ];

@@ -174,6 +174,8 @@ Route::get('/admin-forgot-password', function() {
 
 // forgot password - POST request
 Route::post('/admin-forgot_password', function (Request $request) {
+   #dd($request);
+
    $request->validate(['email' => 'required|email']);
 
    $status = Password::sendResetLink(

@@ -83,16 +83,20 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         // dump and die function to dump the $request data to the browser
-        //dd('description: ' . $request->description);
         //dd($request);
-        
+        #dd($request->input('datetime_in_stock'));
+
         $data = $request->validate([
             'name' => 'required',
             'qty' => 'required|numeric',
             'price' => 'required|decimal:0,2', // min 0, max 2 decimal places
             'description' => 'nullable',
+            'datetime_in_stock' => 'nullable|date_format:Y-m-d\TH:i',
             'image' => 'nullable|image|max:2048', // Image field is now optional with maximum size of 2MB
         ]);
+
+        if ($request->input('datetime_in_stock'))
+            $data['datetime_in_stock'] = date('Y-m-d H:i:s', strtotime($request->input('datetime_in_stock')));
 
         // If an image is provided, handle the image upload
         if ($request->hasFile('image'))
@@ -193,6 +197,7 @@ class ProductController extends Controller
             'qty' => 'required|numeric',
             'price' => 'required|decimal:0,2', // min 0, max 2 decimal places
             'description' => 'nullable',
+            'datetime_in_stock' => 'nullable|date_format:Y-m-d\TH:i',
             'image' => 'nullable|image|max:2048', // Image field is now optional with maximum size of 2MB
         ]);
 
