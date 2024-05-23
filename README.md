@@ -5,7 +5,7 @@
 ### Navigate To Project Directory
 ```cd app-crud```
 
-### Install Dependencies (including Tailwind CSS?)
+### Install Dependencies (including Tailwind CSS)
 ```npm install```
 
 ### Install Required '/vendor' Dependencies (install composer if not already installed)
@@ -32,6 +32,10 @@ DB_PASSWORD=
 
 ### Test Accessing The Home Page '/' and 'products/'
 If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apache error_log.
+
+### Update Tailwind CSS/JS If Adding New TW Classes
+Run ```npm run build``` with the 'app-crud' directory.
+
 
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
