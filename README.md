@@ -5,8 +5,11 @@ git clone https://github.com/yourusername/your-repo.git
 ### Navigate to the project directory
 cd your-repo
 
-### Install dependencies (including Tailwind CSS)
+### Install dependencies (including Tailwind CSS?)
 npm install
+
+### Install required /vendor dependencies (install composer if not already installed)
+composer update
 
 
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
