@@ -1,25 +1,27 @@
-## Copying This Repo For Yourself
-### Clone the repository
-git clone https://github.com/yourusername/your-repo.git
+### Copying This Repo For Yourself
+#### Clone the repository
+```git clone https://github.com/dialeleven/laravel-crud-in-50-minutes-for-beginners-from-scratch```
 
-### Navigate to the project directory
-cd your-repo
+#### Navigate To Project Directory
+```cd app-crud```
 
-### Install dependencies (including Tailwind CSS?)
-npm install
+#### Install Dependencies (including Tailwind CSS)
+```npm install```
 
-### Install required /vendor dependencies (install composer if not already installed)
-composer update
+#### Install Required '/vendor' Dependencies (install composer if not already installed)
+```composer update```
 
-### Copy .env.example as .env
+#### Copy '.env.example' as '.env'
+Adjust your MySQL details in your new .env file now or after the next two steps.
 
-### Run 'php artisan key:generate'
-You may get a 'ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at G:\\...\\\vendor\\laravel\\framework\\src\\Illuminate\\Encryption\\EncryptionServiceProvider.php:83)' if trying to access the application via browser first.
+#### Run 'php artisan key:generate'
+```php artisan key:generate```
+If trying to access the application via browser first, you may get a 'ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at G:\\...\\\vendor\\laravel\\framework\\src\\Illuminate\\Encryption\\EncryptionServiceProvider.php:83)' message. The above command should help resolve the issue.
 
-### Create MySQL Database 'app-crud'
+#### Create MySQL Database 'app-crud'
 Use mysql command line, phpMyAdmin, HeidiSQL, etc to create the database.
 
-### Update .env With MySQL Details (Adjust Below Accordingly)
+#### Update .env with MySQL Details (Adjust Below Accordingly)
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -29,8 +31,12 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### Test Accessing The Home Page '/' and 'products/'
-If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apache error_log.
+#### Test Accessing The Home Page '/' and 'products/' (e.g. http://localhost/products or http://laravel.localhost/products)
+If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apache error_log. Once any error(s) are resolved, you should be up and running!
+
+#### Update Tailwind CSS/JS If Adding New TW Classes
+Run ```npm run build``` within the 'app-crud' directory.
+
 
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
@@ -67,8 +73,10 @@ If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apach
   - [x] Email - HTML format
   - [x] Email multiple attachments
 - [x] API integration: Weather
+- [x] Calendar picker form input
 
 📋 **To Do**
+- [ ] **PHPUnit testing**
 - [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header**
 - [ ] Email functionality with Mailtrap.io?
 - [ ] **Admin site: Forgot password/reset password**
@@ -76,7 +84,6 @@ If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apach
 - [ ] **Products: search functionality (search for product name, description, price - slider(?), description)**
 - [ ] **"You are here" sidebar nav indicator**
 - [ ] Breadcrumb links?
-- [ ] **Calendar picker form input**
 - [ ] Dashboard index page
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, **Bootstrap**, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
