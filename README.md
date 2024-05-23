@@ -16,6 +16,16 @@ composer update
 ### Run 'php artisan key:generate'
 You may get a 'ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at G:\\...\\\vendor\\laravel\\framework\\src\\Illuminate\\Encryption\\EncryptionServiceProvider.php:83)' if trying to access the application via browser first.
 
+### Create MySQL Database 'app-crud'
+Use mysql command line, phpMyAdmin, HeidiSQL, etc to create the database.
+
+### Update .env With MySQL Details (Adjust Below Accordingly)
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=app-crud
+DB_USERNAME=root
+DB_PASSWORD=
 
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
