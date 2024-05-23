@@ -75,6 +75,7 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [x] API integration: Weather
 
 📋 **To Do**
+- [ ] **PHPUnit testing**
 - [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header**
 - [ ] Email functionality with Mailtrap.io?
 - [ ] **Admin site: Forgot password/reset password**
