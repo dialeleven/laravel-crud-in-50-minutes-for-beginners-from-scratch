@@ -2,16 +2,16 @@
 ### Clone the repository
 ```git clone https://github.com/dialeleven/laravel-crud-in-50-minutes-for-beginners-from-scratch```
 
-### Navigate to your project directory
-```cd your-repo```
+### Navigate To Project Directory
+```cd app-crud```
 
-### Install dependencies (including Tailwind CSS?)
+### Install Dependencies (including Tailwind CSS?)
 ```npm install```
 
-### Install required /vendor dependencies (install composer if not already installed)
+### Install Required '/vendor' Dependencies (install composer if not already installed)
 ```composer update```
 
-### Copy .env.example as .env
+### Copy '.env.example' as '.env'
 
 ### Run 'php artisan key:generate'
 ```php artisan key:generate```
@@ -20,7 +20,7 @@ If trying to access the application via browser first, you may get a 'ERROR: No 
 ### Create MySQL Database 'app-crud'
 Use mysql command line, phpMyAdmin, HeidiSQL, etc to create the database.
 
-### Update .env With MySQL Details (Adjust Below Accordingly)
+### Update .env with MySQL Details (Adjust Below Accordingly)
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
