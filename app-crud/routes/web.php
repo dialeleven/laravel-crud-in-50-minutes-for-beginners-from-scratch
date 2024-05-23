@@ -46,7 +46,7 @@ https://mailtrap.io/blog/laravel-send-email-gmail/#How-to-send-emails-using-Lara
 Route::get('/email', function() {
    $name = "Funny Coder";
 
-   $to_email = 'username@gmail.com';
+   $to_email = env('MAIL_FROM_ADDRESS'); //'username@gmail.com';
 
    // The email sending is done using the to method on the Mail facade
    $val = Mail::to($to_email)->send(new MyTestEmail($name = 'Jon Doe'));
@@ -61,7 +61,7 @@ Route::get('/email-with-attachment', function() {
                   'images/20240507_025420000000_twice_group.jpg'
                ];
 
-   $to_email = 'username@gmail.com';
+   $to_email = env('MAIL_FROM_ADDRESS'); //'username@gmail.com';
 
    // The email sending is done using the to method on the Mail facade
    // Mail::to($to_email)->send(new MyTestEmail($name));
