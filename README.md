@@ -23,7 +23,7 @@ Use mysql command line, phpMyAdmin, HeidiSQL, etc to create the database.
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
-DB_PORT=3306
+DB_PORT=3306 # Ensure your port is correct! With multiple XAMPP installs (PHP 5.6 and PHP 8.2), I had to run XAMPP PHP 8.2 with MySQL on port 3308!)
 DB_DATABASE=app-crud
 DB_USERNAME=root
 DB_PASSWORD=
