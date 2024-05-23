@@ -1,6 +1,6 @@
 ## Copying This Repo For Yourself
 ### Clone the repository
-git clone https://github.com/yourusername/your-repo.git
+git clone https://github.com/dialeleven/laravel-crud-in-50-minutes-for-beginners-from-scratch
 
 ### Navigate to the project directory
 cd your-repo
