@@ -12,6 +12,7 @@
 ```composer update```
 
 #### Copy '.env.example' as '.env'
+Adjust your MySQL details in your new .env file now or after the next two steps.
 
 #### Run 'php artisan key:generate'
 ```php artisan key:generate```
