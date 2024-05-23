@@ -14,7 +14,7 @@ composer update
 ### Copy .env.example as .env
 
 ### Run 'php artisan key:generate'
-You may get a 'ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at G:\\...\\\vendor\\laravel\\framework\\src\\Illuminate\\Encryption\\EncryptionServiceProvider.php:83)' if trying to access the application via browser first.
+If trying to access the application via browser first, you may get a 'ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at G:\\...\\\vendor\\laravel\\framework\\src\\Illuminate\\Encryption\\EncryptionServiceProvider.php:83)' message. The above command should help resolve the issue.
 
 ### Create MySQL Database 'app-crud'
 Use mysql command line, phpMyAdmin, HeidiSQL, etc to create the database.
