@@ -11,6 +11,8 @@ npm install
 ### Install required /vendor dependencies (install composer if not already installed)
 composer update
 
+### Copy .env.example as .env
+
 
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
