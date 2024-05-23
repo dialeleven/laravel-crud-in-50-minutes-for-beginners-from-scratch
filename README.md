@@ -73,6 +73,7 @@ Run ```npm run build``` within the 'app-crud' directory.
   - [x] Email - HTML format
   - [x] Email multiple attachments
 - [x] API integration: Weather
+- [x] Calendar picker form input
 
 📋 **To Do**
 - [ ] **PHPUnit testing**
@@ -83,7 +84,6 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [ ] **Products: search functionality (search for product name, description, price - slider(?), description)**
 - [ ] **"You are here" sidebar nav indicator**
 - [ ] Breadcrumb links?
-- [ ] **Calendar picker form input**
 - [ ] Dashboard index page
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, **Bootstrap**, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
