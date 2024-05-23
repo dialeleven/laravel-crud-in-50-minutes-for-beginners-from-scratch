@@ -1,19 +1,20 @@
 ## Copying This Repo For Yourself
 ### Clone the repository
-git clone https://github.com/dialeleven/laravel-crud-in-50-minutes-for-beginners-from-scratch
+```git clone https://github.com/dialeleven/laravel-crud-in-50-minutes-for-beginners-from-scratch```
 
-### Navigate to the project directory
-cd your-repo
+### Navigate to your project directory
+```cd your-repo```
 
 ### Install dependencies (including Tailwind CSS?)
-npm install
+```npm install```
 
 ### Install required /vendor dependencies (install composer if not already installed)
-composer update
+```composer update```
 
 ### Copy .env.example as .env
 
 ### Run 'php artisan key:generate'
+```php artisan key:generate```
 If trying to access the application via browser first, you may get a 'ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at G:\\...\\\vendor\\laravel\\framework\\src\\Illuminate\\Encryption\\EncryptionServiceProvider.php:83)' message. The above command should help resolve the issue.
 
 ### Create MySQL Database 'app-crud'
