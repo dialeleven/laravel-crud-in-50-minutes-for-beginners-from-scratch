@@ -29,6 +29,9 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
+### Test Accessing The Home Page '/' and 'products/'
+If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apache error_log.
+
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
 ✔️ **Completed Additions**
