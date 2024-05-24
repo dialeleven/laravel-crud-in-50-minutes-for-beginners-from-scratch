@@ -74,9 +74,12 @@ Run ```npm run build``` within the 'app-crud' directory.
   - [x] Email multiple attachments
 - [x] API integration: Weather
 - [x] Calendar picker form input
+- [ ] **PHPUnit testing**
+  - [x] Product.index route
 
 📋 **To Do**
 - [ ] **PHPUnit testing**
+  - [ ] Authenticate admin user
 - [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header**
 - [ ] Email functionality with Mailtrap.io?
 - [ ] **Admin site: Forgot password/reset password**
