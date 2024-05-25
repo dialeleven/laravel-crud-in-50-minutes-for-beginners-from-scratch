@@ -29,9 +29,11 @@
       "forgotpassword",
       "fullsize",
       "Hisu",
+      "linkstorage",
       "processlogin",
       "publicpage",
-      "uncompromised"
+      "uncompromised",
+      "weatherapi"
    ],
    "editor.tabSize": 3,
    "editor.detectIndentation": true

@@ -84,7 +84,7 @@ Route::get('/email-with-cc-bcc', function() {
       ->send(new MyTestEmail($name));
    */
    Mail::bcc($bccRecipients)
-      ->send(new MyTestEmail());
+      ->send(new MyTestEmail($name));
    
    print_r($bccRecipients);
    return "<b>Email sent!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
@@ -106,7 +106,7 @@ Route::get('/linkstorage', function () {
 -----------------------------------------------------*/
 
 // Product index - no middleware
-//Route::get('/product', [ProductController::class, 'index'])->name('product.index');
+Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 
 // Product index - 'auth' middleware added which will redirect to a 'login' route by default
 //Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth');

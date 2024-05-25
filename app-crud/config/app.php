@@ -123,4 +123,16 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Other configurations
+    |--------------------------------------------------------------------------
+    |
+    | User defined configurations.
+    |
+    */
+    'pagination' => [
+        'recs_per_page' => 5, // Set your desired default pagination value here
+    ],
 ];

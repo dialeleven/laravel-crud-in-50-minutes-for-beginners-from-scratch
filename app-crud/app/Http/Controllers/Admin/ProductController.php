@@ -36,7 +36,9 @@ class ProductController extends Controller
         $sort_column = $request->get('sort_by', 'id'); // default to sorting by ID
         $sort_direction = $request->get('sort_dir', 'asc'); // default to asc order
 
-        $products = Product::orderBy($sort_column, $sort_direction)->paginate(5);
+        $recs_per_page = config('app.pagination.recs_per_page');
+
+        $products = Product::orderBy($sort_column, $sort_direction)->paginate($recs_per_page);
 
         
         return view('admin.products.index', ['products' => $products, 'sort_column' => $sort_column, 'sort_direction' => $sort_direction]);
@@ -291,25 +293,28 @@ class ProductController extends Controller
     // DELETE product - POST request
     public function destroy(Product $product, Request $request)
     {
+        // Function to delete an image file
+        function deleteImage($path)
+        {
+            if (file_exists($path)) {
+                try {
+                    unlink($path);
+                } catch (\Exception $e) {
+                    Log::error('Error deleting image: ' . $e->getMessage());
+                }
+            } else {
+                Log::warning('Image file not found: ' . $path);
+            }
+        }
+
+
         // Delete the product's image if it exists
         if ($product->image)
         {
             // Get the full path to the image file
             $image_path = public_path('storage/' . $product->image);
 
-            // Check if the file exists
-            if (file_exists($image_path)) {
-                try {
-                    // Attempt to delete the image file
-                    unlink($image_path);
-                } catch (\Exception $e) {
-                    // Log deletion error
-                    Log::error('Error deleting image: ' . $e->getMessage());
-                }
-            } else {
-                // Log case where the file doesn't exist
-                Log::warning('Image file not found: ' . $image_path);
-            }
+            deleteImage($image_path);
         }
 
         // Delete the product's thumbnail if it exists
@@ -318,28 +323,37 @@ class ProductController extends Controller
             // Get the full path to the thumbnail file
             $image_path = public_path('storage/' . $product->thumbnail);
 
-            // Check if the file exists
-            if (file_exists($image_path)) {
-                try {
-                    // Attempt to delete the image file
-                    unlink($image_path);
-                } catch (\Exception $e) {
-                    // Log deletion error
-                    Log::error('Error deleting image: ' . $e->getMessage());
-                }
-            } else {
-                // Log case where the file doesn't exist
-                Log::warning('Image file not found: ' . $image_path);
-            }
+            deleteImage($image_path);
         }
 
         // get the current page number from the query parameters
         $current_page = $request->input('page', 1);
+
+        // get the total number of products before deletion
+        $total_products = Product::count();
+
+        // records per page
+        $recs_per_page = config('app.pagination.recs_per_page');
+
+        // get the total number of pages before deletion
+        $total_pages = ceil($total_products / $recs_per_page);
+
         #dd($request);
         #dd($request->input('page'));
 
         // delete the product
         $product->delete();
+
+        // get the total number of products after deletion
+        $total_products = Product::count();
+
+        // get the total number of pages after deletion
+        $total_pages = ceil($total_products / $recs_per_page);
+
+        // adjust the current page number if it exceeds the total number of pages
+        if ($current_page > $total_pages) {
+            $current_page = $total_pages;
+        }
 
         return redirect(route('product.index', ['page' => $current_page]))->with('success', 'Product deleted successfully');
     }

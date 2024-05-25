@@ -7,7 +7,8 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-Use Illuminate\Mail\Mailables\Attachment;
+use Illuminate\Mail\Mailables\Attachment;
+use Illuminate\Support\Facades\Log;
 
 
 /*
@@ -81,13 +82,21 @@ class MyTestEmail extends Mailable
       $attachments = [];
 
       if (!empty($this->email_attachments)) {
-         foreach ($this->email_attachments as $email_attachment) {
-               $attachments[] = Attachment::fromPath(storage_path('app/public/' . $email_attachment));
-               /*
-               $attachments[] = Attachment::fromPath(storage_path('app/' . $email_attachment))
-                  ->as($email_attachment["file_name"])
-                  ->withMime($email_attachment["mime_type"]);
-               */
+         foreach ($this->email_attachments as $email_attachment)
+         {
+            $file_path = storage_path('app/public/' . $email_attachment);
+
+            if (file_exists($file_path)) {
+                $attachments[] = Attachment::fromPath($file_path);
+                /*
+                $attachments[] = Attachment::fromPath($file_path)
+                    ->as($email_attachment["file_name"])
+                    ->withMime($email_attachment["mime_type"]);
+                */
+            } else {
+                // Optionally, log a warning or handle the missing file case
+                Log::warning("File not found: $file_path");
+            }
          }
       }
       //and a bit of code cleanup
