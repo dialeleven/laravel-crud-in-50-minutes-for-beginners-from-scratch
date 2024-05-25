@@ -44,7 +44,8 @@ return [
 
         'admin' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'admins',,
+            'remember' => true, // Set to true to enable "Remember Me" functionality
         ]
     ],
 

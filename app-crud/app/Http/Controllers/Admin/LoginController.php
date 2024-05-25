@@ -35,7 +35,7 @@ class LoginController extends Controller
         ]);
 
         // verify user/pass match in db
-        if ( Auth::attempt([ 'email' => $data['email'], 'password' => $data['password'] ]) )
+        if ( Auth::attempt([ 'email' => $data['email'], 'password' => $data['password'] ], $request->remember) )
         // if ( Auth::attempt([ $data ]) )
         {
             // regenerate session token after successful login to prevent session fixation attack

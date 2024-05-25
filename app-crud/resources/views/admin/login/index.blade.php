@@ -113,6 +113,12 @@
           </span>
         </div>
       </div>
+
+      <!-- Remember Me checkbox -->
+      <div class="flex items-center">
+        <input type="checkbox" id="remember" name="remember" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
+        <label for="remember" class="ml-1 block text-sm text-gray-900">Remember Me</label>
+    </div>
   
       <div class="flex items-center justify-between">
         <button
