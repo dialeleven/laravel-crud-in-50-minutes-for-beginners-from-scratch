@@ -79,6 +79,7 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [x] Products index - delete product (adjust page user is redirected to if record being deleted is the only product on that page - e.g deleting the only product on page 3  should redirect to page 2)
 - [x] Move records per page pagination value to 'config/app.php'
 - [x] Admin site: Forgot password/reset password
+- [x] Admin login: remember me checkbox (update controller/view)
 
 
 📋 **To Do**
