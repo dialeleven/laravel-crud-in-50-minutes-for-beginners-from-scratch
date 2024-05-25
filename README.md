@@ -72,6 +72,7 @@ Run ```npm run build``` within the 'app-crud' directory.
   - [x] Email with attachement
   - [x] Email - HTML format
   - [x] Email multiple attachments
+  - [x] Check if file exists when attaching file and log error if file does not exist
 - [x] API integration: Weather
 - [x] Calendar picker form input
 - [ ] **PHPUnit testing**
