@@ -15,7 +15,8 @@ return [
 
     'defaults' => [
         'guard' => env('AUTH_GUARD', 'web'),
-        'passwords' => env('AUTH_PASSWORD_BROKER', 'users'),
+        // 'passwords' => env('AUTH_PASSWORD_BROKER', 'users'), // causing admin password reset to use 'users' incorrectly
+        'passwords' => 'users',
     ],
 
     /*
@@ -112,7 +113,7 @@ return [
             'provider' => 'admins',
             'table' => 'password_reset_tokens',
             'expire' => 60,
-            'throttle' => 600,
+            'throttle' => 60,
         ],
     ],
 

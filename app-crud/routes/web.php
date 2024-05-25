@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Password; // lost password/reset password
 #use App\Http\Controllers\EmailController; // ! FOR EMAIL???
 use Illuminate\Support\Facades\Mail; // email functionality
 //use App\Mail\TestMail;               // ? don't need it I think - email functionality
+use Illuminate\Auth\Events\PasswordReset;
 
 
 //--------- ADMIN SITE CONTROLLERS ------------//
@@ -189,21 +190,21 @@ Route::post('/admin-forgot-password/send-reset-link', function (Request $request
 
 
 // Route for handling password reset form display
-Route::get('/admin-reset-password/{token}', function ($token) {
-   return view('auth.reset-password', ['token' => $token]);
-})->middleware('guest')->name('password.reset');
+Route::get('/admin-reset-password/{token}/{email}', function ($token, $email) {
+   return view('admin.login.reset_password', ['token' => $token, 'email' => $email]);
+})->middleware('auth:admin')->name('password.reset');
 
 
 // Route for handling password reset form submission
 Route::post('/admin-reset-password', function (Request $request) {
    $request->validate([
       'token' => 'required',
-      'email' => 'required|email',
-      'password' => 'required|min:8|confirmed',
+      'email' => 'nullable|email',
+      'password' => 'required|min:8',
    ]);
 
-   $status = Password::reset(
-      $request->only('email', 'password', 'password_confirmation', 'token'),
+   $status = Password::broker('admins')->reset(
+      $request->only('email', 'password', 'token'),
       function ($user, $password) {
          $user->forceFill([
                'password' => Hash::make($password)
@@ -215,10 +216,13 @@ Route::post('/admin-reset-password', function (Request $request) {
       }
    );
 
+   
+   #dd($status);
+
    return $status === Password::PASSWORD_RESET
       ? redirect()->route('login')->with('status', __($status))
       : back()->withErrors(['email' => [__($status)]]);
-})->middleware('guest')->name('password.update');
+})->middleware('auth:admin')->name('password.update');
 
 
 /*---------------------------------------------------

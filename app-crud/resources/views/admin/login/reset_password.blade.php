@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>Sign In</title>
+   <title>Reset Password</title>
    {{-- * @vite directive is for Vite.js to build Tailwind CSS/JS --}}
    @vite('resources/css/app.css')
 </head>
@@ -56,25 +56,12 @@
   </div>
 
   <div class="mx-auto border-2 shadow rounded-md max-w-md">
-    <form action="{{route('adminlogin.process')}}" method="POST" class="mx-auto mb-0 mt-3 max-w-md space-y-4 p-5">
+    <form action="{{route('password.update')}}" method="POST" class="mx-auto mb-0 mt-3 max-w-md space-y-4 p-5">
       @csrf
-      @method('post')
-      <div class="">
-        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-  
-        <div class="relative">
-          <input id="email" name="email" type="email" autocomplete="email" required 
-             class="w-full rounded-md p-4 pe-12 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-          </span>
-        </div>
-      </div>
-  
+      @method('post')  
       <div>
         <div class="flex items-center justify-between">
-          <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-          <div class="text-sm">
-            <a href="{{ route('password.request') }}" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
-          </div>
+          <label for="password" class="block text-sm font-medium leading-6 text-gray-900">New Password</label>
         </div>
   
         <div class="relative">
@@ -125,7 +112,8 @@
           <a class="underline" href="{{route('login')}}">Back to login</a>
         </p>
       </div>
-      <input type="hidden" value="{{$token}}">
+      <input type="hidden" name="email" value="{{ $email }}">
+      <input type="hidden" name="token" value="{{$token}}">
     </form>
   </div>
 </div>
