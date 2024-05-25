@@ -2,12 +2,15 @@
 //---------- LARAVEL CLASSES/FACADES --------------//
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request; // use in conjunction with 'Password' Facade
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password; // lost password/reset password
+use Illuminate\Support\Str;
+use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Validation\Rules\Password as PasswordRule;
 
 #use App\Http\Controllers\EmailController; // ! FOR EMAIL???
 use Illuminate\Support\Facades\Mail; // email functionality
 //use App\Mail\TestMail;               // ? don't need it I think - email functionality
-use Illuminate\Auth\Events\PasswordReset;
 
 
 //--------- ADMIN SITE CONTROLLERS ------------//
@@ -166,7 +169,11 @@ Route::post('/adminlogin-logout', [LoginController::class, 'adminloginLogout'])-
 Route::get('/admin-forgot-password2', [LoginController::class, 'adminForgotPasswordTemp'])->name('password.request2');
 
 
-// reset password request - View
+/*************************************************************
+*********** SECTION: Forgot/reset password routes ************
+*************************************************************/
+
+// forgot password - VIEW
 Route::get('/admin-forgot-password', function() {
    #dd('hi');
    return view('admin.login.forgot_password');
@@ -183,24 +190,30 @@ Route::post('/admin-forgot-password/send-reset-link', function (Request $request
       $request->only('email')
    );
 
+   #dd('status: ' . $status);
+
    return $status === Password::RESET_LINK_SENT
                ? back()->with(['status' => __($status)])
                : back()->withErrors(['email' => __($status)]);
 })->middleware('auth:admin')->name('password.send-reset-link');
 
 
-// Route for handling password reset form display
+// reset password (passing token and email) - VIEW
 Route::get('/admin-reset-password/{token}/{email}', function ($token, $email) {
    return view('admin.login.reset_password', ['token' => $token, 'email' => $email]);
 })->middleware('auth:admin')->name('password.reset');
 
 
-// Route for handling password reset form submission
+// reset password form submission - POST request
 Route::post('/admin-reset-password', function (Request $request) {
    $request->validate([
       'token' => 'required',
       'email' => 'nullable|email',
-      'password' => 'required|min:8',
+      #'password' => 'required|min:8',
+      'password' => [
+            'required', 
+            PasswordRule::min(8)->mixedCase()->numbers()->symbols()->uncompromised()
+        ],
    ]);
 
    $status = Password::broker('admins')->reset(
@@ -215,8 +228,6 @@ Route::post('/admin-reset-password', function (Request $request) {
          event(new PasswordReset($user));
       }
    );
-
-   
    #dd($status);
 
    return $status === Password::PASSWORD_RESET
