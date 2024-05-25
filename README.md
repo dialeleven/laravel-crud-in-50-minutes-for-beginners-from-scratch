@@ -75,17 +75,17 @@ Run ```npm run build``` within the 'app-crud' directory.
   - [x] Check if file exists when attaching file and log error if file does not exist
 - [x] API integration: Weather
 - [x] Calendar picker form input
-- [ ] **PHPUnit testing**
-  - [x] Product.index route
+- [x] PHPUnit testing: ✔️Product.index route
 - [x] Products index - delete product (adjust page user is redirected to if record being deleted is the only product on that page - e.g deleting the only product on page 3  should redirect to page 2)
 - [x] Move records per page pagination value to 'config/app.php'
+- [x] Admin site: Forgot password/reset password
+
 
 📋 **To Do**
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
 - [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header**
 - [ ] Email functionality with Mailtrap.io?
-- [ ] **Admin site: Forgot password/reset password**
 - [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
 - [ ] **Products: search functionality (search for product name, description, price - slider(?), description)**
 - [ ] **"You are here" sidebar nav indicator**
