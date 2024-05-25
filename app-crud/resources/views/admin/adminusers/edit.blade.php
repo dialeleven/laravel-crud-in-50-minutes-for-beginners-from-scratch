@@ -35,7 +35,40 @@
    </div>
    <div class="mb-4">
       <label class="block mb-1">Password</label>
-      <input type="password" id="password" name="password" value="{{old('password')}}" class="w-full border border-gray-300 rounded px-3 py-2">
+      <div class="relative">
+         <input
+           id="password"
+           name="password"
+           type="password"
+           required
+           class="w-full rounded-md p-4 pe-12 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+         />
+ 
+         <span id="togglePassword" class="absolute inset-y-0 end-0 grid place-content-center px-4 cursor-pointer">
+           <svg
+             xmlns="http://www.w3.org/2000/svg"
+             class="size-4 text-gray-400"
+             fill="none"
+             viewBox="0 0 24 24"
+             stroke="currentColor"
+             
+           >
+             <title>Show/hide password</title>
+             <path
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               stroke-width="2"
+               d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+             />
+             <path
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               stroke-width="2"
+               d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+             />
+           </svg>
+         </span>
+      </div>
    </div>
    <div class="mb-4">
       <label class="block mb-1">Name</label>
@@ -72,3 +105,19 @@
    </div>
 </form>
 @endsection
+
+
+@push('scripts_body')
+<script>
+   const togglePassword = document.getElementById('togglePassword');
+   const passwordInput = document.getElementById('password');
+ 
+   togglePassword.addEventListener('click', function() {
+     const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+     passwordInput.setAttribute('type', type);
+     // Change eye icon color on toggle
+     this.querySelector('svg').classList.toggle('text-gray-400');
+     this.querySelector('svg').classList.toggle('text-gray-600');
+   });
+ </script>
+@endpush
