@@ -15,7 +15,11 @@
 {{ $product->name }} | 
 {{ $product->qty }} | 
 {{ $product->price }} | 
-{{ $product->description }}<br>
+{{ $product->description }} |
+   @if ($product->thumbnail)
+   <a href="/storage/{{ $product->image }}" target="_blank"><img src="/storage/{{ $product->thumbnail }}" alt="" width="50" height="50"></a>
+   @endif
+   <hr>
 @endforeach
 
 </body>
