@@ -59,7 +59,7 @@
   </div>
 
   <div class="mx-auto border-2 shadow rounded-md max-w-md">
-    <form action="{{route('password.email')}}" method="POST" class="mx-auto mb-0 mt-3 max-w-md space-y-4 p-5">
+    <form action="{{route('password.send-reset-link')}}" method="POST" class="mx-auto mb-0 mt-3 max-w-md space-y-4 p-5">
       @csrf
       @method('post')
       <div class="">

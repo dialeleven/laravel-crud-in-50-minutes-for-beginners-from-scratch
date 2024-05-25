@@ -112,7 +112,7 @@ Route::get('/product', [ProductController::class, 'index'])->name('product.index
 //Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth');
 
 // * Group routes that require authentication
-Route::group(['middleware' => ['auth', 'web']], function()
+Route::group(['middleware' => ['auth', 'admin']], function()
 {
    /************************************************************
    ************ SECTION: Product routes ************************
@@ -165,7 +165,7 @@ Route::post('/adminlogin-logout', [LoginController::class, 'adminloginLogout'])-
 Route::get('/admin-forgot-password2', [LoginController::class, 'adminForgotPasswordTemp'])->name('password.request2');
 
 
-// reset password request
+// reset password request - View
 Route::get('/admin-forgot-password', function() {
    #dd('hi');
    return view('admin.login.forgot_password');
@@ -173,7 +173,7 @@ Route::get('/admin-forgot-password', function() {
 
 
 // forgot password - POST request
-Route::post('/admin-forgot_password', function (Request $request) {
+Route::post('/admin-forgot-password/send-reset-link', function (Request $request) {
    #dd($request);
 
    $request->validate(['email' => 'required|email']);
@@ -185,7 +185,7 @@ Route::post('/admin-forgot_password', function (Request $request) {
    return $status === Password::RESET_LINK_SENT
                ? back()->with(['status' => __($status)])
                : back()->withErrors(['email' => __($status)]);
-})->middleware('guest')->name('password.email');
+})->middleware('guest')->name('password.send-reset-link');
 
 
 // Route for handling password reset form display
