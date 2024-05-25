@@ -109,7 +109,7 @@ Route::get('/linkstorage', function () {
 Route::get('/product', [ProductController::class, 'index'])->name('product.index');
 
 // Product index - 'auth' middleware added which will redirect to a 'login' route by default
-//Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth');
+//Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth:admin');
 
 // * Group routes that require authentication
 Route::group(['middleware' => ['auth', 'admin']], function()
@@ -178,14 +178,14 @@ Route::post('/admin-forgot-password/send-reset-link', function (Request $request
 
    $request->validate(['email' => 'required|email']);
 
-   $status = Password::sendResetLink(
+   $status = Password::broker('admins')->sendResetLink(
       $request->only('email')
    );
 
    return $status === Password::RESET_LINK_SENT
                ? back()->with(['status' => __($status)])
                : back()->withErrors(['email' => __($status)]);
-})->middleware('guest')->name('password.send-reset-link');
+})->middleware('auth:admin')->name('password.send-reset-link');
 
 
 // Route for handling password reset form display
