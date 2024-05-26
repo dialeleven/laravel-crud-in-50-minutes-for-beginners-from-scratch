@@ -1,4 +1,6 @@
-### Copying This Repo For Yourself
+### Setting Up This Project Locally
+This project currently runs on XAMPP 8.2.4 (PHP 8.2.4) and Laravel 11.6 (or 11.7).
+
 #### Clone the repository
 ```git clone https://github.com/dialeleven/laravel-crud-in-50-minutes-for-beginners-from-scratch```
 
@@ -83,6 +85,7 @@ Run ```npm run build``` within the 'app-crud' directory.
 
 
 📋 **To Do**
+- [ ] Deploy project in Docker
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
 - [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header**
