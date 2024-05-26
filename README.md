@@ -90,6 +90,7 @@ Run ```npm run build``` within the 'app-crud' directory.
 📋 **To Do**
 - [ ] Deploy project in Docker
 - [ ] **PHPUnit testing**
+- [ ] [Laravel Telescope - Debugging](https://laravel.com/docs/11.x/telescope)
   - [ ] Authenticate admin user
 - [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header**
 - [ ] Email functionality with Mailtrap.io?
