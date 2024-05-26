@@ -33,6 +33,9 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
+#### Create Link To /storage/public
+TODO: add code example here
+
 #### Test Accessing The Home Page '/' and 'products/' (e.g. http://localhost/products or http://laravel.localhost/products)
 If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apache error_log. Once any error(s) are resolved, you should be up and running!
 
