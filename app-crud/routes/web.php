@@ -133,9 +133,9 @@ Route::group(['middleware' => ['auth', 'admin']], function()
    Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
 
 
-   /*************************************************************
-   ************* SECTION: Admin users routes ********************
-   *************************************************************/
+   /*********************************************************************
+   ************* SECTION: Admin users routes (for admin and superadmin) *
+   *********************************************************************/
    Route::middleware(['auth', 'check.admin.role'])->group(function () {
       Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminusers.index');
       
