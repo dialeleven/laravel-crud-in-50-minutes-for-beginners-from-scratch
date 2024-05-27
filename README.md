@@ -87,6 +87,7 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [x] Admin login: remember me checkbox (update controller/view)
 - [x] Install [Laravel Telescope - Debugging](https://laravel.com/docs/11.x/telescope)
 - [x] Admin users index/edit/create (output user roles from 'admin_roles' table)
+- [x] Add logged in user's name in sidebar (auth()->user()->name)
 
 📋 **To Do**
 - [ ] Restrict adminusers to admins and superadmins
