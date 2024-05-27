@@ -89,6 +89,7 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [x] Admin users index/edit/create (output user roles from 'admin_roles' table)
 - [x] Add logged in user's name in sidebar (auth()->user()->name)
 - [x] Restrict adminusers to admins and superadmins
+- [x] Dashboard index page
 
 📋 **To Do**
 - [ ] Deploy project in Docker
@@ -100,7 +101,6 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [ ] **Products: search functionality (search for product name, description, price - slider(?), description)**
 - [ ] **"You are here" sidebar nav indicator**
 - [ ] Breadcrumb links?
-- [ ] Dashboard index page
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, **Bootstrap**, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
 - [ ] Check out Laravel Libraries
