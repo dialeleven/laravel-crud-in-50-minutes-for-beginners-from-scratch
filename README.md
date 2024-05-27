@@ -86,9 +86,10 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [x] Admin site: Forgot password/reset password
 - [x] Admin login: remember me checkbox (update controller/view)
 - [x] Install [Laravel Telescope - Debugging](https://laravel.com/docs/11.x/telescope)
+- [x] Admin users index/edit/create (output user roles from 'admin_roles' table)
 
 📋 **To Do**
-- [ ] **Admin users index/edit/create (output user roles from 'adminroles' table???)**
+- [ ] Restrict adminusers to admins and superadmins
 - [ ] Deploy project in Docker
 - [ ] Deploy project to [Netlify](https://www.netlify.com/)
 - [ ] **PHPUnit testing**
