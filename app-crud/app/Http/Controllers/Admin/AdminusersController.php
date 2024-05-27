@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash; // Import Hash facade to bcrypt hash passwo
 use Illuminate\Validation\Rules\Password; // import Password validation class
 
 use App\Models\AdminModels\Admin; // import 'Admin' model
+use App\Models\AdminModels\AdminRole;
 
 
 class AdminusersController extends Controller
@@ -18,8 +19,8 @@ class AdminusersController extends Controller
 
         // Get list of admiusers and INNER JOIN the adminroles table to get the adminroles.name column value.
         // ? https://laravel.com/docs/11.x/queries#joins
-        $adminusers = Admin::join('adminroles', 'admins.role_id', '=', 'adminroles.id')
-            ->select('admins.*', 'adminroles.name AS role_name')
+        $adminusers = Admin::join('admin_roles', 'admins.role_id', '=', 'admin_roles.id')
+            ->select('admins.*', 'admin_roles.name AS role_name')
             ->paginate(5); // get paginated records
 
         return view('admin.adminusers.index', ['adminusers' => $adminusers]);
@@ -28,7 +29,11 @@ class AdminusersController extends Controller
 
     // CREATE (add) user - view
     public function create() {
-        return view('admin.adminusers.create');
+        // get list of adminroles from table adminroles
+        // $adminroles = AdminRole::all();
+        $adminroles = AdminRole::orderBy('id', 'desc')->get();
+
+        return view('admin.adminusers.create', ['adminroles' => $adminroles]);
     }
 
 

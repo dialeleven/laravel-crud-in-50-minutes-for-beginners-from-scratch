@@ -80,6 +80,12 @@
    </div>
    <div class="mb-4">
       <label class="block mb-1">Role</label>
+      @foreach ($adminroles as $adminrole)
+      <input type="radio" id="role_{{ $adminrole->id }}" name="role_id" value="{{ $adminrole->id }}" @if(old('role_id', '3') == $adminrole->id ) checked @endif class="border border-gray-300 rounded px-3 py-2 cursor-pointer">
+      <label for="role_{{ $adminrole->id }}" class="mr-4 cursor-pointer">{{ $adminrole->name }}</label>
+      @endforeach
+
+{{--       
       <input type="radio" id="role_user" name="role_id" value="3" @if(old('role_id', '3') == '3') checked @endif class="border border-gray-300 rounded px-3 py-2 cursor-pointer">
       <label for="role_user" class="mr-4 cursor-pointer">User</label>
 
@@ -87,7 +93,7 @@
       <label for="role_admin" class="mr-4 cursor-pointer">Admin</label>
 
       <input type="radio" id="role_superadmin" name="role_id" value="1" @if(old('role_id') == '1') checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2 cursor-pointer">
-      <label for="role_superadmin" class="mr-4 cursor-pointer">Superadmin</label>
+      <label for="role_superadmin" class="mr-4 cursor-pointer">Superadmin</label> --}}
    </div>
    <div class="mb-4">
       <label class="block mb-1">Account Status</label>
