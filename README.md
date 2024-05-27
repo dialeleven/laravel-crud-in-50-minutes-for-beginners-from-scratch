@@ -88,9 +88,9 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [x] Install [Laravel Telescope - Debugging](https://laravel.com/docs/11.x/telescope)
 - [x] Admin users index/edit/create (output user roles from 'admin_roles' table)
 - [x] Add logged in user's name in sidebar (auth()->user()->name)
+- [x] Restrict adminusers to admins and superadmins
 
 📋 **To Do**
-- [ ] Restrict adminusers to admins and superadmins
 - [ ] Deploy project in Docker
 - [ ] Deploy project to [Netlify](https://www.netlify.com/)
 - [ ] **PHPUnit testing**
