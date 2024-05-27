@@ -88,13 +88,13 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [x] Install [Laravel Telescope - Debugging](https://laravel.com/docs/11.x/telescope)
 
 📋 **To Do**
+- [ ] **Admin users index/edit/create (output user roles from 'adminroles' table???)**
 - [ ] Deploy project in Docker
 - [ ] Deploy project to [Netlify](https://www.netlify.com/)
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
 - [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header**
 - [ ] Email functionality with Mailtrap.io?
-- [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
 - [ ] **Products: search functionality (search for product name, description, price - slider(?), description)**
 - [ ] **"You are here" sidebar nav indicator**
 - [ ] Breadcrumb links?
