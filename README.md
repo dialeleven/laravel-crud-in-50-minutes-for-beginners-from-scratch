@@ -1,4 +1,6 @@
-### Copying This Repo For Yourself
+### Setting Up This Project Locally
+This project currently runs on XAMPP 8.2.4 (PHP 8.2.4) and Laravel 11.6 (or 11.7).
+
 #### Clone the repository
 ```git clone https://github.com/dialeleven/laravel-crud-in-50-minutes-for-beginners-from-scratch```
 
@@ -30,6 +32,9 @@ DB_DATABASE=app-crud
 DB_USERNAME=root
 DB_PASSWORD=
 ```
+
+#### Create Link To /storage/public
+TODO: add code example here
 
 #### Test Accessing The Home Page '/' and 'products/' (e.g. http://localhost/products or http://laravel.localhost/products)
 If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apache error_log. Once any error(s) are resolved, you should be up and running!
@@ -80,20 +85,30 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [x] Move records per page pagination value to 'config/app.php'
 - [x] Admin site: Forgot password/reset password
 - [x] Admin login: remember me checkbox (update controller/view)
-
+- [x] Install [Laravel Telescope - Debugging](https://laravel.com/docs/11.x/telescope)
 
 📋 **To Do**
+- [ ] **Admin users index/edit/create (output user roles from 'adminroles' table???)**
+- [ ] Deploy project in Docker
+- [ ] Deploy project to [Netlify](https://www.netlify.com/)
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
 - [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header**
 - [ ] Email functionality with Mailtrap.io?
-- [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
 - [ ] **Products: search functionality (search for product name, description, price - slider(?), description)**
 - [ ] **"You are here" sidebar nav indicator**
 - [ ] Breadcrumb links?
 - [ ] Dashboard index page
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, **Bootstrap**, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
+- [ ] Check out Laravel Libraries
+  - Algolia Meilisearch (Search functionality) https://laravel.com/docs/11.x/scout
+  - Laravel Maatwebsite Excel (Import & Export) https://laravel-excel.com/
+  - Laravel Spatie Queues (Background Jobs)
+  - Laravel Backup https://spatie.be/docs/laravel-backup/v8/introduction
+  - Spatie Laravel Translation (Localization)
+  - Laravelizer (Automatic API Generation)
+  - Laravel Cashier (Stripe) - subscription billing services
 
 
 ### How to Install Intervention Image Library
