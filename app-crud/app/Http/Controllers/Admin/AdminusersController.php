@@ -29,8 +29,9 @@ class AdminusersController extends Controller
 
     // CREATE (add) user - view
     public function create() {
-        // get list of adminroles from table adminroles
         // $adminroles = AdminRole::all();
+
+        // get list of adminroles from table adminroles
         $adminroles = AdminRole::orderBy('id', 'desc')->get();
 
         return view('admin.adminusers.create', ['adminroles' => $adminroles]);
@@ -62,8 +63,10 @@ class AdminusersController extends Controller
     public function edit(Admin $adminuser, Request $request) {
         #dd('edit adminuser');
         #dd($request);
+        // get list of admin_roles
+        $adminroles = AdminRole::orderBy('id', 'desc')->get();
         
-        return view('admin.adminusers.edit', ['adminuser' => $adminuser]);
+        return view('admin.adminusers.edit', ['adminuser' => $adminuser, 'adminroles' => $adminroles]);
     }
 
 

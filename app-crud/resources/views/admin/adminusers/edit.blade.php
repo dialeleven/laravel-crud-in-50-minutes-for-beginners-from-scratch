@@ -40,7 +40,6 @@
            id="password"
            name="password"
            type="password"
-           required
            class="w-full rounded-md p-4 pe-12 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
          />
  
@@ -80,14 +79,19 @@
    </div>
    <div class="mb-4">
       <label class="block mb-1">Role</label>
-      <input type="radio" id="role_user" name="role_id" value="3" @if(old('role_id', $adminuser->role_id) == 3) checked @endif class="border border-gray-300 rounded px-3 py-2 cursor-pointer">
+      @foreach ($adminroles as $adminrole)
+      <input type="radio" id="role_{{ $adminrole->id }}" name="role_id" value="{{ $adminrole->id }}" @if(old('role_id', $adminuser->role_id) == $adminrole->id ) checked @endif class="border border-gray-300 rounded px-3 py-2 cursor-pointer">
+      <label for="role_{{ $adminrole->id }}" class="mr-4 cursor-pointer">{{ $adminrole->name }}</label>
+      @endforeach
+
+      {{-- <input type="radio" id="role_user" name="role_id" value="3" @if(old('role_id', $adminuser->role_id) == 3) checked @endif class="border border-gray-300 rounded px-3 py-2 cursor-pointer">
       <label for="role_user" class="mr-4 cursor-pointer">User</label>
 
       <input type="radio" id="role_admin" name="role_id" value="2" @if(old('role_id', $adminuser->role_id) == 2) checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2 cursor-pointer">
       <label for="role_admin" class="mr-4 cursor-pointer">Admin</label>
 
       <input type="radio" id="role_superadmin" name="role_id" value="1" @if(old('role_id', $adminuser->role_id) == 1) checked @endif class="mr-1 border border-gray-300 rounded px-3 py-2 cursor-pointer">
-      <label for="role_superadmin" class="mr-4 cursor-pointer">Superadmin</label>
+      <label for="role_superadmin" class="mr-4 cursor-pointer">Superadmin</label> --}}
    </div>
    <div class="mb-4">
       <label class="block mb-1">Account Status</label>
