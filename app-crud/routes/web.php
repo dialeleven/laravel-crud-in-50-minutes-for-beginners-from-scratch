@@ -118,6 +118,13 @@ Route::get('/product', [ProductController::class, 'index'])->name('product.index
 // * Group routes that require authentication
 Route::group(['middleware' => ['auth', 'admin']], function()
 {
+   Route::get('/admin-index', function () {
+      #dd(Auth::user);
+
+      return view('admin.index');
+   })->name('admin.index');
+   
+
    /************************************************************
    ************ SECTION: Product routes ************************
    *************************************************************/
@@ -151,7 +158,7 @@ Route::group(['middleware' => ['auth', 'admin']], function()
 
    Route::get('/misc', function () {
       return view('admin.misc');
-  })->name('admin-misc');
+   })->name('admin-misc');
 });
 
 // ********** testing *************/
