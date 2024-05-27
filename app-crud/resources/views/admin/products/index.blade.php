@@ -40,6 +40,10 @@
       {{session('success')}}
    </div>
    @endif
+   
+   {{-- form submission error output --}}
+   @include('admin.site.partials.form_error_output')
+   
  
    <!-- products table -->
    <div class="mt-2 mb-3">

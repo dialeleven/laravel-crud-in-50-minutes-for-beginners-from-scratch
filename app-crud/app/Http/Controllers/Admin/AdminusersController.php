@@ -9,11 +9,17 @@ use Illuminate\Validation\Rules\Password; // import Password validation class
 use App\Models\AdminModels\Admin; // import 'Admin' model
 use App\Models\AdminModels\AdminRole;
 
+use Illuminate\Support\Facades\Auth;
 
 class AdminusersController extends Controller
 {
     // READ adminuser list - view
     public function index() {
+    
+        // Get the authenticated user
+        $user = Auth::user();
+
+        #dd($user->role_id);
         #$adminusers = Admin::all();
         //$adminusers = Admin::paginate(5); // get paginated records
 

@@ -136,15 +136,18 @@ Route::group(['middleware' => ['auth', 'admin']], function()
    /*************************************************************
    ************* SECTION: Admin users routes ********************
    *************************************************************/
-   Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminusers.index');
-   
-   Route::get('/adminusers/create', [AdminusersController::class, 'create'])->name('adminusers.create');
-   Route::post('/adminusers', [AdminusersController::class, 'store'])->name('adminusers.store');
-   
-   Route::get('/adminusers/{adminuser}/edit', [AdminusersController::class, 'edit'])->name('adminusers.edit');
-   Route::put('/adminusers/{adminuser}/update', [AdminusersController::class, 'update'])->name('adminusers.update');
-   
-   Route::delete('/adminusers/{adminuser}/destroy', [AdminusersController::class, 'destroy'])->name('adminusers.destroy');
+   Route::middleware(['auth', 'check.admin.role'])->group(function () {
+      Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminusers.index');
+      
+      Route::get('/adminusers/create', [AdminusersController::class, 'create'])->name('adminusers.create');
+      Route::post('/adminusers', [AdminusersController::class, 'store'])->name('adminusers.store');
+      
+      Route::get('/adminusers/{adminuser}/edit', [AdminusersController::class, 'edit'])->name('adminusers.edit');
+      Route::put('/adminusers/{adminuser}/update', [AdminusersController::class, 'update'])->name('adminusers.update');
+      
+      Route::delete('/adminusers/{adminuser}/destroy', [AdminusersController::class, 'destroy'])->name('adminusers.destroy');
+   });
+
 
    Route::get('/misc', function () {
       return view('admin.misc');
