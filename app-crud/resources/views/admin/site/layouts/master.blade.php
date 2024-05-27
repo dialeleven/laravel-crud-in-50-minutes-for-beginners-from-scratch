@@ -83,6 +83,8 @@
                   </li>
                </ul>
 
+               {{-- display adminusers link for admin and superadmin only --}}
+               @if (Auth::user()->role_name == 'admin' || Auth::user()->role_name == 'superadmin')
                <a href="{{ route('adminusers.index') }}" class="flex items-center px-3 py-2 text-blue-100 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700
                 hover:border-gray-500 dark:hover:border-gray-200 border border-transparent">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -90,6 +92,7 @@
                   </svg>
                   <span class="mx-2 text-sm font-medium">Admin Users</span>
                </a>
+               @endif
 
                <!--
                <a href="#" class="flex items-center px-3 py-2 text-blue-100 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700
