@@ -1,5 +1,5 @@
 ### Setting Up This Project Locally
-This project currently runs on XAMPP 8.2.4 (PHP 8.2.4) and Laravel 11.6 (or 11.7).
+This project currently runs on XAMPP 8.2.4 (PHP 8.2.4) and Laravel 11.8).
 
 #### Clone the repository
 ```git clone https://github.com/dialeleven/laravel-crud-in-50-minutes-for-beginners-from-scratch```
