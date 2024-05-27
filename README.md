@@ -1,5 +1,5 @@
 ### Setting Up This Project Locally
-This project currently runs on XAMPP 8.2.4 (PHP 8.2.4) and Laravel 11.6 (or 11.7).
+This project currently runs on XAMPP 8.2.4 (PHP 8.2.4) and Laravel 11.8).
 
 #### Clone the repository
 ```git clone https://github.com/dialeleven/laravel-crud-in-50-minutes-for-beginners-from-scratch```
@@ -86,9 +86,11 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [x] Admin site: Forgot password/reset password
 - [x] Admin login: remember me checkbox (update controller/view)
 - [x] Install [Laravel Telescope - Debugging](https://laravel.com/docs/11.x/telescope)
+- [x] Admin users index/edit/create (output user roles from 'admin_roles' table)
+- [x] Add logged in user's name in sidebar (auth()->user()->name)
 
 📋 **To Do**
-- [ ] **Admin users index/edit/create (output user roles from 'adminroles' table???)**
+- [ ] Restrict adminusers to admins and superadmins
 - [ ] Deploy project in Docker
 - [ ] Deploy project to [Netlify](https://www.netlify.com/)
 - [ ] **PHPUnit testing**
