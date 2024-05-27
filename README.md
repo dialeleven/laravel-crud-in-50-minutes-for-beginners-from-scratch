@@ -89,6 +89,7 @@ Run ```npm run build``` within the 'app-crud' directory.
 
 📋 **To Do**
 - [ ] Deploy project in Docker
+- [ ] Deploy project to [Netlify](https://www.netlify.com/)
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
 - [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header**
