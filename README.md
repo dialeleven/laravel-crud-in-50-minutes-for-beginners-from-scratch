@@ -85,13 +85,12 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [x] Move records per page pagination value to 'config/app.php'
 - [x] Admin site: Forgot password/reset password
 - [x] Admin login: remember me checkbox (update controller/view)
-
+- [x] Install [Laravel Telescope - Debugging](https://laravel.com/docs/11.x/telescope)
 
 📋 **To Do**
 - [ ] Deploy project in Docker
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
-- [ ] [Laravel Telescope - Debugging](https://laravel.com/docs/11.x/telescope)
 - [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header**
 - [ ] Email functionality with Mailtrap.io?
 - [ ] Admin users index/edit/create (output user roles from 'adminroles' table???)
@@ -101,6 +100,14 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [ ] Dashboard index page
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, **Bootstrap**, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
+- [ ] Check out Laravel Libraries
+  - Algolia Meilisearch (Search functionality) https://laravel.com/docs/11.x/scout
+  - Laravel Maatwebsite Excel (Import & Export) https://laravel-excel.com/
+  - Laravel Spatie Queues (Background Jobs)
+  - Laravel Backup https://spatie.be/docs/laravel-backup/v8/introduction
+  - Spatie Laravel Translation (Localization)
+  - Laravelizer (Automatic API Generation)
+  - Laravel Cashier (Stripe) - subscription billing services
 
 
 ### How to Install Intervention Image Library
