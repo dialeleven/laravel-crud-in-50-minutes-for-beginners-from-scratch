@@ -56,6 +56,7 @@ return [
             'engine' => null,
             'dump' => [
                 'dump_binary_path' => 'G:\xampp8.2.4\mysql\bin',
+                'timeout' => 60 * 5, // 5 minute timeout
                 /*
                 'excludeTables' => [
                     
