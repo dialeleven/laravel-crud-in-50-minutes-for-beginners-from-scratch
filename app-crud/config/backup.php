@@ -167,7 +167,8 @@ return [
          * The password to be used for archive encryption.
          * Set to `null` to disable encryption.
          */
-        'password' => env('BACKUP_ARCHIVE_PASSWORD'),
+        // 'password' => env('BACKUP_ARCHIVE_PASSWORD'),
+        'password' => env(''),
 
         /*
          * The encryption algorithm to be used for archive encryption.
@@ -215,7 +216,7 @@ return [
         'notifiable' => \Spatie\Backup\Notifications\Notifiable::class,
 
         'mail' => [
-            'to' => 'your@example.com',
+            'to' => 'getfrancistsao@gmail.com',
 
             'from' => [
                 'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
