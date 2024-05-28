@@ -89,6 +89,7 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [x] Admin users index/edit/create (output user roles from 'admin_roles' table)
 - [x] Add logged in user's name in sidebar (auth()->user()->name)
 - [x] Restrict adminusers to admins and superadmins
+- [x] Dashboard index page
 
 📋 **To Do**
 - [ ] Deploy project in Docker
@@ -100,17 +101,16 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [ ] **Products: search functionality (search for product name, description, price - slider(?), description)**
 - [ ] **"You are here" sidebar nav indicator**
 - [ ] Breadcrumb links?
-- [ ] Dashboard index page
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, **Bootstrap**, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
 - [ ] Check out Laravel Libraries
-  - Algolia Meilisearch (Search functionality) https://laravel.com/docs/11.x/scout
-  - Laravel Maatwebsite Excel (Import & Export) https://laravel-excel.com/
-  - Laravel Spatie Queues (Background Jobs)
-  - Laravel Backup https://spatie.be/docs/laravel-backup/v8/introduction
-  - Spatie Laravel Translation (Localization)
-  - Laravelizer (Automatic API Generation)
-  - Laravel Cashier (Stripe) - subscription billing services
+  - [Algolia Meilisearch](https://laravel.com/docs/11.x/scout) (Search functionality)
+  - [Laravel Maatwebsite Excel](https://laravel-excel.com/) (Import & Export) 
+  - [Laravel Spatie Queues](https://spatie.be/docs/laravel-health/v1/available-checks/queue) (Background Jobs)
+  - **[Laravel Backup](https://spatie.be/docs/laravel-backup/v8/introduction)**
+  - [Spatie Laravel Translation](https://spatie.be/docs/laravel-translatable/v6/introduction) (Localization)
+  - [Laravel Passport](https://laravel.com/docs/11.x/passport)
+  - [Laravel Cashier (Stripe)](https://laravel.com/docs/11.x/billing) - subscription billing/payment services
 
 
 ### How to Install Intervention Image Library
