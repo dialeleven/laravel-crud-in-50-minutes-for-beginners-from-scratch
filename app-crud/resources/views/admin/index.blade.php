@@ -24,13 +24,15 @@ Welcome to the Admin Dashboard, <b>{{ Auth::user()->name }}</b>! {{-- (role_id: 
 
    <div class="bg-blue-100 to-white p-6 rounded-lg shadow-md border border-gray-300">
       <h2 class="text-xl font-semibold mb-2">Products</h2>
-      <p class="text-gray-700 mb-4">{{ $total_products }} Products</p>
+      <p class="text-gray-700 mb-4">
+         {{ $total_products }} Product{{ $total_products > 1 ? 's' : '' }}
+      </p>
       <a href="{{ route('product.index') }}" class="text-blue-500 hover:underline">View Products</a>
    </div>
 
    <div class="bg-purple-100 p-6 rounded-lg shadow-md border border-gray-300">
       <h2 class="text-xl font-semibold mb-2">Admin Users</h2>
-      <p class="text-gray-700 mb-4">{{ $total_adminusers }} Admin Users</p>
+      <p class="text-gray-700 mb-4">{{ $total_adminusers }} Admin User{{ $total_adminusers > 1 ? 's' : '' }}</p>
       <a href="{{ route('adminusers.index') }}" class="text-blue-500 hover:underline">View Admin Users</a>
    </div>
 
