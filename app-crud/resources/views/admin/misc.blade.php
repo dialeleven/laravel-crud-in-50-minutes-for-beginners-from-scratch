@@ -23,8 +23,7 @@
 <ul class="list-disc pl-5">
     <li class="flex items-center">
         <span class="inline-block w-1 h-1 rounded-full bg-black mr-2"></span>
-        <a href="/email-with-attachment" target="_blank" class="text-blue-500 hover:underline">/email-with-attachment</a>&nbsp;
-        (requires editing web.php)
+        <a href="/email-with-attachment" target="_blank" class="text-blue-500 hover:underline">/email-with-attachment</a>
     </li>
     <li class="flex items-center">
         <span class="inline-block w-1 h-1 rounded-full bg-black mr-2"></span>
