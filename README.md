@@ -112,6 +112,8 @@ Run ```npm run build``` within the 'app-crud' directory.
   - [Spatie Laravel Translation](https://spatie.be/docs/laravel-translatable/v6/introduction) (Localization)
   - [Laravel Passport](https://laravel.com/docs/11.x/passport)
   - [Laravel Cashier (Stripe)](https://laravel.com/docs/11.x/billing) - subscription billing/payment services
+  - [laravel-site-search](https://spatie.be/docs/laravel-site-search)
+  - [laravel-pdf](https://spatie.be/docs/laravel-pdf)
 
 
 ### How to Install Intervention Image Library
