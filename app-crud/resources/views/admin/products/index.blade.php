@@ -118,7 +118,7 @@
          </thead>
          <tbody id="table-body">
          @foreach ($products as $index => $product)
-            <tr class="{{ $index % 2 === 0 ? 'bg-gray-100' : 'bg-white' }}">
+            <tr class="odd:bg-gray-100 even:bg-white">
                <td class="py-2 px-3 border-b border-gray-400">{{ $product->id }}</td>
                <td class="py-2 px-3 border-b border-gray-400">{{ $product->name }}</td>
                <td class="py-2 px-3 border-b border-gray-400">{{ $product->qty }}</td>
