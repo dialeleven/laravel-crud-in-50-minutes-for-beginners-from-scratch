@@ -61,7 +61,7 @@
          </thead>
          <tbody id="table-body">
          @foreach ($adminusers as $index => $adminuser)
-            <tr class="{{ $index % 2 === 0 ? 'bg-gray-100' : 'bg-white' }}">
+            <tr class="odd:bg-white even:bg-gray-100">
                <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->id }}</td>
                <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->username }}</td>
                <td class="py-2 px-3 border-b border-gray-400">{{ $adminuser->name }}</td>
