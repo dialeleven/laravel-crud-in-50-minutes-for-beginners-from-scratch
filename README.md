@@ -90,6 +90,8 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [x] Add logged in user's name in sidebar (auth()->user()->name)
 - [x] Restrict adminusers to admins and superadmins
 - [x] Dashboard index page
+- [x] Laravel Libraries
+  - [x] [Laravel Backup](https://spatie.be/docs/laravel-backup/v8/introduction)
 
 📋 **To Do**
 - [ ] Deploy project in Docker
@@ -107,7 +109,6 @@ Run ```npm run build``` within the 'app-crud' directory.
   - [Algolia Meilisearch](https://laravel.com/docs/11.x/scout) (Search functionality)
   - [Laravel Maatwebsite Excel](https://laravel-excel.com/) (Import & Export) 
   - [Laravel Spatie Queues](https://spatie.be/docs/laravel-health/v1/available-checks/queue) (Background Jobs)
-  - **[Laravel Backup](https://spatie.be/docs/laravel-backup/v8/introduction)**
   - [Spatie Laravel Translation](https://spatie.be/docs/laravel-translatable/v6/introduction) (Localization)
   - [Laravel Passport](https://laravel.com/docs/11.x/passport)
   - [Laravel Cashier (Stripe)](https://laravel.com/docs/11.x/billing) - subscription billing/payment services
