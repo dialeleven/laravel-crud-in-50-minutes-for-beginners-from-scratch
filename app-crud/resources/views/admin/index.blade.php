@@ -18,6 +18,48 @@
 
 {{-- `@section` alone or `@section`+`@endsection` marks where your unique page content goes --}}
 @section('content')
-Welcome to the Admin Dashboard, <b>{{ Auth::user()->name }}</b> (role_id: {{ Auth::user()->role_id }})!
-{{Auth::user()->role_name}}
+Welcome to the Admin Dashboard, <b>{{ Auth::user()->name }}</b>! {{-- (role_id: {{ Auth::user()->role_id }}) --}}
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-5">
+
+   <div class="bg-blue-100 to-white p-6 rounded-lg shadow-md border border-gray-300">
+      <h2 class="text-xl font-semibold mb-2">Products</h2>
+      <p class="text-gray-700 mb-4">{{ $total_products }} Products</p>
+      <a href="{{ route('product.index') }}" class="text-blue-500 hover:underline">View Products</a>
+   </div>
+
+   <div class="bg-purple-100 p-6 rounded-lg shadow-md border border-gray-300">
+      <h2 class="text-xl font-semibold mb-2">Admin Users</h2>
+      <p class="text-gray-700 mb-4">{{ $total_adminusers }} Admin Users</p>
+      <a href="{{ route('adminusers.index') }}" class="text-blue-500 hover:underline">View Admin Users</a>
+   </div>
+
+   <div class="bg-green-100 p-6 rounded-lg shadow-md border border-gray-300">
+      <h2 class="text-xl font-semibold mb-2">Future Module</h2>
+      <p class="text-gray-700 mb-4">X Widgets</p>
+      <a href="#" class="text-blue-500 hover:underline">View Widgets</a>
+   </div>
+
+   <div class="bg-orange-100 p-6 rounded-lg shadow-md border border-gray-300">
+      <h2 class="text-xl font-semibold mb-2">Future Module</h2>
+      <p class="text-gray-700 mb-4">X Widgets</p>
+      <a href="#" class="text-blue-500 hover:underline">View Widgets</a>
+   </div>
+
+   <div class="bg-red-100 p-6 rounded-lg shadow-md border border-gray-300">
+      <h2 class="text-xl font-semibold mb-2">Future Module</h2>
+      <p class="text-gray-700 mb-4">X Widgets</p>
+      <a href="#" class="text-blue-500 hover:underline">View Widgets</a>
+   </div>
+
+   <div class="bg-yellow-100 p-6 rounded-lg shadow-md border border-gray-300">
+      <h2 class="text-xl font-semibold mb-2">Future Module</h2>
+      <p class="text-gray-700 mb-4">X Widgets</p>
+      <a href="#" class="text-blue-500 hover:underline">View Widgets</a>
+   </div>
+ 
+ </div>
 @endsection
+
+@push('scripts_body')
+@endpush

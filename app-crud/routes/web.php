@@ -24,6 +24,10 @@ use App\Http\Controllers\Public\PublicpageController; // test public page
 use App\Http\Controllers\Public\PublicProductController; // public product page
 use App\Http\Controllers\Public\WeatherApiController; // weatherapi.com controller
 
+use App\Models\Common\Product;
+use App\Models\AdminModels\Admin;
+
+
 use App\Mail\MyTestEmail;
 
 
@@ -119,9 +123,17 @@ Route::get('/product', [ProductController::class, 'index'])->name('product.index
 Route::group(['middleware' => ['auth', 'admin']], function()
 {
    Route::get('/admin-index', function () {
+      #dd(auth()->user());
       #dd(Auth::user);
+      
+      // get total products
+      $total_products = Product::count();
 
-      return view('admin.index');
+      // get total adminusers
+      $total_adminusers = Admin::count();
+
+      //return view('admin.index', ['total_products' => $total_products, 'total_admins' => $total_admins]);
+      return view('admin.index', compact('total_products', 'total_adminusers'));
    })->name('admin.index');
    
 
