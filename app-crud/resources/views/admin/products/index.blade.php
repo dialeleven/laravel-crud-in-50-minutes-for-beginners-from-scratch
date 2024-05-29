@@ -125,9 +125,10 @@
                <td class="py-2 px-3 border-b border-gray-400">{{ $product->price }}</td>
                <td class="py-2 px-3 border-b border-gray-400">{{ $product->description }}</td>
                <td class="py-2 px-3 border-b border-gray-400 text-center">
-               @if ($product->thumbnail)
+               {{-- check if thumbnail file exists in /storage folder --}}
+               @if ($product->thumbnail AND Storage::exists('/public/' . $product->thumbnail))
                   <a href="/storage/{{ $product->image }}" target="_blank">
-                  <img src="/storage/{{ $product->thumbnail }}" width="50" height="50" alt="{{ $product->name }}">
+                     <img src="{{ asset("/storage/{$product->thumbnail}") }}" width="50" height="50" alt="{{ $product->name }}">
                   </a>
                @else
                   <!--<a href="/storage/{{ $product->image }}" target="_blank"><i class="fa-solid fa-image" aria-label="display image" title="Image opens in new tab/window"></i></a>-->
