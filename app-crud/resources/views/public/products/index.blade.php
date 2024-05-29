@@ -17,7 +17,7 @@
         <div class="bg-white shadow-md rounded-lg p-4 mb-4">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
-                    @if ($product->thumbnail)
+                    @if ($product->thumbnail AND Storage::exists('/public/' . $product->thumbnail))
                         <a href="/storage/{{ $product->image }}" target="_blank" class="mr-4">
                             <img src="/storage/{{ $product->thumbnail }}" alt="Thumbnail" class="w-12 h-12 rounded-full">
                         </a>
