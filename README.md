@@ -92,6 +92,8 @@ Run ```npm run build``` within the 'app-crud' directory.
 - [x] Dashboard index page
 - [x] Laravel Libraries
   - [x] [Laravel Backup](https://spatie.be/docs/laravel-backup/v8/introduction)
+- [x] SVG nav icon animations (scale up)
+- [x] Truncate long usernames in left nav with ellipses
 
 📋 **To Do**
 - [ ] Deploy project in Docker
