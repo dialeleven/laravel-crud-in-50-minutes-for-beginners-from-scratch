@@ -130,8 +130,6 @@
                   <a href="/storage/{{ $product->image }}" target="_blank">
                      <img src="{{ asset("/storage/{$product->thumbnail}") }}" width="50" height="50" alt="{{ $product->name }}">
                   </a>
-               @else
-                  <!--<a href="/storage/{{ $product->image }}" target="_blank"><i class="fa-solid fa-image" aria-label="display image" title="Image opens in new tab/window"></i></a>-->
                @endif
                </td>
                <td class="py-2 px-3 border-b border-gray-400 text-center">
