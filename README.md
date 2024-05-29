@@ -1,48 +1,3 @@
-### Setting Up This Project Locally
-This project currently runs on XAMPP 8.2.4 (PHP 8.2.4) and Laravel 11.8).
-
-#### Clone the repository
-```git clone https://github.com/dialeleven/laravel-crud-in-50-minutes-for-beginners-from-scratch```
-
-#### Navigate To Project Directory
-```cd app-crud```
-
-#### Install Dependencies (including Tailwind CSS)
-```npm install```
-
-#### Install Required '/vendor' Dependencies (install composer if not already installed)
-```composer update```
-
-#### Copy '.env.example' as '.env'
-Adjust your MySQL details in your new .env file now or after the next two steps.
-
-#### Run 'php artisan key:generate'
-```php artisan key:generate```
-If trying to access the application via browser first, you may get a 'ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at G:\\...\\\vendor\\laravel\\framework\\src\\Illuminate\\Encryption\\EncryptionServiceProvider.php:83)' message. The above command should help resolve the issue.
-
-#### Create MySQL Database 'app-crud'
-Use mysql command line, phpMyAdmin, HeidiSQL, etc to create the database.
-
-#### Update .env with MySQL Details (Adjust Below Accordingly)
-```
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306 # Ensure your port is correct! With multiple XAMPP installs (PHP 5.6 and PHP 8.2), I had to run XAMPP PHP 8.2 with MySQL on port 3308!)
-DB_DATABASE=app-crud
-DB_USERNAME=root
-DB_PASSWORD=
-```
-
-#### Create Link To /storage/public
-TODO: add code example here
-
-#### Test Accessing The Home Page '/' and 'products/' (e.g. http://localhost/products or http://laravel.localhost/products)
-If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apache error_log. Once any error(s) are resolved, you should be up and running!
-
-#### Update Tailwind CSS/JS If Adding New TW Classes
-Run ```npm run build``` within the 'app-crud' directory.
-
-
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
 ✔️ **Completed Additions**
@@ -144,3 +99,47 @@ $image->place('images/watermark.png');
 // save modified image in new format 
 $image->toPng()->save('images/foo.png');
 ```
+
+### Setting Up This Project Locally
+This project currently runs on XAMPP 8.2.4 (PHP 8.2.4) and Laravel 11.8).
+
+#### Clone the repository
+```git clone https://github.com/dialeleven/laravel-crud-in-50-minutes-for-beginners-from-scratch```
+
+#### Navigate To Project Directory
+```cd app-crud```
+
+#### Install Dependencies (including Tailwind CSS)
+```npm install```
+
+#### Install Required '/vendor' Dependencies (install composer if not already installed)
+```composer update```
+
+#### Copy '.env.example' as '.env'
+Adjust your MySQL details in your new .env file now or after the next two steps.
+
+#### Run 'php artisan key:generate'
+```php artisan key:generate```
+If trying to access the application via browser first, you may get a 'ERROR: No application encryption key has been specified. {"exception":"[object] (Illuminate\\Encryption\\MissingAppKeyException(code: 0): No application encryption key has been specified. at G:\\...\\\vendor\\laravel\\framework\\src\\Illuminate\\Encryption\\EncryptionServiceProvider.php:83)' message. The above command should help resolve the issue.
+
+#### Create MySQL Database 'app-crud'
+Use mysql command line, phpMyAdmin, HeidiSQL, etc to create the database.
+
+#### Update .env with MySQL Details (Adjust Below Accordingly)
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306 # Ensure your port is correct! With multiple XAMPP installs (PHP 5.6 and PHP 8.2), I had to run XAMPP PHP 8.2 with MySQL on port 3308!)
+DB_DATABASE=app-crud
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+#### Create Link To /storage/public
+TODO: add code example here
+
+#### Test Accessing The Home Page '/' and 'products/' (e.g. http://localhost/products or http://laravel.localhost/products)
+If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apache error_log. Once any error(s) are resolved, you should be up and running!
+
+#### Update Tailwind CSS/JS If Adding New TW Classes
+Run ```npm run build``` within the 'app-crud' directory.
