@@ -1,4 +1,4 @@
-Devtamin's Laravel CRUD tutorial has been successfully completed. Going above and beyond the tutorial based on what I've built in native PHP in the past (e.g. pagination, email functionality, image uploads and resizing, etc...) and other Laravel libraries, functionality and other things of interest. Below is a list of the additions to the project that have been done.
+Devtamin's Laravel CRUD tutorial has been successfully completed. Going above and beyond the tutorial based on what I've built in native PHP in the past (e.g. pagination, email functionality, image uploads and resizing, etc...), implementing/testing Laravel libraries, functionality and other things of interest. Below is a list of the additions to the project that have been done.
 
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
