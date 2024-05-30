@@ -37,7 +37,9 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
   - [x] Check if file exists when attaching file and log error if file does not exist
 - [x] API integration: Weather
 - [x] Calendar picker form input
-- [x] PHPUnit testing: ✔️Product.index route
+- [x] PHPUnit testing:
+   - [x] Products: ✔️Product.index route
+   - [x] Forgot/Reset Password: ✔️ Send password reset link
 - [x] Products index - delete product (adjust page user is redirected to if record being deleted is the only product on that page - e.g deleting the only product on page 3  should redirect to page 2)
 - [x] Move records per page pagination value to 'config/app.php'
 - [x] Admin site: Forgot password/reset password
@@ -57,6 +59,8 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 - [ ] Deploy project to [Netlify](https://www.netlify.com/)
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
+  - [ ] Products: 
+  - [ ] Forgot/Reset Password: password.reset, password.update
 - [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header**
 - [ ] Email functionality with Mailtrap.io?
 - [ ] **Products: search functionality (search for product name, description, price - slider(?), description)**
