@@ -57,6 +57,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 📋 **To Do**
 - [ ] Deploy project in Docker
 - [ ] Deploy project to [Netlify](https://www.netlify.com/)
+- [ ] Configure PHPUnit to use separate database for running tests (keep db tables in sync running migrations using `php artisan migrate --database=mysql_testing`)
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
   - [ ] Products: 
