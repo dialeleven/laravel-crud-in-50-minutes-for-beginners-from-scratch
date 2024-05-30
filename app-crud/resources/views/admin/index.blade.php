@@ -18,6 +18,10 @@
 
 {{-- `@section` alone or `@section`+`@endsection` marks where your unique page content goes --}}
 @section('content')
+
+{{-- form submission error output --}}
+@include('admin.site.partials.form_error_output')
+
 Welcome to the Admin Dashboard, <b>{{ Auth::user()->name }}</b>! {{-- (role_id: {{ Auth::user()->role_id }}) --}}
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-5">

@@ -120,7 +120,7 @@ Route::get('/product', [ProductController::class, 'index'])->name('product.index
 //Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth:admin');
 
 // * Group routes that require authentication
-Route::group(['middleware' => ['auth', 'admin']], function()
+Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
 {
    Route::get('/admin-index', function () {
       #dd(auth()->user());
@@ -155,7 +155,7 @@ Route::group(['middleware' => ['auth', 'admin']], function()
    /*********************************************************************
    ************* SECTION: Admin users routes (for admin and superadmin) *
    *********************************************************************/
-   Route::middleware(['auth', 'check.admin.role'])->group(function () {
+   Route::middleware(['auth', 'auth.adminsite.admin', 'auth.adminsite.superadmin'])->group(function () {
       Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminusers.index');
       
       Route::get('/adminusers/create', [AdminusersController::class, 'create'])->name('adminusers.create');
@@ -163,7 +163,9 @@ Route::group(['middleware' => ['auth', 'admin']], function()
       
       Route::get('/adminusers/{adminuser}/edit', [AdminusersController::class, 'edit'])->name('adminusers.edit');
       Route::put('/adminusers/{adminuser}/update', [AdminusersController::class, 'update'])->name('adminusers.update');
-      
+   });
+
+   Route::middleware(['auth', 'auth.adminsite.superadmin'])->group(function () {
       Route::delete('/adminusers/{adminuser}/destroy', [AdminusersController::class, 'destroy'])->name('adminusers.destroy');
    });
 
@@ -183,7 +185,7 @@ Route::get('/test2', [ProductController::class, 'test2'])->name('product.test2')
 /*************************************************************
 **************** SECTION: Login routes ***********************
 *************************************************************/
-Route::get('/adminlogin', [LoginController::class, 'adminloginLoginForm'])->name('login'); // named 'login' b/c Laravel expects 'login' route by default
+Route::get('/adminlogin', [LoginController::class, 'adminloginLoginForm'])->name('login'); // named 'login' b/c Laravel expects 'login' route by default?
 Route::post('/adminlogin-process', [LoginController::class, 'adminloginProcess'])->name('adminlogin.process');
 Route::post('/adminlogin-logout', [LoginController::class, 'adminloginLogout'])->name('adminlogin.logout');
 

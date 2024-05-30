@@ -13,9 +13,12 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         //
         $middleware->alias([
-            'admin' => \App\Http\Middleware\IsAdmin::class,
+            // 'admin' => \App\Http\Middleware\IsAdmin::class,
+            // 'check.admin.role' => \App\Http\Middleware\CheckAdminRole::class,
             
-            'check.admin.role' => \App\Http\Middleware\CheckAdminRole::class,
+            'auth.adminsite.user' => \App\Http\Middleware\AuthAdminsiteUser::class,
+            'auth.adminsite.admin' => \App\Http\Middleware\AuthAdminsiteAdmin::class,
+            'auth.adminsite.superadmin' => \App\Http\Middleware\AuthAdminsiteSuperadmin::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

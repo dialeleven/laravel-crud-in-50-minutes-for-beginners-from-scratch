@@ -18,6 +18,7 @@ class IsAdmin
     {
         if (Auth::user())
         {
+            dd($next);
             return $next($request);
         }
         
