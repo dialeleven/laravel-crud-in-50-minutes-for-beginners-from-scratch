@@ -216,9 +216,17 @@ Route::post('/admin-forgot-password/send-reset-link', function (Request $request
 
    #dd('status: ' . $status);
 
-   return $status === Password::RESET_LINK_SENT
-               ? back()->with(['status' => __($status)])
-               : back()->withErrors(['email' => __($status)]);
+   // Log the status and check if notification is being sent
+   #Log::info('status: ' . $status);
+
+   if ($status === Password::RESET_LINK_SENT) {
+      return back()->with('status', __('passwords.sent'));
+  } else {
+      return back()->withErrors(['email' => __($status)]);
+  }
+   // return $status === Password::RESET_LINK_SENT
+   //             ? back()->with(['status' => __($status)])
+   //             : back()->withErrors(['email' => __($status)]);
 })->middleware('auth:admin')->name('password.send-reset-link');
 
 
