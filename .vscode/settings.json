@@ -22,6 +22,7 @@
    "html.suggest.html5": true,
    "cSpell.words": [
       "adminlogin",
+      "adminsite",
       "adminuser",
       "adminusers",
       "CGPT",
@@ -32,6 +33,7 @@
       "linkstorage",
       "processlogin",
       "publicpage",
+      "superadmin",
       "uncompromised",
       "weatherapi"
    ],

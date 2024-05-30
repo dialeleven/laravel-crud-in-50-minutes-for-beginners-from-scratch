@@ -11,7 +11,7 @@ use Illuminate\Notifications\Notifiable;
 // class Admin extends Model
 class Admin extends Authenticatable
 {
-    // use HasFactory;
+    use HasFactory;
     use Notifiable;
     
     protected $fillable = [

@@ -3,6 +3,7 @@ namespace Database\Factories\Common;
 
 use App\Models\Common\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 
 /**
