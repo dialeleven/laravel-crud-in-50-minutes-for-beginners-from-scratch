@@ -37,7 +37,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
   - [x] Check if file exists when attaching file and log error if file does not exist
 - [x] API integration: Weather
 - [x] Calendar picker form input
-- [x] PHPUnit testing:
+- [x] PHPUnit testing
    - [x] Products: ✔️Product.index route
    - [x] Forgot/Reset Password: ✔️ Send password reset link
 - [x] Products index - delete product (adjust page user is redirected to if record being deleted is the only product on that page - e.g deleting the only product on page 3  should redirect to page 2)
