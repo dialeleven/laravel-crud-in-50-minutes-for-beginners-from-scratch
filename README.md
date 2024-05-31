@@ -2,7 +2,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
-✔️ **Completed Additions**
+## ✔️ Completed Additions
 - [x] Laravel DB operations: add column to table
 - [x] ~~Style UI: CSS~~
 - [x] Image upload: Full-size image
@@ -55,9 +55,9 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 - [x] Truncate long usernames in left nav with ellipses
 - [x] Configure PHPUnit to use separate database for running tests (keep db tables in sync running migrations as needed using `php artisan migrate --database=mysql_testing`)
 
-📋 **To Do**
+## 📋 Additional Features To Do
 - [ ] Deploy project in Docker
-- [ ] Deploy project to [Netlify](https://www.netlify.com/)
+- [ ] Deploy project to Oracle Cloud or similar
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
   - [ ] Products: 
@@ -67,7 +67,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 - [ ] **Products: search functionality (search for product name, description, price - slider(?), description)**
 - [ ] **"You are here" sidebar nav indicator**
 - [ ] Breadcrumb links?
-- [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, **Bootstrap**, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
+- [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, ✔️Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
 - [ ] Check out Laravel Libraries
   - [Algolia Meilisearch](https://laravel.com/docs/11.x/scout) (Search functionality: open source version - free)
@@ -155,6 +155,6 @@ Run ```npm run build``` within the 'app-crud' directory.
 Some PHPUnit tests use ```use RefreshDatabase;``` which will remove existing DB table data, but configured to use a different PHPUnit test database to avoid this. This project uses the databases *app-crud* and *app-crud-phpunit-tests*.
 
 See the following files for values to customize if needed:
-- .env (DB_TEST_* fields)
+- .env.example (DB_TEST_* fields)
 - /config/database.php ('mysql_testing' entry)
 - phpunit.xml (```<env name="DB_CONNECTION" value="mysql_testing"/>```)
