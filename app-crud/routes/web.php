@@ -204,8 +204,20 @@ Route::get('/admin-forgot-password', function() {
 })->name('password.request');
 
 
+// * test route to see if an 'admin' is logged in. Good for debugging /admin-forgot-password route
+Route::get('/admin-check', function () {
+   if (Auth::guard('admin')->check()) {
+       return 'Admin is logged in';
+   } else {
+       #dd(Auth::guard('admin'));
+       return 'Admin is not logged in';
+   }
+});
+
+
 // forgot password - POST request
 Route::post('/admin-forgot-password/send-reset-link', function (Request $request) {
+   #dd('test');
    #dd($request);
 
    $request->validate(['email' => 'required|email']);
@@ -223,6 +235,7 @@ Route::post('/admin-forgot-password/send-reset-link', function (Request $request
                ? back()->with(['status' => __($status)])
                : back()->withErrors(['email' => __($status)]);
 })->middleware('auth:admin')->name('password.send-reset-link');
+#})->name('password.send-reset-link'); // ! non-auth middleware version (sometimes submitting the admin-forgot-password/ form will just 302 to adminlogin bypassing the route completely. Uncertain how just adding debugging output causes the route to work eventually. Clearing all caches doesn't fix it. Very strange.)
 
 
 // reset password (passing token and email) - VIEW
