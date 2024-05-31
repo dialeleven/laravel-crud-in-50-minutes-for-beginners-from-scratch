@@ -53,11 +53,11 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
   - [x] [Laravel Backup](https://spatie.be/docs/laravel-backup/v8/introduction)
 - [x] SVG nav icon animations (scale up)
 - [x] Truncate long usernames in left nav with ellipses
+- [x] Configure PHPUnit to use separate database for running tests (keep db tables in sync running migrations as needed using `php artisan migrate --database=mysql_testing`)
 
 📋 **To Do**
 - [ ] Deploy project in Docker
 - [ ] Deploy project to [Netlify](https://www.netlify.com/)
-- [ ] Configure PHPUnit to use separate database for running tests (keep db tables in sync running migrations using `php artisan migrate --database=mysql_testing`)
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
   - [ ] Products: 
@@ -150,3 +150,11 @@ If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apach
 
 ### Update Tailwind CSS/JS If Adding New TW Classes
 Run ```npm run build``` within the 'app-crud' directory.
+
+### If Using PHPUnit To Run Tests, Create MySQL DB for Tests Only
+Some PHPUnit tests use ```use RefreshDatabase;``` which will remove existing DB table data, but configured to use a different PHPUnit test database to avoid this. This project uses the databases *app-crud* and *app-crud-phpunit-tests*.
+
+See the following files for values to customize if needed:
+- .env (DB_TEST_* fields)
+- /config/database.php ('mysql_testing' entry)
+- phpunit.xml (```<env name="DB_CONNECTION" value="mysql_testing"/>```)
