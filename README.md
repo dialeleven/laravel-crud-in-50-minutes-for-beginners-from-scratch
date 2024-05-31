@@ -2,7 +2,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
-✔️ **Completed Additions**
+## ✔️ Completed Additions
 - [x] Laravel DB operations: add column to table
 - [x] ~~Style UI: CSS~~
 - [x] Image upload: Full-size image
@@ -55,7 +55,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 - [x] Truncate long usernames in left nav with ellipses
 - [x] Configure PHPUnit to use separate database for running tests (keep db tables in sync running migrations as needed using `php artisan migrate --database=mysql_testing`)
 
-📋 **To Do**
+## 📋 Additional Features To Do
 - [ ] Deploy project in Docker
 - [ ] Deploy project to [Netlify](https://www.netlify.com/)
 - [ ] **PHPUnit testing**
