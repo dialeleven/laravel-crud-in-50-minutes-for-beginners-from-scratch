@@ -4,7 +4,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use App\Models\AdminModels\Admin;
+use App\Models\AdminSite\Admin;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Log; // Add this import
 class AuthRoutesTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
+    #use WithFaker;
 
     protected function setUp(): void
     {
@@ -26,6 +27,8 @@ class AuthRoutesTest extends TestCase
             ['id' => 2, 'name' => 'admin'],
             ['id' => 3, 'name' => 'user'],
         ]);
+
+        #Log::info('SetUp complete: Admin roles inserted.');
     }
 
 

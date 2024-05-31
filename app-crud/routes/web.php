@@ -25,7 +25,7 @@ use App\Http\Controllers\Public\PublicProductController; // public product page
 use App\Http\Controllers\Public\WeatherApiController; // weatherapi.com controller
 
 use App\Models\Common\Product;
-use App\Models\AdminModels\Admin;
+use App\Models\AdminSite\Admin;
 
 
 use App\Mail\MyTestEmail;

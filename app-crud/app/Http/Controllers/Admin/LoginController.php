@@ -5,14 +5,9 @@ use App\Http\Controllers\Controller; // Import the base Controller class
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash; // Import Hash facade to bcrypt hash password
 use Illuminate\Support\Facades\Auth;
-use App\Models\Admin; // import our Admin model (MySQL table: admins)
+use App\Models\AdminSite\Admin; // import our Admin model (MySQL table: admins)
 
 use Illuminate\Support\Facades\Response; // ? still needed
-
-#use Illuminate\Support\Facades\DB;      // DB facade for traditional style SQL queries
-#use Illuminate\Database\Eloquent\Model; // Eloquent ORM DB model
-
-#use App\Models\Login;
 
 
 class LoginController extends Controller

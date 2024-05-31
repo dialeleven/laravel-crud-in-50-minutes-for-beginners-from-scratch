@@ -1,13 +1,13 @@
 <?php
 
-namespace Database\Factories\AdminModels;
+namespace Database\Factories\AdminSite;
 
-use App\Models\AdminModels\Admin;
+use App\Models\AdminSite\Admin;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AdminModels\Admin>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AdminSite\Admin>
  */
 class AdminFactory extends Factory
 {

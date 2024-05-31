@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash; // Import Hash facade to bcrypt hash password
 use Illuminate\Validation\Rules\Password; // import Password validation class
 
-use App\Models\AdminModels\Admin; // import 'Admin' model
-use App\Models\AdminModels\AdminRole;
+use App\Models\AdminSite\Admin; // import 'Admin' model
+use App\Models\AdminSite\AdminRole;
 
 use Illuminate\Support\Facades\Auth;
 
