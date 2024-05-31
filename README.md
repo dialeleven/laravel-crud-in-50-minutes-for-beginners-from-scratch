@@ -53,11 +53,11 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
   - [x] [Laravel Backup](https://spatie.be/docs/laravel-backup/v8/introduction)
 - [x] SVG nav icon animations (scale up)
 - [x] Truncate long usernames in left nav with ellipses
+- [x] Configure PHPUnit to use separate database for running tests (keep db tables in sync running migrations using `php artisan migrate --database=mysql_testing`)
 
 📋 **To Do**
 - [ ] Deploy project in Docker
 - [ ] Deploy project to [Netlify](https://www.netlify.com/)
-- [ ] Configure PHPUnit to use separate database for running tests (keep db tables in sync running migrations using `php artisan migrate --database=mysql_testing`)
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
   - [ ] Products: 
