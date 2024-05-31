@@ -155,6 +155,6 @@ Run ```npm run build``` within the 'app-crud' directory.
 Some PHPUnit tests use ```use RefreshDatabase;``` which will remove existing DB table data, but configured to use a different PHPUnit test database to avoid this. This project uses the databases *app-crud* and *app-crud-phpunit-tests*.
 
 See the following files for values to customize if needed:
-- .env (DB_TEST_* fields)
+- .env.example (DB_TEST_* fields)
 - /config/database.php ('mysql_testing' entry)
 - phpunit.xml (```<env name="DB_CONNECTION" value="mysql_testing"/>```)
