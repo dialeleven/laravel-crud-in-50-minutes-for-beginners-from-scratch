@@ -234,8 +234,7 @@ Route::post('/admin-forgot-password/send-reset-link', function (Request $request
    return $status === Password::RESET_LINK_SENT
                ? back()->with(['status' => __($status)])
                : back()->withErrors(['email' => __($status)]);
-})->middleware('auth:admin')->name('password.send-reset-link');
-#})->name('password.send-reset-link'); // ! non-auth middleware version (sometimes submitting the admin-forgot-password/ form will just 302 to adminlogin bypassing the route completely. Uncertain how just adding debugging output causes the route to work eventually. Clearing all caches doesn't fix it. Very strange.)
+})->name('password.send-reset-link');
 
 
 // reset password (passing token and email) - VIEW
