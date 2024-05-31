@@ -46,16 +46,25 @@ class AuthRoutesTest extends TestCase
     {
         Notification::fake();
 
+        $test_email = 'admin@example.com';
+
+        // Create a new admin record for testing
         $admin = Admin::factory()->create([
             'role_id' => 1, // Ensuring a valid role_id is used
-            'email' => 'admin@example.com',
+            'email' => $test_email,
         ]);
 
-        // Log in the admin user
+        // Assert that the admin record was created successfully
+        $this->assertDatabaseHas('admins', [
+            'id' => $admin->id,
+            'email' => $test_email,
+        ]);
+
+        // Log in the admin user using the 'admin' guard (in 'config/auth.php')
         $this->actingAs($admin, 'admin');
 
         $response = $this->post(route('password.send-reset-link'), [
-            'email' => 'admin@example.com',
+            'email' => $test_email,
         ]);
 
         $response->assertStatus(302);  // Check if it redirects
