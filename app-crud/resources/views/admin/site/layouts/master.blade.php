@@ -171,7 +171,7 @@
             <div class="mt-6">
                <div class="flex items-center justify-between mt-6">
                   <a href="#" class="flex items-center gap-x-2">
-                     <img class="object-cover rounded-full h-7 w-7" src="{{-- Storage::url(auth()->user()->avatar) --}}{{ asset('assets/images/uifaces-cartoon-image.jpg') }}" alt="avatar">
+                     <img class="object-cover rounded-full h-7 w-7" src="{{-- Storage::url(auth()->user()->avatar) --}}{{-- asset('assets/images/uifaces-cartoon-image.jpg')--}}https://ui-avatars.com/api/?background=random&name={{ auth()->user()->name }}" alt="avatar">
                      {{-- <img class="object-cover rounded-full h-7 w-7" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&h=634&q=80" alt="avatar" /> --}}
                      <div class="overflow-hidden">
                         <span class="text-sm font-medium text-blue-100 dark:text-gray-200 block w-auto md:w-24 md:truncate">@yield('username', auth()->user()->username)</span>
