@@ -71,7 +71,8 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 - [ ] Hover over thumbnail to show full size image
 - [ ] Check out Laravel Libraries
   - [Algolia Meilisearch](https://laravel.com/docs/11.x/scout) (Search functionality: open source version - free)
-  - [Laravel Maatwebsite Excel](https://laravel-excel.com/) (Import & Export) 
+  - [Laravel Maatwebsite Excel](https://laravel-excel.com/) (Import & Export)
+  - [Laravel Dusk](https://laravel.com/docs/11.x/dusk) (browser automation and testing)
   - [Laravel Spatie Queues](https://spatie.be/docs/laravel-health/v1/available-checks/queue) (Background Jobs)
   - [Spatie Laravel Translation](https://spatie.be/docs/laravel-translatable/v6/introduction) (Localization)
   - [Laravel Passport](https://laravel.com/docs/11.x/passport)
