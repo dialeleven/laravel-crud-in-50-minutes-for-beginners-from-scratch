@@ -74,7 +74,7 @@
           <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
           <div class="text-sm">
             <a href="{{ route('password.request') }}" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password?</a>
-            <a href="{{ route('password.request2') }}" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password TEMP</a>
+            {{-- <a href="{{ route('password.request2') }}" class="font-semibold text-indigo-600 hover:text-indigo-500">Forgot password TEMP</a> --}}
           </div>
         </div>
   
@@ -130,7 +130,7 @@
 
         <p class="text-sm text-gray-500">
           New user?
-          <a class="underline" href="#">Sign up</a>
+          <a href="#" onclick="return false" class="underline cursor-not-allowed line-through">Sign up</a>
         </p>
       </div>
     </form>
