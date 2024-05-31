@@ -171,7 +171,8 @@
             <div class="mt-6">
                <div class="flex items-center justify-between mt-6">
                   <a href="#" class="flex items-center gap-x-2">
-                     <img class="object-cover rounded-full h-7 w-7" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&h=634&q=80" alt="avatar" />
+                     <img class="object-cover rounded-full h-7 w-7" src="{{-- Storage::url(auth()->user()->avatar) --}}{{ asset('assets/images/uifaces-cartoon-image.jpg') }}" alt="avatar">
+                     {{-- <img class="object-cover rounded-full h-7 w-7" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&h=634&q=80" alt="avatar" /> --}}
                      <div class="overflow-hidden">
                         <span class="text-sm font-medium text-blue-100 dark:text-gray-200 block w-auto md:w-24 md:truncate">@yield('username', auth()->user()->username)</span>
                      </div>
@@ -222,9 +223,20 @@
       <main>
          <div class="mx-auto max-w-7xl py-1 sm:px-4 lg:px-5">
             <!-- Place your content here -->
-   
+            @yield('content')
+
+            {{-- ! Place content placeholder using @yield('yield_name_here') --}}
+            {{-- ? Your child view (e.g. create.blade.php) will contain @section('yield_name_here', 'Default content') --}}
+
+            {{-- 
+               * For example add <title>@yield('meta_title')</title> in THIS master layout/template (master.blade.php).
+
+               * Your child view (e.g. create.blade.php) will contain @section('meta_title', 'Home Page') which
+               * will be passed to your @yield('meta_title')
+            --}}
 
             {{-- *** @yield('yield_name_here') - @yield is unique content not meant to be reusable. 
+                  *
                   * Use the following to output content in master layout/template (master.blade.php):
                   *    @section('yield_name_here') - For a declared 'yield' replacement much like a variable.
                   *                                    
@@ -234,16 +246,15 @@
                   *                                         `@section('meta_title', 'Home Page')` and passes the
                   *                                         declared @section 'meta_title' to `@yield('meta_title')`
                   *    OR
-                  *    @section('multi_line_yield_name')
-                  *    <div>
-                  *       <!-- Your HTML/Blade code here -->
-                  *       @if ($foo == true)
-                  *          <div>Conditional HTML here</div>
-                  *       @endif
-                  *    </div>
-                  *    @endsection
+                  ?    @section('multi_line_yield_name')
+                  ?    <div>
+                  ?       <!-- Your HTML/Blade code here -->
+                  ?       @if ($foo == true)
+                  ?          <div>Conditional HTML here</div>
+                  ?       @endif
+                  ?    </div>
+                  ?    @endsection
                   *--}}
-            @yield('content')
       </main>
    </div>
 </div>
