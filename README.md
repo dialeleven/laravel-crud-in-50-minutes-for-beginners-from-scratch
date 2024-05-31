@@ -152,7 +152,9 @@ If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apach
 Run ```npm run build``` within the 'app-crud' directory.
 
 ### If Using PHPUnit To Run Tests, Create MySQL DB for Tests Only
-Some PHPUnit tests use ```use RefreshDatabase;``` which will remove existing DB table data, but configured to use a different PHPUnit test database to avoid this. See the following files:
+Some PHPUnit tests use ```use RefreshDatabase;``` which will remove existing DB table data, but configured to use a different PHPUnit test database to avoid this. This project uses the databases *app-crud* and *app-crud-phpunit-tests*.
+
+See the following files for values to customize if needed:
 - .env (DB_TEST_* fields)
 - /config/database.php ('mysql_testing' entry)
 - phpunit.xml (```<env name="DB_CONNECTION" value="mysql_testing"/>```)
