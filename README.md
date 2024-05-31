@@ -57,7 +57,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 
 ## 📋 Additional Features To Do
 - [ ] Deploy project in Docker
-- [ ] Deploy project to [Netlify](https://www.netlify.com/)
+- [ ] Deploy project to Oracle Cloud or similar
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
   - [ ] Products: 
