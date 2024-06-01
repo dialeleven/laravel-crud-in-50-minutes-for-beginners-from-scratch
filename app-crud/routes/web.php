@@ -1,5 +1,6 @@
 <?php
 //---------- LARAVEL CLASSES/FACADES --------------//
+use App\Http\Controllers\TestApiResourceController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request; // use in conjunction with 'Password' Facade. (maybe not needed since password reset is in a controller now)
 
@@ -28,6 +29,9 @@ use App\Models\AdminSite\Admin;
 // Resource controller will automatically create routes for 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
 // for you to use and help keep your routes file cleaner! Run `php artisan route:list` to see all routes.
 Route::resource('widgets', WidgetController::class);
+
+// API resource controller (excludes 'create' and 'edit' routes which don't exist in an API)
+Route::apiResource('apitest', TestApiResourceController::class);
 
 Route::get('/', function () {
     return view('welcome');
