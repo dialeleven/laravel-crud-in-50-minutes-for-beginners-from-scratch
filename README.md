@@ -58,6 +58,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 ## 📋 Additional Features To Do
 - [ ] Deploy project in Docker
 - [ ] Deploy project to Oracle Cloud or similar
+- [ ] Refactor email routes into EmailController for separation of concerns/readability of /routes/web.php
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
   - [ ] Products: 
