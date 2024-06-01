@@ -26,6 +26,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test-route/{user_id?}', function($user_id = 'default_id')
+{
+   return view('test-view', ['user_id' => $user_id]);
+});
+
 /*************************************************************
  **************** SECTION: Utility routes ********************
  *************************************************************/
