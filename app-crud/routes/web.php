@@ -3,13 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request; // use in conjunction with 'Password' Facade. (maybe not needed since password reset is in a controller now)
 use Illuminate\Support\Facades\Mail; // email functionality
-#use Illuminate\Support\Facades\Hash;
-#use Illuminate\Support\Facades\Password; // lost password/reset password
-#use Illuminate\Support\Str;
-#use Illuminate\Auth\Events\PasswordReset;
-#use Illuminate\Validation\Rules\Password as PasswordRule;
-#use App\Http\Controllers\EmailController; // ! FOR EMAIL???
-//use App\Mail\TestMail;               // ? don't need it I think - email functionality
 
 //--------- ADMIN SITE CONTROLLERS ------------//
 use App\Http\Controllers\Admin\ProductController; // namespace for our "Products" Controller
