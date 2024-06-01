@@ -1,15 +1,14 @@
 <?php
 //---------- LARAVEL CLASSES/FACADES --------------//
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request; // use in conjunction with 'Password' Facade
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Password; // lost password/reset password
-use Illuminate\Support\Str;
-use Illuminate\Auth\Events\PasswordReset;
-use Illuminate\Validation\Rules\Password as PasswordRule;
-
-#use App\Http\Controllers\EmailController; // ! FOR EMAIL???
+use Illuminate\Http\Request; // use in conjunction with 'Password' Facade. (maybe not needed since password reset is in a controller now)
 use Illuminate\Support\Facades\Mail; // email functionality
+#use Illuminate\Support\Facades\Hash;
+#use Illuminate\Support\Facades\Password; // lost password/reset password
+#use Illuminate\Support\Str;
+#use Illuminate\Auth\Events\PasswordReset;
+#use Illuminate\Validation\Rules\Password as PasswordRule;
+#use App\Http\Controllers\EmailController; // ! FOR EMAIL???
 //use App\Mail\TestMail;               // ? don't need it I think - email functionality
 
 
@@ -17,7 +16,7 @@ use Illuminate\Support\Facades\Mail; // email functionality
 use App\Http\Controllers\Admin\ProductController; // namespace for our "Products" Controller
 use App\Http\Controllers\Admin\AdminUsersController; // namespace for our "Adminusers" Controller
 use App\Http\Controllers\Admin\LoginController; // namespace for our "Login" Controller to handle /login
-
+use App\Http\Controllers\Admin\PasswordResetController;
 
 //---------- PUBLIC SITE CONTROLLERS ---------------//
 use App\Http\Controllers\Public\PublicpageController; // test public page
@@ -214,63 +213,17 @@ Route::get('/admin-check', function () {
 
 
 // forgot password - POST request
-Route::post('/admin-forgot-password/send-reset-link', function (Request $request) {
-   #dd('test');
-   #dd($request);
-
-   $request->validate(['email' => 'required|email']);
-
-   $status = Password::broker('admins')->sendResetLink(
-      $request->only('email')
-   );
-
-   #dd('status: ' . $status);
-
-   // Log the status and check if notification is being sent
-   #Log::info('status: ' . $status);
-
-   return $status === Password::RESET_LINK_SENT
-               ? back()->with(['status' => __($status)])
-               : back()->withErrors(['email' => __($status)]);
-})->name('password.send-reset-link');
-
+Route::post('/admin-forgot-password/send-reset-link', [PasswordResetController::class, 'sendResetLink'])
+    ->name('password.send-reset-link');
 
 // reset password (passing token and email) - VIEW
 Route::get('/admin-reset-password/{token}/{email}', function ($token, $email) {
    return view('admin.login.reset_password', ['token' => $token, 'email' => $email]);
 })->name('password.reset');
 
-
 // reset password form submission - POST request
-Route::post('/admin-reset-password', function (Request $request) {
-   $request->validate([
-      'token' => 'required',
-      'email' => 'nullable|email',
-      #'password' => 'required|min:8',
-      'password' => [
-            'required', 
-            PasswordRule::min(8)->mixedCase()->numbers()->symbols()->uncompromised()
-        ],
-   ]);
-
-   $status = Password::broker('admins')->reset(
-      $request->only('email', 'password', 'token'),
-      function ($user, $password) {
-         $user->forceFill([
-               'password' => Hash::make($password)
-         ])->save();
-
-         $user->setRememberToken(Str::random(60));
-
-         event(new PasswordReset($user));
-      }
-   );
-   #dd($status);
-
-   return $status === Password::PASSWORD_RESET
-      ? redirect()->route('login')->with('status', __($status))
-      : back()->withErrors(['email' => [__($status)]]);
-})->name('password.update');
+Route::post('/admin-reset-password', [PasswordResetController::class, 'passwordUpdate'])
+    ->name('password.update');
 
 
 /*---------------------------------------------------
