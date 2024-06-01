@@ -113,15 +113,13 @@ Route::get('/linkstorage', function () {
 |                                                   |
 -----------------------------------------------------*/
 
-// Product index - no middleware
-Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-
 // Product index - 'auth' middleware added which will redirect to a 'login' route by default
-//Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth:admin');
+//Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth:adminsite.user');
 
 // * Group routes that require authentication
 Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
 {
+   // Admin dashboard index
    Route::get('/admin-index', function () {
       #dd(auth()->user());
       #dd(Auth::user);
@@ -272,7 +270,7 @@ Route::post('/admin-reset-password', function (Request $request) {
    return $status === Password::PASSWORD_RESET
       ? redirect()->route('login')->with('status', __($status))
       : back()->withErrors(['email' => [__($status)]]);
-})->middleware('auth:admin')->name('password.update');
+})->name('password.update');
 
 
 /*---------------------------------------------------
