@@ -63,7 +63,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
   - [ ] Authenticate admin user
   - [ ] Products: 
   - [ ] Forgot/Reset Password: password.reset, password.update
-- [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header**
+- [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header** (using [Mailtrap.io example](https://mailtrap.io/blog/laravel-send-email-gmail/#Send-email-to-multiple-recipients) )
 - [ ] Email functionality with Mailtrap.io?
 - [ ] **Products: search functionality (search for product name, description, price - slider(?), description)**
 - [ ] **"You are here" sidebar nav indicator**
