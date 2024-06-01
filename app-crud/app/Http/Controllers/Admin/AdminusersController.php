@@ -23,7 +23,7 @@ class AdminusersController extends Controller
         #$adminusers = Admin::all();
         //$adminusers = Admin::paginate(5); // get paginated records
 
-        // Get list of admiusers and INNER JOIN the adminroles table to get the adminroles.name column value.
+        // Get list of admiusers and INNER JOIN the admin_roles table to get the admin_roles.name column value.
         // ? https://laravel.com/docs/11.x/queries#joins
         $adminusers = Admin::join('admin_roles', 'admins.role_id', '=', 'admin_roles.id')
             ->select('admins.*', 'admin_roles.name AS role_name')
@@ -35,12 +35,12 @@ class AdminusersController extends Controller
 
     // CREATE (add) user - view
     public function create() {
-        // $adminroles = AdminRole::all();
+        // $admin_roles = AdminRole::all();
 
-        // get list of adminroles from table adminroles
-        $adminroles = AdminRole::orderBy('id', 'desc')->get();
+        // get list of admin_roles from table admin_roles
+        $admin_roles = AdminRole::orderBy('id', 'desc')->get();
 
-        return view('admin.adminusers.create', ['adminroles' => $adminroles]);
+        return view('admin.adminusers.create', ['admin_roles' => $admin_roles]);
     }
 
 
@@ -70,9 +70,9 @@ class AdminusersController extends Controller
         #dd('edit adminuser');
         #dd($request);
         // get list of admin_roles
-        $adminroles = AdminRole::orderBy('id', 'desc')->get();
+        $admin_roles = AdminRole::orderBy('id', 'desc')->get();
         
-        return view('admin.adminusers.edit', ['adminuser' => $adminuser, 'adminroles' => $adminroles]);
+        return view('admin.adminusers.edit', ['adminuser' => $adminuser, 'admin_roles' => $admin_roles]);
     }
 
 

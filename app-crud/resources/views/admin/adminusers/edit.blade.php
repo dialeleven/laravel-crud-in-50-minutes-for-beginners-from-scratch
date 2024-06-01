@@ -79,7 +79,7 @@
    </div>
    <div class="mb-4">
       <label class="block mb-1">Role</label>
-      @foreach ($adminroles as $adminrole)
+      @foreach ($admin_roles as $adminrole)
       <input type="radio" id="role_{{ $adminrole->id }}" name="role_id" value="{{ $adminrole->id }}" @if(old('role_id', $adminuser->role_id) == $adminrole->id ) checked @endif class="border border-gray-300 rounded px-3 py-2 cursor-pointer">
       <label for="role_{{ $adminrole->id }}" class="mr-4 cursor-pointer">{{ $adminrole->name }}</label>
       @endforeach
