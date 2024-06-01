@@ -2,13 +2,14 @@
 //---------- LARAVEL CLASSES/FACADES --------------//
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request; // use in conjunction with 'Password' Facade. (maybe not needed since password reset is in a controller now)
-use Illuminate\Support\Facades\Mail; // email functionality
+
 
 //--------- ADMIN SITE CONTROLLERS ------------//
 use App\Http\Controllers\Admin\ProductController; // namespace for our "Products" Controller
 use App\Http\Controllers\Admin\AdminUsersController; // namespace for our "Adminusers" Controller
 use App\Http\Controllers\Admin\LoginController; // namespace for our "Login" Controller to handle /login
 use App\Http\Controllers\Admin\PasswordResetController;
+use App\Http\Controllers\Admin\EmailController;
 
 //---------- PUBLIC SITE CONTROLLERS ---------------//
 use App\Http\Controllers\Public\PublicpageController; // test public page
@@ -19,8 +20,6 @@ use App\Http\Controllers\Public\WeatherApiController; // weatherapi.com controll
 use App\Models\Common\Product;
 use App\Models\AdminSite\Admin;
 
-//--------- App Mail ---------------//
-use App\Mail\MyTestEmail;
 
 
 Route::get('/', function () {
@@ -153,67 +152,17 @@ Route::post('/admin-reset-password', [PasswordResetController::class, 'passwordU
 
 
 /*************************************************************
- **************** SECTION: Email routes. TODO: Refactor into a controller for readability ***********************
+ **************** SECTION: Email routes **********************
  *************************************************************/
 
-// send test email
-Route::get('/send-test-email', function () {
-   Mail::to( env('MAIL_FROM_ADDRESS') )->send(new TestMail());
-   return 'Email sent! ' . date('Y-m-d H:i:s');
-});
-
-/*
-Send email using Laravel and Gmail SMTP
-https://mailtrap.io/blog/laravel-send-email-gmail/#How-to-send-emails-using-Laravel-and-Gmail-SMTP
-*/
-Route::get('/email', function() {
-  $name = "Funny Coder";
-
-  $to_email = env('MAIL_FROM_ADDRESS'); //'username@gmail.com';
-
-  // The email sending is done using the to method on the Mail facade
-  $val = Mail::to($to_email)->send(new MyTestEmail($name = 'Jon Doe'));
-
-  return "<b>Email sent to $to_email!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
-});
+// Send email using Laravel and Gmail SMTP (https://bit.ly/3yMjum0)
+Route::get('/email', [EmailController::class, 'sendEmail'])->name('send.email');
 
 // send email with attachment
-Route::get('/email-with-attachment', function() {
-  $name = "Funny Coder";
-  $filePath = [
-                 'images/20240507_023639000000_twice_between1&2.jpg', 
-                 'images/20240507_025420000000_twice_group.jpg'
-              ];
-
-  $to_email = env('MAIL_FROM_ADDRESS'); //'username@gmail.com';
-
-  // The email sending is done using the to method on the Mail facade
-  // Mail::to($to_email)->send(new MyTestEmail($name));
-  Mail::to($to_email)->send(new MyTestEmail($name, $filePath));
-
-  return "<b>Email sent to <span style='color: blue'>$to_email</span>!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
-});
+Route::get('/email-with-attachment', [EmailController::class, 'sendEmailWithAttachment'])->name('send.email.with.attachment');
 
 // send email with cc/bcc (// ! CC/BCC list is visible in email!!!)
-Route::get('/email-with-cc-bcc', function() {
-  $mainRecipients = ['main1@example.com', 'main2@example.com'];
-  #$ccRecipients = ['cc1@example.com', 'cc2@example.com'];
-  $ccRecipients = '';
-  $bccRecipients = ['username@gmail.com', 'username@gmail.com'];
-  $name = "Funny Coder"; // Dynamic content
-  /*
-  Mail::to($mainRecipients)
-     ->cc($ccRecipients)
-     ->bcc($bccRecipients)
-     ->send(new MyTestEmail($name));
-  */
-  Mail::bcc($bccRecipients)
-     ->send(new MyTestEmail($name));
-  
-  print_r($bccRecipients);
-  return "<b>Email sent!</b><h1>" . date('Y-m-d H:i:s') . '</h1>';
-});
-
+Route::get('/email-with-cc-bcc', [EmailController::class, 'sendEmailWithCcBcc'])->name('send.email.with.cc.bcc');
 
 
 /*---------------------------------------------------
