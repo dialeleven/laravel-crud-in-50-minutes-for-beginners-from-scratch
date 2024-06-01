@@ -54,11 +54,11 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 - [x] SVG nav icon animations (scale up)
 - [x] Truncate long usernames in left nav with ellipses
 - [x] Configure PHPUnit to use separate database for running tests (keep db tables in sync running migrations as needed using `php artisan migrate --database=mysql_testing`)
+- [x] Refactor email routes into EmailController for separation of concerns/readability of /routes/web.php
 
 ## 📋 Additional Features To Do
 - [ ] Deploy project in Docker
 - [ ] Deploy project to Oracle Cloud or similar
-- [ ] Refactor email routes into EmailController for separation of concerns/readability of /routes/web.php
 - [ ] **PHPUnit testing**
   - [ ] Authenticate admin user
   - [ ] Products: 
