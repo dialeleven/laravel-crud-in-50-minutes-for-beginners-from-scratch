@@ -21,7 +21,7 @@ use App\Models\Common\Product;
 use App\Models\AdminSite\Admin;
 
 
-
+// ********** testing routes *************/\
 Route::get('/', function () {
     return view('welcome');
 });
@@ -30,6 +30,11 @@ Route::get('/test-route/{user_id?}', function($user_id = 'default_id')
 {
    return view('test-view', ['user_id' => $user_id]);
 });
+
+
+Route::get('/test2', [ProductController::class, 'test2'])->name('product.test2');
+// ********** /end testing *************/
+
 
 /*************************************************************
  **************** SECTION: Utility routes ********************
@@ -107,12 +112,6 @@ Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
    })->name('admin-misc');
 });
 
-// ********** testing *************/
-Route::get('/product2', [ProductController::class, 'index2'])->name('product.index2');
-Route::get('/test', [ProductController::class, 'test'])->name('product.test');
-Route::get('/test2', [ProductController::class, 'test2'])->name('product.test2');
-// ********** /end testing *************/
-
 
 /*************************************************************
 **************** SECTION: Login routes ***********************
@@ -126,13 +125,7 @@ Route::post('/adminlogin-logout', [LoginController::class, 'adminloginLogout'])-
 *********** SECTION: Forgot/reset password routes ************
 *************************************************************/
 
-// forgot password - VIEW
-Route::get('/admin-forgot-password', function() {
-   #dd('hi');
-   return view('admin.login.forgot_password');
-})->name('password.request');
-
-// * test route to see if an 'admin' is logged in. Good for debugging /admin-forgot-password route
+// * test route to see if an 'admin' is logged in
 Route::get('/admin-check', function () {
    if (Auth::guard('admin')->check()) {
        return 'Admin is logged in';
@@ -141,6 +134,13 @@ Route::get('/admin-check', function () {
        return 'Admin is not logged in';
    }
 });
+
+
+// forgot password - VIEW
+Route::get('/admin-forgot-password', function() {
+   #dd('hi');
+   return view('admin.login.forgot_password');
+})->name('password.request');
 
 // forgot password - POST request
 Route::post('/admin-forgot-password/send-reset-link', [PasswordResetController::class, 'sendResetLink'])
