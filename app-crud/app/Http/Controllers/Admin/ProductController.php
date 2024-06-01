@@ -189,7 +189,6 @@ class ProductController extends Controller
         return view('admin.products.edit', ['product' => $product, 'page' => $page]);
     }
 
-
     
     // UPDATE product - POST request
     public function update(Product $product, Request $request)
@@ -358,31 +357,10 @@ class ProductController extends Controller
         return redirect(route('product.index', ['page' => $current_page]))->with('success', 'Product deleted successfully');
     }
 
-
-    
-
-    /**
-     * * FOR TEST PURPOSES
-     */
-    public function index2() {
-        //$products = Product::all(); // get all DB records
-        $products = Product::paginate(5); // get paginated records
-        //return view('products.index2', ['products' => $products]);
-
-        return view('home', ['products' => $products]);
-    }
-
     
     /**
      * * FOR TEST PURPOSES
      */
-    public function test() {
-        //return view('products.index2', ['products' => $products]);
-        #$products = Product::all();
-        $products = Product::paginate(5); // get paginated records
-
-        return view('admin.products.test', ['products' => $products]);
-    }
     public function test2() {
         //return view('products.index2', ['products' => $products]);
         #$products = Product::all();
