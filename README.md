@@ -50,7 +50,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 - [x] Restrict adminusers to admins and superadmins
 - [x] Dashboard index page
 - [x] Laravel Libraries
-  - [x] [Laravel Backup](https://spatie.be/docs/laravel-backup/v8/introduction)
+  - [x] [Laravel Backup](https://spatie.be/docs/laravel-backup/v8/introduction) - Run backups with ```php artisan backup:run```
 - [x] SVG nav icon animations (scale up)
 - [x] Truncate long usernames in left nav with ellipses
 - [x] Configure PHPUnit to use separate database for running tests (keep db tables in sync running migrations as needed using `php artisan migrate --database=mysql_testing`)
