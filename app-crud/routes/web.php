@@ -11,6 +11,8 @@ use App\Http\Controllers\Admin\LoginController; // namespace for our "Login" Con
 use App\Http\Controllers\Admin\PasswordResetController;
 use App\Http\Controllers\Admin\EmailController;
 
+use App\Http\Controllers\WidgetController;
+
 //---------- PUBLIC SITE CONTROLLERS ---------------//
 use App\Http\Controllers\Public\PublicpageController; // test public page
 use App\Http\Controllers\Public\PublicProductController; // public product page
@@ -21,7 +23,12 @@ use App\Models\Common\Product;
 use App\Models\AdminSite\Admin;
 
 
-// ********** testing routes *************/\
+// ********** testing routes *************/
+
+// Resource controller will automatically create routes for 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
+// for you to use and help keep your routes file cleaner! Run `php artisan route:list` to see all routes.
+Route::resource('widgets', WidgetController::class);
+
 Route::get('/', function () {
     return view('welcome');
 });
