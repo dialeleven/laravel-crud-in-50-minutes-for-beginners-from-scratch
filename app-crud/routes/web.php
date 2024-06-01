@@ -240,7 +240,7 @@ Route::post('/admin-forgot-password/send-reset-link', function (Request $request
 // reset password (passing token and email) - VIEW
 Route::get('/admin-reset-password/{token}/{email}', function ($token, $email) {
    return view('admin.login.reset_password', ['token' => $token, 'email' => $email]);
-})->middleware('auth:admin')->name('password.reset');
+})->name('password.reset');
 
 
 // reset password form submission - POST request
