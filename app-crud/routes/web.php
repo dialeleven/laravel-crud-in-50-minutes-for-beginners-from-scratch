@@ -26,11 +26,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test-route/{user_id?}', function($user_id = 'default_id')
-{
+Route::get('/test-route/{user_id?}', function($user_id = 'default_id') {
    return view('test-view', ['user_id' => $user_id]);
 });
 
+// another way to do the same thing as in our '/test-route' route above; a bit less code
+Route::view('/test-route-alt/{user_id?}', 'test-view', ['user_id' => 'default_id']);
 
 Route::get('/test2', [ProductController::class, 'test2'])->name('product.test2');
 // ********** /end testing *************/
