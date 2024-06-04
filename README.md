@@ -76,7 +76,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
   - [Laravel Dusk](https://laravel.com/docs/11.x/dusk) (browser automation and testing)
   - [Laravel Spatie Queues](https://spatie.be/docs/laravel-health/v1/available-checks/queue) (Background Jobs)
   - [Spatie Laravel Translation](https://spatie.be/docs/laravel-translatable/v6/introduction) (Localization)
-  - [Laravel Passport](https://laravel.com/docs/11.x/passport)
+  - [Laravel Passport (OAuth2 support)](https://laravel.com/docs/11.x/passport) or Sanctum (no OAuth2) - API authentication 
   - [Laravel Cashier (Stripe)](https://laravel.com/docs/11.x/billing) - subscription billing/payment services
   - [laravel-site-search](https://spatie.be/docs/laravel-site-search)
   - [laravel-pdf](https://spatie.be/docs/laravel-pdf)
