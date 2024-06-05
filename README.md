@@ -72,7 +72,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, ✔️Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
 - [ ] Check out Laravel Libraries
-  - [Laravel Socialite](https://laravel.com/docs/11.x/socialite) (OAuth authentication from Google, FB, GitHub, etc)
+  - **[Laravel Socialite](https://laravel.com/docs/11.x/socialite)** (OAuth authentication from Google, FB, GitHub, etc)
   - [Algolia Meilisearch](https://laravel.com/docs/11.x/scout) (Search functionality: open source version - free)
   - [Laravel Maatwebsite Excel](https://laravel-excel.com/) (Import & Export)
   - [Laravel Dusk](https://laravel.com/docs/11.x/dusk) (browser automation and testing)
