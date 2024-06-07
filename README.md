@@ -57,26 +57,28 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 - [x] Refactor email routes into EmailController for separation of concerns/readability of /routes/web.php
 
 ## 📋 Additional Features To Do
-- [ ] Deploy project in Docker
-- [ ] Deploy project to Oracle Cloud or similar
-- [ ] **PHPUnit testing**
+- [ ] **Deploy project in Docker**
+- [ ] **Deploy project to Oracle Cloud or similar**
+- [ ] **Redis**
+- [ ] PHPUnit testing
   - [ ] Authenticate admin user
-  - [ ] Products: 
+  - [ ] Products
   - [ ] Forgot/Reset Password: password.reset, password.update
 - [ ] **Email CC/BCC - ensure CC/BCC list is not visible in email/header** (using [Mailtrap.io example](https://mailtrap.io/blog/laravel-send-email-gmail/#Send-email-to-multiple-recipients) )
 - [ ] Email functionality with Mailtrap.io?
 - [ ] **Products: search functionality (search for product name, description, price - slider(?), description)**
-- [ ] **"You are here" sidebar nav indicator**
+- [ ] "You are here" sidebar nav indicator
 - [ ] Breadcrumb links?
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, ✔️Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
 - [ ] Check out Laravel Libraries
+  - **[Laravel Socialite](https://laravel.com/docs/11.x/socialite)** (OAuth authentication from Google, FB, GitHub, etc)
   - [Algolia Meilisearch](https://laravel.com/docs/11.x/scout) (Search functionality: open source version - free)
   - [Laravel Maatwebsite Excel](https://laravel-excel.com/) (Import & Export)
   - [Laravel Dusk](https://laravel.com/docs/11.x/dusk) (browser automation and testing)
   - [Laravel Spatie Queues](https://spatie.be/docs/laravel-health/v1/available-checks/queue) (Background Jobs)
   - [Spatie Laravel Translation](https://spatie.be/docs/laravel-translatable/v6/introduction) (Localization)
-  - [Laravel Passport](https://laravel.com/docs/11.x/passport)
+  - [Laravel Passport (OAuth2 support)](https://laravel.com/docs/11.x/passport) or Sanctum (no OAuth2) - API authentication 
   - [Laravel Cashier (Stripe)](https://laravel.com/docs/11.x/billing) - subscription billing/payment services
   - [laravel-site-search](https://spatie.be/docs/laravel-site-search)
   - [laravel-pdf](https://spatie.be/docs/laravel-pdf)
