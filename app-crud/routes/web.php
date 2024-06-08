@@ -1,9 +1,7 @@
 <?php
 //---------- LARAVEL CLASSES/FACADES --------------//
-use App\Http\Controllers\TestApiResourceController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request; // use in conjunction with 'Password' Facade. (maybe not needed since password reset is in a controller now)
-
 
 //--------- ADMIN SITE CONTROLLERS ------------//
 use App\Http\Controllers\Admin\ProductController; // namespace for our "Products" Controller
@@ -11,8 +9,6 @@ use App\Http\Controllers\Admin\AdminUsersController; // namespace for our "Admin
 use App\Http\Controllers\Admin\LoginController; // namespace for our "Login" Controller to handle /login
 use App\Http\Controllers\Admin\PasswordResetController;
 use App\Http\Controllers\Admin\EmailController;
-
-use App\Http\Controllers\WidgetController;
 
 //---------- PUBLIC SITE CONTROLLERS ---------------//
 use App\Http\Controllers\Public\PublicpageController; // test public page
@@ -25,27 +21,7 @@ use App\Models\AdminSite\Admin;
 
 
 // ********** testing routes *************/
-
-// Resource controller will automatically create routes for 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
-// for you to use and help keep your routes file cleaner! Run `php artisan route:list` to see all routes.
-Route::resource('widgets', WidgetController::class);
-
-// API resource controller (excludes 'create' and 'edit' routes which don't exist in an API)
-Route::apiResource('apitest', TestApiResourceController::class);
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/test-route/{user_id?}', function($user_id = 'default_id') {
-   return view('test-view', ['user_id' => $user_id]);
-});
-
-// another way to do the same thing as in our '/test-route' route above; a bit less code
-Route::view('/test-route-alt/{user_id?}', 'test-view', ['user_id' => 'default_id']);
-
-Route::get('/test2', [ProductController::class, 'test2'])->name('product.test2');
-// ********** /end testing *************/
+require_once 'testing/test_routes.php';
 
 
 /*************************************************************
