@@ -5,7 +5,11 @@ use App\Http\Controllers\Admin\ProductController; // namespace for our "Products
 
 
 // Resource controller will automatically create routes for 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
-// for you to use and help keep your routes file cleaner! Run `php artisan route:list` to see all routes.
+// for you to use and help keep your routes file cleaner! 
+
+// You can use 'only' or 'except' to limit the routes that are created.
+
+// Run `php artisan route:list` to see all routes.
 Route::resource('widgets', WidgetController::class)->except(['show']);
 Route::resource('xyztest', WidgetController::class)->only(['index', 'edit', 'update']);
 
