@@ -20,13 +20,11 @@ use App\Models\Common\Product;
 use App\Models\AdminSite\Admin;
 
 
-// ********** testing routes *************/
+// * test routes 
 require_once 'testing/test_routes.php';
 
 
-/*************************************************************
- **************** SECTION: Utility routes ********************
- *************************************************************/
+// SECTION: Utility routes ---------------------------------------
 
 // lost the 'storage' link in /public? Call this route to fix it.
 Route::get('/linkstorage', function () {
@@ -43,7 +41,7 @@ Route::get('/linkstorage', function () {
 // Product index - 'auth' middleware added which will redirect to a 'login' route by default
 //Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth:adminsite.user');
 
-// * Group routes that require authentication
+// Routes that require authentication to access admin site
 Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
 {
    // Admin dashboard index
@@ -62,9 +60,7 @@ Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
    })->name('admin.index');
    
 
-   /************************************************************
-   ************ SECTION: Product routes ************************
-   *************************************************************/
+   // SECTION: Product routes ---------------------------------------
    Route::get('/product', [ProductController::class, 'index'])->name('product.index');
    Route::get('/product/exportcsv', [ProductController::class, 'indexExportCsv'])->name('product.index.exportcsv');
    
@@ -77,9 +73,7 @@ Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
    Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
 
 
-   /*********************************************************************
-   ************* SECTION: Admin users routes (for admin and superadmin) *
-   *********************************************************************/
+   // SECTION: Admin users routes (for admin and superadmin)  ---------------------------------------
    Route::middleware(['auth', 'auth.adminsite.admin', 'auth.adminsite.superadmin'])->group(function () {
       Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminusers.index');
       
@@ -101,18 +95,17 @@ Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
 });
 
 
-/*************************************************************
-**************** SECTION: Login routes ***********************
-*************************************************************/
-Route::get('/adminlogin', [LoginController::class, 'adminloginLoginForm'])->name('login'); // named 'login' b/c Laravel expects 'login' route by default?
-Route::post('/adminlogin-process', [LoginController::class, 'adminloginProcess'])->name('adminlogin.process');
-Route::post('/adminlogin-logout', [LoginController::class, 'adminloginLogout'])->name('adminlogin.logout');
+
+// SECTION: Login routes  ---------------------------------------
+Route::controller(LoginController::class)->group(function () {
+   Route::get('/adminlogin', 'adminloginLoginForm')->name('login'); // named 'login' b/c Laravel expects 'login' route by default?
+   Route::post('/adminlogin-process', 'adminloginProcess')->name('adminlogin.process');
+   Route::post('/adminlogin-logout', 'adminloginLogout')->name('adminlogin.logout');
+});
 
 
-/*************************************************************
-*********** SECTION: Forgot/reset password routes ************
-*************************************************************/
 
+// SECTION: Forgot/reset password routes ---------------------------------------
 // * test route to see if an 'admin' is logged in
 Route::get('/admin-check', function () {
    if (Auth::guard('admin')->check()) {
@@ -144,9 +137,7 @@ Route::post('/admin-reset-password', [PasswordResetController::class, 'passwordU
     ->name('password.update');
 
 
-/*************************************************************
- **************** SECTION: Email routes **********************
- *************************************************************/
+// SECTION: Email routes  ---------------------------------------
 
 // Send email using Laravel and Gmail SMTP (https://bit.ly/3yMjum0)
 Route::get('/email', [EmailController::class, 'sendEmail'])->name('send.email');
@@ -166,7 +157,5 @@ Route::get('/email-with-cc-bcc', [EmailController::class, 'sendEmailWithCcBcc'])
 Route::get('/products', [PublicProductController::class, 'index'])->name('public_products.index');
 
 
-/************************************************************
-**************** SECTION: API routes ************************
-*************************************************************/
+// SECTION: API routes ---------------------------------------
 Route::get('weatherapi', [WeatherApiController::class, 'index'])->name('weatherapi.index');
