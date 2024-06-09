@@ -74,21 +74,16 @@ Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
 
 
    // SECTION: Admin users routes (for admin and superadmin)  ---------------------------------------
-   Route::middleware(['auth', 'auth.adminsite.admin', 'auth.adminsite.superadmin'])->group(function () {
-      Route::get('/adminusers', [AdminusersController::class, 'index'])->name('adminusers.index');
-      
-      Route::get('/adminusers/create', [AdminusersController::class, 'create'])->name('adminusers.create');
-      Route::post('/adminusers', [AdminusersController::class, 'store'])->name('adminusers.store');
-      
-      Route::get('/adminusers/{adminuser}/edit', [AdminusersController::class, 'edit'])->name('adminusers.edit');
-      Route::put('/adminusers/{adminuser}/update', [AdminusersController::class, 'update'])->name('adminusers.update');
+   Route::group(['middleware' => ['auth', 'auth.adminsite.admin', 'auth.adminsite.superadmin']], function() {
+      Route::resource('/adminusers', AdminusersController::class)->only(['index', 'create', 'store', 'edit', 'update']);
    });
 
-   Route::middleware(['auth', 'auth.adminsite.superadmin'])->group(function () {
-      Route::delete('/adminusers/{adminuser}/destroy', [AdminusersController::class, 'destroy'])->name('adminusers.destroy');
+   Route::group(['middleware' => ['auth', 'auth.adminsite.superadmin']], function() {
+      Route::resource('/adminusers', AdminusersController::class)->only(['destroy']);
    });
 
 
+   // SECTION: Misc routes ---------------------------------------
    Route::get('/misc', function () {
       return view('admin.misc');
    })->name('admin-misc');
