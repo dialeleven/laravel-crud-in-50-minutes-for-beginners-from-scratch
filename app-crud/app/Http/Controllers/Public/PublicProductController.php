@@ -12,6 +12,7 @@ class PublicProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('public.products.index', ['products' => $products]);
+        $total_products = Product::count();
+        return view('public.products.index', ['products' => $products, 'total_products' => $total_products]);
     }
 }

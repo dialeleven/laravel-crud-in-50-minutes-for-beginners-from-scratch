@@ -11,7 +11,7 @@
 <body class="bg-gray-100">
 
 <div class="max-w-4xl mx-auto px-4 py-8">
-    <h1 class="text-2xl font-bold mb-4">Products Index</h1>
+    <h1 class="text-2xl font-bold mb-4">Products Index ({{$total_products}} {{ Str::plural('Product', $total_products) }})</h1>
 
     @foreach ($products as $product)
         <div class="bg-white shadow-md rounded-lg p-4 mb-4">
