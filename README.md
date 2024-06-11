@@ -1,4 +1,4 @@
-With Devtamin's Laravel CRUD tutorial successfully completed going over the basics, we are going above and beyond the tutorial based on what I've built in native PHP in the past professionally (e.g. pagination, email functionality, image uploads and resizing, etc...).
+With Devtamin's Laravel CRUD tutorial successfully completed going over the basics, we are going above and beyond the tutorial based on what I've built in native PHP in the past in the workplace (e.g. pagination, email functionality, image uploads and resizing, etc...).
 
 The "basic" tutorial covers a fair amount including: routes, controllers, views, models, and dependency injection in the service container.
 
