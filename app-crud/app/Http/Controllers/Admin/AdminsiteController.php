@@ -16,6 +16,6 @@ class AdminsiteController extends Controller
         $total_adminusers = Admin::count(); // get total adminusers
 
         //return view('adminsite.index', ['total_products' => $total_products, 'total_admins' => $total_admins]);
-        return view('adminsite.index', compact('total_products', 'total_adminusers'));
+        return view('admin.index', compact('total_products', 'total_adminusers'));
     }
 }
