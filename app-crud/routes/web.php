@@ -61,6 +61,7 @@ Route::prefix('adminsite')->group(function()
       // admin site index
       Route::get('/', [AdminsiteController::class, 'index'])->name('adminsite.index');
 
+      
       // SECTION: Product routes ---------------------------------------
       Route::resource('/products', ProductController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
       Route::get('/products/exportcsv', [ProductController::class, 'indexExportCsv'])->name('products.index.exportcsv');
@@ -87,15 +88,6 @@ Route::prefix('adminsite')->group(function()
 
 
 // SECTION: Forgot/reset password routes ---------------------------------------
-// * test route to see if an 'admin' is logged in
-Route::get('/admin-check', function () {
-   if (Auth::guard('admin')->check()) {
-       return 'Admin is logged in';
-   } else {
-       #dd(Auth::guard('admin'));
-       return 'Admin is not logged in';
-   }
-});
 
 // forgot password - VIEW
 Route::get('/admin-forgot-password', function() {
@@ -115,6 +107,16 @@ Route::get('/admin-reset-password/{token}/{email}', function ($token, $email) {
 // reset password form submission - POST request
 Route::post('/admin-reset-password', [PasswordResetController::class, 'passwordUpdate'])
     ->name('password.update');
+
+// * test route to see if an 'admin' is logged in
+Route::get('/admin-check', function () {
+   if (Auth::guard('admin')->check()) {
+       return 'Admin is logged in';
+   } else {
+       #dd(Auth::guard('admin'));
+       return 'Admin is not logged in';
+   }
+});
 
 
 // SECTION: Email routes  ---------------------------------------
