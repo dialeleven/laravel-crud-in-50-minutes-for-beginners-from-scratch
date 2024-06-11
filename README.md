@@ -1,6 +1,6 @@
 With Devtamin's Laravel CRUD tutorial successfully completed going over the basics, we are going above and beyond the tutorial based on what I've built in native PHP in the past professionally (e.g. pagination, email functionality, image uploads and resizing, etc...).
 
-The "basic" tutorial covers a fair bit like routes, controllers, views, models, dependency injection in the service container.
+The "basic" tutorial covers a fair amount including: routes, controllers, views, models, and dependency injection in the service container.
 
 Beyond the basics, we cover things like PHPUnit testing in Laravel, Tailwind CSS, Bootstrap, Laravel Vite, middleware authentication, sending email (plain text/HTML, attachments), exporting MySQL data to CSV, handling file/image uploads, pagination and sorting, REST API consumption, and exploring various Laravel Libraries. You can see a list of completed (and planned) additions to the project below.
 
