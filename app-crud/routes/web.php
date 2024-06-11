@@ -77,9 +77,7 @@ Route::prefix('adminsite')->group(function()
 
 
       // SECTION: Misc routes ---------------------------------------
-      Route::get('/misc', function () {
-         return view('admin.misc');
-      })->name('admin_misc');
+      Route::view('/misc', 'admin.misc', ['title' => 'Miscellaneous'])->name('admin_misc');
    }); // end auth middleware for adminsite 'users'
 
 });
