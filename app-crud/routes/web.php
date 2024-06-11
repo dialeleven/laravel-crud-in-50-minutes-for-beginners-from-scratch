@@ -24,14 +24,6 @@ use App\Http\Controllers\Public\WeatherApiController; // weatherapi.com controll
 require_once 'testing/test_routes.php';
 
 
-// SECTION: Utility routes ---------------------------------------
-
-// lost the 'storage' link in /public? Call this route to fix it.
-Route::get('/linkstorage', function () {
-   Artisan::call('storage:link');
-});
-
-
 /*---------------------------------------------------
 |                                                   |
 |               ADMIN SITE ROUTES                   |
