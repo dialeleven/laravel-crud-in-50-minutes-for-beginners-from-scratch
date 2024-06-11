@@ -63,7 +63,7 @@ class AuthRoutesTest extends TestCase
         // Log in the admin user using the 'admin' guard (in 'config/auth.php')
         $this->actingAs($admin, 'admin');
 
-        $response = $this->post(route('password.send-reset-link'), [
+        $response = $this->post(route('password.send_reset_link'), [
             'email' => $test_email,
         ]);
 

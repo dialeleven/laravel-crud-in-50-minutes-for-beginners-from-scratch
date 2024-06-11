@@ -156,7 +156,7 @@
                   <span class="mx-2 text-sm font-medium">Weather</span>
                </a>
 
-               <a href="{{route('admin-misc')}}" class="group flex items-center px-3 py-2 text-blue-100 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700
+               <a href="{{route('admin_misc')}}" class="group flex items-center px-3 py-2 text-blue-100 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700
                hover:border-gray-500 dark:hover:border-gray-200 border border-transparent">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 transition-transform duration-300 ease-in-out transform group-hover:scale-125">
                      <title>Miscellany</title>

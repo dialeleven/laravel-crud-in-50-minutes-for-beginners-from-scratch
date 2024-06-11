@@ -79,7 +79,7 @@ Route::prefix('adminsite')->group(function()
       // SECTION: Misc routes ---------------------------------------
       Route::get('/misc', function () {
          return view('admin.misc');
-      })->name('admin-misc');
+      })->name('admin_misc');
    }); // end auth middleware for adminsite 'users'
 
 });
@@ -96,7 +96,7 @@ Route::get('/admin-forgot-password', function() {
 
 // forgot password - POST request
 Route::post('/admin-forgot-password/send-reset-link', [PasswordResetController::class, 'sendResetLink'])
-    ->name('password.send-reset-link');
+    ->name('password.send_reset_link');
 
 // reset password (passing token and email) - VIEW
 Route::get('/admin-reset-password/{token}/{email}', function ($token, $email) {
