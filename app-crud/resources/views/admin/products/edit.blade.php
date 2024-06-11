@@ -19,7 +19,7 @@
 
 {{-- `@section` & `@endsection` marks where your unique page content goes --}}
 @section('content')
-<form method="post" action="{{route('product.update', ['product' => $product])}}" enctype="multipart/form-data" class="max-w-xl text-sm border p-4 rounded-md shadow">
+<form method="post" action="{{route('products.update', ['product' => $product])}}" enctype="multipart/form-data" class="max-w-xl text-sm border p-4 rounded-md shadow">
    @csrf
    @method('put')
 
@@ -53,7 +53,7 @@
    <div class="mb-4">
       <input type="hidden" name="page" value="{{ old('page', $page ) }}">
       <input type="submit" value="Update" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded transition duration-300 cursor-pointer">
-      <input type="button" value="Cancel" class="inline-block bg-gray-500 hover:bg-gray-600 text-white py-1 px-3 rounded transition duration-300 cursor-pointer" onclick="location.href='{{route('product.index')}}';">
+      <input type="button" value="Cancel" class="inline-block bg-gray-500 hover:bg-gray-600 text-white py-1 px-3 rounded transition duration-300 cursor-pointer" onclick="location.href='{{route('products.index')}}';">
    </div>
 </form>
 @endsection

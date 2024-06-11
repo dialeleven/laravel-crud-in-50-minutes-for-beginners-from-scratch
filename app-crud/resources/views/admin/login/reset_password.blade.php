@@ -109,7 +109,7 @@
         </button>
 
         <p class="text-sm text-gray-500">
-          <a class="underline" href="{{route('login')}}">Back to login</a>
+          <a class="underline" href="{{route('adminsite.login')}}">Back to login</a>
         </p>
       </div>
       <input type="hidden" name="email" value="{{ $email }}">

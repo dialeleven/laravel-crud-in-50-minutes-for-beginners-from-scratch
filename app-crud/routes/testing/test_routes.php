@@ -31,4 +31,4 @@ Route::get('/test-route/{user_id?}', function($user_id = 'default_id') {
 // another way to do the same thing as in our '/test-route' route above; a bit less code
 Route::view('/test-route-alt/{user_id?}', 'test-view', ['user_id' => 'default_id']);
 
-Route::get('/test2', [ProductController::class, 'test2'])->name('product.test2');
+Route::get('/test2', [ProductController::class, 'test2'])->name('products.test2');

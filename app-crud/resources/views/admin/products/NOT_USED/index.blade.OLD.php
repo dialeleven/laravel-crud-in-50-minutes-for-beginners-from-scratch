@@ -33,8 +33,8 @@
 
    <!-- create/export csv buttons -->
    <p class="mt-3 mb-4">
-      <a href="{{ route('product.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Create Product</a>
-      <a href="{{ route('product.index.exportcsv') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded text-xs uppercase font-bold">Export CSV</a>
+      <a href="{{ route('products.create') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Create Product</a>
+      <a href="{{ route('products.index.exportcsv') }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded text-xs uppercase font-bold">Export CSV</a>
    </p>
 
    <!-- pagination links - make sure controller is calling "Classname::paginate(X);"" -->
@@ -80,10 +80,10 @@
                @endif
                </td>
                <td class="py-2 px-3 border-b border-gray-400 text-center">
-                  <a href="{{ route('product.edit', ['product' => $product]) }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded transition duration-300">Edit</a>
+                  <a href="{{ route('products.edit', ['product' => $product]) }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded transition duration-300">Edit</a>
                </td>
                <td class="py-2 px-3 border-b border-gray-400 text-center">
-                  <form method="POST" action="{{ route('product.destroy', ['product' => $product]) }}">
+                  <form method="POST" action="{{ route('products.destroy', ['product' => $product]) }}">
                   @csrf
                   @method('delete')
                   <button type="submit" class="inline-block bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded transition duration-300" onclick="return confirm('Delete {{ $product->name }}?')">Delete</button>

@@ -39,63 +39,60 @@ Route::get('/linkstorage', function () {
 -----------------------------------------------------*/
 
 // Product index - 'auth' middleware added which will redirect to a 'login' route by default
-//Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth:adminsite.user');
+//Route::get('/product', [ProductController::class, 'index'])->name('products.index')->middleware('auth:adminsite.user');
 
-// Routes that require authentication to access admin site
-Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
+
+
+
+// Admin site routes
+Route::prefix('adminsite')->group(function()
 {
-   // Admin dashboard index
-   Route::get('/admin-index', function () {
-      #dd(auth()->user());
-      #dd(Auth::user);
+   // Login routes
+   Route::controller(LoginController::class)->group(function () {
+      Route::get('/login', 'adminsiteLoginForm')->name('login'); // Named 'login' b/c default Laravel authentication middleware 
+                                                                 // expects 'login' route to be defined.
+      Route::post('/login-process', 'adminsiteLoginProcess')->name('adminsite.login-process');
+      Route::post('/logout', 'adminsiteLogout')->name('adminsite.logout');
+   });
+
+
+   // Routes that require authentication to access admin site
+   Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
+   {
+      // Admin dashboard index
+      Route::get('/', function () {
+         #dd(auth()->user());
+         #dd(Auth::user);
+
+         $total_products = Product::count(); // get total products
+         $total_adminusers = Admin::count(); // get total adminusers
+
+         //return view('admin.index', ['total_products' => $total_products, 'total_admins' => $total_admins]);
+         return view('admin.index', compact('total_products', 'total_adminusers'));
+      })->name('admin.index');
       
-      // get total products
-      $total_products = Product::count();
 
-      // get total adminusers
-      $total_adminusers = Admin::count();
-
-      //return view('admin.index', ['total_products' => $total_products, 'total_admins' => $total_admins]);
-      return view('admin.index', compact('total_products', 'total_adminusers'));
-   })->name('admin.index');
-   
-
-   // SECTION: Product routes ---------------------------------------
-   Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-   Route::get('/product/exportcsv', [ProductController::class, 'indexExportCsv'])->name('product.index.exportcsv');
-   
-   Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
-   Route::post('/product', [ProductController::class, 'store'])->name('product.store');
-   
-   Route::get('/product/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
-   Route::put('/product/{product}/update', [ProductController::class, 'update'])->name('product.update');
-   
-   Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
+      // SECTION: Product routes ---------------------------------------
+      Route::resource('/products', ProductController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
+      Route::get('/products/exportcsv', [ProductController::class, 'indexExportCsv'])->name('products.index.exportcsv');
 
 
-   // SECTION: Admin users routes (for admin and superadmin)  ---------------------------------------
-   Route::group(['middleware' => ['auth', 'auth.adminsite.admin', 'auth.adminsite.superadmin']], function() {
-      Route::resource('/adminusers', AdminusersController::class)->only(['index', 'create', 'store', 'edit', 'update']);
-   });
+      // SECTION: Admin users routes (for admin and superadmin)  ---------------------------------------
+      Route::group(['middleware' => ['auth', 'auth.adminsite.admin', 'auth.adminsite.superadmin']], function() {
+         Route::resource('/adminusers', AdminusersController::class)->only(['index', 'create', 'store', 'edit', 'update']);
+      });
 
-   Route::group(['middleware' => ['auth', 'auth.adminsite.superadmin']], function() {
-      Route::resource('/adminusers', AdminusersController::class)->only(['destroy']);
-   });
-
-
-   // SECTION: Misc routes ---------------------------------------
-   Route::get('/misc', function () {
-      return view('admin.misc');
-   })->name('admin-misc');
-});
+      Route::group(['middleware' => ['auth', 'auth.adminsite.superadmin']], function() {
+         Route::resource('/adminusers', AdminusersController::class)->only(['destroy']);
+      });
 
 
+      // SECTION: Misc routes ---------------------------------------
+      Route::get('/misc', function () {
+         return view('admin.misc');
+      })->name('admin-misc');
+   }); // end auth middleware for adminsite 'users'
 
-// SECTION: Login routes  ---------------------------------------
-Route::controller(LoginController::class)->group(function () {
-   Route::get('/adminlogin', 'adminloginLoginForm')->name('login'); // named 'login' b/c Laravel expects 'login' route by default?
-   Route::post('/adminlogin-process', 'adminloginProcess')->name('adminlogin.process');
-   Route::post('/adminlogin-logout', 'adminloginLogout')->name('adminlogin.logout');
 });
 
 

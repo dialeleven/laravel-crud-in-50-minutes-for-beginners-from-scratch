@@ -59,7 +59,7 @@
                
                <ul>
                   <li>
-                     <a href="{{ route('product.create') }}" class="flex items-center px-5 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700">
+                     <a href="{{ route('products.create') }}" class="flex items-center px-5 py-2 text-gray-600 transition-colors duration-300 transform rounded-lg dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-gray-200 hover:text-gray-700">
                         <span class="mx-2 text-sm font-medium">Create Product</span>
                      </a>
                   </li>
@@ -148,7 +148,7 @@
       <!-- subnav -->
       <div class="">
          <div class="bg-gray-400 text-white pl-2 pt-2 pr-2 text-xs shadow-lg rounded-bl">
-            <span href="{{ route('product.create') }}" class="inline-block bg-slate-600  text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Products Index</span>
+            <span href="{{ route('products.create') }}" class="inline-block bg-slate-600  text-white py-2 px-4 rounded mr-2 text-xs uppercase font-bold">Products Index</span>
             <a href="#" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 mb-2 text-xs uppercase font-bold">Product Reports</a>
             <a href="#" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 mb-2 text-xs uppercase font-bold">Product Widgets</a>
             <a href="#" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mr-2 mb-2 text-xs uppercase font-bold">Product XYZ</a>
@@ -203,10 +203,10 @@
                         @endif
                         </td>
                         <td class="py-2 px-3 border-b border-gray-400 text-center">
-                           <a href="{{ route('product.edit', ['product' => $product]) }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded transition duration-300">Edit</a>
+                           <a href="{{ route('products.edit', ['product' => $product]) }}" class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-1 px-3 rounded transition duration-300">Edit</a>
                         </td>
                         <td class="py-2 px-3 border-b border-gray-400 text-center">
-                           <form method="POST" action="{{ route('product.destroy', ['product' => $product]) }}">
+                           <form method="POST" action="{{ route('products.destroy', ['product' => $product]) }}">
                            @csrf
                            @method('delete')
                            <button type="submit" class="inline-block bg-red-600 hover:bg-red-700 text-white py-1 px-3 rounded transition duration-300" onclick="return confirm('Delete {{ $product->name }}?')">Delete</button>

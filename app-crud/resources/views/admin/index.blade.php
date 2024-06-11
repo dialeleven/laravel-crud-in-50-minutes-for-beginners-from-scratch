@@ -31,7 +31,7 @@ Welcome to the Admin Dashboard, <b>{{ Auth::user()->name }}</b>! {{-- (role_id: 
       <p class="text-gray-700 mb-4">
          {{ $total_products }} Product{{ $total_products > 1 ? 's' : '' }}
       </p>
-      <a href="{{ route('product.index') }}" class="text-blue-500 hover:underline">View Products</a>
+      <a href="{{ route('products.index') }}" class="text-blue-500 hover:underline">View Products</a>
    </div>
 
    <div class="bg-purple-100 p-6 rounded-lg shadow-md border border-gray-300">

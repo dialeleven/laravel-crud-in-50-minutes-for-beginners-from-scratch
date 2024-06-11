@@ -56,7 +56,7 @@
   </div>
 
   <div class="mx-auto border-2 shadow rounded-md max-w-md">
-    <form action="{{route('adminlogin.process')}}" method="POST" class="mx-auto mb-0 mt-3 max-w-md space-y-4 p-5">
+    <form action="{{route('adminsite.login-process')}}" method="POST" class="mx-auto mb-0 mt-3 max-w-md space-y-4 p-5">
       @csrf
       @method('post')
       <div class="">

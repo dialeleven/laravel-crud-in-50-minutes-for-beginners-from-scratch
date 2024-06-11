@@ -152,8 +152,8 @@ class ProductController extends Controller
         $newProduct = Product::create($data);
 
         // redirect to product index page after
-        //return redirect(route('product.index'));
-        return redirect(route('product.index'))->with('success', 'Product added successfully');
+        //return redirect(route('products.index'));
+        return redirect(route('products.index'))->with('success', 'Product added successfully');
     }
 
     
@@ -285,7 +285,7 @@ class ProductController extends Controller
         // get the current page number from the query parameters
         $current_page = $request->input('page', 1);
 
-        return redirect(route('product.index', ['page' => $current_page]))->with('success', 'Product updated successfully');
+        return redirect(route('products.index', ['page' => $current_page]))->with('success', 'Product updated successfully');
     }
 
 
@@ -354,7 +354,7 @@ class ProductController extends Controller
             $current_page = $total_pages;
         }
 
-        return redirect(route('product.index', ['page' => $current_page]))->with('success', 'Product deleted successfully');
+        return redirect(route('products.index', ['page' => $current_page]))->with('success', 'Product deleted successfully');
     }
 
     

@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Response; // ? still needed
 class LoginController extends Controller
 {
     // admin site - show login form
-    public function adminloginLoginForm() {
+    public function adminsiteLoginForm() {
         //return view('login.index', ['products' => $products]);
         return view('admin.login.index');
     }
 
     // admin site - process admin login user/pass
-    public function adminloginProcess(Request $request)
+    public function adminsiteLoginProcess(Request $request)
     {
         // dd($request);
 
@@ -48,13 +48,13 @@ class LoginController extends Controller
 
 
     // log user out of admin site
-    public function adminloginLogout(Request $request) {
+    public function adminsiteLogout(Request $request) {
         Auth::logout();
         
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         
-        return redirect()->route('login')->with('success', 'You have successfully signed out');
+        return redirect()->route('adminsite.login')->with('success', 'You have successfully signed out');
     }
 
 

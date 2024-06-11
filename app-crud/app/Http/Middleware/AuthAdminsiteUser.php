@@ -19,7 +19,7 @@ class AuthAdminsiteUser
         if (!auth()->check() OR !auth()->user()->role->id) {
             #dd(auth()->user()->role->id);
             #dd(auth()->user()->role);
-            return redirect()->route('login')->withErrors(['error' => 'Please login first']);
+            return redirect()->route('adminsite.login')->withErrors(['error' => 'Please login first']);
         }
 
         return $next($request);
