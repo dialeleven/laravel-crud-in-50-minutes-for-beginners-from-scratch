@@ -1,7 +1,6 @@
 With Devtamin's Laravel CRUD tutorial successfully completed we are going above and beyond the tutorial based on what I've built in native PHP in the past (e.g. pagination, email functionality, image uploads and resizing, etc...), implementing/testing Laravel libraries, functionality and other things of interest. Below is a list of the additions to the project that have been done.
 
-For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices#follow-laravel-naming-conventions) and other Laravel best practices, the GitHub repo from
-Alexey Mezenin for **[laravel-best-practices]**(https://github.com/alexeymezenin/laravel-best-practices) is an excellent resource.
+For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices#follow-laravel-naming-conventions) and other Laravel best practices, Alexey Mezenin's GitHub repo for [Laravel Best Practices](https://github.com/alexeymezenin/laravel-best-practices) is an excellent resource.
 
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
