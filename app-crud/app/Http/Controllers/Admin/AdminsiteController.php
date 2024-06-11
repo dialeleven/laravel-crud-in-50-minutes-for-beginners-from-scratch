@@ -2,7 +2,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller; // Import the base Controller class
-
 use Illuminate\Http\Request;
 
 //--------- App Models ---------------//
