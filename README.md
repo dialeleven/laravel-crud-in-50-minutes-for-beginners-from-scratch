@@ -152,8 +152,12 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### Create Link To /storage/public
-TODO: add code example here
+### Create Link from 'public/storage' to 'storage/app/public' (if it doesn't already exist)
+```
+cd /path/to/your/laravel/project
+Artisan::call('storage:link');
+```
+A return code of zero (0) indicates the command executed successfully and the link should have been created which you can check in your file manager.
 
 ### Test Accessing The Home Page '/' and 'products/' (e.g. http://localhost/products or http://laravel.localhost/products)
 If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apache error_log. Once any error(s) are resolved, you should be up and running!
