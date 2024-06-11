@@ -1,5 +1,6 @@
 <?php
 //---------- LARAVEL CLASSES/FACADES --------------//
+use App\Http\Controllers\Admin\AdminsiteController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request; // use in conjunction with 'Password' Facade. (maybe not needed since password reset is in a controller now)
 
@@ -59,6 +60,8 @@ Route::prefix('adminsite')->group(function()
    // Routes that require authentication to access admin site
    Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
    {
+      Route::get('/', [AdminsiteController::class, 'index'])->name('admin.index'); // TODO: rename 'admin.*' to 'adminsite.*'
+      /*
       // Admin dashboard index
       Route::get('/', function () {
          #dd(auth()->user());
@@ -70,7 +73,7 @@ Route::prefix('adminsite')->group(function()
          //return view('admin.index', ['total_products' => $total_products, 'total_admins' => $total_admins]);
          return view('admin.index', compact('total_products', 'total_adminusers'));
       })->name('admin.index');
-      
+      */
 
       // SECTION: Product routes ---------------------------------------
       Route::resource('/products', ProductController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
