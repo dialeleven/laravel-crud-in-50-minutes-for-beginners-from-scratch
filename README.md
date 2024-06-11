@@ -1,4 +1,8 @@
-With Devtamin's Laravel CRUD tutorial successfully completed we are going above and beyond the tutorial based on what I've built in native PHP in the past (e.g. pagination, email functionality, image uploads and resizing, etc...), implementing/testing Laravel libraries, functionality and other things of interest. Below is a list of the additions to the project that have been done.
+With Devtamin's Laravel CRUD tutorial successfully completed going over the basics, we are going above and beyond the tutorial based on what I've built in native PHP in the past in the workplace (e.g. pagination, email functionality, image uploads and resizing, etc...).
+
+The "basic" tutorial covers a fair amount including: routes, controllers, views, models, and dependency injection in the service container.
+
+Beyond the basics, we delve into things like PHPUnit testing in Laravel, Tailwind CSS, Bootstrap, Laravel Vite, middleware authentication, sending email (plain text/HTML, attachments), exporting MySQL data to CSV, handling file/image uploads, pagination and sorting, REST API consumption, and exploring various Laravel Libraries. You can see a list of completed (and planned) additions to the project below.
 
 For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices#follow-laravel-naming-conventions) and other Laravel best practices, Alexey Mezenin's GitHub repo for [Laravel Best Practices](https://github.com/alexeymezenin/laravel-best-practices) (scoll down to view the README.md) is an excellent resource.
 
@@ -148,8 +152,12 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### Create Link To /storage/public
-TODO: add code example here
+### Create Link from 'public/storage' to 'storage/app/public' (if it doesn't already exist)
+```
+cd /path/to/your/laravel/project
+Artisan::call('storage:link');
+```
+A return code of zero (0) indicates the command executed successfully and the link should have been created which you can check in your file manager.
 
 ### Test Accessing The Home Page '/' and 'products/' (e.g. http://localhost/products or http://laravel.localhost/products)
 If you get any 500 server errors, check 'storage/logs/laravel.log' or your Apache error_log. Once any error(s) are resolved, you should be up and running!
