@@ -2,7 +2,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed going over the basi
 
 The "basic" tutorial covers a fair amount including: routes, controllers, views, models, and dependency injection in the service container.
 
-Beyond the basics, we cover things like PHPUnit testing in Laravel, Tailwind CSS, Bootstrap, Laravel Vite, middleware authentication, sending email (plain text/HTML, attachments), exporting MySQL data to CSV, handling file/image uploads, pagination and sorting, REST API consumption, and exploring various Laravel Libraries. You can see a list of completed (and planned) additions to the project below.
+Beyond the basics, we delve into things like PHPUnit testing in Laravel, Tailwind CSS, Bootstrap, Laravel Vite, middleware authentication, sending email (plain text/HTML, attachments), exporting MySQL data to CSV, handling file/image uploads, pagination and sorting, REST API consumption, and exploring various Laravel Libraries. You can see a list of completed (and planned) additions to the project below.
 
 For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices#follow-laravel-naming-conventions) and other Laravel best practices, Alexey Mezenin's GitHub repo for [Laravel Best Practices](https://github.com/alexeymezenin/laravel-best-practices) (scoll down to view the README.md) is an excellent resource.
 
