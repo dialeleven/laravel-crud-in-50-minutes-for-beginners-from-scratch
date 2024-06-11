@@ -10,7 +10,7 @@ use App\Models\AdminSite\Admin;
 
 class AdminsiteController extends Controller
 {
-    //
+    // adminsite dashboard (home page)
     public function index() {
         $total_products = Product::count(); // get total products
         $total_adminusers = Admin::count(); // get total adminusers

@@ -17,11 +17,11 @@ use App\Http\Controllers\Public\PublicProductController; // public product page
 use App\Http\Controllers\Public\WeatherApiController; // weatherapi.com controller
 
 //--------- App Models ---------------//
-use App\Models\Common\Product;
-use App\Models\AdminSite\Admin;
+#use App\Models\Common\Product;
+#use App\Models\AdminSite\Admin;
 
 
-// * test routes 
+// SECTION: Test routes ---------------------------------------
 require_once 'testing/test_routes.php';
 
 
