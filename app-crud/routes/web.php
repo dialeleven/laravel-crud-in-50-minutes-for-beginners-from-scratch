@@ -60,20 +60,8 @@ Route::prefix('adminsite')->group(function()
    // Routes that require authentication to access admin site
    Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
    {
+      // admin site index
       Route::get('/', [AdminsiteController::class, 'index'])->name('admin.index'); // TODO: rename 'admin.*' to 'adminsite.*'
-      /*
-      // Admin dashboard index
-      Route::get('/', function () {
-         #dd(auth()->user());
-         #dd(Auth::user);
-
-         $total_products = Product::count(); // get total products
-         $total_adminusers = Admin::count(); // get total adminusers
-
-         //return view('admin.index', ['total_products' => $total_products, 'total_admins' => $total_admins]);
-         return view('admin.index', compact('total_products', 'total_adminusers'));
-      })->name('admin.index');
-      */
 
       // SECTION: Product routes ---------------------------------------
       Route::resource('/products', ProductController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);
@@ -110,7 +98,6 @@ Route::get('/admin-check', function () {
        return 'Admin is not logged in';
    }
 });
-
 
 // forgot password - VIEW
 Route::get('/admin-forgot-password', function() {
