@@ -37,7 +37,7 @@ class LoginController extends Controller
             request()->session()->regenerate();
             
             // redirect to admin dashboard
-            return redirect()->route('admin.index')->with('success', 'Welcome back!');
+            return redirect()->route('adminsite.index')->with('success', 'Welcome back!');
         }
 
         // authentication failed, redirect back with errors

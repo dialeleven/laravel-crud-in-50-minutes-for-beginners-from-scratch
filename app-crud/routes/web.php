@@ -43,8 +43,6 @@ Route::get('/linkstorage', function () {
 //Route::get('/product', [ProductController::class, 'index'])->name('products.index')->middleware('auth:adminsite.user');
 
 
-
-
 // Admin site routes
 Route::prefix('adminsite')->group(function()
 {
@@ -61,7 +59,7 @@ Route::prefix('adminsite')->group(function()
    Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
    {
       // admin site index
-      Route::get('/', [AdminsiteController::class, 'index'])->name('admin.index'); // TODO: rename 'admin.*' to 'adminsite.*'
+      Route::get('/', [AdminsiteController::class, 'index'])->name('adminsite.index');
 
       // SECTION: Product routes ---------------------------------------
       Route::resource('/products', ProductController::class)->only(['index', 'create', 'store', 'edit', 'update', 'destroy']);

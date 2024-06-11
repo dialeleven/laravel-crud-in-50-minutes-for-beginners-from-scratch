@@ -22,7 +22,7 @@ class AuthAdminsiteSuperadmin
         // Check if user is authenticated and has superadmin (id = 1) role
         if (!auth()->check() || auth()->user()->role->id !== 1) {
             #dd(auth()->user()->role->id);
-            return redirect()->route('admin.index')->withErrors(['error' => 'Sorry, you are not authorized access to that']);
+            return redirect()->route('adminsite.index')->withErrors(['error' => 'Sorry, you are not authorized access to that']);
         }
 
         return $next($request);

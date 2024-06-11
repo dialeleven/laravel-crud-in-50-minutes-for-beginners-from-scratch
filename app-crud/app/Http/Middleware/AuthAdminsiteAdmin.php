@@ -17,7 +17,7 @@ class AuthAdminsiteAdmin
     {
         // Check if user is authenticated and has is admin (role_id = 2) or superadmin (role_id = 1)
         if (!auth()->check() OR !in_array(auth()->user()->role->id, [1, 2])) {
-            return redirect()->route('admin.index')->with('error', 'Unauthorized access.');
+            return redirect()->route('adminsite.index')->with('error', 'Unauthorized access.');
         }
 
         return $next($request);
