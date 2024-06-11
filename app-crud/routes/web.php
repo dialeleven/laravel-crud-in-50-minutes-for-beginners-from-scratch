@@ -5,14 +5,13 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request; // use in conjunction with 'Password' Facade. (maybe not needed since password reset is in a controller now)
 
 //--------- ADMIN SITE CONTROLLERS ------------//
-use App\Http\Controllers\Admin\ProductController; // namespace for our "Products" Controller
-use App\Http\Controllers\Admin\AdminUsersController; // namespace for our "Adminusers" Controller
+use App\Http\Controllers\Admin\ProductController; // namespace for our "Product" Controller
+use App\Http\Controllers\Admin\AdminUserController; // namespace for our "Adminusers" Controller
 use App\Http\Controllers\Admin\LoginController; // namespace for our "Login" Controller to handle /login
 use App\Http\Controllers\Admin\PasswordResetController;
 use App\Http\Controllers\Admin\EmailController;
 
 //---------- PUBLIC SITE CONTROLLERS ---------------//
-use App\Http\Controllers\Public\PublicpageController; // test public page
 use App\Http\Controllers\Public\PublicProductController; // public product page
 use App\Http\Controllers\Public\WeatherApiController; // weatherapi.com controller
 
@@ -69,11 +68,11 @@ Route::prefix('adminsite')->group(function()
 
       // SECTION: Admin users routes (for admin and superadmin)  ---------------------------------------
       Route::group(['middleware' => ['auth', 'auth.adminsite.admin', 'auth.adminsite.superadmin']], function() {
-         Route::resource('/adminusers', AdminusersController::class)->only(['index', 'create', 'store', 'edit', 'update']);
+         Route::resource('/adminusers', AdminUserController::class)->only(['index', 'create', 'store', 'edit', 'update']);
       });
 
       Route::group(['middleware' => ['auth', 'auth.adminsite.superadmin']], function() {
-         Route::resource('/adminusers', AdminusersController::class)->only(['destroy']);
+         Route::resource('/adminusers', AdminUserController::class)->only(['destroy']);
       });
 
 

@@ -11,7 +11,7 @@ use App\Models\AdminSite\AdminRole;
 
 use Illuminate\Support\Facades\Auth;
 
-class AdminusersController extends Controller
+class AdminUserController extends Controller
 {
     // READ adminuser list - view
     public function index() {
