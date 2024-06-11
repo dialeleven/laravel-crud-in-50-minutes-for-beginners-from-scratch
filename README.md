@@ -1,5 +1,7 @@
 With Devtamin's Laravel CRUD tutorial successfully completed we are going above and beyond the tutorial based on what I've built in native PHP in the past (e.g. pagination, email functionality, image uploads and resizing, etc...), implementing/testing Laravel libraries, functionality and other things of interest. Below is a list of the additions to the project that have been done.
 
+For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices#follow-laravel-naming-conventions) and other Laravel best practices, Alexey Mezenin's GitHub repo for [Laravel Best Practices](https://github.com/alexeymezenin/laravel-best-practices) (scoll down to view the README.md) is an excellent resource.
+
 # Expanding Completed Laravel CRUD tutorial (marked as a 1.0 release). What's Next?
 
 ## ✔️ Completed Additions
@@ -26,7 +28,7 @@ With Devtamin's Laravel CRUD tutorial successfully completed we are going above 
 - [x] Admin Users - Create/Edit - password requirements (min character limit, 1 number, 1 special char)
 - [x] Admin Users - Create/Edit - Password requirement error message output: combine into single error message (currently multiple error messages can be output in list items)
 - [x] Authentication for CRUD app (✔️login form, ✔️login form submission logic, ✔️user logged in check (web.php), ✔️logout
-- [x] Login check for entire CRUD app (check out [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#breeze-and-blade) for authentication starter kit)
+- [x] Login check for entire CRUD app (check out [Laravel Breeze](https://laravel.com/docs/11.x/starter-kits#breeze-and-blade) for authentication starter kit?)
 - [x] One public site view/controller/model (/products - public listing of products)
 - [x] Pagination - sorting (asc/desc)
 - [x] Admin site: [INNER JOIN](https://laravel.com/docs/11.x/queries#joins) query
