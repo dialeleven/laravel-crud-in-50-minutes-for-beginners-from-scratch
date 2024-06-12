@@ -94,8 +94,13 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
 ### Follow the #installation steps (https://laravel.com/docs/11.x/billing#installation)
 Should be no issues running the commands.
 
-### Enter Your API Keys (https://laravel.com/docs/11.x/billing#api-keys)
-Copy/paste your Stripe API keys from (https://dashboard.stripe.com/test/apikeys - note that the URL may change in the future - Log into your account and look under "Developers" and API keys).
+### Enter Your API Keys In .env (https://laravel.com/docs/11.x/billing#api-keys)
+Copy/paste your Stripe API keys from the Stripe dashboard developer section (https://dashboard.stripe.com/test/apikeys - note that the URL may change in the future - Log into your account and look under "Developers" and API keys) and add the Stripe API key/secrets in your Laravel .env file:
+```
+STRIPE_KEY=your-stripe-key
+STRIPE_SECRET=your-stripe-secret
+STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret
+```
 
 ### Handle Stripe Webhooks (https://laravel.com/docs/11.x/billing#handling-stripe-webhooks)
 
