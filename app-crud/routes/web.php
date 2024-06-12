@@ -157,7 +157,7 @@ Route::get('/checkout-simple', function (Request $request) {
    ]);
 })->name('checkout.simple');
 
-Route::middleware('auth:admin')->get('/checkout2', function (Request $request) {
+Route::middleware('auth:web')->get('/checkout2', function (Request $request) {
    $stripePriceId = 'price_deluxe_album';
    $quantity = 1;
    return $request->user()->checkout([$stripePriceId => $quantity], [
@@ -169,7 +169,8 @@ Route::middleware('auth:admin')->get('/checkout2', function (Request $request) {
 
 #Route::middleware('auth:web')->get('/checkout', function (Request $request) {
 Route::get('/checkout', function (Request $request) {
-      $stripePriceId = '9.99';
+      // adjust this value according to your Stripe product id (Dashboard > Product catalogue > Add product. Click on product name > click on '...' to the right of the price > Copy price ID 
+      $stripePriceId = 'price_1PQjb7P3S64d6hFr5zeIVmjU';
       $quantity = 1;
   
       Stripe::setApiKey(env('STRIPE_SECRET'));
@@ -178,7 +179,8 @@ Route::get('/checkout', function (Request $request) {
           $session = Session::create([
               'payment_method_types' => ['card'],
               'line_items' => [[
-                  //'price' => $stripePriceId,
+                  'price' => $stripePriceId,
+                  /*
                   'price_data' => [
                       'currency' => 'usd',
                       'unit_amount' => $quantity * 1000,
@@ -186,6 +188,7 @@ Route::get('/checkout', function (Request $request) {
                           'name' => 'Deluxe Album',
                       ],
                   ],
+                  */
                   'quantity' => $quantity,
               ]],
               'mode' => 'payment',
@@ -197,7 +200,7 @@ Route::get('/checkout', function (Request $request) {
       } catch (\Exception $e) {
           return back()->withErrors(['error' => $e->getMessage()]);
       }
-  })->name('checkout');
+})->name('checkout');
 
 Route::view('/checkout/success', 'public.stripe_checkout.success')->name('checkout-success');
 Route::view('/checkout/cancel', 'public.stripe_checkout.cancel')->name('checkout-cancel');
