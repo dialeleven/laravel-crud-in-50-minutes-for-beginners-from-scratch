@@ -151,7 +151,43 @@ stripe listen --forward-to http://laravelcrud.test
 ```
 
 Create your views for /checkout/success, /checkout/cancel.
-Create routes for /checkout, /checkout/success, and /checkout/cancel, then test! Or just use what's in the repo here, but you'll learn more by going through the process yourself. If you get stuck, check the repo files for assistance :).
+Create routes for /checkout, /checkout/success, and /checkout/cancel, then test!
+
+**Sample route for /checkout**
+```
+Route::get('/checkout', function (Request $request) {
+      $stripePriceId = 'price_1PQjb7P3S64d6hFr5zeIVmjU'; // adjust this value according to your Stripe product id (Dashaboard > Product catalogue > Add product. Click on product name > click on '...' to the right of the price > Copy price ID (this will look like 'price_abcdefg'_
+      $quantity = 1;
+  
+      Stripe::setApiKey(env('STRIPE_SECRET'));
+  
+      try {
+          $session = Session::create([
+              'payment_method_types' => ['card'],
+              'line_items' => [[
+                  'price' => $stripePriceId,
+                  /*
+                  'price_data' => [
+                      'currency' => 'usd',
+                      'unit_amount' => $quantity * 1000,
+                      'product_data' => [
+                          'name' => 'Deluxe Album',
+                      ],
+                  ],
+                  */
+                  'quantity' => $quantity,
+              ]],
+              'mode' => 'payment',
+              'success_url' => route('checkout-success'),
+              'cancel_url' => route('checkout-cancel'),
+          ]);
+  
+          return new RedirectResponse($session->url);
+      } catch (\Exception $e) {
+          return back()->withErrors(['error' => $e->getMessage()]);
+      }
+})->name('checkout');
+```
 
 
 ## How to Install Intervention Image Library
