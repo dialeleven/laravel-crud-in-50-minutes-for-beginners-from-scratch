@@ -89,7 +89,7 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
   - [laravel-site-search](https://spatie.be/docs/laravel-site-search)
   - [laravel-pdf](https://spatie.be/docs/laravel-pdf)
 
-## Laravel Cashier - Installation
+## Laravel Cashier - Installation/Usage
 
 ### Follow the #installation steps (https://laravel.com/docs/11.x/billing#installation)
 Should be no issues running the commands.
@@ -144,6 +144,51 @@ Follow the configuration steps for #Billable Model.
 
 #### Quickstart - https://laravel.com/docs/11.x/billing#quickstart
 On to the Quickstart (finally!).
+
+Run the Stripe CLI command to send all Stripe events in test mode to your local webhook endpoint. Adjust your *--forward-to* URL according to your local dev environment.
+```
+stripe listen --forward-to http://laravelcrud.test
+```
+
+Create your views for /checkout/success, /checkout/cancel.
+Create routes for /checkout, /checkout/success, and /checkout/cancel, then test!
+
+**Sample route for /checkout**
+```
+Route::get('/checkout', function (Request $request) {
+      $stripePriceId = 'price_1PQjb7P3S64d6hFr5zeIVmjU'; // adjust this value according to your Stripe product id (Dashaboard > Product catalogue > Add product. Click on product name > click on '...' to the right of the price > Copy price ID (this will look like 'price_abcdefg'_
+      $quantity = 1;
+  
+      Stripe::setApiKey(env('STRIPE_SECRET'));
+  
+      try {
+          $session = Session::create([
+              'payment_method_types' => ['card'],
+              'line_items' => [[
+                  'price' => $stripePriceId,
+                  /*
+                  'price_data' => [
+                      'currency' => 'usd',
+                      'unit_amount' => $quantity * 1000,
+                      'product_data' => [
+                          'name' => 'Deluxe Album',
+                      ],
+                  ],
+                  */
+                  'quantity' => $quantity,
+              ]],
+              'mode' => 'payment',
+              'success_url' => route('checkout-success'),
+              'cancel_url' => route('checkout-cancel'),
+          ]);
+  
+          return new RedirectResponse($session->url);
+      } catch (\Exception $e) {
+          return back()->withErrors(['error' => $e->getMessage()]);
+      }
+})->name('checkout');
+```
+
 
 ## How to Install Intervention Image Library
 Install Intervention Image with Composer by running the following command.
