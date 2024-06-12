@@ -115,16 +115,18 @@ Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 ```
 
 #### Install Stripe CLI via Scoop Package Manager
+```
 scoop bucket add stripe https://github.com/stripe/scoop-stripe-cli.git
 scoop install stripe
+```
 
 #### Create Laravel Cashier Stripe Webook
 ```php artisan cashier:webhook```
 
-You should see:
-
+You should see something like:
+```
  INFO  The Stripe webhook was created successfully. Retrieve the webhook secret in your Stripe dashboard and define it as an environment variable.
-
+```
 
 ## How to Install Intervention Image Library
 Install Intervention Image with Composer by running the following command.
