@@ -89,6 +89,61 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
   - [laravel-site-search](https://spatie.be/docs/laravel-site-search)
   - [laravel-pdf](https://spatie.be/docs/laravel-pdf)
 
+## Laravel Cashier - Installation
+
+### Follow the #installation steps (https://laravel.com/docs/11.x/billing#installation)
+Should be no issues running the commands.
+
+### Enter Your API Keys In .env (https://laravel.com/docs/11.x/billing#api-keys)
+Copy/paste your Stripe API keys from the Stripe dashboard developer section (https://dashboard.stripe.com/test/apikeys - note that the URL may change in the future - Log into your account and look under "Developers" and API keys) and add the Stripe API key/secrets in your Laravel .env file:
+```
+STRIPE_KEY=your-stripe-key
+STRIPE_SECRET=your-stripe-secret
+STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret
+```
+### Update Your APP_URL in .env
+If you haven't changed the APP_URL in your .env file, it probably looks like:
+```
+APP_URL=http://localhost
+```
+
+Change it to whatever localhost URL you have configured in your environment. I'm using XAMPP and Apache and I adjusted my APP_URL to:
+```
+APP_URL=https://laravelcrud.test
+```
+
+### Handle Stripe Webhooks (https://laravel.com/docs/11.x/billing#handling-stripe-webhooks)
+
+For local development testing, you'll probably need the Stripe CLI tool (https://github.com/stripe/stripe-cli). Instructions are available on the GitHub repo. Windows install instructions are below for stripe-cli.
+
+#### Install Scoop for Windows - https://scoop.sh/
+Open a PowerShell terminal (version 5.1 or later) and from the PS C:\> prompt, run:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+```
+
+#### Install Stripe CLI via Scoop Package Manager
+```
+scoop bucket add stripe https://github.com/stripe/scoop-stripe-cli.git
+scoop install stripe
+```
+
+#### Create Laravel Cashier Stripe Webook
+```php artisan cashier:webhook```
+
+You should see something like:
+```
+ INFO  The Stripe webhook was created successfully. Retrieve the webhook secret in your Stripe dashboard and define it as an environment variable.
+```
+
+#### Configuration - https://laravel.com/docs/11.x/billing#configuration
+
+Follow the configuration steps for #Billable Model.
+
+#### Quickstart - https://laravel.com/docs/11.x/billing#quickstart
+On to the Quickstart (finally!).
 
 ## How to Install Intervention Image Library
 Install Intervention Image with Composer by running the following command.
