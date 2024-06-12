@@ -138,6 +138,11 @@ You should see something like:
  INFO  The Stripe webhook was created successfully. Retrieve the webhook secret in your Stripe dashboard and define it as an environment variable.
 ```
 
+#### Configuration - https://laravel.com/docs/11.x/billing#configuration
+
+Follow the configuration steps for #Billable Model.
+
+
 ## How to Install Intervention Image Library
 Install Intervention Image with Composer by running the following command.
 `$ composer require intervention/image`
