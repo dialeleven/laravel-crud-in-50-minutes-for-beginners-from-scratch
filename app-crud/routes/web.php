@@ -130,3 +130,19 @@ Route::get('/products', [PublicProductController::class, 'index'])->name('public
 
 // SECTION: API routes ---------------------------------------
 Route::get('weatherapi', [WeatherApiController::class, 'index'])->name('weatherapi.index');
+
+
+// SECTION: Stripe routes ---------------------------------------
+Route::get('/checkout', function (Request $request) {
+   $stripePriceId = 'price_deluxe_album';
+
+   $quantity = 1;
+
+   return $request->user()->checkout([$stripePriceId => $quantity], [
+       'success_url' => route('checkout-success'),
+       'cancel_url' => route('checkout-cancel'),
+   ]);
+})->name('checkout');
+
+Route::view('/checkout/success', 'public.stripe_checkout.success')->name('checkout-success');
+Route::view('/checkout/cancel', 'public.stripe_checkout.cancel')->name('checkout-cancel');
