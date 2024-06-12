@@ -82,7 +82,7 @@
 
         <p class="text-sm text-gray-500">
           {{-- New user? --}}
-          <a class="underline" href="{{route('login')}}">Back to login</a>
+          <a class="underline" href="{{route('adminsite.login')}}">Back to login</a>
         </p>
       </div>
     </form>

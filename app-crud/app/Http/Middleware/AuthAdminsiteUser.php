@@ -15,11 +15,13 @@ class AuthAdminsiteUser
      */
     public function handle(Request $request, Closure $next): Response
     {
+        #dd('test');
+
         // Check if user is authenticated and has an admin role
         if (!auth()->check() OR !auth()->user()->role->id) {
             #dd(auth()->user()->role->id);
             #dd(auth()->user()->role);
-            return redirect()->route('login')->withErrors(['error' => 'Please login first']);
+            return redirect()->route('adminsite.login')->withErrors(['error' => 'Please login first']);
         }
 
         return $next($request);

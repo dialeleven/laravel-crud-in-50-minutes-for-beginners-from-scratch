@@ -36,6 +36,7 @@ require_once 'testing/test_routes.php';
 
 // Product index - 'auth' middleware added which will redirect to a 'login' route by default
 //Route::get('/product', [ProductController::class, 'index'])->name('products.index')->middleware('auth:adminsite.user');
+Route::get('/product', [ProductController::class, 'index'])->name('products.index')->middleware('auth.adminsite.user');
 
 
 // Admin site routes
@@ -43,15 +44,14 @@ Route::prefix('adminsite')->group(function()
 {
    // Login routes
    Route::controller(LoginController::class)->group(function () {
-      Route::get('/login', 'adminsiteLoginForm')->name('login'); // Named 'login' b/c default Laravel authentication middleware 
-                                                                 // expects 'login' route to be defined.
+      Route::get('/login', 'adminsiteLoginForm')->name('adminsite.login');
       Route::post('/login-process', 'adminsiteLoginProcess')->name('adminsite.login-process');
       Route::post('/logout', 'adminsiteLogout')->name('adminsite.logout');
    });
 
 
    // Routes that require authentication to access admin site
-   Route::group(['middleware' => ['auth', 'auth.adminsite.user']], function()
+   Route::group(['middleware' => ['auth.adminsite.user']], function()
    {
       // admin site index
       Route::get('/', [AdminsiteController::class, 'index'])->name('adminsite.index');
@@ -63,11 +63,11 @@ Route::prefix('adminsite')->group(function()
 
 
       // SECTION: Admin users routes (for admin and superadmin)  ---------------------------------------
-      Route::group(['middleware' => ['auth', 'auth.adminsite.admin', 'auth.adminsite.superadmin']], function() {
+      Route::group(['middleware' => ['auth.adminsite.admin', 'auth.adminsite.superadmin']], function() {
          Route::resource('/adminusers', AdminUserController::class)->only(['index', 'create', 'store', 'edit', 'update']);
       });
 
-      Route::group(['middleware' => ['auth', 'auth.adminsite.superadmin']], function() {
+      Route::group(['middleware' => ['auth.adminsite.superadmin']], function() {
          Route::resource('/adminusers', AdminUserController::class)->only(['destroy']);
       });
 
@@ -138,7 +138,7 @@ Route::get('weatherapi', [WeatherApiController::class, 'index'])->name('weathera
 
 // SECTION: Login routes ---------------------------------------
 Route::controller(PublicLoginController::class)->group(function () {
-   Route::get('/login', 'publicsiteLoginForm')->name('publicsite.login'); // Named 'login' b/c default Laravel authentication middleware 
+   Route::get('/login', 'publicsiteLoginForm')->name('login'); // Named 'login' b/c default Laravel authentication middleware 
                                                               // expects 'login' route to be defined.
    Route::post('/login-process', 'publicsiteLoginProcess')->name('publicsite.login-process');
    Route::post('/logout', 'publicsiteLogout')->name('publicsite.logout');
@@ -157,7 +157,7 @@ Route::get('/checkout-simple', function (Request $request) {
    ]);
 })->name('checkout.simple');
 
-Route::middleware('auth')->get('/checkout2', function (Request $request) {
+Route::middleware('auth:admin')->get('/checkout2', function (Request $request) {
    $stripePriceId = 'price_deluxe_album';
    $quantity = 1;
    return $request->user()->checkout([$stripePriceId => $quantity], [
