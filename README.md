@@ -89,7 +89,7 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
   - [laravel-site-search](https://spatie.be/docs/laravel-site-search)
   - [laravel-pdf](https://spatie.be/docs/laravel-pdf)
 
-## Laravel Cashier - Installation
+## Laravel Cashier - Installation/Usage
 
 ### Follow the #installation steps (https://laravel.com/docs/11.x/billing#installation)
 Should be no issues running the commands.
@@ -144,6 +144,11 @@ Follow the configuration steps for #Billable Model.
 
 #### Quickstart - https://laravel.com/docs/11.x/billing#quickstart
 On to the Quickstart (finally!).
+
+Run the Stripe CLI command to send all Stripe events in test mode to your local webhook endpoint. Adjust your *--forward-to* URL according to your local dev environment.
+```
+stripe listen --forward-to http://laravelcrud.test
+```
 
 ## How to Install Intervention Image Library
 Install Intervention Image with Composer by running the following command.
