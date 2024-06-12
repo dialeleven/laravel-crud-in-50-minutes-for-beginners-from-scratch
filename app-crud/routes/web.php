@@ -7,13 +7,14 @@ use Illuminate\Http\Request; // use in conjunction with 'Password' Facade. (mayb
 //--------- ADMIN SITE CONTROLLERS ------------//
 use App\Http\Controllers\Admin\ProductController; // namespace for our "Product" Controller
 use App\Http\Controllers\Admin\AdminUserController; // namespace for our "Adminusers" Controller
-use App\Http\Controllers\Admin\LoginController; // namespace for our "Login" Controller to handle /login
+use App\Http\Controllers\Admin\LoginController; // namespace for our "Login" Controller to handle /adminsite/login
 use App\Http\Controllers\Admin\PasswordResetController;
 use App\Http\Controllers\Admin\EmailController;
 
 //---------- PUBLIC SITE CONTROLLERS ---------------//
 use App\Http\Controllers\Public\PublicProductController; // public product page
 use App\Http\Controllers\Public\WeatherApiController; // weatherapi.com controller
+use App\Http\Controllers\Public\PublicLoginController; // namespace for our "Login" Controller to handle /login
 
 //--------- App Models ---------------//
 #use App\Models\Common\Product;
@@ -130,6 +131,15 @@ Route::get('/products', [PublicProductController::class, 'index'])->name('public
 
 // SECTION: API routes ---------------------------------------
 Route::get('weatherapi', [WeatherApiController::class, 'index'])->name('weatherapi.index');
+
+
+// SECTION: Login routes ---------------------------------------
+Route::controller(PublicLoginController::class)->group(function () {
+   Route::get('/login', 'publicsiteLoginForm')->name('publicsite.login'); // Named 'login' b/c default Laravel authentication middleware 
+                                                              // expects 'login' route to be defined.
+   Route::post('/login-process', 'publicsiteLoginProcess')->name('publicsite.login-process');
+   Route::post('/logout', 'publicsiteLogout')->name('publicsite.logout');
+});
 
 
 // SECTION: Stripe routes ---------------------------------------

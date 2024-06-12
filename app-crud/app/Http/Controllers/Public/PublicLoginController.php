@@ -10,12 +10,12 @@ use App\Models\User; // import our User model (MySQL table: users)
 use Illuminate\Support\Facades\Response; // ? still needed
 
 
-class LoginController extends Controller
+class PublicLoginController extends Controller
 {
     // admin site - show login form
     public function publicsiteLoginForm() {
         //return view('login.index', ['products' => $products]);
-        return view('publicsite.login.index');
+        return view('public.login.index');
     }
 
     // admin site - process publicsite login user/pass
@@ -30,14 +30,15 @@ class LoginController extends Controller
         ]);
 
         // verify user/pass match in db
-        if ( Auth::attempt([ 'email' => $data['email'], 'password' => $data['password'] ], $request->remember) )
+        if ( Auth::guard('web')->attempt([ 'email' => $data['email'], 'password' => $data['password'] ], $request->remember) )
         // if ( Auth::attempt([ $data ]) )
         {
             // regenerate session token after successful login to prevent session fixation attack
             request()->session()->regenerate();
             
             // redirect to public homepage
-            return redirect()->route('publicsite.index')->with('success', 'Welcome back!');
+            #return redirect()->route('public.login.index')->with('success', 'Welcome back!');
+            return redirect('/')->with('success', 'Welcome back!');
         }
 
         // authentication failed, redirect back with errors
@@ -54,7 +55,7 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         
-        return redirect()->route('login')->with('success', 'You have successfully signed out');
+        return redirect()->route('public.login')->with('success', 'You have successfully signed out');
     }
 
 
