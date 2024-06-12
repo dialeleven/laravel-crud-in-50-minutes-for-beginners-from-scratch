@@ -101,6 +101,16 @@ STRIPE_KEY=your-stripe-key
 STRIPE_SECRET=your-stripe-secret
 STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret
 ```
+### Update Your APP_URL in .env
+If you haven't changed the APP_URL in your .env file, it probably looks like:
+```
+APP_URL=http://localhost
+```
+
+Change it to whatever localhost URL you have configured in your environment. I'm using XAMPP and Apache and I adjusted my APP_URL to:
+```
+APP_URL=https://laravelcrud.test
+```
 
 ### Handle Stripe Webhooks (https://laravel.com/docs/11.x/billing#handling-stripe-webhooks)
 
