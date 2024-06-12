@@ -142,6 +142,8 @@ You should see something like:
 
 Follow the configuration steps for #Billable Model.
 
+#### Quickstart - https://laravel.com/docs/11.x/billing#quickstart
+On to the Quickstart (finally!).
 
 ## How to Install Intervention Image Library
 Install Intervention Image with Composer by running the following command.
