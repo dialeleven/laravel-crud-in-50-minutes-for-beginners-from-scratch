@@ -89,6 +89,37 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
   - [laravel-site-search](https://spatie.be/docs/laravel-site-search)
   - [laravel-pdf](https://spatie.be/docs/laravel-pdf)
 
+## Laravel Cashier - Installation
+
+### Follow the #installation steps (https://laravel.com/docs/11.x/billing#installation)
+Should be no issues running the commands.
+
+### Enter Your API Keys (https://laravel.com/docs/11.x/billing#api-keys)
+Copy/paste your Stripe API keys from (https://dashboard.stripe.com/test/apikeys - note that the URL may change in the future - Log into your account and look under "Developers" and API keys).
+
+### Handle Stripe Webhooks (https://laravel.com/docs/11.x/billing#handling-stripe-webhooks)
+
+For local development testing, you'll probably need the Stripe CLI tool (https://github.com/stripe/stripe-cli). Instructions are available on the GitHub repo. Windows install instructions are below for stripe-cli.
+
+#### Install Scoop for Windows - https://scoop.sh/
+Open a PowerShell terminal (version 5.1 or later) and from the PS C:\> prompt, run:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+```
+
+#### Install Stripe CLI via Scoop Package Manager
+scoop bucket add stripe https://github.com/stripe/scoop-stripe-cli.git
+scoop install stripe
+
+#### Create Laravel Cashier Stripe Webook
+```php artisan cashier:webhook```
+
+You should see:
+
+ INFO  The Stripe webhook was created successfully. Retrieve the webhook secret in your Stripe dashboard and define it as an environment variable.
+
 
 ## How to Install Intervention Image Library
 Install Intervention Image with Composer by running the following command.
