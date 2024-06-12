@@ -3,6 +3,9 @@
 use App\Http\Controllers\Admin\AdminsiteController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request; // use in conjunction with 'Password' Facade. (maybe not needed since password reset is in a controller now)
+use Stripe\Stripe;
+use Stripe\Checkout\Session;
+use Illuminate\Http\RedirectResponse;
 
 //--------- ADMIN SITE CONTROLLERS ------------//
 use App\Http\Controllers\Admin\ProductController; // namespace for our "Product" Controller
@@ -143,7 +146,7 @@ Route::controller(PublicLoginController::class)->group(function () {
 
 
 // SECTION: Stripe routes ---------------------------------------
-Route::get('/checkout', function (Request $request) {
+Route::get('/checkout-simple', function (Request $request) {
    $stripePriceId = 'price_deluxe_album';
 
    $quantity = 1;
@@ -152,7 +155,49 @@ Route::get('/checkout', function (Request $request) {
        'success_url' => route('checkout-success'),
        'cancel_url' => route('checkout-cancel'),
    ]);
-})->name('checkout');
+})->name('checkout.simple');
+
+Route::middleware('auth')->get('/checkout2', function (Request $request) {
+   $stripePriceId = 'price_deluxe_album';
+   $quantity = 1;
+   return $request->user()->checkout([$stripePriceId => $quantity], [
+       'success_url' => route('checkout-success'),
+       'cancel_url' => route('checkout-cancel'),
+   ]);
+})->name('checkout2');
+
+
+#Route::middleware('auth:web')->get('/checkout', function (Request $request) {
+Route::get('/checkout', function (Request $request) {
+      $stripePriceId = '9.99';
+      $quantity = 1;
+  
+      Stripe::setApiKey(env('STRIPE_SECRET'));
+  
+      try {
+          $session = Session::create([
+              'payment_method_types' => ['card'],
+              'line_items' => [[
+                  //'price' => $stripePriceId,
+                  'price_data' => [
+                      'currency' => 'usd',
+                      'unit_amount' => $quantity * 1000,
+                      'product_data' => [
+                          'name' => 'Deluxe Album',
+                      ],
+                  ],
+                  'quantity' => $quantity,
+              ]],
+              'mode' => 'payment',
+              'success_url' => route('checkout-success'),
+              'cancel_url' => route('checkout-cancel'),
+          ]);
+  
+          return new RedirectResponse($session->url);
+      } catch (\Exception $e) {
+          return back()->withErrors(['error' => $e->getMessage()]);
+      }
+  })->name('checkout');
 
 Route::view('/checkout/success', 'public.stripe_checkout.success')->name('checkout-success');
 Route::view('/checkout/cancel', 'public.stripe_checkout.cancel')->name('checkout-cancel');
