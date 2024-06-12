@@ -55,7 +55,7 @@ class PublicLoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         
-        return redirect()->route('public.login')->with('success', 'You have successfully signed out');
+        return redirect()->route('publicsite.login')->with('success', 'You have successfully signed out');
     }
 
 
