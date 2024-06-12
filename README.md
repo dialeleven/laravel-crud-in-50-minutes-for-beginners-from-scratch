@@ -150,6 +150,10 @@ Run the Stripe CLI command to send all Stripe events in test mode to your local 
 stripe listen --forward-to http://laravelcrud.test
 ```
 
+Create your views for /checkout/success, /checkout/cancel.
+Create routes for /checkout, /checkout/success, and /checkout/cancel, then test! Or just use what's in the repo here, but you'll learn more by going through the process yourself. If you get stuck, check the repo files for assistance :).
+
+
 ## How to Install Intervention Image Library
 Install Intervention Image with Composer by running the following command.
 `$ composer require intervention/image`
