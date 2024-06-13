@@ -19,6 +19,7 @@ Route::apiResource('apitest', TestApiResourceController::class);
 
 
 Route::get('/', function () {
+    return view('public.index');
     return view('welcome');
 });
 
