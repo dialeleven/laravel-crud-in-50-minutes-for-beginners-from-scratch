@@ -78,6 +78,8 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, ✔️Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
 - [ ] Check out Laravel Libraries
+  - **[Laravel Cashier (Stripe)](https://laravel.com/docs/11.x/billing) - subscription billing/payment services**
+  - [Laravel Sail](https://laravel.com/docs/11.x/sail) - Light-weight command-line interface for interacting with Laravel's default Docker development environment. Sail provides a great starting point for building a Laravel application using PHP, MySQL, and Redis without requiring prior Docker experience.
   - **[Laravel Socialite](https://laravel.com/docs/11.x/socialite)** (OAuth authentication from Google, FB, GitHub, etc)
   - [Algolia Meilisearch](https://laravel.com/docs/11.x/scout) (Search functionality: open source version - free)
   - [Laravel Maatwebsite Excel](https://laravel-excel.com/) (Import & Export)
@@ -85,7 +87,6 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
   - [Laravel Spatie Queues](https://spatie.be/docs/laravel-health/v1/available-checks/queue) (Background Jobs)
   - [Spatie Laravel Translation](https://spatie.be/docs/laravel-translatable/v6/introduction) (Localization)
   - [Laravel Passport (OAuth2 support)](https://laravel.com/docs/11.x/passport) or Sanctum (no OAuth2) - API authentication 
-  - [Laravel Cashier (Stripe)](https://laravel.com/docs/11.x/billing) - subscription billing/payment services
   - [laravel-site-search](https://spatie.be/docs/laravel-site-search)
   - [laravel-pdf](https://spatie.be/docs/laravel-pdf)
 
