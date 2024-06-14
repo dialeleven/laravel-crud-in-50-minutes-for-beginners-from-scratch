@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\StripeClient;
 
+
 class StripeProductController extends Controller
 {
    protected $stripe;
