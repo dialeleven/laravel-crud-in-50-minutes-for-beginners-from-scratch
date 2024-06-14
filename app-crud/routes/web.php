@@ -3,9 +3,6 @@
 use App\Http\Controllers\Admin\AdminsiteController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request; // use in conjunction with 'Password' Facade. (maybe not needed since password reset is in a controller now)
-use Stripe\Stripe;
-use Stripe\Checkout\Session;
-use Illuminate\Http\RedirectResponse;
 
 //--------- ADMIN SITE CONTROLLERS ------------//
 use App\Http\Controllers\Admin\ProductController; // namespace for our "Product" Controller

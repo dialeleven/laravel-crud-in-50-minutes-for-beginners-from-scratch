@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller; // ! Import the base Controller class
 use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\StripeClient;
+use Stripe\Checkout\Session;
+use Illuminate\Http\RedirectResponse;
 
 
 class StripeProductController extends Controller
@@ -79,20 +81,29 @@ class StripeProductController extends Controller
 
    public function checkout(Request $request)
    {
-      //$stripePriceId = 'price_1PQjfzP3S64d6hFrQX9lay43'; // only banana works for some reason
+      //$stripe_price_id = 'price_1PQjfzP3S64d6hFrQX9lay43'; // only banana works for some reason
       $quantity = 1;
 
       // get stripe_price_id from query string parameters
-      $stripePriceId = $request->get('stripe_price_id');
+      $stripe_price_id = $request->get('stripe_price_id');
   
       // set Stripe API key
       Stripe::setApiKey(env('STRIPE_SECRET'));
+
+
+      // get price info for stripe_price_id
+      $price_data = $this->stripe->prices->retrieve($stripe_price_id);
+
+      #dd($price_data);
+
+      // adjust mode based on a recurring or one-time payment
+      $mode = ($price_data->type === 'recurring') ? 'subscription' : 'payment';
   
       try {
           $session = Session::create([
               'payment_method_types' => ['card'],
               'line_items' => [[
-                  'price' => $stripePriceId,
+                  'price' => $stripe_price_id,
                   /*
                   'price_data' => [
                       'currency' => 'usd',
@@ -104,7 +115,7 @@ class StripeProductController extends Controller
                   */
                   'quantity' => $quantity,
               ]],
-              'mode' => 'payment',
+              'mode' => $mode,
               'success_url' => route('checkout-success'),
               'cancel_url' => route('checkout-cancel'),
           ]);
@@ -118,9 +129,9 @@ class StripeProductController extends Controller
 
    public function checkoutWithAuth()
    {
-      $stripePriceId = 'price_deluxe_album';
+      $stripe_price_id = 'price_deluxe_album';
       $quantity = 1;
-      return $request->user()->checkout([$stripePriceId => $quantity], [
+      return $request->user()->checkout([$stripe_price_id => $quantity], [
          'success_url' => route('checkout-success'),
          'cancel_url' => route('checkout-cancel'),
       ]);
