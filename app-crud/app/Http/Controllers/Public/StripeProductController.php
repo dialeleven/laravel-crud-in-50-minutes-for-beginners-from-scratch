@@ -23,13 +23,30 @@ class StripeProductController extends Controller
    {
       try {
          // Fetch all products from Stripe
-         $products = $this->stripe->products->all();
+         $products = $this->stripe->products->all(['limit' => 100]);
+         $prices = $this->stripe->prices->all(['limit' => 100]);
 
-         return view('public.index', ['products' => $products]);
+         // Combine products and prices
+         $product_data = [];
+         
+         foreach ($products->data as $product) {
+             $product_prices = array_filter($prices->data, function ($price) use ($product) {
+                 return $price->product === $product->id;
+             });
 
+             $product_data[] = [
+                 'product' => $product,
+                 'prices' => $product_prices
+             ];
+         }
+         
+
+         return view('public.index', ['product_data' => $product_data]);
+
+         // output raw JSON data (if desired)
          return response()->json([
-               'success' => true,
-               'data' => $products,
+            'success' => true,
+            'data' => $product_data,
          ], 200);
       } catch (\Exception $e) {
          return response()->json([
@@ -55,5 +72,55 @@ class StripeProductController extends Controller
                'message' => $e->getMessage(),
          ], 500);
       }
+   }
+
+
+   public function checkout(Request $request)
+   {
+      //$stripePriceId = 'price_1PQjfzP3S64d6hFrQX9lay43'; // only banana works for some reason
+      $quantity = 1;
+
+      // get stripe_price_id from query string parameters
+      $stripePriceId = $request->get('stripe_price_id');
+  
+      // set Stripe API key
+      Stripe::setApiKey(env('STRIPE_SECRET'));
+  
+      try {
+          $session = Session::create([
+              'payment_method_types' => ['card'],
+              'line_items' => [[
+                  'price' => $stripePriceId,
+                  /*
+                  'price_data' => [
+                      'currency' => 'usd',
+                      'unit_amount' => $quantity * 1000,
+                      'product_data' => [
+                          'name' => 'Deluxe Album',
+                      ],
+                  ],
+                  */
+                  'quantity' => $quantity,
+              ]],
+              'mode' => 'payment',
+              'success_url' => route('checkout-success'),
+              'cancel_url' => route('checkout-cancel'),
+          ]);
+  
+          return new RedirectResponse($session->url);
+      } catch (\Exception $e) {
+          return back()->withErrors(['error' => $e->getMessage()]);
+      }
+   }
+
+
+   public function checkoutWithAuth()
+   {
+      $stripePriceId = 'price_deluxe_album';
+      $quantity = 1;
+      return $request->user()->checkout([$stripePriceId => $quantity], [
+         'success_url' => route('checkout-success'),
+         'cancel_url' => route('checkout-cancel'),
+      ]);
    }
 }

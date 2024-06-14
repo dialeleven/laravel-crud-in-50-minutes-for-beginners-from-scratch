@@ -104,26 +104,26 @@
       <p>Our current product catalog coming directly from Stripe!</p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-5">
-         @foreach($products as $product)
+         @foreach($product_data as $product_details)
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-               @if(isset($product['images'][0]))
-                  <img src="{{ $product['images'][0] }}" alt="{{ $product['name'] }}" class="w-full h-48 object-cover">
+               @if(isset($product_details['product']['images'][0]))
+                  <img src="{{ $product_details['product']['images'][0] }}" alt="{{ $product_details['product']['name'] }}" class="w-full h-48 object-cover">
                @else
                   <div class="w-full h-48 bg-gray-200"></div>
                @endif
                <div class="p-4">
-                  <h2 class="text-lg font-semibold">{{ $product['name'] }} ({{ $product['id'] }})</h2>
-                  <p class="text-gray-600">{{ $product['description'] ?? '' }}</p>
+                  <h2 class="text-lg font-semibold">{{ $product_details['product']['name'] }} ({{ $product_details['product']['id'] }})</h2>
+                  <p class="text-gray-600">{{ $product_details['product']['description'] ?? '' }}</p>
                   <ul class="mt-2">
-                     @foreach($product['features'] as $feature)
+                     @foreach($product_details['product']['features'] as $feature)
                         <li class="text-sm text-gray-700">{{ $feature['name'] }}</li>
                      @endforeach
                   </ul>
                   <div class="mt-4 flex justify-between items-center">
-                     <span class="text-gray-500">Created: {{ date('Y-m-d', $product['created']) }}</span>
-                     <a href="{{ route('checkout', ['stripe_price_id' => $product['default_price'] ]) }}" class="text-indigo-600 hover:text-indigo-700">Purchase</a>
+                     <span class="text-gray-500">Created: {{ date('Y-m-d', $product_details['product']['created']) }}</span>
+                     <a href="{{ route('checkout', ['stripe_price_id' => $product_details['product']['default_price'] ]) }}" class="text-indigo-600 hover:text-indigo-700">Purchase</a>
                   </div>
-                  <p>Price ID: {{ $product['default_price'] }}</p>
+                  <p>Price ID: {{ $product_details['product']['default_price'] }}</p>
                </div>
             </div>
          @endforeach

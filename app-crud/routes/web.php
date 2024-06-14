@@ -150,65 +150,10 @@ Route::controller(PublicLoginController::class)->group(function () {
 Route::get('/', [StripeProductController::class, 'index'])->name('stripe.index');
 Route::get('/prices', [StripeProductController::class, 'prices'])->name('stripe.prices');
 
-Route::get('/checkout-simple', function (Request $request) {
-   $stripePriceId = 'price_deluxe_album';
+// TODO: logic for middleware auth:web
+Route::middleware('auth:web')->get('/checkout2', [StripeProductController::class, 'checkout2'])->name('checkout2');
 
-   $quantity = 1;
-
-   return $request->user()->checkout([$stripePriceId => $quantity], [
-       'success_url' => route('checkout-success'),
-       'cancel_url' => route('checkout-cancel'),
-   ]);
-})->name('checkout.simple');
-
-Route::middleware('auth:web')->get('/checkout2', function (Request $request) {
-   $stripePriceId = 'price_deluxe_album';
-   $quantity = 1;
-   return $request->user()->checkout([$stripePriceId => $quantity], [
-       'success_url' => route('checkout-success'),
-       'cancel_url' => route('checkout-cancel'),
-   ]);
-})->name('checkout2');
-
-
-#Route::middleware('auth:web')->get('/checkout', function (Request $request) {
-Route::get('/checkout', function (Request $request) {
-      // adjust this value according to your Stripe product id (Dashboard > Product catalogue > Add product. Click on product name > click on '...' to the right of the price > Copy price ID 
-      $stripePriceId = 'price_1PQjfzP3S64d6hFrQX9lay43'; // only banana works for some reason
-      $quantity = 1;
-
-      // get stripe_price_id from query string parameters
-      $stripePriceId = $request->get('stripe_price_id');
-      #dd($stripePriceId);
-  
-      Stripe::setApiKey(env('STRIPE_SECRET'));
-  
-      try {
-          $session = Session::create([
-              'payment_method_types' => ['card'],
-              'line_items' => [[
-                  'price' => $stripePriceId,
-                  /*
-                  'price_data' => [
-                      'currency' => 'usd',
-                      'unit_amount' => $quantity * 1000,
-                      'product_data' => [
-                          'name' => 'Deluxe Album',
-                      ],
-                  ],
-                  */
-                  'quantity' => $quantity,
-              ]],
-              'mode' => 'payment',
-              'success_url' => route('checkout-success'),
-              'cancel_url' => route('checkout-cancel'),
-          ]);
-  
-          return new RedirectResponse($session->url);
-      } catch (\Exception $e) {
-          return back()->withErrors(['error' => $e->getMessage()]);
-      }
-})->name('checkout');
+Route::get('/checkout', [StripeProductController::class, 'checkout'])->name('checkout');
 
 Route::view('/checkout/success', 'public.stripe_checkout.success')->name('checkout-success');
 Route::view('/checkout/cancel', 'public.stripe_checkout.cancel')->name('checkout-cancel');
