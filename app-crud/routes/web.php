@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\EmailController;
 use App\Http\Controllers\Public\PublicProductController; // public product page
 use App\Http\Controllers\Public\WeatherApiController; // weatherapi.com controller
 use App\Http\Controllers\Public\PublicLoginController; // namespace for our "Login" Controller to handle /login
+use App\Http\Controllers\Public\StripeProductController;
 
 //--------- App Models ---------------//
 #use App\Models\Common\Product;
@@ -146,6 +147,9 @@ Route::controller(PublicLoginController::class)->group(function () {
 
 
 // SECTION: Stripe routes ---------------------------------------
+Route::get('/', [StripeProductController::class, 'index'])->name('stripe.index');
+Route::get('/prices', [StripeProductController::class, 'prices'])->name('stripe.prices');
+
 Route::get('/checkout-simple', function (Request $request) {
    $stripePriceId = 'price_deluxe_album';
 

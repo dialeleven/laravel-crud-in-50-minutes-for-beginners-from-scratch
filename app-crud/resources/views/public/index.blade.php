@@ -94,10 +94,41 @@
    </div>
 </header>
 
-
 <main>
-   <div class="relative px-6 lg:px-8">
-      <div class="mx-auto max-w-3xl pt-50 sm:pt-20 lg:pt-26">
+
+   
+   <div class="relative px-6 lg:px-8 pt-5">
+
+      <h1 class="text-3xl font-bold mb-1">Stripe Products</h1>
+
+      <p>Our current product catalog coming directly from Stripe!</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-5">
+         @foreach($products as $product)
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+               @if(isset($product['images'][0]))
+                  <img src="{{ $product['images'][0] }}" alt="{{ $product['name'] }}" class="w-full h-48 object-cover">
+               @else
+                  <div class="w-full h-48 bg-gray-200"></div>
+               @endif
+               <div class="p-4">
+                  <h2 class="text-lg font-semibold">{{ $product['name'] }}</h2>
+                  <p class="text-gray-600">{{ $product['description'] ?? '' }}</p>
+                  <ul class="mt-2">
+                     @foreach($product['features'] as $feature)
+                        <li class="text-sm text-gray-700">{{ $feature['name'] }}</li>
+                     @endforeach
+                  </ul>
+                  <div class="mt-4 flex justify-between items-center">
+                     <span class="text-gray-500">Created: {{ date('Y-m-d', $product['created']) }}</span>
+                     <a href="{{ $product['url'] }}" class="text-indigo-600 hover:text-indigo-700">View Product</a>
+                  </div>
+               </div>
+            </div>
+         @endforeach
+      </div>
+      
+      <div class="mx-auto max-w-3xl pt-50 sm:pt-20 lg:pt-26 pb-10">
          <div class="hidden sm:mb-8 sm:flex sm:justify-center">
          <div class="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
             <span class="text-gray-600"
