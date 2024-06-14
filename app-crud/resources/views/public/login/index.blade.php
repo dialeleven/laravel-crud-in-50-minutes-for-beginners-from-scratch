@@ -20,7 +20,8 @@
       <img class="mx-auto h-10 w-auto" src="{{asset('assets/images/android-chrome-512x512.png')}}" alt="CRUD App">CRUD Public Site
     </div>
 
-    <h1 class="text-2xl font-bold sm:text-3xl">CRUD Public Site - Sign in to your account</h1>
+    <h1 class="text-2xl font-bold sm:text-3xl">CRUD <span class="text-indigo-600">PUBLIC LOGIN</span></h1>
+    Sign in to your account
 
     <p class="mt-4 text-gray-500">
       <!-- content here -->

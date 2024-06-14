@@ -54,7 +54,7 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         
-        return redirect()->route('login')->with('success', 'You have successfully signed out');
+        return redirect()->route('adminsite.login')->with('success', 'You have successfully signed out');
     }
 
 
