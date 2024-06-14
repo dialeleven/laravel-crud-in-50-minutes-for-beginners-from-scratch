@@ -41,7 +41,7 @@ class StripeProductController extends Controller
          }
          
          // return data to view
-         return view('public.index', ['product_data' => $product_data]);
+         return view('public.index', ['data' => $product_data]);
 
 
          // * output raw JSON data (if desired)
