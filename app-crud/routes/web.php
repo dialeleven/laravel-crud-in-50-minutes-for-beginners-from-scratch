@@ -174,8 +174,12 @@ Route::middleware('auth:web')->get('/checkout2', function (Request $request) {
 #Route::middleware('auth:web')->get('/checkout', function (Request $request) {
 Route::get('/checkout', function (Request $request) {
       // adjust this value according to your Stripe product id (Dashboard > Product catalogue > Add product. Click on product name > click on '...' to the right of the price > Copy price ID 
-      $stripePriceId = 'price_1PQjb7P3S64d6hFr5zeIVmjU';
+      $stripePriceId = 'price_1PQjfzP3S64d6hFrQX9lay43'; // only banana works for some reason
       $quantity = 1;
+
+      // get stripe_price_id from query string parameters
+      $stripePriceId = $request->get('stripe_price_id');
+      #dd($stripePriceId);
   
       Stripe::setApiKey(env('STRIPE_SECRET'));
   

@@ -112,7 +112,7 @@
                   <div class="w-full h-48 bg-gray-200"></div>
                @endif
                <div class="p-4">
-                  <h2 class="text-lg font-semibold">{{ $product['name'] }}</h2>
+                  <h2 class="text-lg font-semibold">{{ $product['name'] }} ({{ $product['id'] }})</h2>
                   <p class="text-gray-600">{{ $product['description'] ?? '' }}</p>
                   <ul class="mt-2">
                      @foreach($product['features'] as $feature)
@@ -121,8 +121,9 @@
                   </ul>
                   <div class="mt-4 flex justify-between items-center">
                      <span class="text-gray-500">Created: {{ date('Y-m-d', $product['created']) }}</span>
-                     <a href="{{ $product['url'] }}" class="text-indigo-600 hover:text-indigo-700">View Product</a>
+                     <a href="{{ route('checkout', ['stripe_price_id' => $product['default_price'] ]) }}" class="text-indigo-600 hover:text-indigo-700">Purchase</a>
                   </div>
+                  <p>Price ID: {{ $product['default_price'] }}</p>
                </div>
             </div>
          @endforeach
