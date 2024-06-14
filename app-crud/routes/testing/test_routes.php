@@ -1,9 +1,7 @@
 <?php
-use App\Http\Controllers\Public\StripeProductController;
 use App\Http\Controllers\TestApiResourceController;
 use App\Http\Controllers\WidgetController;
 use App\Http\Controllers\Admin\ProductController; // namespace for our "Products" Controller
-use App\Http\Controllers\Public\Strip; // namespace for our "Products" Controller
 
 
 // Resource controller will automatically create routes for 'index', 'create', 'store', 'show', 'edit', 'update', 'destroy'
@@ -19,13 +17,12 @@ Route::resource('xyztest', WidgetController::class)->only(['index', 'edit', 'upd
 // API resource controller (excludes 'create' and 'edit' routes which don't exist in an API)
 Route::apiResource('apitest', TestApiResourceController::class);
 
-
+/*
+// default Laravel welcome page for '/'
 Route::get('/', function () {
-    return view('public.index');
     return view('welcome');
 });
-
-Route::get('/', [StripeProductController::class, 'index'])->name('stripe.index');
+*/
 
 Route::get('/test-route/{user_id?}', function($user_id = 'default_id') {
    return view('test-view', ['user_id' => $user_id]);
