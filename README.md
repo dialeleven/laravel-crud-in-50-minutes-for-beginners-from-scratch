@@ -61,10 +61,9 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
 - [x] Truncate long usernames in left nav with ellipses
 - [x] Configure PHPUnit to use separate database for running tests (keep db tables in sync running migrations as needed using `php artisan migrate --database=mysql_testing`)
 - [x] Refactor email routes into EmailController for separation of concerns/readability of /routes/web.php
-- [ ] Stripe integration
+- [x] Stripe integration
    - [x] Stripe Product Catalog output on home page
-      - [ ] Display product price
-   - [ ] Purchase product link > go to checkout
+   - [x] Purchase product link > go to checkout (handle one-time 'payment' vs. 'subscription')
 
 ## 📋 Additional Features To Do
 - [ ] **Deploy project in Docker**
