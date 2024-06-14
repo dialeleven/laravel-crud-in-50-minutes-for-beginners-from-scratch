@@ -62,7 +62,9 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
 - [x] Configure PHPUnit to use separate database for running tests (keep db tables in sync running migrations as needed using `php artisan migrate --database=mysql_testing`)
 - [x] Refactor email routes into EmailController for separation of concerns/readability of /routes/web.php
 - [x] [Laravel Cashier (Stripe)](https://laravel.com/docs/11.x/billing) - subscription billing/payment services
-   - [x] Stripe integration
+   - [x] Stripe integration (tip add ```    'stripe' => [
+        'secret' => env('STRIPE_SECRET'),
+    ],``` to your /config/services.php file)
      - [x] Stripe Product Catalog output on home page
      - [x] Purchase item link > go to checkout (handle one-time 'payment' vs. 'subscription')
 
