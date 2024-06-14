@@ -63,7 +63,7 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
 - [x] Refactor email routes into EmailController for separation of concerns/readability of /routes/web.php
 - [x] Stripe integration
    - [x] Stripe Product Catalog output on home page
-   - [x] Purchase product link > go to checkout (handle one-time 'payment' vs. 'subscription')
+   - [x] Purchase item link > go to checkout (handle one-time 'payment' vs. 'subscription')
 
 ## 📋 Additional Features To Do
 - [ ] **Deploy project in Docker**
