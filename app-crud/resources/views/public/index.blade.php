@@ -70,14 +70,14 @@
                   @endif
                   <div class="p-4">
                      <h2 class="text-lg font-semibold">{{ $item['product']->name }}</h2>
-                     <p class="text-gray-600">{{ $item['product']->description ?? 'No description available' }}</p>
+                     <p class="text-gray-600">{{ $item['product']->description ?? '' }}</p>
                      <ul class="mt-2">
                         @foreach($item['product']->features as $feature)
                            <li class="text-sm text-gray-700">{{ $feature->name }}</li>
                         @endforeach
                      </ul>
                      <div class="mt-4">
-                        <h3 class="text-md font-medium">Prices:</h3>
+                        <h3 class="text-md font-medium">Price:</h3>
                         <ul>
                            @foreach($item['prices'] as $price)
                               @if ($price->active)
@@ -92,8 +92,9 @@
                         </ul>
                      </div>
                      <div class="mt-4 flex justify-between items-center">
-                        <span class="text-gray-500">Created: {{ date('Y-m-d', $item['product']->created) }}</span>
-                        <a href="{{ route('checkout', ['stripe_price_id' => $item['product']->default_price]) }}" class="text-indigo-600 hover:text-indigo-700">Purchase</a>
+                        <a href="{{ route('checkout', ['stripe_price_id' => $item['product']->default_price]) }}" class="inline-block px-6 py-2.5 bg-indigo-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-indigo-700 hover:shadow-lg focus:bg-indigo-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-indigo-800 active:shadow-lg transition duration-150 ease-in-out">
+                            Purchase
+                        </a>
                      </div>
                   </div>
                </div>
