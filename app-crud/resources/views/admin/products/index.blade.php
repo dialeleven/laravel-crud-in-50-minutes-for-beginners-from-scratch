@@ -35,7 +35,7 @@
    {{ $products->links() }}
 
    {{-- output status message(s) if any --}}
-   @include('admin.site.partials.form_status_output')
+   @include('admin.site.partials.form_success_output')
    
    {{-- form submission error output --}}
    @include('admin.site.partials.form_error_output')

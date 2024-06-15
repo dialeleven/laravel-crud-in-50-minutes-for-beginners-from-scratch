@@ -29,7 +29,7 @@
 
   <div class="mx-auto max-w-md">
     {{-- output status message(s) if any --}}
-    @include('admin.site.partials.form_status_output')
+    @include('admin.site.partials.form_success_output')
     
     {{-- output form submission errors if any exist --}}
     @include('admin.site.partials.form_error_output')
