@@ -7,18 +7,18 @@
    @vite('resources/css/app.css')
    <script>
       // Function to remove the status message after a timeout
-      function removeStatusMessage() {
-        var statusMessage = document.getElementById('statusMessage');
-        if (statusMessage) {
-          statusMessage.style.opacity = '0';
+      function removeSuccessMessage() {
+        var successMessage = document.getElementById('successMessage');
+        if (successMessage) {
+          successMessage.style.opacity = '0';
           setTimeout(function() {
-            statusMessage.remove();
+            successMessage.remove();
           }, 500); // Adjust timeout duration (in milliseconds) as needed
         }
       }
   
       // Call the function after a certain period (e.g., 3 seconds)
-      setTimeout(removeStatusMessage, 3000);
+      setTimeout(removeSuccessMessage, 3000);
     </script>
 </head>
 
@@ -42,7 +42,7 @@
 
    {{-- output status message(s) if any --}}
    @if (@session()->has('success'))
-   <div id="statusMessage" class="bg-green-300 py-1 px-4 rounded-md mt-2 mb-0">
+   <div id="successMessage" class="bg-green-300 py-1 px-4 rounded-md mt-2 mb-0">
       {{session('success')}}
    </div>
    @endif

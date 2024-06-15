@@ -165,7 +165,7 @@
 
             {{-- output status message(s) if any --}}
             @if (@session()->has('success'))
-            <div id="statusMessage" class="bg-green-300 py-1 px-4 rounded-md mt-2 mb-0">
+            <div id="successMessage" class="bg-green-300 py-1 px-4 rounded-md mt-2 mb-0">
                {{session('success')}}
             </div>
             @endif

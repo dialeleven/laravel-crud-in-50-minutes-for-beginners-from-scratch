@@ -68,7 +68,7 @@ class AuthRoutesTest extends TestCase
         ]);
 
         $response->assertStatus(302);  // Check if it redirects
-        $response->assertSessionHas('status');
+        $response->assertSessionHas('success');
 
         Notification::assertSentTo([$admin], ResetPassword::class);
     }

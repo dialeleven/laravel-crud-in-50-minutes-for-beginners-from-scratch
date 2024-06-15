@@ -30,9 +30,9 @@
 
   <div class="mx-auto max-w-md">
     {{-- output status message(s) if any --}}
-    @if (@session()->has('success') OR @session()->has('status'))
-    <div id="statusMessage" class="bg-green-300 py-1 px-4 rounded-md mt-2 mb-2">
-      {{session('success')}}{{session('status')}}
+    @if (@session()->has('success'))
+    <div id="successMessage" class="bg-green-300 py-1 px-4 rounded-md mt-2 mb-2">
+      {{session('success')}}
     </div>
     @endif
 

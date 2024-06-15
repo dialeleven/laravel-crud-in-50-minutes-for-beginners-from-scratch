@@ -29,30 +29,10 @@
 
   <div class="mx-auto max-w-md">
     {{-- output status message(s) if any --}}
-    @if (@session()->has('success') OR @session()->has('status'))
-    <div id="statusMessage" class="bg-green-300 py-1 px-4 rounded-md mt-2 mb-2">
-      {{session('success')}}{{session('status')}}
-    </div>
-    @endif
+    @include('admin.site.partials.form_status_output')
 
     {{-- output form submission errors if any exist --}}
-    @if ($errors->any())
-    <div class="mb-3">
-        <ul class="error-list">
-          @foreach($errors->all() as $index => $error)
-          @php
-          // extract input name/id from error message
-          preg_match('/^The (.*?) field/i', $error, $matches);
-          $inputNameOrId = $matches[1] ?? '';
-          @endphp
-          <li class="error-list-item flex items-center bg-red-100 rounded-md p-1 mb-2">
-              <span class="text-red-500 font-bold mr-2">X</span>
-              <a href="#{{ $inputNameOrId }}" class="underline">{{$error}}</a>
-          </li>
-          @endforeach
-        </ul>
-    </div>
-    @endif
+    @include('admin.site.partials.form_error_output')
   </div>
 
   <div class="mx-auto border-2 shadow rounded-md max-w-md">
