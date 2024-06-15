@@ -26,7 +26,7 @@
                      <a class="text-gray-500 transition hover:text-gray-500/75" href="{{ route('public_products.index') }}">Products</a>
                   </li>
                   <li>
-                     <a class="text-gray-500 transition hover:text-gray-500/75" href="#">History</a>
+                     <a class="text-gray-500 transition hover:text-gray-500/75" href="/weatherapi">Weather</a>
                   </li>
                   <li>
                      <a class="text-gray-500 transition hover:text-gray-500/75" href="#">Services</a>
