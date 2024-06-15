@@ -61,10 +61,12 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
 - [x] Truncate long usernames in left nav with ellipses
 - [x] Configure PHPUnit to use separate database for running tests (keep db tables in sync running migrations as needed using `php artisan migrate --database=mysql_testing`)
 - [x] Refactor email routes into EmailController for separation of concerns/readability of /routes/web.php
-- [ ] Stripe integration
-   - [x] Stripe Product Catalog output on home page
-      - [ ] Display product price
-   - [ ] Purchase product link > go to checkout
+- [x] [Laravel Cashier (Stripe)](https://laravel.com/docs/11.x/billing) - subscription billing/payment services
+   - [x] Stripe integration (tip add ```    'stripe' => [
+        'secret' => env('STRIPE_SECRET'),
+    ],``` to your /config/services.php file)
+     - [x] Stripe Product Catalog output on home page
+     - [x] Purchase item link > go to checkout (handle one-time 'payment' vs. 'subscription')
 
 ## 📋 Additional Features To Do
 - [ ] **Deploy project in Docker**
@@ -82,7 +84,6 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
 - [ ] Style UI: Frameworks (e.g. ✔️Tailwind CSS, ✔️Bootstrap, **[Vue](https://v2.vuejs.org/v2/cookbook/form-validation#Using-Custom-Validation)**, **[Vueform](https://vueform.com/)**, **[react-hook-form](https://react-hook-form.com/)**)
 - [ ] Hover over thumbnail to show full size image
 - [ ] Check out Laravel Libraries
-  - **[Laravel Cashier (Stripe)](https://laravel.com/docs/11.x/billing) - subscription billing/payment services**
   - [Laravel Sail](https://laravel.com/docs/11.x/sail) - Light-weight command-line interface for interacting with Laravel's default Docker development environment. Sail provides a great starting point for building a Laravel application using PHP, MySQL, and Redis without requiring prior Docker experience.
   - **[Laravel Socialite](https://laravel.com/docs/11.x/socialite)** (OAuth authentication from Google, FB, GitHub, etc)
   - [Algolia Meilisearch](https://laravel.com/docs/11.x/scout) (Search functionality: open source version - free)
