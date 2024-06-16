@@ -97,6 +97,8 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
      
 ## Redis Installation Notes
 
+You can either install Redis locally or use their free 30MB Redis Cloud database as of this writing (June 2024) (limit of 1 DB it seems?). Be aware some free offerings could change to paid only in the future. I went for the free Redis Cloud DB to get started quicker. Will try a local Redis DB as well.
+
 ### Install the Redis PHP extension
 - Download the Redis PHP extension at https://pecl.php.net/package/redis (I'm using XAMPP on Windows 11, so Windows users select the **DLL** link. Usually the thread safe (TS) version.)
 - Copy the php_redis.dll to your PHP ext dir (e.g. c:\xampp\php\ext). I copied the php_redis.pdb to ext just in case.
