@@ -94,6 +94,30 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
   - [Laravel Passport (OAuth2 support)](https://laravel.com/docs/11.x/passport) or Sanctum (no OAuth2) - API authentication 
   - [laravel-site-search](https://spatie.be/docs/laravel-site-search)
   - [laravel-pdf](https://spatie.be/docs/laravel-pdf)
+     
+## Redis Installation Notes
+
+### Install the Redis PHP extension
+- Download the Redis PHP extension at https://pecl.php.net/package/redis (I'm using XAMPP on Windows 11, so Windows users select the **DLL** link. Usually the thread safe (TS) version.)
+- Copy the php_redis.dll to your PHP ext dir (e.g. c:\xampp\php\ext). I copied the php_redis.pdb to ext just in case.
+- Restart Apache
+
+### Install the Laravel Redis Library
+```composer require predis/predis``` ensure there is no error output at the beginning of the composer command execution. Easy to miss if your're in VS Code terminal and the window pane is small (happened to me).
+
+### Run a test route for Redis
+Example:
+```
+// Redis test route
+Route::get('/redis', function () {
+    #Redis::set('key', 'value');
+    
+    $redis = app()->make('redis');
+    $redis->set('foo', 'bar');
+    return $redis->get('foo');
+});
+```
+This should retun 'foo' if successful!
 
 ## Laravel Cashier - Installation/Usage
 
