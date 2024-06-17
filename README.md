@@ -94,6 +94,52 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
   - [Laravel Passport (OAuth2 support)](https://laravel.com/docs/11.x/passport) or Sanctum (no OAuth2) - API authentication 
   - [laravel-site-search](https://spatie.be/docs/laravel-site-search)
   - [laravel-pdf](https://spatie.be/docs/laravel-pdf)
+     
+## Redis Installation Notes
+
+You can either install Redis locally or use their free 30MB Redis Cloud database as of this writing (June 2024) (limit of 1 DB it seems?). Be aware some free offerings could change to paid only in the future. I went for the free Redis Cloud DB to get started quickerat first. After I tried a local Redis on Windows install outlined below.
+
+### Install Redis on Windows
+1) To install Redis on Windows, you'll first need to enable [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) (Windows Subsystem for Linux). WSL2 lets you run Linux binaries natively on Windows. For this method to work, you'll need to be running Windows 10 version 2004 and higher or Windows 11.
+
+2) Next you can Install Redis on Windows following these [instructions](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows/).
+
+Wasn't bad at all. I chose to install Ubuntu for WSL. Started up the redis server through by Ubuntu WSL command line:
+
+```
+sudo service redis-server start
+```
+
+Then tested the 'ping' command which should return the following:
+```
+127.0.0.1:6379> ping
+PONG
+```
+
+### Install the Redis PHP extension
+- Download the Redis PHP extension at https://pecl.php.net/package/redis (I'm using XAMPP on Windows 11, so Windows users select the **DLL** link. Usually the thread safe (TS) version.)
+- Copy the php_redis.dll to your PHP ext dir (e.g. c:\xampp\php\ext). I copied the php_redis.pdb to ext just in case.
+- Restart Apache
+
+### Install the Laravel Redis Library
+```composer require predis/predis``` ensure there is no error output at the beginning of the composer command execution. Easy to miss if your're in VS Code terminal and the window pane is small (happened to me).
+
+### Run a test route for Redis
+Example:
+```
+// Redis test route
+Route::get('/redis', function () {
+    #Redis::set('key', 'value');
+    
+    $redis = app()->make('redis');
+    $redis->set('foo', 'bar');
+    return $redis->get('foo');
+});
+```
+This should retun 'foo' if successful!
+
+### Redis Insight
+[Redis Insight](https://redis.io/docs/latest/operate/redisinsight/) is a handy tool for browsing/viewing your Redis databases, CLI tool, Command Helper, etc. I'd recommend installing this after you get Redis on Windows and it configured in your Laravel app (.env, /config/database.php).
 
 ## Laravel Cashier - Installation/Usage
 
