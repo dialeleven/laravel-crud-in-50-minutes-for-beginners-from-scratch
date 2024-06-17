@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\AdminUserController; // namespace for our "Adminu
 use App\Http\Controllers\Admin\LoginController; // namespace for our "Login" Controller to handle /adminsite/login
 use App\Http\Controllers\Admin\PasswordResetController;
 use App\Http\Controllers\Admin\EmailController;
+use App\Http\Controllers\Admin\RedisAdminController;
 
 //---------- PUBLIC SITE CONTROLLERS ---------------//
 use App\Http\Controllers\Public\PublicProductController; // public product page
@@ -159,10 +160,16 @@ Route::view('/checkout/cancel', 'public.stripe_checkout.cancel')->name('checkout
 // SECTION: Redis routes ---------------------------------------
 
 // Redis test route
-Route::get('/redis', function () {
-   #Redis::set('key', 'value');
-   
-   $redis = app()->make('redis');
-   $redis->set('foo', 'baz');
-   return $redis->get('foo');
-});
+Route::get('/redis', [RedisAdminController::class, 'redis'])->name('redis');
+
+Route::get('/redis-setname', [RedisAdminController::class, 'setName'])->name('redis.setname');
+Route::get('/redis-store-array', [RedisAdminController::class, 'storeArray'])->name('redis.store.array');
+Route::get('/redis-store-complex-array', [RedisAdminController::class, 'storeComplexArray'])->name('redis.store.complex.array');
+
+Route::get('/redis-set', [RedisAdminController::class, 'set'])->name('redis.set');
+Route::get('/redis-get', [RedisAdminController::class, 'get'])->name('redis.get');
+Route::get('/redis-update', [RedisAdminController::class, 'update'])->name('redis.update');
+Route::get('/redis-delete', [RedisAdminController::class, 'delete'])->name('redis.delete');
+Route::get('/redis-hash-set', [RedisAdminController::class, 'hashSet'])->name('redis.hash.set');
+Route::get('/redis-hash-get', [RedisAdminController::class, 'hashGet'])->name('redis.hash.get');
+Route::get('/redis-hash-delete', [RedisAdminController::class, 'hashDelete'])->name('redis.hash.delete');

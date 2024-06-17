@@ -31,4 +31,16 @@
     </li>
 </ul>
 
+<h2 class="text-lg font-semibold mt-5">Redis Operations</h2>
+
+    <ul>
+        <li><a href="{{ route('redis.set') }}" class="text-blue-500 hover:underline">Set Value</a></li>
+        <li><a href="{{ route('redis.get') }}" class="text-blue-500 hover:underline">Get Value</a></li>
+        <li><a href="{{ route('redis.update') }}" class="text-blue-500 hover:underline">Update Value</a></li>
+        <li><a href="{{ route('redis.delete') }}" class="text-blue-500 hover:underline">Delete Value</a></li>
+        <li><a href="{{ route('redis.hash.set') }}" class="text-blue-500 hover:underline">Set Hash Values</a></li>
+        <li><a href="{{ route('redis.hash.get') }}" class="text-blue-500 hover:underline">Get Hash Values</a></li>
+        <li><a href="{{ route('redis.hash.delete') }}" class="text-blue-500 hover:underline">Delete Hash Value</a></li>
+    </ul>
+
 @endsection
