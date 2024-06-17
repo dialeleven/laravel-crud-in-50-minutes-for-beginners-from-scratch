@@ -115,21 +115,60 @@ class RedisAdminController extends Controller
 
     public function hashSet()
     {
-        Redis::hset('frameworks', 'laravel', '9.x');
-        Redis::hset('frameworks', 'symfony', '5.4');
+        Redis::hset('frameworks_hash', 'laravel', '9.x');
+        Redis::hset('frameworks_hash', 'symfony', '5.4');
         return 'Hash values set';
     }
 
     public function hashGet()
     {
-        $laravelVersion = Redis::hget('frameworks', 'laravel');
-        $symfonyVersion = Redis::hget('frameworks', 'symfony');
+        $laravelVersion = Redis::hget('frameworks_hash', 'laravel');
+        $symfonyVersion = Redis::hget('frameworks_hash', 'symfony');
         return "Laravel: $laravelVersion, Symfony: $symfonyVersion";
     }
 
     public function hashDelete()
     {
-        Redis::hdel('frameworks', 'laravel');
+        Redis::hdel('frameworks_hash', 'laravel');
         return 'Laravel entry deleted';
+    }
+
+    
+    public function storeAndRetrieveUsers()
+    {
+        // Example user data
+        $users = [
+            1 => [
+                'name' => 'John Doe',
+                'email' => 'john@example.com',
+                'age' => 30
+            ],
+            2 => [
+                'name' => 'Jane Smith',
+                'email' => 'jane@example.com',
+                'age' => 25
+            ],
+            3 => [
+                'name' => 'Alice Johnson',
+                'email' => 'alice@example.com',
+                'age' => 28
+            ]
+        ];
+
+        // Store user data in Redis using HSET
+        foreach ($users as $userId => $userData) {
+            foreach ($userData as $field => $value) {
+                Redis::hset("user:$userId", $field, $value);
+            }
+        }
+
+        // Retrieve all user data from Redis
+        $retrievedUsers = [];
+        foreach ($users as $userId => $userData) {
+            $retrievedUsers[$userId] = Redis::hgetall("user:$userId");
+        }
+
+        // Return the retrieved user data as JSON
+        return response()->json($retrievedUsers);
     }
 }

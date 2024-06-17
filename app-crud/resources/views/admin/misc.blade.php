@@ -45,6 +45,7 @@
         <li><a href="{{ route('redis.hash.set') }}" class="text-blue-500 hover:underline" target="_blank">Set Hash Values</a></li>
         <li><a href="{{ route('redis.hash.get') }}" class="text-blue-500 hover:underline" target="_blank">Get Hash Values</a></li>
         <li><a href="{{ route('redis.hash.delete') }}" class="text-blue-500 hover:underline" target="_blank">Delete Hash Value</a></li>
+        <li><a href="{{ route('redis.users') }}" class="text-blue-500 hover:underline" target="_blank">storeAndRetrieveUsers</a></li>
     </ul>
 
 @endsection
