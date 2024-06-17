@@ -97,7 +97,7 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
      
 ## Redis Installation Notes
 
-You can either install Redis locally or use their free 30MB Redis Cloud database as of this writing (June 2024) (limit of 1 DB it seems?). Be aware some free offerings could change to paid only in the future. I went for the free Redis Cloud DB to get started quicker. Will try a local Redis DB as well.
+You can either install Redis locally or use their free 30MB Redis Cloud database as of this writing (June 2024) (limit of 1 DB it seems?). Be aware some free offerings could change to paid only in the future. I went for the free Redis Cloud DB to get started quickerat first. After I tried a local Redis on Windows install outlined below.
 
 ### Install Redis on Windows
 1) To install Redis on Windows, you'll first need to enable [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) (Windows Subsystem for Linux). WSL2 lets you run Linux binaries natively on Windows. For this method to work, you'll need to be running Windows 10 version 2004 and higher or Windows 11.
