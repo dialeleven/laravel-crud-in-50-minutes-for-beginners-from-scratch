@@ -12,7 +12,7 @@ class RedisAdminController extends Controller
         #Redis::set('key', 'value');
         
         $redis = app()->make('redis');
-        $redis->set('foo', 'bar');
+        $redis->set('foo', 'bar ' . date('Y-m-d H:i:s'));
         return $redis->get('foo');
 
     }
@@ -24,9 +24,9 @@ class RedisAdminController extends Controller
             'version' => '11.x'
         ];
 
-        Redis::set('framework', json_encode($data));
+        Redis::set('frameworkdb', json_encode($data));
 
-        $storedData = json_decode(Redis::get('framework'), true);
+        $storedData = json_decode(Redis::get('frameworkdb'), true);
 
         return $storedData;
     }
@@ -34,7 +34,8 @@ class RedisAdminController extends Controller
 
     public function storeComplexArray() {
         // Retrieve existing data from Redis
-        $storedData = json_decode(Redis::get('frameworks'), true);
+        $storedData = json_decode(Redis::get('frameworks-arr'), true);
+        
 
         // Check if the data exists, if not, initialize an empty array
         if (!$storedData) {
@@ -73,10 +74,10 @@ class RedisAdminController extends Controller
         }
 
         // Encode the updated array back to JSON
-        Redis::set('frameworks', json_encode($storedData));
+        Redis::set('frameworks-arr', json_encode($storedData));
 
         // Retrieve and return the updated data
-        $updatedData = json_decode(Redis::get('frameworks'), true);
+        $updatedData = json_decode(Redis::get('frameworks-arr'), true);
 
         return $updatedData;
     }
@@ -85,7 +86,7 @@ class RedisAdminController extends Controller
     // read
     public function set() {
         // Set a value
-        Redis::set('name', 'Laravel');
+        Redis::set('name', 'LaravelXYZ');
 
         // Get a value
         $name = Redis::get('name');

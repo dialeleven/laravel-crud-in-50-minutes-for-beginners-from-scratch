@@ -33,14 +33,18 @@
 
 <h2 class="text-lg font-semibold mt-5">Redis Operations</h2>
 
-    <ul>
-        <li><a href="{{ route('redis.set') }}" class="text-blue-500 hover:underline">Set Value</a></li>
-        <li><a href="{{ route('redis.get') }}" class="text-blue-500 hover:underline">Get Value</a></li>
-        <li><a href="{{ route('redis.update') }}" class="text-blue-500 hover:underline">Update Value</a></li>
-        <li><a href="{{ route('redis.delete') }}" class="text-blue-500 hover:underline">Delete Value</a></li>
-        <li><a href="{{ route('redis.hash.set') }}" class="text-blue-500 hover:underline">Set Hash Values</a></li>
-        <li><a href="{{ route('redis.hash.get') }}" class="text-blue-500 hover:underline">Get Hash Values</a></li>
-        <li><a href="{{ route('redis.hash.delete') }}" class="text-blue-500 hover:underline">Delete Hash Value</a></li>
+    <ul class="list-disc pl-5">
+        <li><a href="{{ route('redis') }}" class="text-blue-500 hover:underline" target="_blank">Set Name</a></li>
+        <li><a href="{{ route('redis.store.array') }}" class="text-blue-500 hover:underline" target="_blank">Store Array</a></li>
+        <li><a href="{{ route('redis.store.complex.array') }}" class="text-blue-500 hover:underline" target="_blank">Store Complex Array</a></li>
+        <br>
+        <li><a href="{{ route('redis.set') }}" class="text-blue-500 hover:underline" target="_blank">Set Value</a></li>
+        <li><a href="{{ route('redis.get') }}" class="text-blue-500 hover:underline" target="_blank">Get Value</a></li>
+        <li><a href="{{ route('redis.update') }}" class="text-blue-500 hover:underline" target="_blank">Update Value</a></li>
+        <li><a href="{{ route('redis.delete') }}" class="text-blue-500 hover:underline" target="_blank">Delete Value</a></li>
+        <li><a href="{{ route('redis.hash.set') }}" class="text-blue-500 hover:underline" target="_blank">Set Hash Values</a></li>
+        <li><a href="{{ route('redis.hash.get') }}" class="text-blue-500 hover:underline" target="_blank">Get Hash Values</a></li>
+        <li><a href="{{ route('redis.hash.delete') }}" class="text-blue-500 hover:underline" target="_blank">Delete Hash Value</a></li>
     </ul>
 
 @endsection
