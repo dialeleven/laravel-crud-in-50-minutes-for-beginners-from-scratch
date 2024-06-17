@@ -154,3 +154,15 @@ Route::get('/checkout', [StripeProductController::class, 'checkout'])->name('che
 
 Route::view('/checkout/success', 'public.stripe_checkout.success')->name('checkout-success');
 Route::view('/checkout/cancel', 'public.stripe_checkout.cancel')->name('checkout-cancel');
+
+
+// SECTION: Redis routes ---------------------------------------
+
+// Redis test route
+Route::get('/redis', function () {
+   #Redis::set('key', 'value');
+   
+   $redis = app()->make('redis');
+   $redis->set('foo', 'baz');
+   return $redis->get('foo');
+});
