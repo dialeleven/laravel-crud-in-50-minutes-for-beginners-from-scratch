@@ -72,6 +72,12 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
 - [ ] **Deploy project in Docker**
 - [ ] **Deploy project to Oracle Cloud or similar**
 - [ ] **Redis**
+   - [X] Configure/connect to Redis locally and using Redis Cloud
+   - [ ] Redis CRUD
+   - [ ] Advanced
+      - [ ] Caching, Session Storage
+      - [ ] Handling more complex data structures and operations
+      - [ ] Monitor and maintain a Redis instance
 - [ ] PHPUnit testing
   - [ ] Authenticate admin user
   - [ ] Products
