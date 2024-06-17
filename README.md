@@ -99,6 +99,23 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
 
 You can either install Redis locally or use their free 30MB Redis Cloud database as of this writing (June 2024) (limit of 1 DB it seems?). Be aware some free offerings could change to paid only in the future. I went for the free Redis Cloud DB to get started quicker. Will try a local Redis DB as well.
 
+### Install Redis on Windows
+1) To install Redis on Windows, you'll first need to enable [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) (Windows Subsystem for Linux). WSL2 lets you run Linux binaries natively on Windows. For this method to work, you'll need to be running Windows 10 version 2004 and higher or Windows 11.
+
+2) Next you can Install Redis on Windows following these [instructions](https://redis.io/docs/latest/operate/oss_and_stack/install/install-redis/install-redis-on-windows/).
+
+Wasn't bad at all. I chose to install Ubuntu for WSL. Started up the redis server through by Ubuntu WSL command line:
+
+```
+sudo service redis-server start
+```
+
+Then tested the 'ping' command which should return the following:
+```
+127.0.0.1:6379> ping
+PONG
+```
+
 ### Install the Redis PHP extension
 - Download the Redis PHP extension at https://pecl.php.net/package/redis (I'm using XAMPP on Windows 11, so Windows users select the **DLL** link. Usually the thread safe (TS) version.)
 - Copy the php_redis.dll to your PHP ext dir (e.g. c:\xampp\php\ext). I copied the php_redis.pdb to ext just in case.
