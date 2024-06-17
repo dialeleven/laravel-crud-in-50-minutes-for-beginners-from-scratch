@@ -138,6 +138,9 @@ Route::get('/redis', function () {
 ```
 This should retun 'foo' if successful!
 
+### Redis Insight
+[Redis Insight](https://redis.io/docs/latest/operate/redisinsight/) is a handy tool for browsing/viewing your Redis databases, CLI tool, Command Helper, etc. I'd recommend installing this after you get Redis on Windows and it configured in your Laravel app (.env, /config/database.php).
+
 ## Laravel Cashier - Installation/Usage
 
 ### Follow the #installation steps (https://laravel.com/docs/11.x/billing#installation)
