@@ -20,22 +20,22 @@
             <nav aria-label="Global" class="hidden peer-checked:block md:block" id="mobile-menu">
                <ul class="flex flex-col md:flex-row items-center gap-6 text-sm">
                   <li>
-                     <a class="text-gray-500 transition hover:text-gray-500/75" href="#">About</a>
-                  </li>
-                  <li>
                      <a class="text-gray-500 transition hover:text-gray-500/75" href="{{ route('public_products.index') }}">Products</a>
                   </li>
                   <li>
                      <a class="text-gray-500 transition hover:text-gray-500/75" href="/weatherapi">Weather</a>
                   </li>
                   <li>
-                     <a class="text-gray-500 transition hover:text-gray-500/75" href="#">Services</a>
+                     <a class="text-gray-500 transition hover:text-gray-500/75" href="#">Link1</a>
                   </li>
                   <li>
-                     <a class="text-gray-500 transition hover:text-gray-500/75" href="#">Projects</a>
+                     <a class="text-gray-500 transition hover:text-gray-500/75" href="#">Link2</a>
                   </li>
                   <li>
-                     <a class="text-gray-500 transition hover:text-gray-500/75" href="#">Blog</a>
+                     <a class="text-gray-500 transition hover:text-gray-500/75" href="#">Link3</a>
+                  </li>
+                  <li>
+                     <a class="text-gray-500 transition hover:text-gray-500/75" href="#">Link4</a>
                   </li>
                </ul>
             </nav>
