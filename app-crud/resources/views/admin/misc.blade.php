@@ -46,7 +46,17 @@
         <li><a href="{{ route('redis.hash.get') }}" class="text-blue-500 hover:underline" target="_blank">Get Hash Values</a></li>
         <li><a href="{{ route('redis.hash.delete') }}" class="text-blue-500 hover:underline" target="_blank">Delete Hash Value</a></li>
         <li><a href="{{ route('redis.users') }}" class="text-blue-500 hover:underline" target="_blank">storeAndRetrieveUsers</a></li>
-        <li><a href="{{ route('redis.dispatch.job') }}" class="text-blue-500 hover:underline" target="_blank">dispatchJob</a></li>
+        <li>
+            app/Console/Commands:
+            <div>
+                <pre class="text-sm">
+    php artisan subscribe:channel (in one terminal)
+    php artisan publish:message "Hello, Redis!" (in another terminal - your message should appear in the other terminal)
+
+    php artisan process:queue (???)
+                </pre>
+            </div>
+        </li>
     </ul>
 
 @endsection

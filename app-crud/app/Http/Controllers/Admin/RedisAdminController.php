@@ -174,11 +174,4 @@ class RedisAdminController extends Controller
         // Return the retrieved user data as JSON
         return response()->json($retrievedUsers);
     }
-
-    
-    public function dispatchJob() {    
-        // Dispatching job
-        EnqueueMessage::dispatch('Task 1');
-        EnqueueMessage::dispatch('Task 2');
-    }
 }
