@@ -106,7 +106,7 @@ class RedisAdminController extends Controller
 
     public function update()
     {
-        Redis::set('name', 'Laravel 9.x');
+        Redis::set('name', 'Laravel 9.x UPDATED VALUE');
         return 'Value updated';
     }
 
