@@ -33,6 +33,8 @@
 
 <h2 class="text-lg font-semibold mt-5">Redis Operations</h2>
 
+<p class="text-sm mb-5">View data in <a href="redisinsight://databases/connect?redisUrl=subscriptionType=fixed&planMemoryLimit=0&memoryLimitMeasurementUnit=GB&free=true" target="_blank" class="text-blue-500 hover:underline">RedisInsight</a>. Don't have Redis Insight? <a href="https://s3.amazonaws.com/redisinsight.download/public/latest/Redis-Insight-win-installer.exe" target="_blank" class="text-blue-500 hover:underline" >Get it here</a></p>
+
     <ul class="list-disc pl-5">
         <li><a href="{{ route('redis') }}" class="text-blue-500 hover:underline" target="_blank">Set Name</a></li>
         <li><a href="{{ route('redis.store.array') }}" class="text-blue-500 hover:underline" target="_blank">Store Array</a></li>
