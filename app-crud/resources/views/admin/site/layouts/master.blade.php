@@ -33,7 +33,7 @@
       <aside class="flex flex-col px-5 py-3 overflow-y-auto rtl:border-r-0 rtl:border-l dark:bg-gray-900 dark:border-gray-700">
          
          <!-- logo -->
-         <a href="{{ route('adminsite.index') }}" style="display: flex; align-items: center; text-decoration: none;">
+         <a href="/" style="display: flex; align-items: center; text-decoration: none;" target="_blank">
             <img class="w-auto h-7" src="{{asset('assets/images/android-chrome-512x512.png')}}" alt="Logo" title="" style="margin-right: 8px;">
             <span class="font-bold text-blue-100">CRUD APP</span>
          </a>
