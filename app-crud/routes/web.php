@@ -175,3 +175,5 @@ Route::get('/redis-hash-get', [RedisAdminController::class, 'hashGet'])->name('r
 Route::get('/redis-hash-delete', [RedisAdminController::class, 'hashDelete'])->name('redis.hash.delete');
 
 Route::get('/redis-users', [RedisAdminController::class, 'storeAndRetrieveUsers'])->name('redis.users');
+
+Route::get('/redis-dispatch-job', [RedisAdminController::class, 'dispatchJob'])->name('redis.dispatch.job');

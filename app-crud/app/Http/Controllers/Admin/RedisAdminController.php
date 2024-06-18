@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use Predis\Client;
 
+use App\Jobs\EnqueueMessage;
+
+
 class RedisAdminController extends Controller
 {
     public function redis() {
@@ -170,5 +173,12 @@ class RedisAdminController extends Controller
 
         // Return the retrieved user data as JSON
         return response()->json($retrievedUsers);
+    }
+
+    
+    public function dispatchJob() {    
+        // Dispatching job
+        EnqueueMessage::dispatch('Task 1');
+        EnqueueMessage::dispatch('Task 2');
     }
 }
