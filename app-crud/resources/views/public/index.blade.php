@@ -59,7 +59,12 @@
    <main>
       <div class="relative px-6 lg:px-8 pt-5">
          <h1 class="text-3xl font-bold mb-1">Stripe Products</h1>
-         <p>Our current product catalog coming directly from Stripe!</p>
+         <p>
+            Our current product catalog coming directly from Stripe!
+         </p>
+         <p>
+            The Stripe Checkout works in test mode. Test cards can be found at <a href="https://stripe.com/docs/testing#cards" target="_blank" class="text-blue-600 underline hover:text-blue-800">https://stripe.com/docs/testing#cards</a>
+         </p>
          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-5">
             @foreach($data as $item)
                <div class="bg-white rounded-lg shadow-md overflow-hidden">
