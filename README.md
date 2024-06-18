@@ -73,9 +73,10 @@ For [naming conventions](https://github.com/alexeymezenin/laravel-best-practices
 - [ ] **Deploy project to Oracle Cloud or similar**
 - [ ] **Redis**
    - [X] Configure/connect to Redis locally and using Redis Cloud
-   - [ ] Redis CRUD
+   - [X] Redis CRUD
+   - [ ] Search
    - [ ] Advanced
-      - [ ] Caching, Session Storage
+      - [X] Caching, Session Storage - set Laravel cache/session driver
       - [ ] Handling more complex data structures and operations
       - [ ] Monitor and maintain a Redis instance
 - [ ] PHPUnit testing
